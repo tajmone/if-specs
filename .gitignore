@@ -1,0 +1,43 @@
+############################################
+#  Interactive Fiction Specs in AsciiDoc:  #
+#  https://github.com/tajmone/if-specs     #
+############################################
+
+## TMP Work Files
+#################
+___*
+___*.*
+
+# Links and URLs:
+*.lnk
+*.url
+
+############################
+## COMMON IGNORE PATTERNS ##
+############################
+
+## Linux
+########
+*~
+.directory
+.fuse_hidden*
+.nfs*
+.Trash-*
+
+## macOS
+########
+*.DS_Store
+._*
+.AppleDouble
+.LSOverride
+Icon
+
+## Windows
+##########
+Thumbs.db
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+.BIN/
+
+# EOF #
