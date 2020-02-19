@@ -1,5 +1,8 @@
 # Glulx Specification
 
+[![CC BY-NC-SA 3.0 License][license badge]][CC BY-NC-SA 3.0]&nbsp;
+![Glulx version][glulx badge]&nbsp;
+
 The [Glulx VM] Specification, version 3.1.2, by [Andrew Plotkin], licensed under [CC BY-NC-SA 3.0].
 
 
@@ -82,6 +85,11 @@ In summary (but not a substitute for the [full license text][LICENSE]):
 [indicate if changes were made]: https://wiki.creativecommons.org/wiki/License_Versions#Modifications_and_adaptations_must_be_marked_as_such "More info..."
 [publicity, privacy, or moral rights]: https://wiki.creativecommons.org/Considerations_for_licensors_and_licensees "More info..."
 [technological measures]: https://wiki.creativecommons.org/License_Versions#Application_of_effective_technological_measures_by_users_of_CC-licensed_works_prohibited "More info..."
+
+<!-- badges -->
+
+[license badge]: https://img.shields.io/badge/license-CC%20BY--NC--SA%203.0-00b5da.svg
+[glulx badge]: https://img.shields.io/badge/Glulx-3.1.2-brightgreen "Glulx specification version"
 
 <!-- project files -->
 

@@ -1,0 +1,20 @@
+############################################
+#  Interactive Fiction Specs in AsciiDoc:  #
+#  https://github.com/tajmone/if-specs     #
+############################################
+
+dist: trusty
+
+git:
+  depth: false
+
+install:
+  - npm install -g eclint
+
+script:
+  # ==============================================
+  # EditorConfig Code Styles Validation via EClint
+  # ==============================================
+  # https://editorconfig.org
+  # https://www.npmjs.com/package/eclint
+  - bash ./validate.sh

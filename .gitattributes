@@ -24,4 +24,11 @@
 *.txt          text
 LICENSE        text
 
+
+## Shell Scripts
+################
+*.bat   text eol=crlf
+*.cmd   text eol=crlf
+*.sh    text eol=lf
+
 # EOF #

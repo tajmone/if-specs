@@ -1,5 +1,7 @@
 # Interactive Fiction Specs in AsciiDoc
 
+![build status][travis badge]
+
 - https://github.com/tajmone/if-specs
 
 This repository is dedicated to porting to AsciiDoc technical documents on various Interactive Fiction standards and their specifications.
@@ -28,6 +30,16 @@ Created by [Tristano Ajmone], 2020/02/19.
 
 - [`/glulx/`](./glulx/) — Glulx Specification v3.1.2.
 
+Build and validation scripts:
+
+- [`validate.sh`][validate.sh] — code styles consistency validation via [EClint] ([Node.js]).
+
+Repository settings:
+
+- [`.editorconfig`][.editorconfig] — [EditorConfig] settings for code styles consistency.
+- [`.gitattributes`][.gitattributes]
+- [`.gitignore`][.gitignore]
+- [`.travis.yml`][.travis.yml] — [Travis CI] settings to validate commits and pull request code styles consistency.
 
 # Project Status
 
@@ -78,6 +90,13 @@ The Glulx specification is Copyright 1999-2014 by [Andrew Plotkin], licensed und
 [Inform 6 website]: https://inform-fiction.org "Visit Inform 6 website"
 [IF Archive]: https://www.ifarchive.org/ "Visit the IF Archive"
 
+<!-- 3rd party tools -->
+
+[EClint]: https://www.npmjs.com/package/eclint "Visit EClint page at NPM"
+[EditorConfig]: https://editorconfig.org "Visit EditorConfig website"
+[Node.js]: https://nodejs.org "Visit Node.js website"
+[Travis CI]: https://travis-ci.com  "Visit Travis CI website"
+
 <!-- specs & tech docs -->
 
 [Blorb specs]: https://eblong.com/zarf/blorb/index.html "Official Blorb specification homepage"
@@ -89,6 +108,18 @@ The Glulx specification is Copyright 1999-2014 by [Andrew Plotkin], licensed und
 <!-- licenses -->
 
 [CC BY-NC-SA 3.0]: https://creativecommons.org/licenses/by-nc-sa/3.0/ "View CC BY-NC-SA 3.0 License at creativecommons.org"
+
+<!-- badges -->
+
+[travis badge]: https://travis-ci.org/tajmone/if-specs.svg?branch=master "Travis CI Build Status for EditorConfig Validation"
+
+<!-- project files -->
+
+[.editorconfig]: ./.editorconfig "EditorConfig settings for code styles consistency"
+[.gitattributes]: ./.gitattributes "Git attributes settings file"
+[.gitignore]: ./.gitignore "Git ignore rules files"
+[.travis.yml]: ./.travis.yml "Travis CI build validation settings"
+[validate.sh]: ./validate.sh "Validate contents against EditorConfig settings via EClint"
 
 <!-- people -->
 
