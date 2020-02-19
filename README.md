@@ -6,13 +6,60 @@ This repository is dedicated to porting to AsciiDoc technical documents on vario
 
 Created by [Tristano Ajmone], 2020/02/19.
 
+
+-----
+
+**Table of Contents**
+
+
+<!-- MarkdownTOC autolink="true" bracket="round" autoanchor="false" lowercase="only_ascii" uri_encoding="true" levels="1,2,3,4" -->
+
+- [Project Contents](#project-contents)
+- [Project Status](#project-status)
+- [Licenses](#licenses)
+    - [Glulx Specification](#glulx-specification)
+- [Links](#links)
+
+<!-- /MarkdownTOC -->
+
+-----
+
+# Project Contents
+
+- [`/glulx/`](./glulx/) — Glulx Specification v3.1.2.
+
+
 # Project Status
 
-Under construction.
+The project is still under development, below is the task-list of the current roadmap.
 
-# License
+- [ ] Add original specs and standards documents:
+    + [ ] Blorb
+    + [ ] Glk
+    + [x] Glulx
+    + [ ] The Treaty of Babel
+    + [ ] Z-Machine
+- [ ] Port the documents to AsciiDoc:
+    + [ ] Blorb
+    + [ ] Glk
+    + [ ] Glulx
+    + [ ] The Treaty of Babel
+    + [ ] Z-Machine
 
-Each document will be governed by its original license.
+# Licenses
+
+Each document is governed by its original license.
+
+Here follows a quick summary of the Copyright and license terms of each third party document included in this repository.
+
+For full details, see the `README.md` and `LICENSE` files inside each subfolder.
+
+## Glulx Specification
+
+- [`/glulx/`](./glulx/)
+    + [`LICENSE`](./glulx/LICENSE)
+
+The Glulx specification is Copyright 1999-2014 by [Andrew Plotkin], licensed under [CC BY-NC-SA 3.0].
 
 # Links
 
@@ -38,6 +85,10 @@ Each document will be governed by its original license.
 [Glulx specs]: https://eblong.com/zarf/glulx/index.html "Official Glulx specification homepage"
 [The Treaty of Babel]: https://babel.ifarchive.org "Visit the official homepage of 'The Treaty of Babel', software and a standard for IF bibliography"
 [Z-Machine specs]: https://inform-fiction.org/zmachine/standards/index.html "Visit the Z-Machine Standards homepage"
+
+<!-- licenses -->
+
+[CC BY-NC-SA 3.0]: https://creativecommons.org/licenses/by-nc-sa/3.0/ "View CC BY-NC-SA 3.0 License at creativecommons.org"
 
 <!-- people -->
 

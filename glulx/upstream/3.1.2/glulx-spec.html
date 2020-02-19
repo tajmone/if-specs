@@ -1,0 +1,84 @@
+<!doctype HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head>
+<title>Glulx</title>
+</head><body>
+<h2>Glulx</h2>
+<p>
+
+<center><em>A 32-Bit Virtual Machine for IF</em></center>
+<p>
+
+<center><em>VM specification version 3.1.2</em></center>
+<p>
+
+<center><em>Andrew Plotkin &lt;erkyrath@eblong.com&gt;</em></center>
+<p>
+
+Copyright 1999-2014 by Andrew Plotkin. This specification is licensed under a Creative Commons Attribution-Noncommercial-Share Alike 3.0 Unported License: <a href="http://creativecommons.org/licenses/by-nc-sa/3.0">http://creativecommons.org/licenses/by-nc-sa/3.0</a>
+<p>
+
+The virtual machine <em>described</em> by this document is an idea, not an expression of an idea, and is therefore not copyrightable. Anyone is free to write programs that run on the Glulx VM or make use of it, including compilers, interpreters, debuggers, and so on.
+<p>
+
+This document and further Glulx information can be found at:<a href="http://eblong.com/zarf/glulx/">http://eblong.com/zarf/glulx/</a>
+<p>
+
+<ul>
+<li><a name="intro">0.</a> <a href="glulx-spec_0.html#beg">Introduction</a>
+<li>0.1. <a href="glulx-spec_0.html#s.1">Why Bother?</a>
+<li><a name="otherif">0.2.</a> <a href="glulx-spec_0.html#s.2">Glulx and Other IF Systems</a>
+<li>0.3. <a href="glulx-spec_0.html#s.3">Credits</a>
+<li>1. <a href="glulx-spec_1.html#beg">The Machine</a>
+<li>1.1. <a href="glulx-spec_1.html#s.1">Input and Output</a>
+<li>1.2. <a href="glulx-spec_1.html#s.2">The Memory Map</a>
+<li><a name="stack">1.3.</a> <a href="glulx-spec_1.html#s.3">The Stack</a>
+<li><a name="callframe">1.3.1.</a> <a href="glulx-spec_1.html#s.3.1">The Call Frame</a>
+<li><a name="callstub">1.3.2.</a> <a href="glulx-spec_1.html#s.3.2">Call Stubs</a>
+<li>1.3.3. <a href="glulx-spec_1.html#s.3.3">Calling and Returning</a>
+<li><a name="callstring">1.3.4.</a> <a href="glulx-spec_1.html#s.3.4">Calling and Returning Within Strings</a>
+<li><a name="callfilter">1.3.5.</a> <a href="glulx-spec_1.html#s.3.5">Calling and Returning During Output Filtering</a>
+<li>1.4. <a href="glulx-spec_1.html#s.4">The Header</a>
+<li><a name="instruction">1.5.</a> <a href="glulx-spec_1.html#s.5">Instruction Format</a>
+<li>1.6. <a href="glulx-spec_1.html#s.6">Typable Objects</a>
+<li><a name="string">1.6.1.</a> <a href="glulx-spec_1.html#s.6.1">Strings</a>
+<li><a name="string_plain">1.6.1.1.</a> <a href="glulx-spec_1.html#s.6.1.1">Unencoded strings</a>
+<li><a name="string_unicode">1.6.1.2.</a> <a href="glulx-spec_1.html#s.6.1.2">Unencoded Unicode strings</a>
+<li><a name="string_enc">1.6.1.3.</a> <a href="glulx-spec_1.html#s.6.1.3">Compressed strings</a>
+<li><a name="string_table">1.6.1.4.</a> <a href="glulx-spec_1.html#s.6.1.4">The String-Decoding Table</a>
+<li><a name="function">1.6.2.</a> <a href="glulx-spec_1.html#s.6.2">Functions</a>
+<li>1.6.3. <a href="glulx-spec_1.html#s.6.3">Other Glulx Objects</a>
+<li>1.6.4. <a href="glulx-spec_1.html#s.6.4">User-Defined Objects</a>
+<li><a name="floats">1.7.</a> <a href="glulx-spec_1.html#s.7">Floating-Point Numbers</a>
+<li><a name="saveformat">1.8.</a> <a href="glulx-spec_1.html#s.8">The Save-Game Format</a>
+<li>1.8.1. <a href="glulx-spec_1.html#s.8.1">Contents of Dynamic Memory</a>
+<li>1.8.2. <a href="glulx-spec_1.html#s.8.2">Contents of the Stack</a>
+<li>1.8.3. <a href="glulx-spec_1.html#s.8.3">Memory Allocation Heap</a>
+<li>1.8.4. <a href="glulx-spec_1.html#s.8.4">Associated Story File</a>
+<li>1.8.5. <a href="glulx-spec_1.html#s.8.5">State Not Saved</a>
+<li>2. <a href="glulx-spec_2.html#beg">Dictionary of Opcodes</a>
+<li>2.1. <a href="glulx-spec_2.html#s.1">Integer Math</a>
+<li><a name="opcodes_branch">2.2.</a> <a href="glulx-spec_2.html#s.2">Branches</a>
+<li>2.3. <a href="glulx-spec_2.html#s.3">Moving Data</a>
+<li>2.4. <a href="glulx-spec_2.html#s.4">Array Data</a>
+<li>2.5. <a href="glulx-spec_2.html#s.5">The Stack</a>
+<li>2.6. <a href="glulx-spec_2.html#s.6">Functions</a>
+<li>2.7. <a href="glulx-spec_2.html#s.7">Continuations</a>
+<li><a name="opcodes_memory">2.8.</a> <a href="glulx-spec_2.html#s.8">Memory Map</a>
+<li><a name="opcodes_malloc">2.9.</a> <a href="glulx-spec_2.html#s.9">Memory Allocation Heap</a>
+<li>2.10. <a href="glulx-spec_2.html#s.10">Game State</a>
+<li><a name="opcodes_output">2.11.</a> <a href="glulx-spec_2.html#s.11">Output</a>
+<li><a name="opcodes_float">2.12.</a> <a href="glulx-spec_2.html#s.12">Floating-Point Math</a>
+<li><a name="opcodes_floatbranch">2.13.</a> <a href="glulx-spec_2.html#s.13">Floating-Point Comparisons</a>
+<li><a name="opcodes_rand">2.14.</a> <a href="glulx-spec_2.html#s.14">Random Number Generator</a>
+<li><a name="opcodes_copy">2.15.</a> <a href="glulx-spec_2.html#s.15">Block Copy and Clear</a>
+<li>2.16. <a href="glulx-spec_2.html#s.16">Searching</a>
+<li><a name="opcodes_accel">2.17.</a> <a href="glulx-spec_2.html#s.17">Accelerated Functions</a>
+<li><a name="opcodes_misc">2.18.</a> <a href="glulx-spec_2.html#s.18">Miscellaneous</a>
+<li>2.19. <a href="glulx-spec_2.html#s.19">Assembly Language</a>
+</ul>
+
+<p>
+
+
+<hr>
+</body></html>

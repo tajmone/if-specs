@@ -1,0 +1,2004 @@
+<!doctype HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head>
+<title>Glulx: 2. Dictionary of Opcodes</title>
+</head><body>
+<h2><a name="beg">2: Dictionary of Opcodes</a></h2>
+<p>
+
+Opcodes are written here in the format:
+<p>
+
+<pre>
+opname L1 L2 S1
+</pre>
+
+<p>
+
+...where "L1" and "L2" are operands using the load addressing modes, and "S1" is an operand using the store addressing modes. (See <a href="glulx-spec_1.html#s.5">section 1.5, "Instruction Format"</a>.)
+<p>
+
+The table of opcodes:
+<p>
+
+<ul>
+<li>0x00: nop
+<li>0x10: add
+<li>0x11: sub
+<li>0x12: mul
+<li>0x13: div
+<li>0x14: mod
+<li>0x15: neg
+<li>0x18: bitand
+<li>0x19: bitor
+<li>0x1A: bitxor
+<li>0x1B: bitnot
+<li>0x1C: shiftl
+<li>0x1D: sshiftr
+<li>0x1E: ushiftr
+<li>0x20: jump
+<li>0x22: jz
+<li>0x23: jnz
+<li>0x24: jeq
+<li>0x25: jne
+<li>0x26: jlt
+<li>0x27: jge
+<li>0x28: jgt
+<li>0x29: jle
+<li>0x2A: jltu
+<li>0x2B: jgeu
+<li>0x2C: jgtu
+<li>0x2D: jleu
+<li>0x30: call
+<li>0x31: return
+<li>0x32: catch
+<li>0x33: throw
+<li>0x34: tailcall
+<li>0x40: copy
+<li>0x41: copys
+<li>0x42: copyb
+<li>0x44: sexs
+<li>0x45: sexb
+<li>0x48: aload
+<li>0x49: aloads
+<li>0x4A: aloadb
+<li>0x4B: aloadbit
+<li>0x4C: astore
+<li>0x4D: astores
+<li>0x4E: astoreb
+<li>0x4F: astorebit
+<li>0x50: stkcount
+<li>0x51: stkpeek
+<li>0x52: stkswap
+<li>0x53: stkroll
+<li>0x54: stkcopy
+<li>0x70: streamchar
+<li>0x71: streamnum
+<li>0x72: streamstr
+<li>0x73: streamunichar
+<li>0x100: gestalt
+<li>0x101: debugtrap
+<li>0x102: getmemsize
+<li>0x103: setmemsize
+<li>0x104: jumpabs
+<li>0x110: random
+<li>0x111: setrandom
+<li>0x120: quit
+<li>0x121: verify
+<li>0x122: restart
+<li>0x123: save
+<li>0x124: restore
+<li>0x125: saveundo
+<li>0x126: restoreundo
+<li>0x127: protect
+<li>0x130: glk
+<li>0x140: getstringtbl
+<li>0x141: setstringtbl
+<li>0x148: getiosys
+<li>0x149: setiosys
+<li>0x150: linearsearch
+<li>0x151: binarysearch
+<li>0x152: linkedsearch
+<li>0x160: callf
+<li>0x161: callfi
+<li>0x162: callfii
+<li>0x163: callfiii
+<li>0x170: mzero
+<li>0x171: mcopy
+<li>0x178: malloc
+<li>0x179: mfree
+<li>0x180: accelfunc
+<li>0x181: accelparam
+<li>0x190: numtof
+<li>0x191: ftonumz
+<li>0x192: ftonumn
+<li>0x198: ceil
+<li>0x199: floor
+<li>0x1A0: fadd
+<li>0x1A1: fsub
+<li>0x1A2: fmul
+<li>0x1A3: fdiv
+<li>0x1A4: fmod
+<li>0x1A8: sqrt
+<li>0x1A9: exp
+<li>0x1AA: log
+<li>0x1AB: pow
+<li>0x1B0: sin
+<li>0x1B1: cos
+<li>0x1B2: tan
+<li>0x1B3: asin
+<li>0x1B4: acos
+<li>0x1B5: atan
+<li>0x1B6: atan2
+<li>0x1C0: jfeq
+<li>0x1C1: jfne
+<li>0x1C2: jflt
+<li>0x1C3: jfle
+<li>0x1C4: jfgt
+<li>0x1C5: jfge
+<li>0x1C8: jisnan
+<li>0x1C9: jisinf
+</ul>
+
+<p>
+
+Opcodes 0x1000 to 0x10FF are reserved for use by FyreVM. Opcodes 0x1100 to 0x11FF are reserved for extension projects by Dannii Willis. Opcodes 0x1200 to 0x12FF are reserved for iOS extension features by Andrew Plotkin. These are not documented here. Opcodes 0x7900 to 0x79FF are (apparently) reserved for experimental features in the Git interpreter. See <a href="glulx-spec_0.html#s.2">section 0.2, "Glulx and Other IF Systems"</a>.
+<p>
+
+<h3><a name="s.1">2.1: Integer Math</a></h3>
+<p>
+
+<pre>
+add L1 L2 S1
+</pre>
+
+<p>
+
+Add L1 and L2, using standard 32-bit addition. Truncate the result to 32 bits if necessary. Store the result in S1.
+<p>
+
+<pre>
+sub L1 L2 S1
+</pre>
+
+<p>
+
+Compute (L1 - L2), and store the result in S1.
+<p>
+
+<pre>
+mul L1 L2 S1
+</pre>
+
+<p>
+
+Compute (L1 * L2), and store the result in S1. Truncate the result to 32 bits if necessary.
+<p>
+
+<pre>
+div L1 L2 S1
+</pre>
+
+<p>
+
+Compute (L1 / L2), and store the result in S1. This is signed integer division.
+<p>
+
+<pre>
+mod L1 L2 S1
+</pre>
+
+<p>
+
+Compute (L1 % L2), and store the result in S1. This is the remainder from signed integer division.
+<p>
+
+In division and remainer, signs are annoying. Rounding is towards zero. The sign of a remainder equals the sign of the dividend. It is always true that (A / B) * B + (A % B) == A. Some examples (in decimal):
+<p>
+
+<pre>
+ 11 /  2 =  5
+-11 /  2 = -5
+ 11 / -2 = -5
+-11 / -2 =  5
+ 13 %  5 =  3
+-13 %  5 = -3
+ 13 % -5 =  3
+-13 % -5 = -3
+
+</pre>
+
+<p>
+
+<pre>
+neg L1 S1
+</pre>
+
+<p>
+
+Compute the negative of L1.
+<p>
+
+<pre>
+bitand L1 L2 S1
+</pre>
+
+<p>
+
+Compute the bitwise AND of L1 and L2.
+<p>
+
+<pre>
+bitor L1 L2 S1
+</pre>
+
+<p>
+
+Compute the bitwise OR of L1 and L2.
+<p>
+
+<pre>
+bitxor L1 L2 S1
+</pre>
+
+<p>
+
+Compute the bitwise XOR of L1 and L2.
+<p>
+
+<pre>
+bitnot L1 S1
+</pre>
+
+<p>
+
+Compute the bitwise negation of L1.
+<p>
+
+<pre>
+shiftl L1 L2 S1
+</pre>
+
+<p>
+
+Shift the bits of L1 to the left (towards more significant bits) by L2 places. The bottom L2 bits are filled in with zeroes. If L2 is 32 or more, the result is always zero.
+<p>
+
+<pre>
+ushiftr L1 L2 S1
+</pre>
+
+<p>
+
+Shift the bits of L1 to the right by L2 places. The top L2 bits are filled in with zeroes. If L2 is 32 or more, the result is always zero.
+<p>
+
+<pre>
+sshiftr L1 L2 S1
+</pre>
+
+<p>
+
+Shift the bits of L1 to the right by L2 places. The top L2 bits are filled in with copies of the top bit of L1. If L2 is 32 or more, the result is always zero or FFFFFFFF, depending on the top bit of L1.
+<p>
+
+Notes on the shift opcodes: If L2 is zero, the result is always equal to L1. L2 is considered unsigned, so 80000000 or greater is "more than 32".
+<p>
+
+<h3><a name="s.2">2.2: Branches</a></h3>
+<p>
+
+All branches (except jumpabs) specify their destinations with an offset value. The actual destination address of the branch is computed as (Addr + Offset - 2), where Addr is the address of the instruction <em>after</em> the branch opcode, and offset is the branch's operand. The special offset values 0 and 1 are interpreted as "return 0" and "return 1" respectively. [This odd hiccup is inherited from the Z-machine. Inform uses it heavily for code optimization.]
+<p>
+
+It is legal to branch to code that is in another function. [Indeed, there is no well-defined notion of where a function ends.] However, this does not affect the current stack frame; that remains set up according to the same function call as before the branch. Similarly, it is legal to branch to code which is not associated with any function -- e.g., code compiled on the fly in RAM.
+<p>
+
+<pre>
+jump L1
+</pre>
+
+<p>
+
+Branch unconditionally to offset L1.
+<p>
+
+<pre>
+jz L1 L2
+</pre>
+
+<p>
+
+If L1 is equal to zero, branch to L2.
+<p>
+
+<pre>
+jnz L1 L2
+</pre>
+
+<p>
+
+If L1 is not equal to zero, branch to L2.
+<p>
+
+<pre>
+jeq L1 L2 L3
+</pre>
+
+<p>
+
+If L1 is equal to L2, branch to L3.
+<p>
+
+<pre>
+jne L1 L2 L3
+</pre>
+
+<p>
+
+If L1 is not equal to L2, branch to L3.
+<p>
+
+<pre>
+jlt L1 L2 L3
+jle L1 L2 L3
+jgt L1 L2 L3
+jge L1 L2 L3
+</pre>
+
+<p>
+
+Branch is L1 is less than, less than or equal to, greater than, greater than or equal to L2. The values are compared as signed 32-bit values.
+<p>
+
+<pre>
+jltu L1 L2 L3
+jleu L1 L2 L3
+jgtu L1 L2 L3
+jgeu L1 L2 L3
+</pre>
+
+<p>
+
+The same, except that the values are compared as unsigned 32-bit values.
+<p>
+
+[Since the address space can span the full 32-bit range, it is wiser to compare addresses with the unsigned comparison operators.]
+<p>
+
+<pre>
+jumpabs L1
+</pre>
+
+<p>
+
+Branch unconditionally to address L1. Unlike the other branch opcodes, this takes an absolute address, not an offset. The special cases 0 and 1 (for returning) do not apply; jumpabs 0 would branch to memory address 0, if that were ever a good idea, which it isn't.
+<p>
+
+<h3><a name="s.3">2.3: Moving Data</a></h3>
+<p>
+
+<pre>
+copy L1 S1
+</pre>
+
+<p>
+
+Read L1 and store it at S1, without change.
+<p>
+
+<pre>
+copys L1 S1
+</pre>
+
+<p>
+
+Read a 16-bit value from L1 and store it at S1.
+<p>
+
+<pre>
+copyb L1 S1
+</pre>
+
+<p>
+
+Read an 8-bit value from L1 and store it at S1.
+<p>
+
+Since copys and copyb can access chunks smaller than the usual four bytes, they require some comment. When reading from main memory or the call-frame locals, they access two or one bytes, instead of four. However, when popping or pushing values on the stack, these opcodes pull or push a full 32-bit value.
+<p>
+
+Therefore, if copyb (for example) copies a byte from main memory to the stack, a 32-bit value will be pushed, whose value will be from 0 to 255. Sign-extension <em>does not</em> occur. Conversely, if copyb copies a byte from the stack to memory, a 32-bit value is popped, and the bottom 8 bits are written at the given address. The upper 24 bits are lost. Constant values are truncated as well.
+<p>
+
+If copys or copyb are used with both L1 and S1 in pop/push mode, the 32-bit value is popped, truncated, and pushed.
+<p>
+
+[NOTE: Since a call frame has no specified endianness, it is unwise to use these opcodes to pull out one or two bytes from a four-byte local variable. The result will be implementation-dependent. Therefore, use of the copyb and copys opcodes with a local-variable operand of different size is deprecated. Since locals of less than four bytes are <em>also</em> deprecated, you should not use copyb or copys with local-variable operands at all.]
+<p>
+
+<pre>
+sexs L1 S1
+</pre>
+
+<p>
+
+Sign-extend a value, considered as a 16-bit value. If the value's 8000 bit is set, the upper 16 bits are all set; otherwise, the upper 16 bits are all cleared.
+<p>
+
+<pre>
+sexb L1 S1
+</pre>
+
+<p>
+
+Sign-extend a value, considered as an 8-bit value. If the value's 80 bit is set, the upper 24 bits are all set; otherwise, the upper 24 bits are all cleared.
+<p>
+
+Note that these opcodes, like most, work on 32-bit values. Although (for example) sexb is commonly used in conjunction with copyb, it does not share copyb's behavior of reading a single byte from memory or the locals.
+<p>
+
+Also note that the upper bits, 16 or 24 of them, are entirely ignored and overwritten with ones or zeroes.
+<p>
+
+<h3><a name="s.4">2.4: Array Data</a></h3>
+<p>
+
+<pre>
+astore L1 L2 L3
+</pre>
+
+<p>
+
+Store L3 into the 32-bit field at main memory address (L1+4*L2).
+<p>
+
+<pre>
+aload L1 L2 S1
+</pre>
+
+<p>
+
+Load a 32-bit value from main memory address (L1+4*L2), and store it in S1.
+<p>
+
+<pre>
+astores L1 L2 L3
+</pre>
+
+<p>
+
+Store L3 into the 16-bit field at main memory address (L1+2*L2).
+<p>
+
+<pre>
+aloads L1 L2 S1
+</pre>
+
+<p>
+
+Load an 16-bit value from main memory address (L1+2*L2), and store it in S1.
+<p>
+
+<pre>
+astoreb L1 L2 L3
+</pre>
+
+<p>
+
+Store L3 into the 8-bit field at main memory address (L1+L2).
+<p>
+
+<pre>
+aloadb L1 L2 S1
+</pre>
+
+<p>
+
+Load an 8-bit value from main memory address (L1+L2), and store it in S1.
+<p>
+
+Note that these opcodes cannot access call-frame locals, or the stack. (Not with the L1 and L2 opcodes, that is.) L1 and L2 provide a main-memory address. Be not confused by the fact that L1 and L2 can be any addressing mode, including call-frame or stack-pop modes. That controls where the values come from which are used to <em>compute</em> the main-memory address.
+<p>
+
+The other end of the transfer (S1 or L3) is always a 32-bit value. The "store" opcodes truncate L3 to 8 or 16 bits if necessary. The "load" opcodes expand 8-bit or 16-bit values <em>without</em> sign extension. (If signed values are appropriate, you can follow aloads/aloadb with sexs/sexb.)
+<p>
+
+L2 is considered signed, so you can access addresses before L1 as well as after.
+<p>
+
+<pre>
+astorebit L1 L2 L3
+</pre>
+
+<p>
+
+Set or clear a single bit. This is bit number (L2 mod 8) of memory address (L1+L2/8). It is cleared if L3 is zero, set if nonzero.
+<p>
+
+<pre>
+aloadbit L1 L2 S1
+</pre>
+
+<p>
+
+Test a single bit, similarly. If it is set, 1 is stored at S1; if clear, 0 is stored.
+<p>
+
+For these two opcodes, bits are effectively numbered sequentially, starting with the least significant bit of address L1. L2 is considered signed, so this numbering extends both positively and negatively. For example:
+<p>
+
+<pre>
+astorebit  1002  0  1:  Set bit 0 of address 1002. (The 1's place.)
+astorebit  1002  7  1:  Set bit 7 of address 1002. (The 128's place.)
+astorebit  1002  8  1:  Set bit 0 of address 1003.
+astorebit  1002  9  1:  Set bit 1 of address 1003.
+astorebit  1002 -1  1:  Set bit 7 of address 1001.
+astorebit  1002 -3  1:  Set bit 5 of address 1001.
+astorebit  1002 -8  1:  Set bit 0 of address 1001.
+astorebit  1002 -9  1:  Set bit 7 of address 1000.
+
+</pre>
+
+<p>
+
+Like the other aload and astore opcodes, these opcodes cannot access call-frame locals, or the stack.
+<p>
+
+<h3><a name="s.5">2.5: The Stack</a></h3>
+<p>
+
+<pre>
+stkcount S1
+</pre>
+
+<p>
+
+Store a count of the number of values on the stack. This counts only values above the current call-frame. In other words, it is always zero when a C1 function starts executing, and (numargs+1) when a C0 function starts executing. It then increases and decreases thereafter as values are pushed and popped; it is always the number of values that can be popped legally. (If S1 uses the stack push mode, the count is done before the result is pushed.)
+<p>
+
+<pre>
+stkpeek L1 S1
+</pre>
+
+<p>
+
+Peek at the L1'th value on the stack, without actually popping anything. If L1 is zero, this is the top value; if one, it's the value below that; etc. L1 must be less than the current stack-count. (If L1 or S1 use the stack pop/push modes, the peek is counted after L1 is popped, but before the result is pushed.)
+<p>
+
+<pre>
+stkswap
+</pre>
+
+<p>
+
+Swap the top two values on the stack. The current stack-count must be at least two.
+<p>
+
+<pre>
+stkcopy L1
+</pre>
+
+<p>
+
+Peek at the top L1 values in the stack, and push duplicates onto the stack in the same order. If L1 is zero, nothing happens. L1 must not be greater than the current stack-count. (If L1 uses the stack pop mode, the stkcopy is counted after L1 is popped.)
+<p>
+
+An example of stkcopy, starting with six values on the stack:
+<p>
+
+<pre>
+5 4 3 2 1 0 &lt;top&gt;
+stkcopy 3
+5 4 3 2 1 0 2 1 0 &lt;top&gt;
+
+</pre>
+
+<p>
+
+<pre>
+stkroll L1 L2
+</pre>
+
+<p>
+
+Rotate the top L1 values on the stack. They are rotated up or down L2 places, with positive values meaning up and negative meaning down. The current stack-count must be at least L1. If either L1 or L2 is zero, nothing happens. (If L1 and/or L2 use the stack pop mode, the roll occurs after they are popped.)
+<p>
+
+An example of two stkrolls, starting with nine values on the stack:
+<p>
+
+<pre>
+8 7 6 5 4 3 2 1 0 &lt;top&gt;
+stkroll 5 1
+8 7 6 5 0 4 3 2 1 &lt;top&gt;
+stkroll 9 -3
+5 0 4 3 2 1 8 7 6 &lt;top&gt;
+
+</pre>
+
+<p>
+
+Note that stkswap is equivalent to stkroll 2 1, or for that matter stkroll 2 -1. Also, stkcopy 1 is equivalent to stkpeek 0 sp.
+<p>
+
+These opcodes can only access the values pushed on the stack above the current call-frame. It is illegal to stkswap, stkpeek, stkcopy, or stkroll values below that -- i.e, the locals segment or any previous function call frames.
+<p>
+
+<h3><a name="s.6">2.6: Functions</a></h3>
+<p>
+
+<pre>
+call L1 L2 S1
+</pre>
+
+<p>
+
+Call function whose address is L1, passing in L2 arguments, and store the return result at S1.
+<p>
+
+The arguments are taken from the stack. Before you execute the call opcode, you must push the arguments on, in backward order (last argument pushed first, first argument topmost on the stack.) The L2 arguments are removed before the new function's call frame is constructed. (If L1, L2, or S1 use the stack pop/push modes, the arguments are taken after L1 or L2 is popped, but before the result is pushed.)
+<p>
+
+Recall that all functions in Glulx have a single 32-bit return value. If you do not care about the return value, you can use operand mode 0 ("discard value") for operand S1.
+<p>
+
+<pre>
+callf L1 S1
+callfi L1 L2 S1
+callfii L1 L2 L3 S1
+callfiii L1 L2 L3 L4 S1
+</pre>
+
+<p>
+
+Call function whose address is L1, passing zero, one, two, or three arguments. Store the return result at S1.
+<p>
+
+These opcodes behave the same as call, except that the arguments are given in the usual opcode format instead of being found on the stack. (If L2, L3, etc. all use the stack pop mode, then the behavior is exactly the same as call.)
+<p>
+
+<pre>
+return L1
+</pre>
+
+<p>
+
+Return from the current function, with the given return value. If this is the top-level function, Glulx execution is over.
+<p>
+
+Note that all the branch opcodes (jump, jz, jeq, and so on) have an option to return 0 or 1 instead of branching. These behave exactly as if the return opcode had been executed.
+<p>
+
+<pre>
+tailcall L1 L2
+</pre>
+
+<p>
+
+Call function whose address is L1, passing in L2 arguments, and pass the return result out to whoever called the current function.
+<p>
+
+This destroys the current call-frame, as if a return had been executed, but does not touch the call stub below that. It then immediately calls L1, creating a new call-frame. The effect is the same as a call immediately followed by a return, but takes less stack space.
+<p>
+
+It is legal to use tailcall from the top-level function. L1 becomes the top-level function.
+<p>
+
+[This opcode can be used to implement tail recursion, without forcing the stack to grow with every call.]
+<p>
+
+<h3><a name="s.7">2.7: Continuations</a></h3>
+<p>
+
+<pre>
+catch S1 L1
+</pre>
+
+<p>
+
+Generates a "catch token", which can be used to jump back to this execution point from a throw opcode. The token is stored in S1, and then execution branches to offset L1. If execution is proceeding from this point because of a throw, the thrown value is stored instead, and the branch is ignored.
+<p>
+
+Remember if the branch value is not 0 or 1, the branch is to to (Addr + L1 - 2), where Addr is the address of the instruction <em>after</em> the catch. If the value <em>is</em> 0 or 1, the function returns immediately, invalidating the catch token.
+<p>
+
+If S1 or L1 uses the stack push/pop modes, note that the precise order of execution is: evaluate L1 (popping if appropriate); generate a call stub and compute the token; store S1 (pushing if appropriate).
+<p>
+
+<pre>
+throw L1 L2
+</pre>
+
+<p>
+
+Jump back to a previously-executed catch opcode, and store the value L1. L2 must be a valid catch token.
+<p>
+
+The exact catch/throw procedure is as follows:
+<p>
+
+When catch is executed, a four-value call stub is pushed on the stack -- result destination, PC, and FramePtr. (See <a href="glulx-spec_1.html#s.3.2">section 1.3.2, "Call Stubs"</a>. The PC is the address of the next instruction after the catch.) The catch token is the value of the stack pointer after these are pushed. The token value is stored in the result destination, and execution proceeds, branching to L1.
+<p>
+
+When throw is executed, the stack is popped down until the stack pointer equals the given token. Then the four values are read back off the stack, the thrown value is stored in the destination, and execution proceeds with the instruction after the catch.
+<p>
+
+If the call stub (or any part of it) is removed from the stack, the catch token becomes invalid, and must not be used. This will certainly occur when you return from the function containing the catch opcode. It will also occur if you pop too many values from the stack after executing the catch. (You may wish to do this to "cancel" the catch; if you pop and discard those four values, the token is invalidated, and it is as if you had never executed the catch at all.) The catch token is also invalidated if any part of the call stub is overwritten (e.g. with stkswap or stkroll).
+<p>
+
+[Why is the catch branch taken at catch time, and ignored after a throw? Because it's easier to write the interpreter that way, that's why. If it had to branch after a throw, either the call stub would have to contain the branch offset, or the terp would have to re-parse the catch instruction. Both are ugly.]
+<p>
+
+<h3><a name="s.8">2.8: Memory Map</a></h3>
+<p>
+
+<pre>
+getmemsize S1
+</pre>
+
+<p>
+
+Store the current size of the memory map. This is originally the ENDMEM value from the header, but you can change it with the setmemsize opcode. (The malloc and mfree opcodes may also cause this value to change; see <a href="#s.9">section 2.9, "Memory Allocation Heap"</a>.) It will always be greater than or equal to ENDMEM, and will always be a multiple of 256.
+<p>
+
+<pre>
+setmemsize L1 S1
+</pre>
+
+<p>
+
+Set the current size of the memory map. The new value must be a multiple of 256, like all memory boundaries in Glulx. It must be greater than or equal to ENDMEM (the initial memory-size value which is stored in the header.) It does not have to be greater than the previous memory size. The memory size may grow and shrink over time, as long as it never gets smaller than the initial size.
+<p>
+
+When the memory size grows, the new space is filled with zeroes. When it shrinks, the contents of the old space are lost.
+<p>
+
+If the allocation heap is active (see <a href="#s.9">section 2.9, "Memory Allocation Heap"</a>) you may not use setmemsize -- the memory map is under the control of the heap system. If you free all heap objects, the heap will then no longer be active, and you can use setmemsize.
+<p>
+
+Since memory allocation is never guaranteed, you must be prepared for the possibility that setmemsize will fail. The opcode stores the value zero if it succeeded, and 1 if it failed. If it failed, the memory size is unchanged.
+<p>
+
+Some interpreters do not have the capability to resize memory at all. On such interpreters, setmemsize will <em>always</em> fail. You can check this in advance with the ResizeMem gestalt selector.
+<p>
+
+Note that the memory size is considered part of the game state. If you restore a saved game, the current memory size is changed to the size that was in effect when the game was saved. If you restart, the current memory size is reset to its initial value.
+<p>
+
+<h3><a name="s.9">2.9: Memory Allocation Heap</a></h3>
+<p>
+
+Manage the memory allocation heap.
+<p>
+
+Glulx is able to maintain a list of dynamically-allocated memory objects. These objects exist in the memory map, above ENDMEM. The malloc and mfree opcodes allow the game to request the allocation and destruction of these objects.
+<p>
+
+Some interpreters do not have the capability to manage an allocation heap. On such interpreters, malloc will always fail. You can check this in advance with the MAlloc gestalt selector.
+<p>
+
+When you first allocate a block of memory, the heap becomes active. The current end of memory -- that is, the current getmemsize value -- becomes the beginning address of the heap. The memory map is then extended to accomodate the memory block.
+<p>
+
+Subsequent memory allocations and deallocations are done within the heap. The interpreter may extend or reduce the memory map, as needed, when allocations and deallocations occur. While the heap is active, you may not manually resize the memory map with setmemsize; the heap system is responsible for doing that.
+<p>
+
+When you free the last extant memory block, the heap becomes inactive. The interpreter will reduce the memory map size down to the heap-start address. (That is, the getmemsize value returns to what it was before you allocated the first block.) Thereafter, it is legal to call setmemsize again.
+<p>
+
+It is legitimate to read or write any memory address in the heap range (from ENDMEM to the end of the memory map). You are not restricted to extant blocks. [The VM's heap state is not stored in its own memory map. So, unlike the familiar C heap, you cannot damage it by writing outside valid blocks.]
+<p>
+
+The heap state (whether it is active, its starting address, and the addresses and sizes of all extant blocks) <em>is</em> part of the saved game state.
+<p>
+
+These opcodes were added in Glulx version 3.1.
+<p>
+
+<pre>
+malloc L1 S1
+</pre>
+
+<p>
+
+Allocate a memory block of L1 bytes. (L1 must be positive.) This stores the address of the new memory block, which will be within the heap and will not overlap any other extant block. The interpreter may have to extend the memory map (see <a href="#s.8">section 2.8, "Memory Map"</a>) to accomodate the new block.
+<p>
+
+This operation does not change the contents of the memory block (or, indeed, the contents of the memory map at all). If you want the memory block to be initialized, you must do it yourself.
+<p>
+
+If the allocation fails, this stores zero.
+<p>
+
+<pre>
+mfree L1
+</pre>
+
+<p>
+
+Free the memory block at address L1. This <em>must</em> be the address of an extant block -- that is, a value returned by malloc and not previously freed.
+<p>
+
+This operation does not change the contents of the memory block (or, indeed, the contents of the memory map at all).
+<p>
+
+<h3><a name="s.10">2.10: Game State</a></h3>
+<p>
+
+<pre>
+quit
+</pre>
+
+<p>
+
+Shut down the terp and exit. This is equivalent to returning from the top-level function, or for that matter calling glk_exit().
+<p>
+
+Note that (in the Glk I/O system) Glk is responsible for any "hit any key to exit" prompt. It is safe for you to print a bunch of final text and then exit immediately.
+<p>
+
+<pre>
+restart
+</pre>
+
+<p>
+
+Restore the VM to its initial state (memory, stack, and registers). Note that the current memory size is reset, as well as the contents of memory.
+<p>
+
+<pre>
+save L1 S1
+</pre>
+
+<p>
+
+Save the VM state to the output stream L1. It is your responsibility to prompt the player for a filespec, open the stream, and then destroy these objects afterward. S1 is set to zero if the operation succeeded, 1 if it failed, and -1 if the VM has just been restored and is continuing from this instruction.
+<p>
+
+(In the Glk I/O system, L1 should be the ID of a writable Glk stream. In other I/O systems, it will mean something different. In the "filter" and "null" I/O systems, the save opcode is illegal, as the interpreter has nowhere to write the state.)
+<p>
+
+<pre>
+restore L1 S1
+</pre>
+
+<p>
+
+Restore the VM state from the input stream L1. S1 is set to 1 if the operation failed. If it succeeded, of course, this instruction never returns a value.
+<p>
+
+<pre>
+saveundo S1
+</pre>
+
+<p>
+
+Save the VM state in a temporary location. The terp will choose a location appropriate for rapid access, so this may be called once per turn. S1 is set to zero if the operation succeeded, 1 if it failed, and -1 if the VM state has just been restored.
+<p>
+
+<pre>
+restoreundo S1
+</pre>
+
+<p>
+
+Restore the VM state from temporary storage. S1 is set to 1 if the operation failed.
+<p>
+
+<pre>
+protect L1 L2
+</pre>
+
+<p>
+
+Protect a range of memory from restart, restore, restoreundo. The protected range starts at address L1 and has a length of L2 bytes. This memory is silently unaffected by the state-restoring operations. (However, if the result-storage S1 is directed into the protected range, that is not blocked.)
+<p>
+
+When the VM starts up, there is no protection range. Only one range can be protected at a time. Calling protect cancels any previous range. To turn off protection, call protect with L1 and L2 set to zero.
+<p>
+
+It is important to note that the protection range itself (its existence, location, and length) is <em>not</em> part of the saved game state! If you save a game, move the protection range to a new location, and then restore that game, it is the new range that will be protected, and the range will remain there afterwards.
+<p>
+
+<pre>
+verify S1
+</pre>
+
+<p>
+
+Perform sanity checks on the game file, using its length and checksum. S1 is set to zero if everything looks good, 1 if there seems to be a problem. (Many interpreters will do this automatically, before the game starts executing. This opcode is provided mostly for slower interpreters, where auto-verify might cause an unacceptable delay.)
+<p>
+
+Notes:
+<p>
+
+All the save and restore opcodes can generate diagnostic information on the current output stream.
+<p>
+
+A terp may support several levels of temporary storage. You should not make any assumptions about how many times restoreundo can be called. If the player so requests, you should keep calling it until it fails.
+<p>
+
+Glk opaque objects (windows, streams, filespecs) are not part of the saved game state. Therefore, when you restore a game, all the object IDs you have in Glulx memory must be considered invalid. (This includes both IDs in main memory and on the stack.) You must use the Glk iteration calls to go through all the opaque objects in existence, and recognize them by their rocks.
+<p>
+
+The same applies after restoreundo, to a lesser extent. Since saveundo/restoreundo only operate within a single play session, you can rely on the IDs of objects created before the first saveundo. However, if you have created any objects since then, you must iterate and recognize them.
+<p>
+
+The restart opcode is a similar case. You must do an iteration as soon as your program starts, to find objects created in an earlier incarnation. Alternatively, you can be careful to close all opaque objects before invoking restart.
+<p>
+
+[Another approach is to use the protect opcode, to preserve global variables containing your object IDs. This will work within a play session -- that is, with saveundo, restoreundo, and restart. You must still deal with save and restore.]
+<p>
+
+<h3><a name="s.11">2.11: Output</a></h3>
+<p>
+
+<pre>
+getiosys S1 S2
+</pre>
+
+<p>
+
+Return the current I/O system mode and rock.
+<p>
+
+Due to a long-standing bug in the reference interpreter, the two store operands must be of the same general type: both main-memory/global stores, both local variable stores, or both stack pushes.
+<p>
+
+<pre>
+setiosys L1 L2
+</pre>
+
+<p>
+
+Set the I/O system mode and rock. If the system L1 is not supported by the interpreter, it will default to the "null" system (0).
+<p>
+
+These systems are currently defined:
+<p>
+
+<ul>
+<li>0: The null system. All output is discarded. (When the Glulx machine starts up, this is the current system.)
+<li>1: The filtering system. The rock (L2) value should be the address of a Glulx function. This function will be called for every character output (with the character value as its sole argument). The function's return value is ignored.
+<li>2: The Glk system. All output will be handled through Glk function calls, sent to the current Glk stream.
+<li>20: The FyreVM channel system. See <a href="glulx-spec_0.html#s.2">section 0.2, "Glulx and Other IF Systems"</a>.
+</ul>
+
+<p>
+
+It is important to recall that when Glulx starts up, the Glk I/O system is <em>not</em> set. And when Glk starts up, there are no windows and no current output stream. To make anything appear to the user, you must first do three things: select the Glk I/O system, open a Glk window, and set its stream as the current one. (It is illegal in Glk to send output when there is no stream set. Sending output to Glulx's "null" I/O system is legal, but pointless.)
+<p>
+
+<pre>
+streamchar L1
+</pre>
+
+<p>
+
+Send L1 to the current stream. This sends a single character; the value L1 is truncated to eight bits.
+<p>
+
+<pre>
+streamunichar L1
+</pre>
+
+<p>
+
+Send L1 to the current stream. This sends a single (32-bit) character.
+<p>
+
+This opcode was added in Glulx version 3.0.
+<p>
+
+<pre>
+streamnum L1
+</pre>
+
+<p>
+
+Send L1 to the current stream, represented as a signed decimal number in ASCII.
+<p>
+
+<pre>
+streamstr L1
+</pre>
+
+<p>
+
+Send a string object to the current stream. L1 must be the address of a Glulx string object (type E0, E1, or E2.) The string is decoded and sent as a sequence of characters.
+<p>
+
+When the Glk I/O system is set, these opcodes are implemented using the Glk API. You can bypass them and directly call glk_put_char(), glk_put_buffer(), and so on. Remember, however, that glk_put_string() only accepts unencoded string (E0) objects; glk_put_string_uni() only accepts unencoded Unicode (E2) objects.
+<p>
+
+Note that it is illegal to decode a compressed string (E1) if there is no string-decoding table set.
+<p>
+
+<pre>
+getstringtbl S1
+</pre>
+
+<p>
+
+Return the address the terp is currently using for its string-decoding table. If there is no table, set, this returns zero.
+<p>
+
+<pre>
+setstringtbl L1
+</pre>
+
+<p>
+
+Change the address the terp is using for its string-decoding table. This may be zero, indicating that there is no table (in which case it is illegal to print any compressed string). Otherwise, it must be the address of a <em>valid</em> string-decoding table.
+<p>
+
+[This does not change the value in the header field at address 001C. The header is in ROM, and never changes. To determine the current table address, use the getstringtbl opcode.]
+<p>
+
+A string-decoding table may be in RAM or ROM, but there may be speed penalties if it is in RAM. See <a href="glulx-spec_1.html#s.6.1.4">section 1.6.1.4, "The String-Decoding Table"</a>.
+<p>
+
+<h3><a name="s.12">2.12: Floating-Point Math</a></h3>
+<p>
+
+Recall that floating-point values are encoded as single-precision (32-bit) IEEE-754 values (see <a href="glulx-spec_1.html#s.7">section 1.7, "Floating-Point Numbers"</a>). The interpreter must convert values (from memory or the stack) before performing a floating-point operation, and unconvert them afterwards.
+<p>
+
+[In other words, passing a float value to an integer arithmetic opcode will operate on the IEEE-754-encoded 32-bit value. Such an operation would be deterministic, albeit mathematically meaningless. The same is true for passing an integer to a float opcode.]
+<p>
+
+Float operations which produce inexact results are not guaranteed to be identical on every platform. That is, 1.0 plus 1.0 will always be 2.0, because that can be represented exactly. But acos(-1.0), which should be pi, may generate either 40490FDA (3.14159250...) or 40490FDB (3.14159274...). Both are approximations of the correct result, but which one you get depends on the interpreter's underlying math library.
+<p>
+
+If any argument to a float operation is a NaN ("not a number") value, the result will be a NaN value. (Except for the pow opcode, which has some special cases.)
+<p>
+
+[Speaking of special cases: I have tried to describe all the important ones for these operations. However, you should also consult the Glulxercise unit test (available on the Glulx web site). Consider it definitive if this document is unclear.]
+<p>
+
+These opcodes were added in Glulx version 3.1.2. However, not all interpreters may support them. You can test for their availability with the Float gestalt selector.
+<p>
+
+<pre>
+numtof L1 S1
+</pre>
+
+<p>
+
+Convert an integer value to the closest equivalent float. (That is, if L1 is 1, then 3F800000 -- the float encoding of 1.0 -- will be stored in S1.) Integer zero is converted to (positive) float zero.
+<p>
+
+If the value is less than -1000000 or greater than 1000000 (hex), the conversion may not be exact. (More specifically, it may round to a nearby multiple of a power of 2.)
+<p>
+
+<pre>
+ftonumz L1 S1
+</pre>
+
+<p>
+
+Convert a float value to an integer, rounding towards zero (i.e., truncating the fractional part). If the value is outside the 32-bit integer range, or is NaN or infinity, the result will be 7FFFFFFF (for positive values) or 80000000 (for negative values).
+<p>
+
+<pre>
+ftonumn L1 S1
+</pre>
+
+<p>
+
+Convert a float value to an integer, rounding towards the nearest integer. Again, overflows become 7FFFFFFF or 80000000.
+<p>
+
+<pre>
+fadd L1 L2 S1
+fsub L1 L2 S1
+fmul L1 L2 S1
+fdiv L1 L2 S1
+</pre>
+
+<p>
+
+Perform floating-point arithmetic. Overflows produce infinite values (with the appropriate sign); underflows produce zero values (ditto). 0/0 is NaN. Inf/Inf, or Inf-Inf, is NaN. Any finite number added to infinity is infinity. Any nonzero number divided by an infinity, or multiplied by zero, is a zero. Any nonzero number multiplied by an infinity, or divided by zero, is an infinity.
+<p>
+
+<pre>
+fmod L1 L2 S1 S2
+</pre>
+
+<p>
+
+Perform a floating-point modulo operation. S1 is the remainder (or modulus); S2 is the quotient.
+<p>
+
+S2 is L1/L2, rounded (towards zero) to an integral value. S1 is L1-(S2*L2). Note that S1 always has the same sign as L1; S2 has the appropriate sign for L1/L2.
+<p>
+
+If L2 is 1, this gives you the fractional and integer parts of L1. If L1 is zero, both results are zero. If L2 is infinite, S1 is L1 and S2 is zero. If L1 is infinite or L2 is zero, both results are NaN.
+<p>
+
+<pre>
+ceil L1 S1
+floor L1 S1
+</pre>
+
+<p>
+
+Round L1 up (towards +Inf) or down (towards -Inf) to the nearest integral value. (The result is still in float format, however.) These opcodes are idempotent.
+<p>
+
+The result keeps the sign of L1; in particular, floor(0.5) is 0 and ceil(-0.5) is -0. Rounding -0 up or down gives -0. Rounding an infinite value gives infinity.
+<p>
+
+<pre>
+sqrt L1 S1
+exp L1 S1
+log L1 S1
+</pre>
+
+<p>
+
+Compute the square root of L1, e^L1, and log of L1 (base e).
+<p>
+
+sqrt(-0) is -0. sqrt returns NaN for all other negative values. exp(+0) and exp(-0) are 1; exp(-Inf) is +0. log(+0) and log(-0) are -Inf. log returns NaN for all other negative values.
+<p>
+
+<pre>
+pow L1 L2 S1
+</pre>
+
+<p>
+
+Compute L1 raised to the L2 power.
+<p>
+
+The special cases are breathtaking. The following is quoted (almost) directly from the libc man page:
+<p>
+
+<ul>
+<li>pow(&plusmn;0, y) returns &plusmn;Inf for y an odd integer &lt; 0.
+<li>pow(&plusmn;0, y) returns +Inf for y &lt; 0 and not an odd integer.
+<li>pow(&plusmn;0, y) returns &plusmn;0 for y an odd integer &gt; 0.
+<li>pow(&plusmn;0, y) returns +0 for y &gt; 0 and not an odd integer.
+<li>pow(-1, &plusmn;Inf) returns 1.
+<li>pow(1, y) returns 1 for any y, even a NaN.
+<li>pow(x, &plusmn;0) returns 1 for any x, even a NaN.
+<li>pow(x, y) returns a NaN for finite x &lt; 0 and finite non-integer y.
+<li>pow(x, -Inf) returns +Inf for |x| &lt; 1.
+<li>pow(x, -Inf) returns +0 for |x| &gt; 1.
+<li>pow(x, +Inf) returns +0 for |x| &lt; 1.
+<li>pow(x, +Inf) returns +Inf for |x| &gt; 1.
+<li>pow(-Inf, y) returns -0 for y an odd integer &lt; 0.
+<li>pow(-Inf, y) returns +0 for y &lt; 0 and not an odd integer.
+<li>pow(-Inf, y) returns -Inf for y an odd integer &gt; 0.
+<li>pow(-Inf, y) returns +Inf for y &gt; 0 and not an odd integer.
+<li>pow(+Inf, y) returns +0 for y &lt; 0.
+<li>pow(+Inf, y) returns +Inf for y &gt; 0.
+<li>pow(x, y) returns NaN if x is negative and y is not an integer (both finite).
+</ul>
+
+<p>
+
+<pre>
+sin L1 S1
+cos L1 S1
+tan L1 S1
+acos L1 S1
+asin L1 S1
+atan L1 S1
+</pre>
+
+<p>
+
+Compute the standard trigonometric functions.
+<p>
+
+sin and cos return values in the range -1 to 1. sin, cos, and tan of infinity are NaN.
+<p>
+
+asin is always in the range -pi/2 to pi/2; acos is always in the range 0 to pi. asin and acos of values greater than 1, or less than -1, are NaN. atan(&plusmn;Inf) is &plusmn;pi/2.
+<p>
+
+<pre>
+atan2 L1 L2 S1
+</pre>
+
+<p>
+
+Computes the arctangent of L1/L2, using the signs of both arguments to determine the quadrant of the return value. (Note that the Y argument is first and the X argument is second.)
+<p>
+
+Again with the special cases:
+<p>
+
+<ul>
+<li>atan2(&plusmn;0, -0) returns &plusmn;pi.
+<li>atan2(&plusmn;0, +0) returns &plusmn;0.
+<li>atan2(&plusmn;0, x) returns &plusmn;pi for x &lt; 0.
+<li>atan2(&plusmn;0, x) returns &plusmn;0 for x &gt; 0.
+<li>atan2(y, &plusmn;0) returns +pi/2 for y &gt; 0.
+<li>atan2(y, &plusmn;0) returns -pi/2 for y &lt; 0.
+<li>atan2(&plusmn;y, -Inf) returns &plusmn;pi for finite y.
+<li>atan2(&plusmn;y, +Inf) returns &plusmn;0 for finite y.
+<li>atan2(&plusmn;Inf, x) returns &plusmn;pi/2 for finite x.
+<li>atan2(&plusmn;Inf, -Inf) returns &plusmn;3*pi/4.
+<li>atan2(&plusmn;Inf, +Inf) returns &plusmn;pi/4.
+</ul>
+
+<p>
+
+<h3><a name="s.13">2.13: Floating-Point Comparisons</a></h3>
+<p>
+
+All these branch opcodes specify their destinations with an offset value. See <a href="#s.2">section 2.2, "Branches"</a>.
+<p>
+
+Most of these opcodes never branch if any argument is NaN. (Exceptions are jisnan and jfne.) In particular, NaN is neither less than, greater than, nor equal to NaN.
+<p>
+
+These opcodes were added in Glulx version 3.1.2. However, not all interpreters may support them. You can test for their availability with the Float gestalt selector.
+<p>
+
+<pre>
+jisnan L1 L2
+</pre>
+
+<p>
+
+Branch to L2 if the floating-point value L1 is a NaN value. (See <a href="glulx-spec_1.html#s.7">section 1.7, "Floating-Point Numbers"</a>.)
+<p>
+
+<pre>
+jisinf L1 L2
+</pre>
+
+<p>
+
+Branch to L2 if the floating-point value L1 is an infinity (7F800000 or FF800000).
+<p>
+
+<pre>
+jfeq L1 L2 L3 L4
+</pre>
+
+<p>
+
+Branch to L4 if the difference between L1 and L2 is less than or equal to (plus or minus) L3. The sign of L3 is ignored.
+<p>
+
+If any of the arguments are NaN, this will not branch. If L3 is infinite, this will always branch -- unless L1 and L2 are opposite infinities. (Opposite infinities are never equal, regardless of L3. Infinities of the same sign are always equal.)
+<p>
+
+If L3 is (plus or minus) zero, this tests for exact equality. Note that +0 is considered exactly equal to -0.
+<p>
+
+<pre>
+jfne L1 L2 L3 L4
+</pre>
+
+<p>
+
+The reverse of jfeq. This <em>will</em> branch if <em>any</em> of the arguments is NaN.
+<p>
+
+<pre>
+jflt L1 L2 L3
+jfle L1 L2 L3
+jfgt L1 L2 L3
+jfge L1 L2 L3
+</pre>
+
+<p>
+
+Branch to L3 if L1 is less than (less than or equal to, greater than, greater than or equal to) L2.
+<p>
+
++0 and -0 behave identically in comparisons. In particular, +0 is considered equal to -0, not greater than -0.
+<p>
+
+<h3><a name="s.14">2.14: Random Number Generator</a></h3>
+<p>
+
+<pre>
+random L1 S1
+</pre>
+
+<p>
+
+Return a random number in the range 0 to (L1-1); or, if L1 is negative, the range (L1+1) to 0. If L1 is zero, return a random number in the full 32-bit integer range. (Remember that this may be either positive or negative.)
+<p>
+
+<pre>
+setrandom L1
+</pre>
+
+<p>
+
+Seed the random-number generator with the value L1. If L1 is zero, subsequent random numbers will be as genuinely unpredictable as the terp can provide; it may include timing data or other random sources in its generation. If L1 is nonzero, subsequent random numbers will follow a deterministic sequence, always the same for a given nonzero seed.
+<p>
+
+The terp starts up in the "nondeterministic" mode (as if setrandom 0 had been invoked.)
+<p>
+
+The random-number generator is not part of the saved-game state.
+<p>
+
+<h3><a name="s.15">2.15: Block Copy and Clear</a></h3>
+<p>
+
+<pre>
+mzero L1 L2
+</pre>
+
+<p>
+
+Write L1 zero bytes, starting at address L2. This is exactly equivalent to:
+<p>
+
+<pre>
+for (ix=0: ix&lt;L1: ix++) L2-&gt;ix = 0;
+
+</pre>
+
+<p>
+
+<pre>
+mcopy L1 L2 L3
+</pre>
+
+<p>
+
+Copy L1 bytes from address L2 to address L3. It is safe to copy a block to an overlapping block. This is exactly equivalent to:
+<p>
+
+<pre>
+if (L3 &lt; L2)
+  for (ix=0: ix&lt;L1: ix++) L3-&gt;ix = L2-&gt;ix;
+else
+  for (ix=L1-1: ix&gt;=0: ix--) L3-&gt;ix = L2-&gt;ix;
+
+</pre>
+
+<p>
+
+For both of these opcodes, L1 may be zero, in which case the opcodes do nothing. The operands are considered unsigned, so a "negative" L1 is a very large number (and almost certainly a mistake).
+<p>
+
+These opcodes were added in Glulx version 3.1. You can test for their availability with the MemCopy gestalt selector.
+<p>
+
+<h3><a name="s.16">2.16: Searching</a></h3>
+<p>
+
+Perform a generic linear, binary, or linked-list search.
+<p>
+
+[These are outrageously CISC for an hardware CPU, but easy enough to add to a software terp; and taking advantage of them can speed up a program considerably. Advent, under the Inform library, runs 15-20% faster when property-table lookup is handled with a binary-search opcode instead of Inform code. A similar change in the dictionary lookup trims another percent or so.]
+<p>
+
+All three of these opcodes operate on a collection of fixed-size data structures in memory. A key, which is a fixed-length array of bytes, is found at a known position within each data structure. The opcodes search the collection of structures, and find one whose key matches a given key.
+<p>
+
+The following flags may be set in the Options argument. Note that not all flags can be used with all types of searches.
+<p>
+
+<ul>
+<li>KeyIndirect (0x01): This flag indicates that the Key argument passed to the opcode is the address of the actual key. If this flag is not used, the Key argument is the key value itself. (In this case, the KeySize <em>must</em> be 1, 2, or 4 -- the native sizes of Glulx values. If the KeySize is 1 or 2, the lower bytes of the Key are used and the upper bytes ignored.)
+<li>ZeroKeyTerminates (0x02): This flag indicates that the search should stop (and return failure) if it encounters a structure whose key is all zeroes. If the searched-for key happens to also be all zeroes, the success takes precedence.
+<li>ReturnIndex (0x04): This flag indicates that search should return the array index of the structure that it finds, or -1 (0xFFFFFFFF) for failure. If this flag is not used, the search returns the address of the structure that it finds, or 0 for failure.
+</ul>
+
+<p>
+
+<pre>
+linearsearch L1 L2 L3 L4 L5 L6 L7 S1
+</pre>
+
+<p>
+
+<ul>
+<li>L1: Key
+<li>L2: KeySize
+<li>L3: Start
+<li>L4: StructSize
+<li>L5: NumStructs
+<li>L6: KeyOffset
+<li>L7: Options
+<li>S1: Result
+</ul>
+
+<p>
+
+An array of data structures is stored in memory, beginning at Start, each structure being StructSize bytes. Within each struct, there is a key value KeySize bytes long, starting at position KeyOffset (from the start of the structure.) Search through these in order. If one is found whose key matches, return it. If NumStructs are searched with no result, the search fails.
+<p>
+
+NumStructs may be -1 (0xFFFFFFFF) to indicate no upper limit to the number of structures to search. The search will continue until a match is found, or (if ZeroKeyTerminates is used) a zero key.
+<p>
+
+The KeyIndirect, ZeroKeyTerminates, and ReturnIndex options may be used.
+<p>
+
+<pre>
+binarysearch L1 L2 L3 L4 L5 L6 L7 S1
+</pre>
+
+<p>
+
+<ul>
+<li>L1: Key
+<li>L2: KeySize
+<li>L3: Start
+<li>L4: StructSize
+<li>L5: NumStructs
+<li>L6: KeyOffset
+<li>L7: Options
+<li>S1: Result
+</ul>
+
+<p>
+
+An array of data structures is in memory, as above. However, the structs must be stored in forward order of their keys (taking each key to be a big-endian unsigned integer.) There can be no duplicate keys. NumStructs must indicate the exact length of the array; it cannot be -1.
+<p>
+
+The KeyIndirect and ReturnIndex options may be used.
+<p>
+
+<pre>
+linkedsearch L1 L2 L3 L4 L5 L6 S1
+</pre>
+
+<p>
+
+<ul>
+<li>L1: Key
+<li>L2: KeySize
+<li>L3: Start
+<li>L4: KeyOffset
+<li>L5: NextOffset
+<li>L6: Options
+<li>S1: Result
+</ul>
+
+<p>
+
+The structures need not be consecutive; they may be anywhere in memory, in any order. They are linked by a four-byte address field, which is found in each struct at position NextOffset. If this field contains zero, it indicates the end of the linked list.
+<p>
+
+The KeyIndirect and ZeroKeyTerminates options may be used.
+<p>
+
+<h3><a name="s.17">2.17: Accelerated Functions</a></h3>
+<p>
+
+To improve performance, Glulx incorporates some complex functions which replicate code in the Inform library. [Yes, this is even more outrageously CISC than the search opcodes.]
+<p>
+
+Rather than allocating a new opcode for each function, Glulx offers an expandable function acceleration system. Two functions are defined below. The game may request that a particular address -- the address of a VM function -- be replaced by one of the available functions. This does not alter memory; but any subsequent call to that address might invoke the terp's built-in version of the function, instead of the VM code at that address.
+<p>
+
+(A "call" includes any function invocation of that address, including the call, tailcall, and callf (etc.) opcodes. It also includes invocation via the filter I/O system, and function nodes in the string-decoding table. Branches to the address are <em>not</em> affected; neither are returns, throws, or other ways the terp might reach it.)
+<p>
+
+A terp may implement any, all, or none of the functions on the list. If the game requests an accelerated function which is not available, the request is ignored. Therefore, the game <em>must</em> be sure that it only requests an accelerated function at an address which actually matches the requested function.
+<p>
+
+Some functions may require values (or addresses) which are compiled into the game file, or otherwise stored by the game. The interpreter maintains a table of these parameters -- whichever ones are needed by the functions it supports. All parameters in the table are initially zero; the game may supply values as needed.
+<p>
+
+The set of active acceleration requests, and the values in the parameter table, are <em>not</em> part of the saved-game state.
+<p>
+
+The behavior of an accelerated function is somewhat limited. The state of the VM during the function is not defined, so there is no way for an accelerated function to call a normal VM function. The normal printing mechanism (as in the streamchar opcode, etc) is not available, since that can call VM functions via the filter I/O system. [Not that I/O functions are likely to be worth accelerating in any case.]
+<p>
+
+Errors encountered during an accelerated function will be displayed to the user by some convenient means. For example, an interpreter may send the error message to the current Glk output stream. However, the terp may have no recourse but to invoke a <em>fatal</em> error. (For example, if there is no current Glk output stream.) Therefore, accelerated functions are defined with no error conditions that must be recoverable.
+<p>
+
+These opcodes were added in Glulx version 3.1.1. Since a 3.1.1 game file ought to run in a 3.1.0 interpreter, you <em>may not</em> use these opcodes without first testing the Acceleration gestalt selector. If it returns zero, your game is running on a 3.1.0 terp (or earlier), and it is your responsibility to avoid executing these opcodes. [Of course, the way the opcodes are defined should ensure that skipping them does not affect the behavior of your game.]
+<p>
+
+<pre>
+accelfunc L1 L2
+</pre>
+
+<p>
+
+Request that the VM function with address L2 be replaced by the accelerated function whose number is L1. If L1 is zero, the acceleration for address L2 is cancelled.
+<p>
+
+If the terp does not offer accelerated function L1, this does nothing.
+<p>
+
+If you request acceleration at an address which is already accelerated, the previous request is cancelled before the new one is considered. If you cancel at an unaccelerated address, nothing happens.
+<p>
+
+A given accelerated function L1 may replace several VM functions (at different addresses) at the same time. Each request is considered separate, and must be cancelled separately.
+<p>
+
+<pre>
+accelparam L1 L2
+</pre>
+
+<p>
+
+Store the value L2 in the parameter table at position L1. If the terp does not know about parameter L1, this does nothing.
+<p>
+
+The list of accelerated functions is as follows. They are defined as if in Inform 6 source code. (Consider Inform's "strict" mode to be off, for the purposes of operators such as .&amp; and --&gt;.) ERROR() represents code which displays an error, as described above.
+<p>
+
+(Functions may be added to this list in future versions of the Glulx spec. Existing functions will not be removed or altered. Functions and parameters numbered 0x1100 to 0x11FF are reserved for extension projects by Dannii Willis. These are not documented here. See <a href="glulx-spec_0.html#s.2">section 0.2, "Glulx and Other IF Systems"</a>.)
+<p>
+
+Note that functions 2 through 7 are deprecated; they behave badly if the Inform 6 NUM_ATTR_BYTES option (parameter 7) is changed from its default value (7). They will not be removed, but new games should use functions 8 through 13 instead.
+<p>
+
+<pre>
+Constant PARAM_0_classes_table = #classes_table;
+Constant PARAM_1_indiv_prop_start = INDIV_PROP_START;
+Constant PARAM_2_class_metaclass = Class;
+Constant PARAM_3_object_metaclass = Object;
+Constant PARAM_4_routine_metaclass = Routine;
+Constant PARAM_5_string_metaclass = String;
+Constant PARAM_6_self = #globals_array + WORDSIZE * #g$self;
+Constant PARAM_7_num_attr_bytes = NUM_ATTR_BYTES;
+Constant PARAM_8_cpv__start = #cpv__start;
+
+! OBJ_IN_CLASS: utility function; implements "obj in Class".
+[ OBJ_IN_CLASS obj;
+  return ((obj + 13 + PARAM_7_num_attr_bytes)--&gt;0
+    == PARAM_2_class_metaclass);
+];
+
+! FUNC_1_Z__Region: implements Z__Region() as of Inform 6.31.
+[ FUNC_1_Z__Region addr
+  tb endmem; ! locals
+  if (addr&lt;36) rfalse;
+  @getmemsize endmem;
+  @jgeu addr endmem?outrange;  ! branch if addr &gt;= endmem (unsigned)
+  tb=addr-&gt;0;
+  if (tb &gt;= $E0) return 3;
+  if (tb &gt;= $C0) return 2;
+  if (tb &gt;= $70 &amp;&amp; tb &lt;= $7F &amp;&amp; addr &gt;= (0--&gt;2)) return 1;
+.outrange;
+  rfalse;
+];
+
+! FUNC_2_CP__Tab: implements CP__Tab() as of Inform 6.31.
+[ FUNC_2_CP__Tab obj id
+  otab max res; ! locals
+  if (FUNC_1_Z__Region(obj)~=1) {
+    ERROR("[** Programming error: tried to find the ~.~ of (something) **]");
+    rfalse;
+  }
+  otab = obj--&gt;4;
+  if (otab == 0) return 0;
+  max = otab--&gt;0;
+  otab = otab+4;
+  @binarysearch id 2 otab 10 max 0 0 res;
+  return res;
+];
+
+! FUNC_3_RA__Pr: implements RA__Pr() as of Inform 6.31.
+[ FUNC_3_RA__Pr obj id
+  cla prop ix; ! locals
+  if (id &amp; $FFFF0000) {
+    cla = PARAM_0_classes_table--&gt;(id &amp; $FFFF);
+    if (~~FUNC_5_OC__Cl(obj, cla)) return 0;
+    @ushiftr id 16 id;
+    obj = cla;
+  }
+  prop = FUNC_2_CP__Tab(obj, id);
+  if (prop==0) return 0;
+  if (OBJ_IN_CLASS(obj) &amp;&amp; cla == 0) {
+    if (id &lt; PARAM_1_indiv_prop_start
+        || id &gt;= PARAM_1_indiv_prop_start+8)
+      return 0;
+  }
+  if (PARAM_6_self--&gt;0 ~= obj) {
+    @aloadbit prop 72 ix;
+    if (ix) return 0;
+  }
+  return prop--&gt;1;
+];
+
+! FUNC_4_RL__Pr: implements RL__Pr() as of Inform 6.31.
+[ FUNC_4_RL__Pr obj id
+  cla prop ix; ! locals
+  if (id &amp; $FFFF0000) {
+    cla = PARAM_0_classes_table--&gt;(id &amp; $FFFF);
+    if (~~FUNC_5_OC__Cl(obj, cla)) return 0;
+    @ushiftr id 16 id;
+    obj = cla;
+  }
+  prop = FUNC_2_CP__Tab(obj, id);
+  if (prop==0) return 0;
+  if (OBJ_IN_CLASS(obj) &amp;&amp; cla == 0) {
+    if (id &lt; PARAM_1_indiv_prop_start
+        || id &gt;= PARAM_1_indiv_prop_start+8)
+      return 0;
+  }
+  if (PARAM_6_self--&gt;0 ~= obj) {
+    @aloadbit prop 72 ix;
+    if (ix) return 0;
+  }
+  @aloads prop 1 ix;
+  return WORDSIZE * ix;
+];
+
+! FUNC_5_OC__Cl: implements OC__Cl() as of Inform 6.31.
+[ FUNC_5_OC__Cl obj cla
+  zr jx inlist inlistlen; ! locals
+  zr = FUNC_1_Z__Region(obj);
+  if (zr == 3) {
+    if (cla == PARAM_5_string_metaclass) rtrue;
+    rfalse;
+  }
+  if (zr == 2) {
+    if (cla == PARAM_4_routine_metaclass) rtrue;
+    rfalse;
+  }
+  if (zr ~= 1) rfalse;
+  if (cla == PARAM_2_class_metaclass) {
+    if (OBJ_IN_CLASS(obj)
+      || obj == PARAM_2_class_metaclass or PARAM_5_string_metaclass
+         or PARAM_4_routine_metaclass or PARAM_3_object_metaclass)
+      rtrue;
+    rfalse;
+  }
+  if (cla == PARAM_3_object_metaclass) {
+    if (OBJ_IN_CLASS(obj)
+      || obj == PARAM_2_class_metaclass or PARAM_5_string_metaclass
+         or PARAM_4_routine_metaclass or PARAM_3_object_metaclass)
+      rfalse;
+    rtrue;
+  }
+  if (cla == PARAM_5_string_metaclass or PARAM_4_routine_metaclass)
+    rfalse;
+  if (~~OBJ_IN_CLASS(cla)) {
+    ERROR("[** Programming error: tried to apply 'ofclass' with non-class **]");
+    rfalse;
+  }
+  inlist = FUNC_3_RA__Pr(obj, 2);
+  if (inlist == 0) rfalse;
+  inlistlen = FUNC_4_RL__Pr(obj, 2) / WORDSIZE;
+  for (jx=0 : jx&lt;inlistlen : jx++) {
+    if (inlist--&gt;jx == cla) rtrue;
+  }
+  rfalse;
+];
+
+! FUNC_6_RV__Pr: implements RV__Pr() as of Inform 6.31.
+[ FUNC_6_RV__Pr obj id
+  addr; ! locals
+  addr = FUNC_3_RA__Pr(obj, id);
+  if (addr == 0) {
+    if (id &gt; 0 &amp;&amp; id &lt; PARAM_1_indiv_prop_start) {
+      return PARAM_8_cpv__start--&gt;id;
+    }
+    ERROR("[** Programming error: tried to read (something) **]");
+    return 0;
+  }
+  return addr--&gt;0;
+];
+
+! FUNC_7_OP__Pr: implements OP__Pr() as of Inform 6.31.
+[ FUNC_7_OP__Pr obj id
+  zr; ! locals
+  zr = FUNC_1_Z__Region(obj);
+  if (zr == 3) {
+    if (id == print or print_to_array) rtrue;
+    rfalse;
+  }
+  if (zr == 2) {
+    if (id == call) rtrue;
+    rfalse;
+  }
+  if (zr ~= 1) rfalse;
+  if (id &gt;= PARAM_1_indiv_prop_start
+      &amp;&amp; id &lt; PARAM_1_indiv_prop_start+8) {
+    if (OBJ_IN_CLASS(obj)) rtrue;
+  }
+  if (FUNC_3_RA__Pr(obj, id) ~= 0)
+    rtrue;
+  rfalse;
+];
+
+! FUNC_8_CP__Tab: implements CP__Tab() as of Inform 6.33.
+[ FUNC_8_CP__Tab obj id
+  otab max res; ! locals
+  if (FUNC_1_Z__Region(obj)~=1) {
+    ERROR("[** Programming error: tried to find the ~.~ of (something) **]");
+    rfalse;
+  }
+  otab = obj--&gt;(3+(PARAM_7_num_attr_bytes/4));
+  if (otab == 0) return 0;
+  max = otab--&gt;0;
+  otab = otab+4;
+  @binarysearch id 2 otab 10 max 0 0 res;
+  return res;
+];
+
+! FUNC_9_RA__Pr: implements RA__Pr() as of Inform 6.33.
+[ FUNC_9_RA__Pr obj id
+  cla prop ix; ! locals
+  if (id &amp; $FFFF0000) {
+    cla = PARAM_0_classes_table--&gt;(id &amp; $FFFF);
+    if (~~FUNC_11_OC__Cl(obj, cla)) return 0;
+    @ushiftr id 16 id;
+    obj = cla;
+  }
+  prop = FUNC_8_CP__Tab(obj, id);
+  if (prop==0) return 0;
+  if (OBJ_IN_CLASS(obj) &amp;&amp; cla == 0) {
+    if (id &lt; PARAM_1_indiv_prop_start
+        || id &gt;= PARAM_1_indiv_prop_start+8)
+      return 0;
+  }
+  if (PARAM_6_self--&gt;0 ~= obj) {
+    @aloadbit prop 72 ix;
+    if (ix) return 0;
+  }
+  return prop--&gt;1;
+];
+
+! FUNC_10_RL__Pr: implements RL__Pr() as of Inform 6.33.
+[ FUNC_10_RL__Pr obj id
+  cla prop ix; ! locals
+  if (id &amp; $FFFF0000) {
+    cla = PARAM_0_classes_table--&gt;(id &amp; $FFFF);
+    if (~~FUNC_11_OC__Cl(obj, cla)) return 0;
+    @ushiftr id 16 id;
+    obj = cla;
+  }
+  prop = FUNC_8_CP__Tab(obj, id);
+  if (prop==0) return 0;
+  if (OBJ_IN_CLASS(obj) &amp;&amp; cla == 0) {
+    if (id &lt; PARAM_1_indiv_prop_start
+        || id &gt;= PARAM_1_indiv_prop_start+8)
+      return 0;
+  }
+  if (PARAM_6_self--&gt;0 ~= obj) {
+    @aloadbit prop 72 ix;
+    if (ix) return 0;
+  }
+  @aloads prop 1 ix;
+  return WORDSIZE * ix;
+];
+
+! FUNC_11_OC__Cl: implements OC__Cl() as of Inform 6.33.
+[ FUNC_11_OC__Cl obj cla
+  zr jx inlist inlistlen; ! locals
+  zr = FUNC_1_Z__Region(obj);
+  if (zr == 3) {
+    if (cla == PARAM_5_string_metaclass) rtrue;
+    rfalse;
+  }
+  if (zr == 2) {
+    if (cla == PARAM_4_routine_metaclass) rtrue;
+    rfalse;
+  }
+  if (zr ~= 1) rfalse;
+  if (cla == PARAM_2_class_metaclass) {
+    if (OBJ_IN_CLASS(obj)
+      || obj == PARAM_2_class_metaclass or PARAM_5_string_metaclass
+         or PARAM_4_routine_metaclass or PARAM_3_object_metaclass)
+      rtrue;
+    rfalse;
+  }
+  if (cla == PARAM_3_object_metaclass) {
+    if (OBJ_IN_CLASS(obj)
+      || obj == PARAM_2_class_metaclass or PARAM_5_string_metaclass
+         or PARAM_4_routine_metaclass or PARAM_3_object_metaclass)
+      rfalse;
+    rtrue;
+  }
+  if (cla == PARAM_5_string_metaclass or PARAM_4_routine_metaclass)
+    rfalse;
+  if (~~OBJ_IN_CLASS(cla)) {
+    ERROR("[** Programming error: tried to apply 'ofclass' with non-class **]");
+    rfalse;
+  }
+  inlist = FUNC_9_RA__Pr(obj, 2);
+  if (inlist == 0) rfalse;
+  inlistlen = FUNC_10_RL__Pr(obj, 2) / WORDSIZE;
+  for (jx=0 : jx&lt;inlistlen : jx++) {
+    if (inlist--&gt;jx == cla) rtrue;
+  }
+  rfalse;
+];
+
+! FUNC_12_RV__Pr: implements RV__Pr() as of Inform 6.33.
+[ FUNC_12_RV__Pr obj id
+  addr; ! locals
+  addr = FUNC_9_RA__Pr(obj, id);
+  if (addr == 0) {
+    if (id &gt; 0 &amp;&amp; id &lt; PARAM_1_indiv_prop_start) {
+      return PARAM_8_cpv__start--&gt;id;
+    }
+    ERROR("[** Programming error: tried to read (something) **]");
+    return 0;
+  }
+  return addr--&gt;0;
+];
+
+! FUNC_13_OP__Pr: implements OP__Pr() as of Inform 6.33.
+[ FUNC_13_OP__Pr obj id
+  zr; ! locals
+  zr = FUNC_1_Z__Region(obj);
+  if (zr == 3) {
+    if (id == print or print_to_array) rtrue;
+    rfalse;
+  }
+  if (zr == 2) {
+    if (id == call) rtrue;
+    rfalse;
+  }
+  if (zr ~= 1) rfalse;
+  if (id &gt;= PARAM_1_indiv_prop_start
+      &amp;&amp; id &lt; PARAM_1_indiv_prop_start+8) {
+    if (OBJ_IN_CLASS(obj)) rtrue;
+  }
+  if (FUNC_9_RA__Pr(obj, id) ~= 0)
+    rtrue;
+  rfalse;
+];
+
+</pre>
+
+<p>
+
+<h3><a name="s.18">2.18: Miscellaneous</a></h3>
+<p>
+
+<pre>
+nop
+</pre>
+
+<p>
+
+Do nothing.
+<p>
+
+<pre>
+gestalt L1 L2 S1
+</pre>
+
+<p>
+
+Test the Gestalt selector number L1, with optional extra argument L2, and store the result in S1. If the selector is not known, store zero.
+<p>
+
+The reasoning behind the design of a Gestalt system is, I hope, too obvious to explain.
+<p>
+
+[This list of Gestalt selectors has nothing to do with the list in the Glk library.]
+<p>
+
+The list of L1 selectors is as follows. Note that if a selector does not mention L2, you should always set that argument to zero. [This will ensure future compatibility, in case the selector definition is extended.]
+<p>
+
+<ul>
+<li>GlulxVersion (0): Returns the version of the Glulx spec which the interpreter implements. The upper 16 bits of the value contain a major version number; the next 8 bits contain a minor version number; and the lowest 8 bits contain an even more minor version number, if any. This specification is version 3.1.2, so a terp implementing it would return 0x00030102. I will try to maintain the convention that minor version changes are backwards compatible, and subminor version changes are backwards and forwards compatible.
+<li>TerpVersion (1): Returns the version of the interpreter. The format is the same as the GlulxVersion. [Each interpreter has its own version numbering system, defined by its author, so this information is not terribly useful. But it is convenient for the game to be able to display it, in case the player is capturing version information for a bug report.]
+<li>ResizeMem (2): Returns 1 if the terp has the potential to resize the memory map, with the setmemsize opcode. If this returns 0, setmemsize will always fail. [But remember that setmemsize might fail in any case.]
+<li>Undo (3): Returns 1 if the terp has the potential to undo. If this returns 0, saveundo and restoreundo will always fail.
+<li>IOSystem (4): Returns 1 if the terp supports the I/O system given in L2. (The constants are the same as for the setiosys opcode: 0 for null, 1 for filter, 2 for Glk, 20 for FyreVM. 0 and 1 will always succeed.)
+<li>Unicode (5): Returns 1 if the terp supports Unicode operations. These are: the E2 Unicode string type; the 04 and 05 string node types (in compressed strings); the streamunichar opcode; the type-14 call stub. If the Unicode selector returns 0, encountering any of these will cause a fatal interpreter error.
+<li>MemCopy (6): Returns 1 if the interpreter supports the mzero and mcopy opcodes. (This must true for any terp supporting Glulx 3.1.)
+<li>MAlloc (7): Returns 1 if the interpreter supports the malloc and mfree opcodes. (If this is true, MemCopy and ResizeMem must also both be true, so there is no need to check all three.)
+<li>MAllocHeap (8): Returns the start address of the heap. This is the value that getmemsize had when the first memory block was allocated. If the heap is not active (no blocks are extant), this returns zero.
+<li>Acceleration (9): Returns 1 if the interpreter supports the accelfunc and accelparam opcodes. (This must true for any terp supporting Glulx 3.1.1.)
+<li>AccelFunc (10): Returns 1 if the terp implements the accelerated function given in L2.
+<li>Float (11): Returns 1 if the interpreter supports the floating-point arithmetic opcodes.
+</ul>
+
+<p>
+
+Selectors 0x1000 to 0x10FF are reserved for use by FyreVM. Selectors 0x1100 to 0x11FF are reserved for extension projects by Dannii Willis. Selectors 0x1200 to 0x12FF are reserved for iOS extension features by Andrew Plotkin. These are not documented here. See <a href="glulx-spec_0.html#s.2">section 0.2, "Glulx and Other IF Systems"</a>.
+<p>
+
+[The Unicode selector is slightly redundant. Since the Unicode operations exist in Glulx spec 3.0 and higher, you can get the same information by testing GlulxVersion against 0x00030000. However, it's clearer to have a separate selector. Similarly, the MemCopy selector is true exactly when GlulxVersion is 0x00030100 or higher.]
+<p>
+
+[The Unicode selector does <em>not</em> guarantee that your Glk library supports Unicode. For that, you must check the Glk gestalt selector gestalt_Unicode. If the Glk library is non-Unicode, the Glulx Unicode operations are still legal; however, Unicode characters (beyond FF) will be printed as 3F ("?").]
+<p>
+
+<pre>
+debugtrap L1
+</pre>
+
+<p>
+
+Interrupt execution to do something interpreter-specific with L1. If the interpreter has nothing in mind, it should halt with a visible error message.
+<p>
+
+[This is intended for use by debugging interpreters. The program might be sprinkled with consistency tests, set to call debugtrap if an assertion failed. The interpreter could then be set to halt, display a warning, or ignore the debugtrap.]
+<p>
+
+This should <em>not</em> be used as an arbitrary interpreter trap-door in a finished (non-debugging) program. If you really want to add interpreter functionality to your program, and you're willing to support an alternate interpreter to run it, you should add an entirely new opcode. There are still 2^28 of them available, give or take.
+<p>
+
+<pre>
+glk L1 L2 S1
+</pre>
+
+<p>
+
+Call the Glk API function whose identifier is L1, passing in L2 arguments. The return value is stored at S1. (If the Glk function has no return value, zero is stored at S1.)
+<p>
+
+The arguments are passed on the stack, last argument pushed first, just as for the call opcode.
+<p>
+
+Arguments should be represented in the obvious way. Integers and character are passed as integers. Glk opaque objects are passed as integer identifiers, with zero representing NULL. Strings and Unicode strings are passed as the addresses of Glulx string objects (see <a href="glulx-spec_1.html#s.6.1">section 1.6.1, "Strings"</a>.) References to values are passed by their addresses. Arrays are passed by their addresses; note that an array argument, unlike a string argument, is always followed by an array length argument.
+<p>
+
+Reference arguments require more explanation. A reference to an integer or opaque object is the address of a 32-bit value (which, being in main memory, does not have to be aligned, but must be big-endian.) Alternatively, the value -1 (FFFFFFFF) may be passed; this is a special case, which means that the value is read from or written to the stack. Arguments are always evaluated left to right, which means that input arguments are popped from the stack first-topmost, but output arguments are pushed on last-topmost.
+<p>
+
+A reference to a Glk structure is the address of an array of 32-bit values in main memory. Again, -1 means that all the values are written to the stack. Also again, an input structure is popped off first-topmost, and an output structure is pushed on last-topmost.
+<p>
+
+All stack input references (-1 addresses) are popped after the Glk argument list is popped. [This should be obvious, since the -1 occurs <em>in</em> the Glk argument list.] Stack output references are pushed after the Glk call, but before the S1 result value is stored.
+<p>
+
+[The difference between strings and character arrays is somewhat confusing. These are the same type in the C Glk API, but different in Glulx. Calls such as glk_put_buffer() and glk_request_line_event() take character arrays; this is the address of a byte array containing character values, followed by an integer array length. The byte array itself has neither a length field or a terminator. In contrast, calls such as glk_put_string() and glk_fileref_create_by_name() take string arguments, which must be unencoded Glulx string objects. An unencoded Glulx string object is nearly a byte array, but not quite; it has an E0 byte at the beginning and a zero byte at the end. Similarly, calls such as glk_put_string_uni() take unencoded (E2) Unicode objects.]
+<p>
+
+[Previous versions of this spec said that string arguments could be unencoded <em>or encoded</em> string objects. This use of encoded strings has never been supported, however, and it is withdrawn from the spec.]
+<p>
+
+[The convention that "address" -1 refers to the stack is a feature of the Glk invocation mechanism; it applies only to Glk arguments. It is <em>not</em> part of the general Glulx definition. When instruction operands are being evaluated, -1 has no special meaning. This includes the L1, L2, and S1 arguments of the glk opcode.]
+<p>
+
+<h3><a name="s.19">2.19: Assembly Language</a></h3>
+<p>
+
+The format used by Inform is acceptable for now:
+<p>
+
+<pre>
+@opcode [ op op op ... ] ;
+
+</pre>
+
+<p>
+
+Where each "op" is a constant, the name of a local variable, the name of a global variable, or "sp" (for stack push/pop modes).
+<p>
+
+[It would be convenient to have a one-line form for the opcodes that pass arguments on the stack (call and glk).]
+<p>
+
+To make life a little easier for cross-platform I6 code, Inform accepts the macro "@push val" for "@copy val sp", and "@pull val" for "@copy sp val". Supporting these forms is recommended.
+<p>
+
+You can synthesize opcodes that the compiler does not know about:
+<p>
+
+<pre>
+@"FlagsCount:Code" [ op op op ... ] ;
+
+</pre>
+
+<p>
+
+The optional Flags can include "S" if the last operand is a store; "SS" if the last two operands are stores; "B" for branch format; "R" if execution never continues after the opcode. The Count is the number of arguments (0 to 9). The Code is a decimal integer representing the opcode number. So these two lines generate the same code:
+<p>
+
+<pre>
+@add x 1 y;
+@"S3:16" x 1 y;
+
+</pre>
+
+<p>
+
+...because the @add opcode has number 16 (decimal), and has format "@add L1 L2 S1".
+<hr>
+<em><a href="glulx-spec.html">Up to top</a>
+<a href="glulx-spec_1.html">Previous chapter</a>
+Next chapter
+</em>
+</body></html>
