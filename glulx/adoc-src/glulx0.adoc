@@ -1,0 +1,64 @@
+:sectnums!:
+
+= Introduction
+
+Glulx is a simple solution to a fairly trivial problem.
+We want a virtual machine which the Inform compiler can compile to, without the increasingly annoying restrictions of the Z-machine.
+
+Glulx does this, without much fuss.
+All arithmetic is 32-bit (although there are opcodes to handle 8-bit and 16-bit memory access.)
+Input and output are handled through the Glk API (which chops out half the Z-machine opcodes, and most of the complexity of a Z-code interpreter.)
+Some care has been taken to make the bytecode small, but simplicity and elbow room are considered more important -- bytecode is not a majority of the bulk in current Inform games.
+
+== Why Bother?
+
+We're buried in IF VMs already, not to mention general VMs like Java, not to mention other interpreters or bytecode systems like Perl.  Do we need another one?
+
+Well, maybe not, but Glulx is simple enough that it was easier to design and implement it than to use something else.
+Really.
+
+The Inform compiler already does most of the work of translating a high-level language to bytecode.
+It has long since outgrown many of the IF-specific features of the Z-machine (such as the object structure.)
+So it makes sense to remove those features, leaving a generic VM.
+Furthermore, there are enough other constraints (Inform's assumption of a flat memory model, the desire to have a lightweight VM suitable for PDAs) that no existing system is really ideal.
+So it seems worthwhile to design a new one.
+
+Indeed, most of the effort that has gone into this system has been modifying Inform.
+Glulx itself is nearly an afterthought.
+
+== Glulx and Other IF Systems
+
+Glulx grew out of the desire to extend Inform.
+However, it may well be suitable as a VM for other IF systems.
+
+Or maybe not.
+Since Glulx _is_ so lightweight, a compiler has to be fairly complex to compile to it.
+Many IF systems take the approach of a simple compiler, and a complex, high-level, IF-specific interpreter.
+Glulx is not suitable for this.
+
+However, if a system wants to use a simple runtime format with 32-bit data, Glulx may be a good choice.
+
+Note that this is entirely separate from question of the I/O layer.
+Glulx uses the Glk I/O API, for the sake of simplicity and portability.
+Any IF system can do the same.
+One can use Glk I/O without using the Glulx game-file format.
+
+On the obverse, one could also extend the Glulx VM to use a different I/O system instead of Glk.
+One such extension is FyreVM, a commercial IF system developed by Textfyre.
+FyreVM is described at
+link:https://web.archive.org/web/20080524015249/https://textfyre.com/fyrevm/[http://textfyre.com/fyrevm/^,title="View archived version at Wayback Machine"].
+
+Other extension projects, not yet solidified, are being developed by Dannii Willis.
+See https://curiousdannii.github.com/if/[^].
+
+This specification does not cover FyreVM and the other projects, except to note opcodes, gestalt selectors, and iosys values that are specific to them.
+
+== Credits
+
+Graham Nelson gets pretty much all of it.
+Without Inform, there would be no reason for any of this.
+The entirety of Glulx is fallout from my attempt to deconstruct Inform and rebuild its code generator in my own image, with Graham's support.
+
+:sectnums:
+
+// EOF //

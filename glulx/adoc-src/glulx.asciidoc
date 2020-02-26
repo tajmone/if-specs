@@ -1,0 +1,69 @@
+= Glulx, A 32-Bit Virtual Machine for IF
+Andrew Plotkin <erkyrath@eblong.com>
+// AsciiDoc Port Info:
+:PortVers: 1
+:PortDate: 2012-02-26
+:PortAuth: Tristano Ajmone
+:revremark: AsciiDoc Draft v{PortVers} ({PortDate})
+// Current Glulx Spec info:
+:GlulxVersion:         3.1.2
+:GlulxVersionHex: 0x00030102
+:revnumber: {GlulxVersion}
+:revdate: 2010-08-17
+:lang: en
+// TOC Settings:
+:toc: left
+:toclevels: 5
+// Sections Numbering:
+:sectnums:
+:sectnumlevels: 4
+// Cross References:
+:xrefstyle: full
+:section-refsig: Sec.
+:section-refsig: section
+// Misc Settings:
+:experimental: true
+:icons: font
+:linkattrs: true
+:reproducible: true
+:sectanchors:
+
+// *****************************************************************************
+// *                                                                           *
+// *                            Document Preamble                              *
+// *                                                                           *
+// *****************************************************************************
+
+VM specification version {revnumber}
+
+Andrew Plotkin <erkyrath@eblong.com>
+
+Copyright 1999-2014 by Andrew Plotkin.
+This specification is licensed under a Creative Commons Attribution-Noncommercial-Share Alike 3.0 Unported License: https://creativecommons.org/licenses/by-nc-sa/3.0[^]
+
+================================================================================
+Ported to AsciiDoc by {PortAuth}.
+
+[WARNING]
+======================================================================
+This AsciiDoc version of the Glulx Specification is still a WIP draft!
+
+Draft version {PortVers}, updated on {PortDate}.
+======================================================================
+================================================================================
+
+The virtual machine _described_ by this document is an idea, not an expression of an idea, and is therefore not copyrightable.
+Anyone is free to write programs that run on the Glulx VM or make use of it, including compilers, interpreters, debuggers, and so on.
+
+This document and further Glulx information can be found at: https://eblong.com/zarf/glulx/[^]
+
+
+'''
+
+:leveloffset: +1
+include::glulx0.adoc[]
+include::glulx1.adoc[]
+include::glulx2.adoc[]
+:leveloffset: 0
+
+// EOF //

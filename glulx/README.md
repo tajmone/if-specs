@@ -5,6 +5,8 @@
 
 The [Glulx VM] Specification, version 3.1.2, by [Andrew Plotkin], licensed under [CC BY-NC-SA 3.0].
 
+> **WIP** — The AsciiDoc port is still a work-in-progress draft.
+> See [`TODO.md`][TODO] for details about its status and pending tasks.
 
 -----
 
@@ -25,6 +27,10 @@ The [Glulx VM] Specification, version 3.1.2, by [Andrew Plotkin], licensed under
 - [`/upstream/`](./upstream/) — original Glulx specs documents:
     + [`/3.1.2/`][3.1.2] — Aug 17, 2010.
     + [`changes.txt`][changes.txt] — latest Glulx specs change log.
+- [`/adoc-src/`](./adoc-src/) — Glulx specs AsciiDoc sources.
+- [`Glulx-Specification.html`][glulx html] — New HTML Glulx specs built from AsciiDoc.
+- [`LICENSE`][LICENSE] — full text of the [CC BY-NC-SA 3.0] License.
+- [`TODO.md`](./TODO.md) — List of pending tasks.
 
 # About Glulx
 
@@ -91,11 +97,15 @@ In summary (but not a substitute for the [full license text][LICENSE]):
 [license badge]: https://img.shields.io/badge/license-CC%20BY--NC--SA%203.0-00b5da.svg
 [glulx badge]: https://img.shields.io/badge/Glulx-3.1.2-brightgreen "Glulx specification version"
 
-<!-- project files -->
+<!-- project files and folders -->
+
+[3.1.2]: ./upstream/3.1.2/ "original Glulx v3.1.2 specification docs"
+[changes.txt]: ./upstream/changes.txt "View the Glulx specification change log"
 
 [LICENSE]: ./LICENSE "View the full text of the CC BY-NC-SA 3.0 license"
-[changes.txt]: ./upstream/changes.txt "View the Glulx specification change log"
-[3.1.2]: ./upstream/3.1.2 "original Glulx v3.1.2 specification docs"
+[TODO]: ./TODO.md "View the list of pending tasks..."
+
+[glulx html]: ./Glulx-Specification.html "New HTML version of the Glulx Specification"
 
 <!-- people -->
 
