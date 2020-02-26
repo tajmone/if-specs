@@ -43,20 +43,26 @@ Repository settings:
 
 # Project Status
 
+![Blorb Status][blorb-status badge]&nbsp;
+![Glk Status][glk-status badge]&nbsp;
+[![Glulx Status][glulx-status badge]][glulx-dev]&nbsp;
+![The Treaty of Babel Status][babel-status badge]&nbsp;
+![Z-Machine Status][zmachine-status badge]
+
 The project is still under development, below is the task-list of the current roadmap.
 
 - [ ] Add original specs and standards documents:
     + [ ] Blorb
     + [ ] Glk
     + [x] Glulx
-    + [ ] The Treaty of Babel
+    + [ ] Treaty of Babel
     + [ ] Z-Machine
 - [ ] Port the documents to AsciiDoc:
-    + [ ] Blorb
-    + [ ] Glk
-    + [ ] Glulx
-    + [ ] The Treaty of Babel
-    + [ ] Z-Machine
+    + [ ]  Blorb
+    + [ ]  Glk
+    + [ ]  [Glulx (&nbsp;:construction:&nbsp;)][glulx-dev]
+    + [ ]  Treaty of Babel
+    + [ ]  Z-Machine
 
 # Licenses
 
@@ -112,6 +118,16 @@ The Glulx specification is Copyright 1999-2014 by [Andrew Plotkin], licensed und
 <!-- badges -->
 
 [travis badge]: https://travis-ci.org/tajmone/if-specs.svg?branch=master "Travis CI Build Status for EditorConfig Validation"
+
+[blorb-status badge]: https://img.shields.io/badge/Blorb-TBD-lightgrey "Blorb AsciiDoc port still pending implementation"
+[glk-status badge]: https://img.shields.io/badge/Glk-TBD-lightgrey "Glk AsciiDoc port still pending implementation"
+[glulx-status badge]: https://img.shields.io/badge/Glulx-WIP-orange "View the Glulx AsciiDoc development branch"
+[babel-status badge]: https://img.shields.io/badge/Treaty%20of%20Babel-TBD-lightgrey "Treaty of Babel AsciiDoc port still pending implementation"
+[zmachine-status badge]: https://img.shields.io/badge/Z--Machine-TBD-lightgrey "Z-Machine AsciiDoc port still pending implementation"
+
+<!-- dev branches  -->
+
+[glulx-dev]: https://github.com/tajmone/if-specs/tree/dev-glulx/glulx/ "View the Glulx AsciiDoc development branch"
 
 <!-- project files -->
 
