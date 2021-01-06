@@ -23,6 +23,7 @@ The [Z-Machine Standards Document], version 1.1, by [Graham Nelson].
 
 - [`/upstream/`](./upstream/) — original Z-Machine Standards Document (HTML):
     + [`/1.1/`][1.1] — Feb 24, 2014.
+- [`/adoc-src/`](./adoc-src/) — Z-Machine Standards Document AsciiDoc sources.
 
 # License
 
