@@ -20,6 +20,7 @@ Created by [Tristano Ajmone], 2020/02/19.
 - [Project Status](#project-status)
 - [Licenses](#licenses)
     - [Glulx Specification](#glulx-specification)
+    - [Z-Machine Specification](#z-machine-specification)
 - [Links](#links)
 
 <!-- /MarkdownTOC -->
@@ -29,6 +30,7 @@ Created by [Tristano Ajmone], 2020/02/19.
 # Project Contents
 
 - [`/glulx/`](./glulx/) — Glulx Specification v3.1.2.
+- [`/zmachine/`](./zmachine/) — Z-Machine Standards Document v1.1.
 
 Build and validation scripts:
 
@@ -47,7 +49,7 @@ Repository settings:
 ![Glk Status][glk-status badge]&nbsp;
 [![Glulx Status][glulx-status badge]][glulx-dev]&nbsp;
 ![The Treaty of Babel Status][babel-status badge]&nbsp;
-![Z-Machine Status][zmachine-status badge]
+[![Z-Machine Status][zmachine-status badge]][zmachine-dev]
 
 The project is still under development, below is the task-list of the current roadmap.
 
@@ -56,13 +58,13 @@ The project is still under development, below is the task-list of the current ro
     + [ ] Glk
     + [x] Glulx
     + [ ] Treaty of Babel
-    + [ ] Z-Machine
+    + [x] Z-Machine
 - [ ] Port the documents to AsciiDoc:
     + [ ]  Blorb
     + [ ]  Glk
     + [ ]  [Glulx (&nbsp;:construction:&nbsp;)][glulx-dev]
     + [ ]  Treaty of Babel
-    + [ ]  Z-Machine
+    + [ ]  [Z-Machine (&nbsp;:construction:&nbsp;)][zmachine-dev]
 
 # Licenses
 
@@ -78,6 +80,13 @@ For full details, see the `README.md` and `LICENSE` files inside each subfolder.
     + [`LICENSE`](./glulx/LICENSE)
 
 The Glulx specification is Copyright 1999-2014 by [Andrew Plotkin], licensed under [CC BY-NC-SA 3.0].
+
+## Z-Machine Specification
+
+- [`/zmachine/`](./zmachine/)
+    + [`LICENSE`](./zmachine/LICENSE)
+
+The _Z-Machine Standards Document_ (written by [Graham Nelson]) is Copyright 1993-2018 by the [Interactive Fiction Technology Foundation], licensed under [CC BY-SA 4.0].
 
 # Links
 
@@ -114,6 +123,7 @@ The Glulx specification is Copyright 1999-2014 by [Andrew Plotkin], licensed und
 <!-- licenses -->
 
 [CC BY-NC-SA 3.0]: https://creativecommons.org/licenses/by-nc-sa/3.0/ "View CC BY-NC-SA 3.0 License at creativecommons.org"
+[CC BY-SA 4.0]: https://creativecommons.org/licenses/by-sa/4.0/ "View CC BY-SA 4.0 License at creativecommons.org"
 
 <!-- badges -->
 
@@ -123,11 +133,12 @@ The Glulx specification is Copyright 1999-2014 by [Andrew Plotkin], licensed und
 [glk-status badge]: https://img.shields.io/badge/Glk-TBD-lightgrey "Glk AsciiDoc port still pending implementation"
 [glulx-status badge]: https://img.shields.io/badge/Glulx-WIP-orange "View the Glulx AsciiDoc development branch"
 [babel-status badge]: https://img.shields.io/badge/Treaty%20of%20Babel-TBD-lightgrey "Treaty of Babel AsciiDoc port still pending implementation"
-[zmachine-status badge]: https://img.shields.io/badge/Z--Machine-TBD-lightgrey "Z-Machine AsciiDoc port still pending implementation"
+[zmachine-status badge]: https://img.shields.io/badge/Z--Machine-WIP-orange "View the Z-Machine AsciiDoc development branch"
 
 <!-- dev branches  -->
 
 [glulx-dev]: https://github.com/tajmone/if-specs/tree/dev-glulx/glulx/ "View the Glulx AsciiDoc development branch"
+[zmachine-dev]: https://github.com/tajmone/if-specs/tree/dev-zmachine/zmachine/ "View the Z-Machine AsciiDoc development branch"
 
 <!-- project files -->
 
@@ -145,6 +156,7 @@ The Glulx specification is Copyright 1999-2014 by [Andrew Plotkin], licensed und
 
 <!-- orgs -->
 
+[Interactive Fiction Technology Foundation]: https://iftechfoundation.org/ "Visit the Interactive Fiction Technology Foundation website"
 [Z-Machine Mailing List]: https://ifarchive.org/indexes/if-archive/infocom/interpreters/specification/ "See archived copies of the defunct Z-Machine Mailing List <z-machine@gmd.de>, preserved at the IF Archive"
 
 <!-- EOF -->
