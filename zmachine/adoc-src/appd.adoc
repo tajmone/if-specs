@@ -1,6 +1,5 @@
-image:iconad.gif[image]
-
-== Appendix D. A short history of the Z-machine
+[appendix]
+= A short history of the Z-machine
 
 Infocom made six main Versions of the Z-machine and several minor variant forms. These are recognisably similar but with labyrinthine differences, like different archaic dialects of the same language. (The archaeological record stops sharply in 1989 when the civilisation in question collapsed.)
 

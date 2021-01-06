@@ -1,6 +1,5 @@
-image:iconaa.gif[image]
-
-== Appendix A. Error messages and debugging
+[appendix]
+= Error messages and debugging
 
 Older interpreters, such as *ITF*, are extremely curt when an error condition is reached (for example, an illegal opcode). It was assumed that Infocom's shipped story files were bug-free, which is mostly true, so that errors could only arise through a bug elsewhere in the interpreter.
 

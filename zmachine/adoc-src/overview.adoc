@@ -1,6 +1,4 @@
-image:iconov.gif[image]
-
-== Overview of Z-machine architecture
+= Overview of Z-machine architecture
 
 '''''
 

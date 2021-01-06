@@ -1,6 +1,5 @@
-image:iconae.gif[image]
-
-== Appendix E. Statistics
+[appendix]
+= Statistics
 
 ____
 LORD DIMWIT FLATHEAD: "It must have two hundred thousand rooms, four million takeable objects, and understand a vocabulary of every single word ever spoken in every language ever invented."

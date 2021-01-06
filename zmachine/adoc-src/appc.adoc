@@ -1,6 +1,5 @@
-image:iconac.gif[image]
-
-== Appendix C. Resources available
+[appendix]
+= Resources available
 
 ____
 ...the dead hand of the academy had yet to stifle the unbridled enthusiasms of a small band of amateurs in Europe and America.
@@ -14,13 +13,13 @@ The resources below are mainly available from the http://www.ifarchive.org/if-ar
 
 '''''
 
-=== Public Interpreters
+== Public Interpreters
 
 Since the 1.0 Standard was first introduced, a variety of http://www.ifarchive.org/indexes/if-archiveXinfocomXinterpreters.html[interpreters] have become available, for many different platforms and with a variety of features. The page on http://inform7.com/if/interpreters/[Playing Interactive Fiction] at inform7.com is a good place to start when looking for an interpreter, as is the http://www.ifwiki.org/index.php/Z-machine#Assorted_Z-machine_interpreters[ifwiki page on the Z-Machine].
 
 '''''
 
-=== Testing compliance
+== Testing compliance
 
 A few story files exist to test interpreter for various Z-Machine features:
 
@@ -32,7 +31,7 @@ A few story files exist to test interpreter for various Z-Machine features:
 
 '''''
 
-=== Compilers
+== Compilers
 
 Infocom's original compiler *Zilch* no longer exists, but a PDF copy of http://www.xlisp.org/zil.pdf[Learning ZIL], Infocom's documentation for their *ZIL* language, is available. Since the emergence of this file, there have been a few attempts at making a new *ZIL* compiler, most notably https://sourceforge.net/projects/zilf/[ZILF] by Jesse McGrew.
 
@@ -46,7 +45,7 @@ A few http://www.ifarchive.org/indexes/if-archiveXinfocomXcompilers.html[other c
 
 '''''
 
-=== Utility programs
+== Utility programs
 
 Mark Howell has written a toolkit of http://www.ifarchive.org/indexes/if-archiveXinfocomXtoolsXztools.html[Ztools], or utility programs (1991-5, updated 1997), which includes:
 
@@ -61,7 +60,7 @@ http://www.ifarchive.org/indexes/if-archiveXinfocomXtoolsXreform.html[Reform], b
 
 '''''
 
-=== Story files
+== Story files
 
 . Numerous http://www.ifarchive.org/indexes/if-archiveXgamesXzcode.html[Inform-compiled story files] are publically available.
 . A few Infocom story files are public, notably two 4-in-1 sample games (released for advertising purposes: http://www.ifarchive.org/if-archive/infocom/demos/sampler1_R55.z3[55.850823] and http://www.ifarchive.org/if-archive/infocom/demos/sampler2.z3[97.870601]) and http://www.ifarchive.org/if-archive/infocom/demos/minizork.z3[Minizork] (a heavily abbreviated form of Zork I released with a Commodore magazine).
@@ -74,7 +73,7 @@ Version 1 and 2 games are extinct, though there are a few fossils in the hands o
 
 '''''
 
-=== Documents
+== Documents
 
 The definitive guide to all Infocom story files known to exist, and an indispensable reference for anyone interested in Infocom, is Paul David Doherty's http://www.ifarchive.org/if-archive/infocom/info/fact-sheet.txt[Infocom fact sheet], which is regularly updated, concise and precise. This supersedes Paul Smith's "Infocom Game Information" file.
 

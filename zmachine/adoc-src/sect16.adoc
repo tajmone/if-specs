@@ -1,8 +1,7 @@
-image:icon16.gif[image]
 
-== 16. Font 3 and character graphics
+= Font 3 and character graphics
 
-=== 16.1
+== 16.1
 
 The following table of 8x8 bitmaps gives a suitable appearance for font 3. The font must have a fixed pitch and characters must be printed immediately next to each other in all four directions.
 
@@ -239,7 +238,7 @@ The following table of 8x8 bitmaps gives a suitable appearance for font 3. The f
 
 '''''
 
-=== Remarks
+== Remarks
 
 Two different versions of font 3 were supplied by Infocom, which we shall call the Amiga and PC forms (the Atari form is the same as for the PC). The arrow shape differed slightly and so did the rune alphabet. Each was an attempt to map the late Anglian ("futhorc") runic alphabet, which has 33 characters, onto our Latin alphabet. The drawings above are from the Amiga set.
 

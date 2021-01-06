@@ -1,8 +1,7 @@
 '''''
 
-image:icon14.gif[image]
 
-== 14. Complete table of opcodes
+= Complete table of opcodes
 
 '''''
 
@@ -807,39 +806,39 @@ Opcode numbers 192 to 223: VAR forms of 2OP:0 to 2OP:31.
 '''''
 
 [[one]]
-=== 14.1
+== 14.1
 
 This table contains all 119 opcodes and, taken with the dictionary in *S* 15, describes exactly what each should do. In addition, it lists which opcodes are actually used in the known Infocom story files, and documents the Inform assembly language syntax.
 
 [[two]]
-=== 14.2
+== 14.2
 
 Formally, it is illegal for a game to contain an opcode not specified for its version. An interpreter should normally halt with a suitable message.
 
 [[section]]
-=== 14.2.1
+== 14.2.1
 
 However, extended opcodes in the range EXT:29 to EXT:255 should be simply ignored (perhaps with a warning message somewhere off-screen).
 
 [[section-1]]
-=== 14.2.2
+== 14.2.2
 
 ****[1.0][1.1]* EXT:11 and EXT:12 were opcodes added in Standard 1.0 and can be generated in code compiled by Inform 6.12 or later. EXT:13 and EXT:29 are new in Standard 1.1. EXT:14 to EXT:15, and EXT:30 to EXT:127, are reserved for future versions of this document to specify.
 
 [[section-2]]
-=== 14.2.3
+== 14.2.3
 
 Designers who wish to create their own "new" opcodes, for one specific game only, are asked to use opcode numbers in the range EXT:128 to EXT:255. It is easy to modify Inform to name and assemble such opcodes. (Of course the game will then have to be circulated with a suitably modified interpreter to run it.)
 
 [[section-3]]
-=== 14.2.4
+== 14.2.4
 
 Interpreter-writers should ideally make this easy by providing a routine which is called if EXT:128 to EXT:255 are found, so that the minimum possible modification to the interpreter is needed.
 
 '''''
 
 [[reading]]
-=== Reading the opcode tables
+== Reading the opcode tables
 
 The two columns "St" and "Br" (store and branch) mark whether an instruction stores a result in a variable, and whether it must provide a label to jump to, respectively.
 
@@ -854,7 +853,7 @@ The table explicitly marks opcodes which do not exist in any version of the Z-ma
 '''''
 
 [[inform]]
-=== Inform assembly language
+== Inform assembly language
 
 This section documents Inform 6 assembly language, which is richer than that of Inform 5. The Inform 6 assembler can generate every legal opcode and automatically sets any consequent header bits (for instance, a usage of *set_colour* will set the "colours needed" bit).
 
@@ -962,7 +961,7 @@ is an exotic new opcode, number 128 in the extended range, which is both Branch 
 
 '''''
 
-=== Remarks
+== Remarks
 
 The opcodes EXT:5 to EXT:8 were very likely in Infocom's own Version 5 specification (documentary records of which are lost): they seem to have been partially implemented in existing Infocom interpreters, but do not occur in any existing Version 5 story file. They are here left unspecified.
 

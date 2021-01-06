@@ -1,6 +1,5 @@
-image:iconaf.gif[image]
-
-== Appendix F. Canonical Story Files
+[appendix]
+= Canonical Story Files
 
 '''''
 

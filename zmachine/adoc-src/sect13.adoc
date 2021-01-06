@@ -1,6 +1,5 @@
-image:icon13.gif[image]
 
-== 13. The dictionary and lexical analysis
+= The dictionary and lexical analysis
 
 '''''
 
@@ -9,12 +8,12 @@ image:icon13.gif[image]
 '''''
 
 [[one]]
-=== 13.1
+== 13.1
 
 The dictionary table is held in static memory and its byte address is stored in the word at *$08* in the header.
 
 [[two]]
-=== 13.2
+== 13.2
 
 The table begins with a short header:
 
@@ -26,12 +25,12 @@ The table begins with a short header:
 The keyboard input codes are "word-separators": typically (and under Inform mandatorily) these are the ZSCII codes for full stop, comma and double-quote. Note that a space character (32) should never be a word-separator. The "entry length" is the length of each word's entry in the dictionary table. (It must be at least 4 in Versions 1 to 3, and at least 6 in later Versions.)
 
 [[section]]
-=== 13.2.1
+== 13.2.1
 
 Note that the word-separators table can only contain codes which are defined in ZSCII for both input and output.
 
 [[three]]
-=== 3
+== 3
 
 In Versions 1 to 3, each word has an entry in the form
 
@@ -43,22 +42,22 @@ In Versions 1 to 3, each word has an entry in the form
 The interpreter ignores the bytes of data (presumably the game's parser will use them). The encoded text contains 6 Z-characters (it is always padded out with Z-character 5's to make up 4 bytes: see *S* 3). The text may include spaces or other word-separators (though, if so, the interpreter will never match any text to the dictionary word in question: surprisingly, this can be useful and is a trick used in the Inform library).
 
 [[four]]
-=== 13.4
+== 13.4
 
 In Versions 4 and later, the encoded text has 6 bytes and always contains 9 Z-characters.
 
 [[five]]
-=== 13.5
+== 13.5
 
 The word entries follow immediately after the dictionary header and must be given in numerical order of the encoded text (when the encoded text is regarded as a 32 or 48-bit binary number with most-significant byte first). It must not contain two entries with the same encoded text.
 
 [[six]]
-=== 13.6
+== 13.6
 
 Lexical analysis takes place in two circumstances: on request of a *tokenise* opcode (in which case it can use any dictionary table it likes, in the format above) and during acceptance of a game command (in which case the standard dictionary is used).
 
 [[section-1]]
-=== 13.6.1
+== 13.6.1
 
 First, the text is broken up into words. Spaces divide up words and are otherwise ignored. Word separators also divide words, but each one of them is considered a word in its own right. Thus, the erratically-spaced text "fred,go fishing" is divided into four words:
 
@@ -67,18 +66,18 @@ fred / , / go / fishing
 ....
 
 [[section-2]]
-=== 13.6.2
+== 13.6.2
 
 Each word is then encoded as a Z-machine string in dictionary form, and searched for in the dictionary.
 
 [[section-3]]
-=== 13.6.3
+== 13.6.3
 
 A "parse table" is then written, recording the number of words, the length and position of each word and the dictionary address of each word which is recognised. For the format, see the *read* opcode.
 
 '''''
 
-=== Remarks
+== Remarks
 
 Usually (under Inform, mandatorily) there are three bytes of data in the word entries, so that dictionary entry lengths are 7 and 9 in the early and late Z-machine, respectively.
 

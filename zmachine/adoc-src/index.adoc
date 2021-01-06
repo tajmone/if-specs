@@ -1,8 +1,8 @@
 image:zlogo.gif[image]
 
-== The Z-Machine Standards Document
+= The Z-Machine Standards Document
 
-=== Version 1.1
+== Version 1.1
 
 24 February 2014
 
@@ -13,7 +13,7 @@ image:zlogo.gif[image]
 
 '''''
 
-==== Fundamentals
+=== Fundamentals
 
 * link:sect01.html[1. The memory map]
 * link:sect02.html[2. Numbers and arithmetic]
@@ -22,31 +22,31 @@ image:zlogo.gif[image]
 * link:sect05.html[5. How routines are encoded]
 * link:sect06.html[6. The game state: storage and routine calls]
 
-==== Input/Output
+=== Input/Output
 
 * link:sect07.html[7. Output streams and file handling]
 * link:sect08.html[8. The screen model]
 * link:sect09.html[9. Sound effects]
 * link:sect10.html[10. Input streams and devices]
 
-==== Tables
+=== Tables
 
 * link:sect11.html[11. The format of the header]
 * link:sect12.html[12. The object table]
 * link:sect13.html[13. The dictionary and lexical analysis]
 
-==== Instruction Set
+=== Instruction Set
 
 * link:sect14.html[14. Complete table of opcodes] link:sect14.html#inform[(with Inform assembly syntax)]
 * link:sect15.html[15. Dictionary of opcodes]
 
-==== An Unusual Font
+=== An Unusual Font
 
 * link:sect16.html[16. Font 3 and character graphics]
 
 '''''
 
-==== Appendices
+=== Appendices
 
 * link:appa.html[A. Error messages and debugging]
 * link:appb.html[B. Conventional contents of the header]
@@ -57,7 +57,7 @@ image:zlogo.gif[image]
 
 '''''
 
-==== Related standards documents
+=== Related standards documents
 
 * http://inform-fiction.org/zmachine/standards/quetzal/index.html[Quetzal: a common format for saved-game files]
 * http://www.eblong.com/zarf/blorb/blorb.html[Blorb: An IF Resource Collection Format Standard]

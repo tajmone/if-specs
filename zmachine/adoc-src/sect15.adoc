@@ -1,9 +1,8 @@
-image:icon15.gif[image]
 
 '''''
 
 [[dict]]
-== 15. Dictionary of opcodes
+= Dictionary of opcodes
 
 ____
 The highest ideal of a translation... is achieved when the reader flings it impatiently into the fire, and begins patiently to learn the language for himself.
@@ -17,21 +16,21 @@ link:#add[A] / link:#buffer_mode[B] / link:#call[C] / link:#dec[D] / link:#encod
 
 '''''
 
-=== 15.1
+== 15.1
 
 The dictionary below is alphabetical and includes entries on every opcode listed in the table above, as well as brief notes on a few opcodes once thought to exist but now disproved.
 
-=== 15.2
+== 15.2
 
 The Z-machine has the same concept of "table" (as an internal data structure) as Inform. Specifically, a table is an array of words (in dynamic or static memory) of which the initial entry is the number of subsequent words in the table. For example, a table with three entries occupies 8 bytes, arranged as the words 3, x, y, z.
 
-=== 15.3
+== 15.3
 
 In all cases below where one operand is supposed to be in a particular range, behaviour is undefined if it is not. For instance an interpreter complies with the Standard even if it crashes when an illegal object number (including 0) is given for an object operand. However, see *S* A for guidelines on detecting and dealing with errors.
 
 '''''
 
-=== add
+== add
 
 *link:sect14.html#2OP[2OP]:20 14 add a b -> (result)*
 
@@ -39,7 +38,7 @@ Signed 16-bit addition.
 
 '''''
 
-=== and
+== and
 
 *link:sect14.html#2OP[2OP]:9 9 and a b -> (result)*
 
@@ -47,13 +46,13 @@ Bitwise AND.
 
 '''''
 
-=== aread
+== aread
 
 This is the Inform name for the keyboard-reading opcode under Version 5 and later. (Inform calls the same opcode *sread* under Versions 3 and 4.) See *read* for the specification.
 
 '''''
 
-=== art_shift
+== art_shift
 
 *link:sect14.html#EXT[EXT]:3 3 5/- art_shift number places -> (result)*
 
@@ -63,7 +62,7 @@ The "places" operand must be in the range -15 to +15, otherwise behaviour is und
 
 '''''
 
-=== buffer_mode
+== buffer_mode
 
 *link:sect14.html#VAR[VAR]:242 12 4 buffer_mode flag*
 
@@ -73,7 +72,7 @@ In Version 6, this opcode is redundant (the "buffering" window attribute can be 
 
 '''''
 
-=== buffer_screen
+== buffer_screen
 
 *link:sect14.html#EXT[EXT]:29 1D 6/* buffer_screen mode -> (result)*
 
@@ -89,7 +88,7 @@ See *S* 8 for more details.
 
 '''''
 
-=== call
+== call
 
 *link:sect14.html#VAR[VAR]:224 0 1 call routine ...up to 3 args... -> (result)*
 
@@ -97,7 +96,7 @@ The only call instruction in Version 3, Inform reads this as *call_vs* in higher
 
 '''''
 
-=== call_1n
+== call_1n
 
 *link:sect14.html#1OP[1OP]:143 F 5 call_1n routine*
 
@@ -105,7 +104,7 @@ Executes *routine()* and throws away result.
 
 '''''
 
-=== call_1s
+== call_1s
 
 *link:sect14.html#1OP[1OP]:136 8 4 call_1s routine -> (result)*
 
@@ -113,7 +112,7 @@ Stores *routine()*.
 
 '''''
 
-=== call_2n
+== call_2n
 
 *link:sect14.html#2OP[2OP]:26 1A 5 call_2n routine arg1*
 
@@ -121,7 +120,7 @@ Executes *routine(arg1)* and throws away result.
 
 '''''
 
-=== call_2s
+== call_2s
 
 *link:sect14.html#2OP[2OP]:25 19 4 call_2s routine arg1 -> (result)*
 
@@ -129,7 +128,7 @@ Stores *routine(arg1)*.
 
 '''''
 
-=== call_vn
+== call_vn
 
 *link:sect14.html#VAR[VAR]:249 19 5 call_vn routine ...up to 3 args...*
 
@@ -137,7 +136,7 @@ Like *call*, but throws away result.
 
 '''''
 
-=== call_vs
+== call_vs
 
 *link:sect14.html#VAR[VAR]:224 0 4 call_vs routine ...up to 3 args... -> (result)*
 
@@ -145,7 +144,7 @@ See *call*.
 
 '''''
 
-=== call_vn2
+== call_vn2
 
 *link:sect14.html#VAR[VAR]:250 1A 5 call_vn2 routine ...up to 7 args...*
 
@@ -153,7 +152,7 @@ Call with a variable number (from 0 to 7) of arguments, then throw away the resu
 
 '''''
 
-=== call_vs2
+== call_vs2
 
 *link:sect14.html#VAR[VAR]:236 C 4 call_vs2 routine ...up to 7 args... -> (result)*
 
@@ -161,7 +160,7 @@ See *call_vn2*.
 
 '''''
 
-=== catch
+== catch
 
 *link:sect14.html#0OP[0OP]:185 9 5/6 catch -> (result)*
 
@@ -169,7 +168,7 @@ Opposite to *throw* (and occupying the same opcode that *pop* used in Versions 3
 
 '''''
 
-=== check_arg_count
+== check_arg_count
 
 *link:sect14.html#VAR[VAR]:255 1F 5 check_arg_count argument-number*
 
@@ -177,7 +176,7 @@ Branches if the given argument-number (counting from 1) has been provided by the
 
 '''''
 
-=== check_unicode
+== check_unicode
 
 *link:sect14.html#EXT[EXT]:12 C 5/* check_unicode char-number -> (result)*
 
@@ -187,7 +186,7 @@ Determines whether or not the interpreter can print, or receive from the keyboar
 
 '''''
 
-=== clear_attr
+== clear_attr
 
 *link:sect14.html#2OP[2OP]:12 C clear_attr object attribute*
 
@@ -195,7 +194,7 @@ Make *object* not have the attribute numbered *attribute*.
 
 '''''
 
-=== copy_table
+== copy_table
 
 *link:sect14.html#VAR[VAR]:253 1D 5 copy_table first second size*
 
@@ -209,7 +208,7 @@ The tables are allowed to overlap. If *size* is positive, the interpreter must c
 
 '''''
 
-=== dec
+== dec
 
 *link:sect14.html#1OP[1OP]:134 6 dec (variable)*
 
@@ -217,7 +216,7 @@ Decrement variable by 1. This is signed, so 0 decrements to -1.
 
 '''''
 
-=== dec_chk
+== dec_chk
 
 *link:sect14.html#2OP[2OP]:4 4 dec_chk (variable) value ?(label)*
 
@@ -225,7 +224,7 @@ Decrement variable, and branch if it is now less than the given value.
 
 '''''
 
-=== div
+== div
 
 *link:sect14.html#2OP[2OP]:23 17 div a b -> (result)*
 
@@ -233,7 +232,7 @@ Signed 16-bit division. Division by zero should halt the interpreter with a suit
 
 '''''
 
-=== draw_picture
+== draw_picture
 
 *link:sect14.html#EXT[EXT]:5 5 6 draw_picture picture-number y x*
 
@@ -241,7 +240,7 @@ Displays the picture with the given number. (y,x) coordinates (of the top left o
 
 '''''
 
-=== encode_text
+== encode_text
 
 *link:sect14.html#VAR[VAR]:252 1C 5 encode_text zscii-text length from coded-text*
 
@@ -249,7 +248,7 @@ Translates a ZSCII word to Z-encoded text format (stored at *coded-text*), as if
 
 '''''
 
-=== erase_line
+== erase_line
 
 *link:sect14.html#VAR[VAR]:238 E 4/6 erase_line value*
 
@@ -259,7 +258,7 @@ Version 6: if the value is 1, erase from the current cursor position to the end 
 
 '''''
 
-=== erase_picture
+== erase_picture
 
 *link:sect14.html#EXT[EXT]:7 7 6 erase_picture picture-number y x*
 
@@ -267,7 +266,7 @@ Like *draw_picture*, but paints the appropriate region to the background colour 
 
 '''''
 
-=== erase_window
+== erase_window
 
 *link:sect14.html#VAR[VAR]:237 D 4 erase_window window*
 
@@ -275,13 +274,13 @@ Erases window with given number (to background colour); or if -1 it unsplits the
 
 '''''
 
-=== "extended"
+== "extended"
 
 This byte (decimal 190) is not an instruction, but indicates that the opcode is "extended": the next byte contains the number in the extended set.
 
 '''''
 
-=== get_child
+== get_child
 
 *link:sect14.html#1OP[1OP]:130 2 get_child object -> (result) ?(label)*
 
@@ -289,7 +288,7 @@ Get first object contained in given object, branching if this exists, i.e. is no
 
 '''''
 
-=== get_cursor
+== get_cursor
 
 *link:sect14.html#VAR[VAR]:240 10 4/6 get_cursor array*
 
@@ -297,7 +296,7 @@ Puts the current cursor row into the word 0 of the given array, and the current 
 
 '''''
 
-=== get_next_prop
+== get_next_prop
 
 *link:sect14.html#2OP[2OP]:19 13 get_next_prop object property -> (result)*
 
@@ -305,7 +304,7 @@ Gives the number of the next property provided by the quoted object. This may be
 
 '''''
 
-=== get_parent
+== get_parent
 
 *link:sect14.html#1OP[1OP]:131 3 get_parent object -> (result)*
 
@@ -313,7 +312,7 @@ Get parent object (note that this has no "branch if exists" clause).
 
 '''''
 
-=== get_prop
+== get_prop
 
 *link:sect14.html#2OP[2OP]:17 11 get_prop object property -> (result)*
 
@@ -321,7 +320,7 @@ Read property from object (resulting in the default value if it had no such decl
 
 '''''
 
-=== get_prop_addr
+== get_prop_addr
 
 *link:sect14.html#2OP[2OP]:18 12 get_prop_addr object property -> (result)*
 
@@ -329,7 +328,7 @@ Get the byte address (in dynamic memory) of the property data for the given obje
 
 '''''
 
-=== get_prop_len
+== get_prop_len
 
 *link:sect14.html#1OP[1OP]:132 4 get_prop_len property-address -> (result)*
 
@@ -339,7 +338,7 @@ Get length of property data (in bytes) for the given object's property. It is il
 
 '''''
 
-=== get_sibling
+== get_sibling
 
 *link:sect14.html#1OP[1OP]:129 1 get_sibling object -> (result) ?(label)*
 
@@ -347,7 +346,7 @@ Get next object in tree, branching if this exists, i.e. is not 0.
 
 '''''
 
-=== get_wind_prop
+== get_wind_prop
 
 *link:sect14.html#EXT[EXT]:19 13 6 get_wind_prop window property-number -> (result)*
 
@@ -355,7 +354,7 @@ Reads the given property of the given window (see *S* 8).
 
 '''''
 
-=== inc
+== inc
 
 *link:sect14.html#1OP[1OP]:133 5 inc (variable)*
 
@@ -363,7 +362,7 @@ Increment variable by 1. (This is signed, so -1 increments to 0.)
 
 '''''
 
-=== inc_chk
+== inc_chk
 
 *link:sect14.html#2OP[2OP]:5 5 inc_chk (variable) value ?(label)*
 
@@ -371,7 +370,7 @@ Increment variable, and branch if now greater than value.
 
 '''''
 
-=== input_stream
+== input_stream
 
 *link:sect14.html#VAR[VAR]:244 14 3 input_stream number*
 
@@ -379,7 +378,7 @@ Selects the current input stream.
 
 '''''
 
-=== insert_obj
+== insert_obj
 
 *link:sect14.html#2OP[2OP]:14 E insert_obj object destination*
 
@@ -387,7 +386,7 @@ Moves object O to become the first child of the destination object D. (Thus, aft
 
 '''''
 
-=== je
+== je
 
 *link:sect14.html#2OP[2OP]:1 1 je a b c d ?(label)*
 
@@ -397,7 +396,7 @@ je with just 1 operand is not permitted.
 
 '''''
 
-=== jg
+== jg
 
 *link:sect14.html#2OP[2OP]:3 3 jg a b ?(label)*
 
@@ -405,7 +404,7 @@ Jump if *a > b* (using a signed 16-bit comparison).
 
 '''''
 
-=== jin
+== jin
 
 *link:sect14.html#2OP[2OP]:6 6 jin obj1 obj2 ?(label)*
 
@@ -413,7 +412,7 @@ Jump if object *a* is a direct child of *b*, i.e., if *parent* of *a* is *b*.
 
 '''''
 
-=== jl
+== jl
 
 *link:sect14.html#2OP[2OP]:2 2 jl a b ?(label)*
 
@@ -421,7 +420,7 @@ Jump if *a < b* (using a signed 16-bit comparison).
 
 '''''
 
-=== jump
+== jump
 
 *link:sect14.html#1OP[1OP]:140 C jump ?(label)*
 
@@ -437,7 +436,7 @@ This is analogous to the calculation for branch offsets.
 
 '''''
 
-=== jz
+== jz
 
 *link:sect14.html#1OP[1OP]:128 0 jz a ?(label)*
 
@@ -445,7 +444,7 @@ Jump if *a = 0*.
 
 '''''
 
-=== load
+== load
 
 *link:sect14.html#1OP[1OP]:142 E load (variable) -> (result)*
 
@@ -453,7 +452,7 @@ The value of the variable referred to by the operand is stored in the result. (I
 
 '''''
 
-=== loadb
+== loadb
 
 *link:sect14.html#2OP[2OP]:16 10 loadb array byte-index -> (result)*
 
@@ -461,7 +460,7 @@ Stores *array->byte-index* (i.e., the byte at address *array+byte-index*, which 
 
 '''''
 
-=== loadw
+== loadw
 
 *link:sect14.html#2OP[2OP]:15 F loadw array word-index -> (result)*
 
@@ -469,7 +468,7 @@ Stores *array-->word-index* (i.e., the word at address *array+2*word-index*, whi
 
 '''''
 
-=== log_shift
+== log_shift
 
 *link:sect14.html#EXT[EXT]:2 2 5 log_shift number places -> (result)*
 
@@ -479,7 +478,7 @@ The "places" operand must be in the range -15 to +15, otherwise behaviour is und
 
 '''''
 
-=== make_menu
+== make_menu
 
 *link:sect14.html#EXT[EXT]:27 1B 6 make_menu number table ?(label)*
 
@@ -487,7 +486,7 @@ Controls menus with numbers greater than 2 (i.e., it doesn't control the three s
 
 '''''
 
-=== mod
+== mod
 
 *link:sect14.html#2OP[2OP]:24 18 mod a b -> (result)*
 
@@ -495,7 +494,7 @@ Remainder after signed 16-bit division. Division by zero should halt the interpr
 
 '''''
 
-=== mouse_window
+== mouse_window
 
 *link:sect14.html#EXT[EXT]:23 17 6 mouse_window window*
 
@@ -503,7 +502,7 @@ Constrain the mouse arrow to sit inside the given window. By default it sits in 
 
 '''''
 
-=== move_window
+== move_window
 
 *link:sect14.html#EXT[EXT]:16 10 6 move_window window y x*
 
@@ -511,7 +510,7 @@ Moves the given window to pixels (y,x): (1,1) being the top left. Nothing actual
 
 '''''
 
-=== mul
+== mul
 
 *link:sect14.html#2OP[2OP]:22 16 mul a b -> (result)*
 
@@ -519,7 +518,7 @@ Signed 16-bit multiplication.
 
 '''''
 
-=== new_line
+== new_line
 
 *link:sect14.html#0OP[0OP]:187 B new_line*
 
@@ -527,7 +526,7 @@ Print carriage return.
 
 '''''
 
-=== nop
+== nop
 
 *link:sect14.html#0OP[0OP]:180 4 1/- nop*
 
@@ -535,7 +534,7 @@ Probably the official "no operation" instruction, which, appropriately, was neve
 
 '''''
 
-=== not
+== not
 
 *link:sect14.html#1OP[1OP]:143 F 1/4 not value -> (result)*
 
@@ -545,7 +544,7 @@ Bitwise NOT (i.e., all 16 bits reversed). Note that in Versions 3 and 4 this is 
 
 '''''
 
-=== or
+== or
 
 *link:sect14.html#2OP[2OP]:8 8 or a b -> (result)*
 
@@ -553,7 +552,7 @@ Bitwise OR.
 
 '''''
 
-=== output_stream
+== output_stream
 
 *link:sect14.html#VAR[VAR]:243 13 3 output_stream number table*
 
@@ -567,7 +566,7 @@ In Version 6, a *width* field may optionally be given: text will then be justifi
 
 '''''
 
-=== picture_data
+== picture_data
 
 *link:sect14.html#EXT[EXT]:6 6 6 picture_data picture-number array ?(label)*
 
@@ -579,7 +578,7 @@ Otherwise, nothing happens.
 
 '''''
 
-=== picture_table
+== picture_table
 
 *link:sect14.html#EXT[EXT]:28 1C 6 picture_table table*
 
@@ -587,7 +586,7 @@ Given a table of picture numbers, the interpreter may if it wishes load or unpac
 
 '''''
 
-=== piracy
+== piracy
 
 *link:sect14.html#0OP[0OP]:191 F 5/- piracy ?(label)*
 
@@ -595,7 +594,7 @@ Branches if the game disc is believed to be genuine by the interpreter (which is
 
 '''''
 
-=== pop
+== pop
 
 *link:sect14.html#0OP[0OP]:185 9 1 pop*
 
@@ -603,7 +602,7 @@ Throws away the top item on the stack. (This was useful to lose unwanted routine
 
 '''''
 
-=== pop_stack
+== pop_stack
 
 *link:sect14.html#EXT[EXT]:21 15 6 pop_stack items stack*
 
@@ -611,7 +610,7 @@ The given number of items are thrown away from the top of a stack: by default th
 
 '''''
 
-=== print
+== print
 
 *link:sect14.html#0OP[0OP]:178 2 print <literal-string>*
 
@@ -619,7 +618,7 @@ Print the quoted (literal) Z-encoded string.
 
 '''''
 
-=== print_addr
+== print_addr
 
 *link:sect14.html#1OP[1OP]:135 7 print_addr byte-address-of-string*
 
@@ -627,7 +626,7 @@ Print (Z-encoded) string at given byte address, in dynamic or static memory.
 
 '''''
 
-=== print_char
+== print_char
 
 *link:sect14.html#VAR[VAR]:229 5 print_char output-character-code*
 
@@ -635,7 +634,7 @@ Print a ZSCII character. The operand must be a character code defined in ZSCII f
 
 '''''
 
-=== print_form
+== print_form
 
 *link:sect14.html#EXT[EXT]:26 1A 6 print_form formatted-table*
 
@@ -643,7 +642,7 @@ Prints a formatted table of the kind written to output stream 3 when formatting 
 
 '''''
 
-=== print_num
+== print_num
 
 *link:sect14.html#VAR[VAR]:230 6 print_num value*
 
@@ -651,7 +650,7 @@ Print (signed) number in decimal.
 
 '''''
 
-=== print_obj
+== print_obj
 
 *link:sect14.html#1OP[1OP]:138 A print_obj object*
 
@@ -659,7 +658,7 @@ Print short name of object (the Z-encoded string in the object header, not a pro
 
 '''''
 
-=== print_paddr
+== print_paddr
 
 *link:sect14.html#1OP[1OP]:141 D print_paddr packed-address-of-string*
 
@@ -667,7 +666,7 @@ Print the (Z-encoded) string at the given packed address in high memory.
 
 '''''
 
-=== print_ret
+== print_ret
 
 *link:sect14.html#0OP[0OP]:179 3 print_ret <literal-string>*
 
@@ -675,7 +674,7 @@ Print the quoted (literal) Z-encoded string, then print a new-line and then retu
 
 '''''
 
-=== print_table
+== print_table
 
 *link:sect14.html#VAR[VAR]:254 1E 5 print_table zscii-text width height skip*
 
@@ -683,7 +682,7 @@ Print a rectangle of text on screen spreading right and down from the current cu
 
 '''''
 
-=== print_unicode
+== print_unicode
 
 *link:sect14.html#EXT[EXT]:11 B 5/* print_unicode char-number*
 
@@ -693,7 +692,7 @@ Print a Unicode character. See *S* 3.8.5.4 and *S* 7.5 for details. The given ch
 
 '''''
 
-=== pull
+== pull
 
 *link:sect14.html#VAR[VAR]:233 9 1 pull (variable)*
 
@@ -703,7 +702,7 @@ Pulls value off a stack. (If the stack underflows, the interpreter should halt w
 
 '''''
 
-=== push
+== push
 
 *link:sect14.html#VAR[VAR]:232 8 push value*
 
@@ -711,7 +710,7 @@ Pushes value onto the game stack.
 
 '''''
 
-=== push_stack
+== push_stack
 
 *link:sect14.html#EXT[EXT]:24 18 6 push_stack value stack ?(label)*
 
@@ -719,7 +718,7 @@ Pushes the value onto the specified user stack, and branching if this was succes
 
 '''''
 
-=== put_prop
+== put_prop
 
 *link:sect14.html#VAR[VAR]:227 3 put_prop object property value*
 
@@ -727,7 +726,7 @@ Writes the given value to the given property of the given object. If the propert
 
 '''''
 
-=== put_wind_prop
+== put_wind_prop
 
 *link:sect14.html#EXT[EXT]:25 19 6 put_wind_prop window property-number value*
 
@@ -735,7 +734,7 @@ Writes a window property (see *get_wind_prop*). This should only be used when th
 
 '''''
 
-=== quit
+== quit
 
 *link:sect14.html#0OP[0OP]:186 A quit*
 
@@ -743,7 +742,7 @@ Exit the game immediately. (Any "Are you sure?" question must be asked by the ga
 
 '''''
 
-=== random
+== random
 
 *link:sect14.html#VAR[VAR]:231 7 random range -> (result)*
 
@@ -753,7 +752,7 @@ If *range* is positive, returns a uniformly random number between 1 and *range*.
 
 '''''
 
-=== read
+== read
 
 *link:sect14.html#VAR[VAR]:228 4 1 sread text parse*
 
@@ -791,7 +790,7 @@ In Version 5 and later, this is a store instruction: the return value is the ter
 
 '''''
 
-=== read_char
+== read_char
 
 *link:sect14.html#VAR[VAR]:246 16 4 read_char 1 time routine -> (result)*
 
@@ -799,7 +798,7 @@ Reads a single character from input stream 0 (the keyboard). The first operand m
 
 '''''
 
-=== read_mouse
+== read_mouse
 
 *link:sect14.html#EXT[EXT]:22 16 6 read_mouse array*
 
@@ -821,7 +820,7 @@ In the menu word, the upper byte is the menu number and the lower byte is the it
 
 '''''
 
-=== remove_obj
+== remove_obj
 
 *link:sect14.html#1OP[1OP]:137 9 remove_obj object*
 
@@ -829,7 +828,7 @@ Detach the object from its parent, so that it no longer has any parent. (Its chi
 
 '''''
 
-=== restart
+== restart
 
 *link:sect14.html#0OP[0OP]:183 7 1 restart*
 
@@ -839,7 +838,7 @@ In particular, changing the program start address before a restart will not have
 
 '''''
 
-=== restore
+== restore
 
 *link:sect14.html#0OP[0OP]:182 6 1 restore ?(label)*
 
@@ -857,7 +856,7 @@ If the restore fails, 0 is returned, but once again this necessarily happens sin
 
 '''''
 
-=== restore_undo
+== restore_undo
 
 *link:sect14.html#EXT[EXT]:10 A 5 restore_undo -> (result)*
 
@@ -865,7 +864,7 @@ Like *restore*, but restores the state saved to memory by *save_undo*. (The opti
 
 '''''
 
-=== ret
+== ret
 
 *link:sect14.html#1OP[1OP]:139 B ret value*
 
@@ -873,7 +872,7 @@ Returns from the current routine with the value given.
 
 '''''
 
-=== ret_popped
+== ret_popped
 
 *link:sect14.html#0OP[0OP]:184 8 ret_popped*
 
@@ -881,7 +880,7 @@ Pops top of stack and returns that. (This is equivalent to *ret sp*, but is one 
 
 '''''
 
-=== rfalse
+== rfalse
 
 *link:sect14.html#0OP[0OP]:177 1 rfalse*
 
@@ -889,7 +888,7 @@ Return false (i.e., 0) from the current routine.
 
 '''''
 
-=== rtrue
+== rtrue
 
 *link:sect14.html#0OP[0OP]:176 0 rtrue*
 
@@ -897,7 +896,7 @@ Return true (i.e., 1) from the current routine.
 
 '''''
 
-=== save
+== save
 
 *link:sect14.html#0OP[0OP]:181 5 1 save ?(label)*
 
@@ -915,7 +914,7 @@ It is illegal to use this opcode within an interrupt routine (one called asynchr
 
 '''''
 
-=== save_undo
+== save_undo
 
 *link:sect14.html#EXT[EXT]:9 9 5 save_undo -> (result)*
 
@@ -927,7 +926,7 @@ It is illegal to use this opcode within an interrupt routine (one called asynchr
 
 '''''
 
-=== scan_table
+== scan_table
 
 *link:sect14.html#VAR[VAR]:247 17 4 scan_table x table len form -> (result)*
 
@@ -937,7 +936,7 @@ The *form* is optional (and only used in Version 5?): bit 7 is set for words, cl
 
 '''''
 
-=== scroll_window
+== scroll_window
 
 *link:sect14.html#EXT[EXT]:20 14 6 scroll_window window pixels*
 
@@ -945,7 +944,7 @@ Scrolls the given window by the given number of pixels (a negative value scrolls
 
 '''''
 
-=== set_attr
+== set_attr
 
 *link:sect14.html#2OP[2OP]:11 B set_attr object attribute*
 
@@ -953,7 +952,7 @@ Make *object* have the attribute numbered *attribute*.
 
 '''''
 
-=== set_colour
+== set_colour
 
 *link:sect14.html#2OP[2OP]:27 1B 5 set_colour foreground background*
 
@@ -965,7 +964,7 @@ If coloured text is available, set text to be foreground-against-background. (Fl
 
 '''''
 
-=== set_cursor
+== set_cursor
 
 *link:sect14.html#VAR[VAR]:239 F 4 set_cursor line column*
 
@@ -977,7 +976,7 @@ In Version 6, *set_cursor -1* turns the cursor off, and either *set_cursor -2* o
 
 '''''
 
-=== set_font
+== set_font
 
 *link:sect14.html#EXT[EXT]:4 4 5 set_font font -> (result)*
 
@@ -993,7 +992,7 @@ If the font ID requested is 0, the font is not changed, and the ID of the curren
 
 '''''
 
-=== set_margins
+== set_margins
 
 *link:sect14.html#EXT[EXT]:8 8 6 set_margins left right window*
 
@@ -1001,7 +1000,7 @@ Sets the margin widths (in pixels) on the left and right for the given window (w
 
 '''''
 
-=== set_text_style
+== set_text_style
 
 *link:sect14.html#VAR[VAR]:241 11 4 set_text_style style*
 
@@ -1011,7 +1010,7 @@ Sets the text style to: Roman (if 0), Reverse Video (if 1), Bold (if 2), Italic 
 
 '''''
 
-=== set_true_colour
+== set_true_colour
 
 *link:sect14.html#EXT[EXT]:13 D 5/* set_true_colour foreground background*
 
@@ -1032,7 +1031,7 @@ The optional window parameter is only allowed in V6, and operates the same as in
 
 '''''
 
-=== set_window
+== set_window
 
 *link:sect14.html#VAR[VAR]:235 B 3 set_window window*
 
@@ -1040,7 +1039,7 @@ Selects the given window for text output.
 
 '''''
 
-=== show_status
+== show_status
 
 *link:sect14.html#0OP[0OP]:188 C 3 show_status*
 
@@ -1048,7 +1047,7 @@ Selects the given window for text output.
 
 '''''
 
-=== sound_effect
+== sound_effect
 
 *link:sect14.html#VAR[VAR]:245 15 5/3 sound_effect number effect volume routine*
 
@@ -1082,7 +1081,7 @@ will stop (and unload) all sounds - music and effects.
 
 '''''
 
-=== split_window
+== split_window
 
 *link:sect14.html#VAR[VAR]:234 A 3 split_window lines*
 
@@ -1096,13 +1095,13 @@ A cursor remains in the same absolute screen position (which means that its y-co
 
 '''''
 
-=== sread
+== sread
 
 This is the Inform name for the keyboard-reading opcode under Versions 3 and 4. (Inform calls the same opcode *aread* in later Versions.) See *read* for the specification.
 
 '''''
 
-=== store
+== store
 
 *link:sect14.html#2OP[2OP]:13 D store (variable) value*
 
@@ -1110,7 +1109,7 @@ Set the *link:sect14.html#VAR[VAR]iable* referenced by the operand to *value*.
 
 '''''
 
-=== storeb
+== storeb
 
 *link:sect14.html#VAR[VAR]:226 2 storeb array byte-index value*
 
@@ -1118,7 +1117,7 @@ Set the *link:sect14.html#VAR[VAR]iable* referenced by the operand to *value*.
 
 '''''
 
-=== storew
+== storew
 
 *link:sect14.html#VAR[VAR]:225 1 storew array word-index value*
 
@@ -1126,7 +1125,7 @@ Set the *link:sect14.html#VAR[VAR]iable* referenced by the operand to *value*.
 
 '''''
 
-=== sub
+== sub
 
 *link:sect14.html#2OP[2OP]:21 15 sub a b -> (result)*
 
@@ -1134,7 +1133,7 @@ Signed 16-bit subtraction.
 
 '''''
 
-=== test
+== test
 
 *link:sect14.html#2OP[2OP]:7 7 test bitmap flags ?(label)*
 
@@ -1142,13 +1141,13 @@ Jump if all of the flags in bitmap are set (i.e. if *bitmap & flags == flags*).
 
 '''''
 
-=== "test_array"
+== "test_array"
 
 See *clear_flag*. (*ITF* implements this as unconditionally false.)
 
 '''''
 
-=== test_attr
+== test_attr
 
 *link:sect14.html#2OP[2OP]:10 A test_attr object attribute ?(label)*
 
@@ -1156,7 +1155,7 @@ Jump if *object* has *attribute*.
 
 '''''
 
-=== throw
+== throw
 
 *link:sect14.html#2OP[2OP]:28 1C 5/6 throw value stack-frame*
 
@@ -1164,7 +1163,7 @@ Opposite of *catch*: resets the routine call state to the state it had when the 
 
 '''''
 
-=== tokenise
+== tokenise
 
 *link:sect14.html#VAR[VAR]:251 1B 5 tokenise text parse dictionary flag*
 
@@ -1178,7 +1177,7 @@ Parsing a user dictionary is slightly different. A user dictionary should look j
 
 '''''
 
-=== verify
+== verify
 
 *link:sect14.html#0OP[0OP]:189 D 3 verify ?(label)*
 
@@ -1188,7 +1187,7 @@ The interpreter must stop calculating when the file length (as given in the head
 
 '''''
 
-=== window_size
+== window_size
 
 *link:sect14.html#EXT[EXT]:17 11 6 window_size window y x*
 
@@ -1196,7 +1195,7 @@ Change size of window in pixels. (Does not change the current display.)
 
 '''''
 
-=== window_style
+== window_style
 
 *link:sect14.html#EXT[EXT]:18 12 6 window_style window flags operation*
 

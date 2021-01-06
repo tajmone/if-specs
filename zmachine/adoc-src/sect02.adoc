@@ -1,6 +1,5 @@
-image:icon02.gif[image]
 
-== 2. Numbers and arithmetic
+= Numbers and arithmetic
 
 '''''
 
@@ -9,58 +8,58 @@ image:icon02.gif[image]
 '''''
 
 [[one]]
-=== 2.1
+== 2.1
 
 In the Z-machine, numbers are usually stored in 2 bytes (in the form most-significant-byte first, then least-significant) and hold any value in the range *$0000* to *$ffff* (0 to 65535 decimal).
 
 [[two]]
-=== 2.2
+== 2.2
 
 These values are sometimes regarded as signed, in the range -32768 to 32767. In effect -n is stored as 65536-n and so the top bit is the sign bit.
 
 [[section]]
-=== 2.2.1
+== 2.2.1
 
 The operations of numerical comparison, multiplication, addition, subtraction, division, remainder-after-division and printing of numbers are signed; bitwise operations are unsigned. (In particular, since comparison is signed, it is unsafe to compare two addresses using simply *jl* and *jg*.)
 
 [[three]]
-=== 2.3
+== 2.3
 
 Arithmetic errors:
 
 [[section-1]]
-=== 2.3.1
+== 2.3.1
 
 It is illegal to divide by 0 (or to ask for remainder after division by 0) and an interpreter should halt with an error message if this occurs.
 
 [[section-2]]
-=== 2.3.2
+== 2.3.2
 
 Formally it has never been specified what the result of an out-of-range calculation should be. The author suggests that the result should be reduced modulo *$10000*.
 
 [[four]]
-=== 2.4
+== 2.4
 
 The Z-machine needs a random number generator which at any time has one of two states, "random" and "predictable". When the game starts or restarts the state becomes "random". Ideally the generator should not produce identical sequences after each restart.
 
 [[section-3]]
-=== 2.4.1
+== 2.4.1
 
 When "random", it must be capable of generating a uniformly random integer in the range 1 <= x <= n, for any value 1 <= n <= 32767. Any method can be used for this (for instance, using the host computer's clock time in milliseconds). The uniformity of randomness should be optimised for low values of n (say, up to 100 or so) and it is especially important to avoid regular patterns appearing in remainders after division (most crudely, being alternately odd and even).
 
 [[section-4]]
-=== 2.4.2
+== 2.4.2
 
 The generator is switched into "predictable" state with a seed value. On any two occasions when the same seed is sown, identical sequences of values must result (for an indefinite period) until the generator is switched back into "random" mode. The generator should cope well with very low seed values, such as 10, and should not depend on the seed containing many non-zero bits.
 
 [[section-5]]
-=== 2.4.3
+== 2.4.3
 
 The interpreter is permitted to switch between these states on request of the player. (This is useful for testing purposes.)
 
 '''''
 
-=== Remarks
+== Remarks
 
 It is dangerous to rely on the older ANSI C random number routines (rand() and srand()), as some implementations of these are very poor. This has made some games (in particular, 'Balances') unwinnable on some Unix ports of *Zip*.
 

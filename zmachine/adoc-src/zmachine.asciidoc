@@ -1,0 +1,108 @@
+= The Z-Machine Standards Document
+Graham Nelson
+// AsciiDoc Port Info:
+:PortVers: 1
+:PortDate: 2021-01-06
+:PortAuth: Tristano Ajmone
+:revremark: AsciiDoc Draft v{PortVers} ({PortDate})
+// Current Z-Machine Spec info:
+:ZMSpecVersion: 1.1
+:revnumber: {ZMSpecVersion}
+:revdate: 2014-02-24
+:lang: en
+:doctype: book
+// TOC Settings:
+:toc: left
+:toclevels: 5
+// Sections Numbering:
+:sectnums:
+:sectnumlevels: 4
+// Cross References:
+:xrefstyle: full
+:section-refsig: Sec.
+:section-refsig: section
+// Misc Settings:
+:experimental: true
+:icons: font
+:linkattrs: true
+:reproducible: true
+:sectanchors:
+// Paths:
+// :imagesdir: images
+
+// *****************************************************************************
+// *                                                                           *
+// *                            Document Preamble                              *
+// *                                                                           *
+// *****************************************************************************
+
+Z-Machine Standards Document version {revnumber}
+
+Written by Graham Nelson.
+
+1993-2018 by the https://iftechfoundation.org[Interactive Fiction Technology Foundation^,title="Visit the Interactive Fiction Technology Foundation website"].
+This specification is licensed under a https://creativecommons.org/licenses/by-sa/4.0/[Creative Commons Attribution-ShareAlike 4.0 International License^].
+
+================================================================================
+Ported to AsciiDoc by {PortAuth}.
+
+[WARNING]
+======================================================================
+This AsciiDoc version of the Z-Machine Standards is still a WIP draft!
+
+Draft version {PortVers}, updated on {PortDate}.
+======================================================================
+================================================================================
+
+
+'''
+:sectnums!:
+
+include::preface.adoc[leveloffset=+1]
+include::overview.adoc[leveloffset=+1]
+
+:sectnums:
+
+= Fundamentals
+
+include::sect01.adoc[leveloffset=+1]
+include::sect02.adoc[leveloffset=+1]
+include::sect03.adoc[leveloffset=+1]
+include::sect04.adoc[leveloffset=+1]
+include::sect05.adoc[leveloffset=+1]
+include::sect06.adoc[leveloffset=+1]
+
+
+= Input/Output
+
+include::sect07.adoc[leveloffset=+1]
+include::sect08.adoc[leveloffset=+1]
+include::sect09.adoc[leveloffset=+1]
+include::sect10.adoc[leveloffset=+1]
+
+
+= Tables
+
+include::sect11.adoc[leveloffset=+1]
+include::sect12.adoc[leveloffset=+1]
+include::sect13.adoc[leveloffset=+1]
+
+= Instruction Set
+
+include::sect14.adoc[leveloffset=+1]
+include::sect15.adoc[leveloffset=+1]
+
+= An Unusual Font
+
+include::sect16.adoc[leveloffset=+1]
+
+= Appendices
+
+include::appa.adoc[leveloffset=+1]
+include::appb.adoc[leveloffset=+1]
+include::appc.adoc[leveloffset=+1]
+include::appd.adoc[leveloffset=+1]
+include::appe.adoc[leveloffset=+1]
+include::appf.adoc[leveloffset=+1]
+
+// EOF //
