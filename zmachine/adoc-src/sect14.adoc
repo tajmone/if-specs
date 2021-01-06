@@ -805,34 +805,34 @@ Opcode numbers 192 to 223: VAR forms of 2OP:0 to 2OP:31.
 
 '''''
 
-[[one]]
-== 14.1
-
+// [[one]]
+[[p14.1]]
+[.red]##§14.1.##
 This table contains all 119 opcodes and, taken with the dictionary in *S* 15, describes exactly what each should do. In addition, it lists which opcodes are actually used in the known Infocom story files, and documents the Inform assembly language syntax.
 
-[[two]]
-== 14.2
-
+// [[two]]
+[[p14.2]]
+[.red]##§14.2.##
 Formally, it is illegal for a game to contain an opcode not specified for its version. An interpreter should normally halt with a suitable message.
 
-[[section]]
-== 14.2.1
-
+// [[section]]
+[[p14.2.1]]
+[.red]##§14.2.1.##
 However, extended opcodes in the range EXT:29 to EXT:255 should be simply ignored (perhaps with a warning message somewhere off-screen).
 
-[[section-1]]
-== 14.2.2
-
+// [[section-1]]
+[[p14.2.2]]
+[.red]##§14.2.2.##
 ****[1.0][1.1]* EXT:11 and EXT:12 were opcodes added in Standard 1.0 and can be generated in code compiled by Inform 6.12 or later. EXT:13 and EXT:29 are new in Standard 1.1. EXT:14 to EXT:15, and EXT:30 to EXT:127, are reserved for future versions of this document to specify.
 
-[[section-2]]
-== 14.2.3
-
+// [[section-2]]
+[[p14.2.3]]
+[.red]##§14.2.3.##
 Designers who wish to create their own "new" opcodes, for one specific game only, are asked to use opcode numbers in the range EXT:128 to EXT:255. It is easy to modify Inform to name and assemble such opcodes. (Of course the game will then have to be circulated with a suitably modified interpreter to run it.)
 
-[[section-3]]
-== 14.2.4
-
+// [[section-3]]
+[[p14.2.4]]
+[.red]##§14.2.4.##
 Interpreter-writers should ideally make this easy by providing a routine which is called if EXT:128 to EXT:255 are found, so that the minimum possible modification to the interpreter is needed.
 
 '''''

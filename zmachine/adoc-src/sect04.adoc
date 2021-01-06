@@ -15,9 +15,9 @@ ____
 
 '''''
 
-[[one]]
-== 4.1
-
+// [[one]]
+[[p4.1]]
+[.red]##§4.1.##
 A single Z-machine instruction consists of the following sections (and in the order shown):
 
 ....
@@ -31,9 +31,9 @@ A single Z-machine instruction consists of the following sections (and in the or
 
 Bracketed sections are not present in all opcodes. (A few opcodes take both "store" and "branch".)
 
-[[two]]
-== 4.2
-
+// [[two]]
+[[p4.2]]
+[.red]##§4.2.##
 There are four 'types' of operand. These are often specified by a number stored in 2 binary digits:
 
 ....
@@ -43,84 +43,84 @@ There are four 'types' of operand. These are often specified by a number stored 
   $$11    Omitted altogether             0 bytes
 ....
 
-[[section]]
-== 4.2.1
-
+// [[section]]
+[[p4.2.1]]
+[.red]##§4.2.1.##
 Large constants, like all 2-byte words of data in the Z-machine, are stored with most significant byte first (e.g. *$2478* is stored as *$24* followed by *$78*). A 'large constant' may in fact be a small number.
 
-[[section-1]]
-== 4.2.2
-
+// [[section-1]]
+[[p4.2.2]]
+[.red]##§4.2.2.##
 Variable number *$00* refers to the top of the stack, *$01* to *$0f* mean the local variables of the current routine and *$10* to *$ff* mean the global variables. It is illegal to refer to local variables which do not exist for the current routine (there may even be none).
 
-[[section-2]]
-== 4.2.3
-
+// [[section-2]]
+[[p4.2.3]]
+[.red]##§4.2.3.##
 The type 'Variable' really means "variable by value". Some instructions take as an operand a "variable by reference": for instance, *inc* has one operand, the reference number of a variable to increment. This operand usually has type 'Small constant' (and Inform automatically assembles a line like *@inc turns* by writing the operand *turns* as a small constant with value the reference number of the variable *turns*).
 
-[[three]]
-== 4.3
-
+// [[three]]
+[[p4.3]]
+[.red]##§4.3.##
 Each instruction has a form (long, short, extended or variable) and an operand count (0OP, 1OP, 2OP or VAR). If the top two bits of the opcode are *$$11* the form is variable; if *$$10*, the form is short. If the opcode is 190 (*$BE* in hexadecimal) and the version is 5 or later, the form is "extended". Otherwise, the form is "long".
 
-[[section-3]]
-== 4.3.1
-
+// [[section-3]]
+[[p4.3.1]]
+[.red]##§4.3.1.##
 In short form, bits 4 and 5 of the opcode byte give an operand type as above. If this is *$11* then the operand count is 0OP; otherwise, 1OP. In either case the opcode number is given in the bottom 4 bits.
 
-[[section-4]]
-== 4.3.2
-
+// [[section-4]]
+[[p4.3.2]]
+[.red]##§4.3.2.##
 In long form the operand count is always 2OP. The opcode number is given in the bottom 5 bits.
 
-[[section-5]]
-== 4.3.3
-
+// [[section-5]]
+[[p4.3.3]]
+[.red]##§4.3.3.##
 In variable form, if bit 5 is 0 then the count is 2OP; if it is 1, then the count is VAR. The opcode number is given in the bottom 5 bits.
 
-[[section-6]]
-== 4.3.4
-
+// [[section-6]]
+[[p4.3.4]]
+[.red]##§4.3.4.##
 In extended form, the operand count is VAR. The opcode number is given in a second opcode byte.
 
-[[four]]
-== 4.4
-
+// [[four]]
+[[p4.4]]
+[.red]##§4.4.##
 Next, the types of the operands are specified.
 
-[[section-7]]
-== 4.4.1
-
+// [[section-7]]
+[[p4.4.1]]
+[.red]##§4.4.1.##
 In short form, bits 4 and 5 of the opcode give the type.
 
-[[section-8]]
-== 4.4.2
-
+// [[section-8]]
+[[p4.4.2]]
+[.red]##§4.4.2.##
 In long form, bit 6 of the opcode gives the type of the first operand, bit 5 of the second. A value of 0 means a small constant and 1 means a variable. (If a 2OP instruction needs a large constant as operand, then it should be assembled in variable rather than long form.)
 
-[[section-9]]
-== 4.4.3
-
+// [[section-9]]
+[[p4.4.3]]
+[.red]##§4.4.3.##
 In variable or extended forms, a byte of 4 operand types is given next. This contains 4 2-bit fields: bits 6 and 7 are the first field, bits 0 and 1 the fourth. The values are operand types as above. Once one type has been given as 'omitted', all subsequent ones must be. Example: *$$00101111* means large constant followed by variable (and no third or fourth opcode).
 
-[[section-10]]
-== 4.4.3.1
-
+// [[section-10]]
+[[p4.4.3.1]]
+[.red]##§4.4.3.1.##
 In the special case of the "double variable" VAR opcodes *call_vs2* and *call_vn2* (opcode numbers 12 and 26), a second byte of types is given, containing the types for the next four operands.
 
-[[five]]
-== 4.5
-
+// [[five]]
+[[p4.5]]
+[.red]##§4.5.##
 The operands are given next. Operand counts of 0OP, 1OP or 2OP require 0, 1 or 2 operands to be given, respectively. If the count is VAR, there must be as many operands as there were types other than 'omitted'.
 
-[[section-11]]
-== 4.5.1
-
+// [[section-11]]
+[[p4.5.1]]
+[.red]##§4.5.1.##
 Note that only *call_vs2* and *call_vn2* can have more than 4 operands, and no instruction can have more than 8.
 
-[[section-12]]
-== 4.5.2
-
+// [[section-12]]
+[[p4.5.2]]
+[.red]##§4.5.2.##
 Opcode operands are always evaluated from first to last - this order is important when the stack pointer appears as an argument. Thus
 
 ....
@@ -129,33 +129,33 @@ Opcode operands are always evaluated from first to last - this order is importan
 
 subtracts the second-from-top stack item from the topmost stack item.
 
-[[six]]
-== 4.6
-
+// [[six]]
+[[p4.6]]
+[.red]##§4.6.##
 "Store" instructions return a value: e.g., *mul* multiplies its two operands together. Such instructions must be followed by a single byte giving the variable number of where to put the result.
 
-[[seven]]
-== 4.7
-
+// [[seven]]
+[[p4.7]]
+[.red]##§4.7.##
 Instructions which test a condition are called "branch" instructions. The branch information is stored in one or two bytes, indicating what to do with the result of the test. If bit 7 of the first byte is 0, a branch occurs when the condition was false; if 1, then branch is on true. If bit 6 is set, then the branch occupies 1 byte only, and the "offset" is in the range 0 to 63, given in the bottom 6 bits. If bit 6 is clear, then the offset is a signed 14-bit number given in bits 0 to 5 of the first byte followed by all 8 of the second.
 
-[[section-13]]
-== 4.7.1
-
+// [[section-13]]
+[[p4.7.1]]
+[.red]##§4.7.1.##
 An offset of 0 means "return false from the current routine", and 1 means "return true from the current routine".
 
-[[section-14]]
-== 4.7.2
-
+// [[section-14]]
+[[p4.7.2]]
+[.red]##§4.7.2.##
 Otherwise, a branch moves execution to the instruction at address
 
 ....
   Address after branch data + Offset - 2.
 ....
 
-[[eight]]
-== 4.8
-
+// [[eight]]
+[[p4.8]]
+[.red]##§4.8.##
 Two opcodes, *print* and *print_ret*, are followed by a text string. This is stored according to the usual rules: in particular execution continues after the last 2-byte word of text (the one with top bit set).
 
 '''''

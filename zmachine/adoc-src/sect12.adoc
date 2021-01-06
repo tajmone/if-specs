@@ -7,24 +7,24 @@
 
 '''''
 
-[[one]]
-== 12.1
-
+// [[one]]
+[[p12.1]]
+[.red]##§12.1.##
 The object table is held in dynamic memory and its byte address is stored in the word at *$0a* in the header. (Recall that objects have flags attached called attributes, numbered from 0 upward, and variables attached called properties, numbered from 1 upward. An object need not provide every property.)
 
-[[two]]
-== 12.2
-
+// [[two]]
+[[p12.2]]
+[.red]##§12.2.##
 The table begins with a block known as the property defaults table. This contains 31 words in Versions 1 to 3 and 63 in Versions 4 and later. When the game attempts to read the value of property n for an object which does not provide property n, the n-th entry in this table is the resulting value.
 
-[[three]]
-== 12.3
-
+// [[three]]
+[[p12.3]]
+[.red]##§12.3.##
 Next is the object tree. Objects are numbered consecutively from 1 upward, with object number 0 being used to mean "nothing" (though there is formally no such object). The table consists of a list of entries, one for each object.
 
-[[section]]
-== 12.3.1
-
+// [[section]]
+[[p12.3.1]]
+[.red]##§12.3.1.##
 In Versions 1 to 3, there are at most 255 objects, each having a 9-byte entry as follows:
 
 ....
@@ -34,9 +34,9 @@ In Versions 1 to 3, there are at most 255 objects, each having a 9-byte entry as
 
 *parent*, *sibling* and *child* must all hold valid object numbers. The *properties* pointer is the byte address of the list of properties attached to the object. Attributes 0 to 31 are flags (at any given time, they are either on (1) or off (0)) and are stored topmost bit first: e.g., attribute 0 is stored in bit 7 of the first byte, attribute 31 is stored in bit 0 of the fourth.
 
-[[section-1]]
-== 12.3.2
-
+// [[section-1]]
+[[p12.3.2]]
+[.red]##§12.3.2.##
 In Version 4 and later, there are at most 65535 objects, each having a 14-byte entry as follows:
 
 ....
@@ -44,9 +44,9 @@ In Version 4 and later, there are at most 65535 objects, each having a 14-byte e
    ---48 bits in 6 bytes---   ---3 words, i.e. 6 bytes----  ---2 bytes--
 ....
 
-[[four]]
-== 12.4
-
+// [[four]]
+[[p12.4]]
+[.red]##§12.4.##
 Each object has its own property table. Each of these can be anywhere in dynamic memory (indeed, a game can legally change an object's properties table address in play, provided the new address points to another valid properties table). The header of a property table is as follows:
 
 ....
@@ -56,9 +56,9 @@ Each object has its own property table. Each of these can be anywhere in dynamic
 
 where the *text-length* is the number of 2-byte words making up the text, which is stored in the usual format. (This means that an object's short name is limited to 765 Z-characters.) After the header, the properties are listed in descending numerical order. (This order is essential and is not a matter of convention.)
 
-[[section-2]]
-== 12.4.1
-
+// [[section-2]]
+[[p12.4.1]]
+[.red]##§12.4.1.##
 In Versions 1 to 3, each property is stored as a block
 
 ....
@@ -68,9 +68,9 @@ In Versions 1 to 3, each property is stored as a block
 
 where the *size byte* is arranged as 32 times the number of data bytes minus one, plus the property number. A property list is terminated by a size byte of 0. (It is otherwise illegal for a size byte to be a multiple of 32.)
 
-[[section-3]]
-== 12.4.2
-
+// [[section-3]]
+[[p12.4.2]]
+[.red]##§12.4.2.##
 In Versions 4 and later, a property block instead has the form
 
 ....
@@ -80,24 +80,24 @@ In Versions 4 and later, a property block instead has the form
 
 The property number occupies the bottom 6 bits of the first size byte.
 
-[[section-4]]
-== 12.4.2.1
-
+// [[section-4]]
+[[p12.4.2.1]]
+[.red]##§12.4.2.1.##
 If the top bit (bit 7) of the first size byte is set, then there are two size-and-number bytes as follows. In the first byte, bits 0 to 5 contain the property number; bit 6 is undetermined (it is clear in all Infocom or Inform story files); bit 7 is set. In the second byte, bits 0 to 5 contain the property data length, counting in bytes; bit 6 is undetermined (it is set in Infocom story files, but clear in Inform ones); bit 7 is always set.
 
-[[section-5]]
-== 12.4.2.1.1
-
+// [[section-5]]
+[[p12.4.2.1.1]]
+[.red]##§12.4.2.1.1.##
 ****[1.0]* A value of 0 as property data length (in the second byte) should be interpreted as a length of 64. (Inform can compile such properties.)
 
-[[section-6]]
-== 12.4.2.2
-
+// [[section-6]]
+[[p12.4.2.2]]
+[.red]##§12.4.2.2.##
 If the top bit (bit 7) of the first size byte is clear, then there is only one size-and-number byte. Bits 0 to 5 contain the property number; bit 6 is either clear to indicate a property data length of 1, or set to indicate a length of 2; bit 7 is clear.
 
-[[five]]
-== 12.5
-
+// [[five]]
+[[p12.5]]
+[.red]##§12.5.##
 It is the game's responsibility to keep the object tree well-founded: the interpreter is not required to check. "Well-founded" means the following:
 
 *(a)* An object with a sibling also has a parent.
