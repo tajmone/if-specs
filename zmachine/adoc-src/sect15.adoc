@@ -1,14 +1,8 @@
-
-'''''
-
 [[dict]]
 = Dictionary of opcodes
 
-____
-The highest ideal of a translation... is achieved when the reader flings it impatiently into the fire, and begins patiently to learn the language for himself.
-
-Philip Vellacott
-____
+"The highest ideal of a translation... is achieved when the reader flings it impatiently into the fire, and begins patiently to learn the language for himself."
+-- Philip Vellacott
 
 '''''
 
@@ -1202,13 +1196,3 @@ Change size of window in pixels. (Does not change the current display.)
 Changes attributes for a given window. A bitmap of attributes is given, in which the bits are: 0 -- keep text within margins, 1 -- scroll when at bottom, 2 -- copy text to output stream 2 (the printer), 3 -- buffer text to word-wrap it between the margins of the window.
 
 The operation, by default, is 0, meaning "set to these settings". 1 means "set the bits supplied". 2 means "clear the ones supplied", and 3 means "reverse the bits supplied" (i.e. eXclusive OR).
-
-'''''
-
-link:index.html[Contents] / link:preface.html[Preface] / link:overview.html[Overview]
-
-Section link:sect01.html[1] / link:sect02.html[2] / link:sect03.html[3] / link:sect04.html[4] / link:sect05.html[5] / link:sect06.html[6] / link:sect07.html[7] / link:sect08.html[8] / link:sect09.html[9] / link:sect10.html[10] / link:sect11.html[11] / link:sect12.html[12] / link:sect13.html[13] / link:sect14.html[14] / link:sect15.html[15] / link:sect16.html[16]
-
-Appendix link:appa.html[A] / link:appb.html[B] / link:appc.html[C] / link:appd.html[D] / link:appe.html[E] / link:appf.html[F]
-
-'''''

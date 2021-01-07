@@ -1,15 +1,16 @@
 
 = The memory map
 
-'''''
 
-1.1 link:#one[Regions of memory] / 1.2 link:#two[Addresses]
-
-'''''
+////
+1.1 link:#one[Regions of memory] /
+1.2 link:#two[Addresses]
+////
 
 // [[one]]
-[[p1.1]]
-[.red]##§1.1.##
+[[s1.1]]
+== Regions of memory
+
 The memory map of the Z-machine is an array of bytes with "byte addresses" running from 0 upwards. This is divided into three regions: "dynamic", "static" and "high". Dynamic memory begins from byte address *$00000* and runs up to the byte before the byte address stored in the word at *$0e* in the header. (Dynamic memory must contain at least 64 bytes.) Static memory follows immediately on. Its extent is not defined in the header (or anywhere else), though it must end by the last byte of the story file or by byte address *$0ffff* (whichever is lower). High memory begins at the "high memory mark" (the byte address stored in the word at *$04* in the header) and continues to the end of the story file. The bottom of high memory may overlap with the top of static memory (but not with dynamic memory).
 
 // [[section]]
@@ -47,9 +48,11 @@ The maximum permitted length of a story file depends on the Version, as follows:
     128     256     512
 ....
 
+
 // [[two]]
-[[p1.2]]
-[.red]##§1.2.##
+[[s1.2]]
+== Addresses
+
 There are three kinds of address in the Z-machine, all of which can be stored in a 2-byte number: byte addresses, word addresses and packed addresses.
 
 // [[section-6]]
@@ -100,8 +103,9 @@ _R_O_ and _S_O_ are the routine and strings offsets (specified in the header as 
 | |*06ae6* |end of file
 |===
 
-'''''
+:sectnums!:
 
+[[remarks-01]]
 == Remarks
 
 Inform never compiles any overlap between static and high memory (it places all data tables in dynamic memory). However, many Infocom games group tables of static data just above the high memory mark, before routines begin; some, such as 'Nord 'n' Bert...', interleave static data between routines, so that static memory actually overlaps code; and a few, such as 'Seastalker' release 15, even contain routines placed below the high memory mark. (The original idea behind the high memory mark was that everything below it should be stored in the interpreter's RAM, while what was above could reasonably be kept in "virtual memory", i.e., loaded off disc as needed.)
@@ -110,12 +114,4 @@ Note that the total of dynamic plus static memory must not exceed 64K. (In fact,
 
 Throughout the specification, Versions 7 and 8 are identical to Version 5 except as stated at 1.1.4 and 1.2.3 above.
 
-'''''
-
-link:index.html[Contents] / link:preface.html[Preface] / link:overview.html[Overview]
-
-Section link:sect01.html[1] / link:sect02.html[2] / link:sect03.html[3] / link:sect04.html[4] / link:sect05.html[5] / link:sect06.html[6] / link:sect07.html[7] / link:sect08.html[8] / link:sect09.html[9] / link:sect10.html[10] / link:sect11.html[11] / link:sect12.html[12] / link:sect13.html[13] / link:sect14.html[14] / link:sect15.html[15] / link:sect16.html[16]
-
-Appendix link:appa.html[A] / link:appb.html[B] / link:appc.html[C] / link:appd.html[D] / link:appe.html[E] / link:appf.html[F]
-
-'''''
+:sectnums:

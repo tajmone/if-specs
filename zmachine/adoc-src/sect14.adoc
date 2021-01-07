@@ -1,13 +1,14 @@
-'''''
-
-
 = Complete table of opcodes
 
-'''''
 
 link:#2OP[2OP] / link:#1OP[1OP] / link:#0OP[0OP] / link:#VAR[VAR] / link:#EXT[EXT]
 
-14.1 link:#one[Contents] / 14.2 link:#two[Out of range opcodes] / link:#reading[_Reading the table_] / link:#inform[_Inform assembly language_]
+////
+14.1 link:#one[Contents] /
+14.2 link:#two[Out of range opcodes] /
+link:#reading[_Reading the table_] /
+link:#inform[_Inform assembly language_]
+////
 
 '''''
 
@@ -806,13 +807,16 @@ Opcode numbers 192 to 223: VAR forms of 2OP:0 to 2OP:31.
 '''''
 
 // [[one]]
-[[p14.1]]
-[.red]##§14.1.##
+[[s14.1]]
+== Contents
+
 This table contains all 119 opcodes and, taken with the dictionary in *S* 15, describes exactly what each should do. In addition, it lists which opcodes are actually used in the known Infocom story files, and documents the Inform assembly language syntax.
 
+
 // [[two]]
-[[p14.2]]
-[.red]##§14.2.##
+[[s14.2]]
+== Out of range opcodes
+
 Formally, it is illegal for a game to contain an opcode not specified for its version. An interpreter should normally halt with a suitable message.
 
 // [[section]]
@@ -837,6 +841,8 @@ Interpreter-writers should ideally make this easy by providing a routine which i
 
 '''''
 
+:sectnums!:
+
 [[reading]]
 == Reading the opcode tables
 
@@ -850,7 +856,7 @@ In a few cases, the Version is given as "3/4" or some such. The first number is 
 
 The table explicitly marks opcodes which do not exist in any version of the Z-machine as *------*: in addition, none of the extended set of codes after EXT:29 have been used.
 
-'''''
+
 
 [[inform]]
 == Inform assembly language
@@ -959,8 +965,8 @@ For example,
 
 is an exotic new opcode, number 128 in the extended range, which is both Branch and Store, and the assembly of which causes bit 14 to be set in "Flags 2". See *S* 14.2 below for rules on how to number newly created opcodes.
 
-'''''
 
+[[remarks-14]]
 == Remarks
 
 The opcodes EXT:5 to EXT:8 were very likely in Infocom's own Version 5 specification (documentary records of which are lost): they seem to have been partially implemented in existing Infocom interpreters, but do not occur in any existing Version 5 story file. They are here left unspecified.
@@ -973,12 +979,5 @@ The 2OP opcode 0 was possibly intended for setting break-points in debugging (an
 
 *picture_table* is used once by 'Shogun' and several times by 'Zork Zero'.
 
-'''''
 
-link:index.html[Contents] / link:preface.html[Preface] / link:overview.html[Overview]
-
-Section link:sect01.html[1] / link:sect02.html[2] / link:sect03.html[3] / link:sect04.html[4] / link:sect05.html[5] / link:sect06.html[6] / link:sect07.html[7] / link:sect08.html[8] / link:sect09.html[9] / link:sect10.html[10] / link:sect11.html[11] / link:sect12.html[12] / link:sect13.html[13] / link:sect14.html[14] / link:sect15.html[15] / link:sect16.html[16]
-
-Appendix link:appa.html[A] / link:appb.html[B] / link:appc.html[C] / link:appd.html[D] / link:appe.html[E] / link:appf.html[F]
-
-'''''
+:sectnums:

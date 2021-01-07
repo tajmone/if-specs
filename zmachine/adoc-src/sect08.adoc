@@ -1,15 +1,24 @@
 
 = The screen model
 
-'''''
 
-8.1 link:#one[Fonts] / 8.2 link:#two[Status line] / 8.3 link:#three[Text colours] / 8.4 link:#four[Screen dimensions] / 8.5 link:#five[Screen model (V1, V2)] / 8.6 link:#six[Screen model (V3)] / 8.7 link:#seven[Screen model (V4, V5)] / 8.8 link:#eight[Screen model (V6)]
+////
+8.1 link:#one[Fonts] /
+8.2 link:#two[Status line] /
+8.3 link:#three[Text colours] /
+8.4 link:#four[Screen dimensions] /
+8.5 link:#five[Screen model (V1, V2)] /
+8.6 link:#six[Screen model (V3)] /
+8.7 link:#seven[Screen model (V4, V5)] /
+8.8 link:#eight[Screen model (V6)]
+////
 
-'''''
+
 
 // [[one]]
-[[p8.1]]
-[.red]##§8.1.##
+[[s8.1]]
+== Fonts
+
 Text may be printed in any font of the interpreter's choice, variable- or fixed-pitch: except that when bit 1 of 'Flags 2' in the header is set, font 4 has been selected, or when the text style has been set to Fixed Pitch, then a fixed-pitch font must be used. The fixed pitch-bit is deprecated in Version 5 and later, and interpreter support in Version 6 is optional.
 
 // [[section]]
@@ -61,9 +70,11 @@ In Version 5 (only), an interpreter which cannot provide the character graphics 
 [.red]##§8.1.6.##
 Any new fonts will have numbers higher than 4. Fonts 5-1023 are reserved for future Standards to specify. Local use may be made of higher font numbers.
 
+
 // [[two]]
-[[p8.2]]
-[.red]##§8.2.##
+[[s8.2]]
+== Status line
+
 In Versions 1 to 3, a status line should be printed by the interpreter, as follows. In Version 3, it must set bit 4 of 'Flags 1' in the header if it is unable to produce a status line.
 
 // [[section-8]]
@@ -106,9 +117,11 @@ For "time games": the time, in the form *hours:minutes* (held in the second and 
 [.red]##§8.2.4.##
 The status line is updated in exactly two circumstances: when a *show_status* opcode is executed, and just before the keyboard is read by *read*. (It is not displayed when the game begins.)
 
+
 // [[three]]
-[[p8.3]]
-[.red]##§8.3.##
+[[s8.3]]
+== Text colours
+
 Under Versions 5 and later, text printing has a current foreground and background colour. In Version 6, each window has its own pair. (Note that a Version 6 interpreter going under the Amiga interpreter number must use the same pair of colours for all windows when running Infocom's games. If either is changed, then the interpreter must change the colour of all text on the screen to match. This simulates the Amiga hardware, which used two logical colours for text and switched palette to change their physical colour. This behaviour should not occur when running non-Infocom games, and modern games should never expect it. An interpreter that does not wish to handle this behaviour at all should avoid using the Amiga interpreter number when running Infocom's Version 6 games.)
 
 // [[section-16]]
@@ -206,9 +219,11 @@ In the minimal implementation, interpreters just need to match to the closest of
 
 True colour specifications are in the sRGB colour space, *$0000* being black and *$7FFF* being white. Colours should be gamma adjusted if necessary. See the *PNG* specification for a good introduction to colour spaces and gamma correction.
 
+
 // [[four]]
-[[p8.4]]
-[.red]##§8.4.##
+[[s8.4]]
+== Screen dimensions
+
 The screen should ideally be at least 60 characters wide by 14 lines deep. (Old Apple II interpreters had a 40 character width and some modern laptop ones have a 9 line height, but implementors should seek to avoid these extremes if possible.) The interpreter may change the exact dimensions whenever it likes but must write the current height (in lines) and width (in characters) into bytes *$20* and *$21* in the header.
 
 // [[section-27]]
@@ -226,9 +241,11 @@ Screen dimensions are measured in notional "units". In Versions 1 to 4, one unit
 [.red]##§8.4.3.##
 In Version 5 and later, the screen's width and height in units should be written to the words at *$22* and *$24*.
 
+
 // [[five]]
-[[p8.5]]
-[.red]##§8.5.##
+[[s8.5]]
+== Screen model (V1, V2)
+
 The screen model for Versions 1 and 2 is as follows:
 
 // [[section-30]]
@@ -241,9 +258,11 @@ The screen can only be printed to (like a teletype) and there is no control of t
 [.red]##§8.5.2.##
 At the start of a game, the screen should be cleared and the text cursor placed at the bottom left (so that text scrolls upwards as the game gets under way).
 
+
 // [[six]]
-[[p8.6]]
-[.red]##§8.6.##
+[[s8.6]]
+== Screen model (V3)
+
 The screen model for Version 3 is as follows:
 
 // [[section-32]]
@@ -286,9 +305,11 @@ When text reaches the bottom right of the lower window, it should be scrolled up
 [.red]##§8.6.3.##
 At the start of a game, the screen should be cleared and the text cursor placed at the bottom left (so that text scrolls upwards as the game gets under way).
 
+
 // [[seven]]
-[[p8.7]]
-[.red]##§8.7.##
+[[s8.7]]
+== Screen model (V4, V5)
+
 The screen model for Versions 4 and later, except Version 6, is as follows:
 
 // [[section-40]]
@@ -376,9 +397,11 @@ Erasing window -1 clears the whole screen to the background colour of the lower 
 [.red]##§8.7.3.4.##
 Using *erase_line* in the upper window should erase the current line from the cursor position to the right-hand edge, clearing it to background colour. (Even if the text style is Reverse Video the new blank space should not have reversed colours.)
 
+
 // [[eight]]
-[[p8.8]]
-[.red]##§8.8.##
+[[s8.8]]
+== Screen model (V6)
+
 The screen model for Version 6 is as follows:
 
 // [[section-57]]
@@ -615,8 +638,11 @@ When *buffer_screen* is set back to 0, the display is not necessarily updated im
 [.red]##§8.8.7.2.##
 ****[1.1]* With buffer_screen in either state, an update of the visible display can be forced immediately by issuing *buffer_screen* -1, without altering the current buffering state. Note that *buffer_screen* -1 does not flush the text buffer.
 
-'''''
 
+
+:sectnums!:
+
+[[remarks-08]]
 == Remarks
 
 See *S* 16 for comment on how 'Beyond Zork' uses fonts.
@@ -728,12 +754,5 @@ buffer_mode on    ---
 
 Due to a bug or an oversight, the V6 story files for all interpreters use *buffer_mode* once: to remove buffering while printing "Please wait..." with a row of full stops trickling out during a slow operation. Buffering would frustrate this, but fortunately on modern computers the operation is no longer slow and so the bug does not cause trouble.
 
-'''''
 
-link:index.html[Contents] / link:preface.html[Preface] / link:overview.html[Overview]
-
-Section link:sect01.html[1] / link:sect02.html[2] / link:sect03.html[3] / link:sect04.html[4] / link:sect05.html[5] / link:sect06.html[6] / link:sect07.html[7] / link:sect08.html[8] / link:sect09.html[9] / link:sect10.html[10] / link:sect11.html[11] / link:sect12.html[12] / link:sect13.html[13] / link:sect14.html[14] / link:sect15.html[15] / link:sect16.html[16]
-
-Appendix link:appa.html[A] / link:appb.html[B] / link:appc.html[C] / link:appd.html[D] / link:appe.html[E] / link:appf.html[F]
-
-'''''
+:sectnums:

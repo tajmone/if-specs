@@ -63,13 +63,3 @@ ____
 Infocom gradually ceased to exist during 1987-9 as its financial problems grew. But its products were increasingly regarded as anachronistic and most of its staff had left since the middle years: if Infocom had not finally been wound up, whether it would have continued to release text games of the classical style is arguable.
 
 Two new formats, versions 7 and 8, have recently been devised to cope with large Inform games.
-
-'''''
-
-link:index.html[Contents] / link:preface.html[Preface] / link:overview.html[Overview]
-
-Section link:sect01.html[1] / link:sect02.html[2] / link:sect03.html[3] / link:sect04.html[4] / link:sect05.html[5] / link:sect06.html[6] / link:sect07.html[7] / link:sect08.html[8] / link:sect09.html[9] / link:sect10.html[10] / link:sect11.html[11] / link:sect12.html[12] / link:sect13.html[13] / link:sect14.html[14] / link:sect15.html[15] / link:sect16.html[16]
-
-Appendix link:appa.html[A] / link:appb.html[B] / link:appc.html[C] / link:appd.html[D] / link:appe.html[E] / link:appf.html[F]
-
-'''''

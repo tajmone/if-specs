@@ -1,20 +1,29 @@
 
 = Input streams and devices
 
-'''''
 
-10.1 link:#one[Keyboard only in V1] / 10.2 link:#two[Input streams] / 10.3 link:#three[Mouse support] / 10.4 link:#four[Menu support] / 10.5 link:#five[Terminating characters and timed input] / 10.6 link:#six[Single keypresses] / 10.7 link:#seven[Reading ZSCII from the keyboard]
+////
+10.1 link:#one[Keyboard only in V1] /
+10.2 link:#two[Input streams] /
+10.3 link:#three[Mouse support] /
+10.4 link:#four[Menu support] /
+10.5 link:#five[Terminating characters and timed input] /
+10.6 link:#six[Single keypresses] /
+10.7 link:#seven[Reading ZSCII from the keyboard]
+////
 
-'''''
 
 // [[one]]
-[[p10.1]]
-[.red]##§10.1.##
+[[s10.1]]
+== Keyboard only in V1
+
 In Versions 1 and 2, the player's commands can only be drawn from the keyboard.
 
+
 // [[two]]
-[[p10.2]]
-[.red]##§10.2.##
+[[s10.2]]
+== Input streams
+
 In Versions 3 and later, the player's keypresses are drawn from the current "input stream". There are two input streams: numbered 0 (the keyboard) and 1 (a file containing commands). Other inputs (mouse clicks or menu selections), if available, are also implemented as keypresses (see below).
 
 // [[section]]
@@ -37,9 +46,11 @@ When input stream 1 is first selected, the interpreter may use any method of cho
 [.red]##§10.2.4.##
 When the the current stream is stream 1, the interpreter should not hold up long passages of text (by printing "[MORE]" and waiting for a keypress, for instance).
 
+
 // [[three]]
-[[p10.3]]
-[.red]##§10.3.##
+[[s10.3]]
+== Mouse support
+
 Mouse support is optional but can be provided in Versions 5 and later.
 
 // [[section-4]]
@@ -72,9 +83,11 @@ The mouse is presumed to have between 0 and 16 buttons. The state of these butto
 [.red]##§10.3.4.##
 In Version 6, the mouse can either be free or constrained to one of the 8 windows: if so, clicks outside the 'mouse window' must be ignored, and the interpreter is at liberty to confine the mouse's movement to the boundary of its window.
 
+
 // [[four]]
-[[p10.4]]
-[.red]##§10.4.##
+[[s10.4]]
+== Menu support
+
 Menu support can optionally be provided in Version 6.
 
 // [[section-9]]
@@ -97,9 +110,11 @@ Menus are numbered from 0 upwards. 0, 1 and 2 are reserved for the interpreter t
 [.red]##§10.4.3.##
 Menu selection is reported to the game as a keypress (see below). Details of what selection has been made are read with *read_mouse*.
 
+
 // [[five]]
-[[p10.5]]
-[.red]##§10.5.##
+[[s10.5]]
+== Terminating characters and timed input
+
 Whole commands are read from the input stream using the *read* opcode. (Note that this has two different internal names in Inform, *sread* for Versions 1 to 4 and *aread* subsequently.)
 
 // [[section-13]]
@@ -122,14 +137,17 @@ In Versions 5 and later, the game may provide a "terminating characters table" b
 [.red]##§10.5.3.##
 ****[1.0]* In Versions 4 and later, an interpreter should ideally be able to time input and to call a (game) routine at periodic intervals: see the *read* opcode. If it is able to do this, it should set bit 7 of 'Flags 1' in the header.
 
+
 // [[six]]
-[[p10.6]]
-[.red]##§10.6.##
+[[s10.6]]
+== Single keypresses
+
 In Versions 4 and later, individual characters can be read from the current input stream, using *read_char*. Again, the interpreter should ideally be able to time input and to call a (game) routine at periodic intervals. If it is able to do this, it should set bit 7 of 'Flags 1' in the header.
 
 // [[seven]]
-[[p10.7]]
-[.red]##§10.7.##
+[[s10.7]]
+== Reading ZSCII from the keyboard
+
 The only characters which can be read from the keyboard are ZSCII characters defined for input (see *S* 3).
 
 // [[section-17]]
@@ -147,8 +165,10 @@ Only ZSCII characters defined for both input and output can be stored in the tex
 [.red]##§10.7.3.##
 The "escape" code is optional: that is, an interpreter need not provide an escape key. (The Inform library clears and quits menus if this code is returned to *read_char*.)
 
-'''''
 
+:sectnums!:
+
+[[remarks-10]]
 == Remarks
 
 Menus in 'Beyond Zork' define cursor up and cursor down as terminating characters, and make use of *read* in the upper window.
@@ -161,12 +181,5 @@ Programs must be prepared to cope with this. For example in a painting program y
 
 Interpreters may constrain the pointer to the screen as long as buttons are held down - this might aid dragging operations - although this is not required.
 
-'''''
 
-link:index.html[Contents] / link:preface.html[Preface] / link:overview.html[Overview]
-
-Section link:sect01.html[1] / link:sect02.html[2] / link:sect03.html[3] / link:sect04.html[4] / link:sect05.html[5] / link:sect06.html[6] / link:sect07.html[7] / link:sect08.html[8] / link:sect09.html[9] / link:sect10.html[10] / link:sect11.html[11] / link:sect12.html[12] / link:sect13.html[13] / link:sect14.html[14] / link:sect15.html[15] / link:sect16.html[16]
-
-Appendix link:appa.html[A] / link:appb.html[B] / link:appc.html[C] / link:appd.html[D] / link:appe.html[E] / link:appf.html[F]
-
-'''''
+:sectnums:

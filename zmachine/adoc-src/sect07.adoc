@@ -1,15 +1,22 @@
 
 = Output streams and file handling
 
-'''''
 
-7.1 link:#one[Output streams] / 7.2 link:#two[Buffering] / 7.3 link:#three[Selection (V1 and V2)] / 7.4 link:#four[Selection (later versions)] / 7.5 link:#five[Dealing with Unicode or invalid characters] / 7.6 link:#six[File handling]
 
-'''''
+////
+7.1 link:#one[Output streams] /
+7.2 link:#two[Buffering] /
+7.3 link:#three[Selection (V1 and V2)] /
+7.4 link:#four[Selection (later versions)] /
+7.5 link:#five[Dealing with Unicode or invalid characters] /
+7.6 link:#six[File handling]
+////
+
 
 // [[one]]
-[[p7.1]]
-[.red]##§7.1.##
+[[s7.1]]
+== Output streams
+
 At any given time text is being output through a selection of "output streams" (possibly none, possibly several at once).
 
 // [[section]]
@@ -57,9 +64,11 @@ Newlines are written to output stream 3 as ZSCII 13. (A game should never *print
 [.red]##§7.1.2.3.##
 Output stream 4 is unusual in that, when it is selected, the only text printed to it is that of the player's commands and keypresses (as read by *read_char*). (Each command is written, in one go, when it has been finished. Time delays and mouse-clicks should ideally be recorded. For suggestions on how this might be achieved, see the remarks section below. Mistypes and uses of 'delete' are not written.)
 
+
 // [[two]]
-[[p7.2]]
-[.red]##§7.2.##
+[[s7.2]]
+== Buffering
+
 On output streams 1 and 2 (only), text printing may be "buffered" in that new-lines are automatically printed to ensure that no word (of length less than the width of the screen) spreads across two lines (if the interpreter is able to control this). (This process is sometimes called "word-wrapping".)
 
 // [[section-9]]
@@ -72,19 +81,25 @@ In Versions 1 to 3, buffering is always on. In Versions 4 and later it is on by 
 [.red]##§7.2.2.##
 In Version 6, each of the eight windows has its own "buffering flag". In Versions 3 to 5, the *buffer_mode* applies only to the lower window, and buffering never happens in the upper window.
 
+
 // [[three]]
-[[p7.3]]
-[.red]##§7.3.##
+[[s7.3]]
+== Selection (V1 and V2)
+
 In Versions 1 and 2, output stream 1 is always selected and stream 2 can be selected or deselected by the game, by setting or clearing bit 0 of 'Flags 2'.
 
+
 // [[four]]
-[[p7.4]]
-[.red]##§7.4.##
+[[s7.4]]
+== Selection (later versions)
+
 In Versions 3 and later, all four output streams can be selected or deselected using the *output_stream* opcode. In addition, stream 2 can be selected or deselected by setting or clearing bit 0 of 'Flags 2'. Whichever method is used, the interpreter must ensure that this flag holds the current status of stream 2. ('A Mind Forever Voyaging' requires this.)
 
+
 // [[five]]
-[[p7.5]]
-[.red]##§7.5.##
+[[s7.5]]
+== Dealing with Unicode or invalid characters
+
 ****[1.0]* Because of the *print_unicode* opcode, it is possible for arbitrary Unicode characters to be sent to the output streams: that is, for characters which are not in the ZSCII set at all, even in the "extra characters" range.
 
 // [[section-11]]
@@ -107,9 +122,11 @@ When printed to stream 3, Unicode characters should be converted to ZSCII if pos
 [.red]##§7.5.4.##
 Non-ZSCII characters never need to be printed to stream 4.
 
+
 // [[six]]
-[[p7.6]]
-[.red]##§7.6.##
+[[s7.6]]
+== File handling
+
 ****[1.0]* In Versions 5 and later, the Z-machine has the ability to load and save files (using optional operands with the *save* and *restore* opcodes: these operands were not used in Infocom's Version 5 games, but I wish to specify them as in Version 5 anyway).
 
 // [[section-15]]
@@ -162,8 +179,11 @@ An attempt by the game to use save or restore in a manner not supported by the i
 [.red]##§7.6.5.2.##
 An attempt by the game to use streams to access external files which is not supported by the interpreter should ideally print a warning to the user that the functionality is not available, and otherwise do nothing.
 
-'''''
 
+
+:sectnums!:
+
+[[remarks-07]]
 == Remarks
 
 The *ITF* interpreter incorrectly applies buffering when printing to the upper window.
@@ -185,12 +205,5 @@ An interpreter should be able to write time delays (for timed input), accented c
 
 A typical auxiliary file might be one containing the player's preferred choices. This would be created when he first changed any of the default settings, and loaded (if present) whenever the game started up.
 
-'''''
 
-link:index.html[Contents] / link:preface.html[Preface] / link:overview.html[Overview]
-
-Section link:sect01.html[1] / link:sect02.html[2] / link:sect03.html[3] / link:sect04.html[4] / link:sect05.html[5] / link:sect06.html[6] / link:sect07.html[7] / link:sect08.html[8] / link:sect09.html[9] / link:sect10.html[10] / link:sect11.html[11] / link:sect12.html[12] / link:sect13.html[13] / link:sect14.html[14] / link:sect15.html[15] / link:sect16.html[16]
-
-Appendix link:appa.html[A] / link:appb.html[B] / link:appc.html[C] / link:appd.html[D] / link:appe.html[E] / link:appf.html[F]
-
-'''''
+:sectnums:

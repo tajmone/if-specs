@@ -31,13 +31,3 @@ ____
 We live in an age of censorship.
 . For comment on interpreter numbers, see *S* 11. Infocom's own interpreters were generally rewritten for each of versions 3 to 6. For instance, interpreters known to have been shipped with the Macintosh gave version letters B, C, G, I (Version 3), E, H, I (Version 4), A, B, C (Version 5) and finally 6.1 for Version 6. (Version 6 interpreters seem to have version numbers rather than letters.) See the "Infocom fact sheet" for fuller details.
 . Inform 6 story files are easily distinguished from all other story files by their usage of the last four header bytes. Inform 1 to 5 story files are best distinguished from Infocom ones by the serial code date: anything before 930000 is either an Infocom file, or a fake. (The author of 'Jigsaw' is tempted to compile a millenial version with serial code 991231 when the time comes, but then the next day serial codes will clock over to 000101. The decision of how to continue serial codes past the year 2079 is deferred to a future revision of this Standard.) Clearly there is no point going to any trouble to prevent fakes, but with a little practice it's easy to tell whether Zilch or Inform compiled a file from the style of code generated.
-
-'''''
-
-link:index.html[Contents] / link:preface.html[Preface] / link:overview.html[Overview]
-
-Section link:sect01.html[1] / link:sect02.html[2] / link:sect03.html[3] / link:sect04.html[4] / link:sect05.html[5] / link:sect06.html[6] / link:sect07.html[7] / link:sect08.html[8] / link:sect09.html[9] / link:sect10.html[10] / link:sect11.html[11] / link:sect12.html[12] / link:sect13.html[13] / link:sect14.html[14] / link:sect15.html[15] / link:sect16.html[16]
-
-Appendix link:appa.html[A] / link:appb.html[B] / link:appc.html[C] / link:appd.html[D] / link:appe.html[E] / link:appf.html[F]
-
-'''''

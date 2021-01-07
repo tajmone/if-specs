@@ -1,25 +1,34 @@
 
 = The object table
 
-'''''
 
-12.1 link:#one[Storage] / 12.2 link:#two[Property defaults table] / 12.3 link:#three[Object tree] / 12.4 link:#four[Property tables] / 12.5 link:#five[Well-foundedness of the tree]
+////
+12.1 link:#one[Storage]
+12.2 link:#two[Property defaults table]
+12.3 link:#three[Object tree]
+12.4 link:#four[Property tables]
+12.5 link:#five[Well-foundedness of the tree]
+////
 
-'''''
 
 // [[one]]
-[[p12.1]]
-[.red]##§12.1.##
+[[s12.1]]
+== Storage
+
 The object table is held in dynamic memory and its byte address is stored in the word at *$0a* in the header. (Recall that objects have flags attached called attributes, numbered from 0 upward, and variables attached called properties, numbered from 1 upward. An object need not provide every property.)
 
+
 // [[two]]
-[[p12.2]]
-[.red]##§12.2.##
+[[s12.2]]
+== Property defaults table
+
 The table begins with a block known as the property defaults table. This contains 31 words in Versions 1 to 3 and 63 in Versions 4 and later. When the game attempts to read the value of property n for an object which does not provide property n, the n-th entry in this table is the resulting value.
 
+
 // [[three]]
-[[p12.3]]
-[.red]##§12.3.##
+[[s12.3]]
+== Object tree
+
 Next is the object tree. Objects are numbered consecutively from 1 upward, with object number 0 being used to mean "nothing" (though there is formally no such object). The table consists of a list of entries, one for each object.
 
 // [[section]]
@@ -44,9 +53,11 @@ In Version 4 and later, there are at most 65535 objects, each having a 14-byte e
    ---48 bits in 6 bytes---   ---3 words, i.e. 6 bytes----  ---2 bytes--
 ....
 
+
 // [[four]]
-[[p12.4]]
-[.red]##§12.4.##
+[[s12.4]]
+== Property tables
+
 Each object has its own property table. Each of these can be anywhere in dynamic memory (indeed, a game can legally change an object's properties table address in play, provided the new address points to another valid properties table). The header of a property table is as follows:
 
 ....
@@ -95,9 +106,11 @@ If the top bit (bit 7) of the first size byte is set, then there are two size-an
 [.red]##§12.4.2.2.##
 If the top bit (bit 7) of the first size byte is clear, then there is only one size-and-number byte. Bits 0 to 5 contain the property number; bit 6 is either clear to indicate a property data length of 1, or set to indicate a length of 2; bit 7 is clear.
 
+
 // [[five]]
-[[p12.5]]
-[.red]##§12.5.##
+[[s12.5]]
+== Well-foundedness of the tree
+
 It is the game's responsibility to keep the object tree well-founded: the interpreter is not required to check. "Well-founded" means the following:
 
 *(a)* An object with a sibling also has a parent.
@@ -106,8 +119,10 @@ It is the game's responsibility to keep the object tree well-founded: the interp
 
 *(c)* Each object can be given a level n, such that parentless objects have level 0 and all children of a level n object have level n+1.
 
-'''''
 
+:sectnums!:
+
+[[remarks-12]]
 == Remarks
 
 The largest valid object number is not directly stored anywhere in the Z-machine. Utility programs like *Infodump* deduce this number by assuming that, initially, the object entries end where the first property table begins.
@@ -120,12 +135,5 @@ Bit 6 in the second byte is presently wasted, which is a pity as it could be use
 
 Inform can only construct well-founded object trees as the initial game state, but it is easy to compile sequences of code like "move red box to blue box" followed by "move blue box to red box" which leave the object tree in an ill-founded state. (The Inform library protects the standard object-movement verbs against this.)
 
-'''''
 
-link:index.html[Contents] / link:preface.html[Preface] / link:overview.html[Overview]
-
-Section link:sect01.html[1] / link:sect02.html[2] / link:sect03.html[3] / link:sect04.html[4] / link:sect05.html[5] / link:sect06.html[6] / link:sect07.html[7] / link:sect08.html[8] / link:sect09.html[9] / link:sect10.html[10] / link:sect11.html[11] / link:sect12.html[12] / link:sect13.html[13] / link:sect14.html[14] / link:sect15.html[15] / link:sect16.html[16]
-
-Appendix link:appa.html[A] / link:appb.html[B] / link:appc.html[C] / link:appd.html[D] / link:appe.html[E] / link:appf.html[F]
-
-'''''
+:sectnums:

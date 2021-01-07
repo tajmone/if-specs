@@ -114,13 +114,3 @@ The rule that story files should be independent of their target computers was dr
 '''''
 
 Note that a new Infocom game, _Zork: The Undiscovered Underground_ was published by Activision in 1997. 16.970828 is the only public version I know of: however, note that this file was compiled by Inform and not by Zilch. It is therefore not useful as a witness to Z-machine rules.
-
-'''''
-
-link:index.html[Contents] / link:preface.html[Preface] / link:overview.html[Overview]
-
-Section link:sect01.html[1] / link:sect02.html[2] / link:sect03.html[3] / link:sect04.html[4] / link:sect05.html[5] / link:sect06.html[6] / link:sect07.html[7] / link:sect08.html[8] / link:sect09.html[9] / link:sect10.html[10] / link:sect11.html[11] / link:sect12.html[12] / link:sect13.html[13] / link:sect14.html[14] / link:sect15.html[15] / link:sect16.html[16]
-
-Appendix link:appa.html[A] / link:appb.html[B] / link:appc.html[C] / link:appd.html[D] / link:appe.html[E] / link:appf.html[F]
-
-'''''

@@ -1,20 +1,27 @@
 
 = The dictionary and lexical analysis
 
-'''''
 
-13.1 link:#one[Storage] / 13.2 link:#two[Header] / 13.3 link:#three[Entries (V1 to V3)] / 13.4 link:#four[Entries (later versions)] / 13.5 link:#five[Ordering] / 13.6 link:#six[Lexical analysis]
+////
+13.1 link:#one[Storage] /
+13.2 link:#two[Header] /
+13.3 link:#three[Entries (V1 to V3)] /
+13.4 link:#four[Entries (later versions)] /
+13.5 link:#five[Ordering] /
+13.6 link:#six[Lexical analysis]
+////
 
-'''''
 
 // [[one]]
-[[p13.1]]
-[.red]##§13.1.##
+[[s13.1]]
+== Storage
+
 The dictionary table is held in static memory and its byte address is stored in the word at *$08* in the header.
 
 // [[two]]
-[[p13.2]]
-[.red]##§13.2.##
+[[s13.2]]
+== Header
+
 The table begins with a short header:
 
 ....
@@ -29,9 +36,11 @@ The keyboard input codes are "word-separators": typically (and under Inform mand
 [.red]##§13.2.1.##
 Note that the word-separators table can only contain codes which are defined in ZSCII for both input and output.
 
+
 // [[three]]
-[[p3]]
-[.red]##§3.##
+[[s13.3]]
+== Entries (V1 to V3)
+
 In Versions 1 to 3, each word has an entry in the form
 
 ....
@@ -41,19 +50,25 @@ In Versions 1 to 3, each word has an entry in the form
 
 The interpreter ignores the bytes of data (presumably the game's parser will use them). The encoded text contains 6 Z-characters (it is always padded out with Z-character 5's to make up 4 bytes: see *S* 3). The text may include spaces or other word-separators (though, if so, the interpreter will never match any text to the dictionary word in question: surprisingly, this can be useful and is a trick used in the Inform library).
 
+
 // [[four]]
-[[p13.4]]
-[.red]##§13.4.##
+[[s13.4]]
+== Entries (later versions)
+
 In Versions 4 and later, the encoded text has 6 bytes and always contains 9 Z-characters.
 
+
 // [[five]]
-[[p13.5]]
-[.red]##§13.5.##
+[[s13.5]]
+== Ordering
+
 The word entries follow immediately after the dictionary header and must be given in numerical order of the encoded text (when the encoded text is regarded as a 32 or 48-bit binary number with most-significant byte first). It must not contain two entries with the same encoded text.
 
+
 // [[six]]
-[[p13.6]]
-[.red]##§13.6.##
+[[s13.6]]
+== Lexical analysis
+
 Lexical analysis takes place in two circumstances: on request of a *tokenise* opcode (in which case it can use any dictionary table it likes, in the format above) and during acceptance of a game command (in which case the standard dictionary is used).
 
 // [[section-1]]
@@ -75,8 +90,11 @@ Each word is then encoded as a Z-machine string in dictionary form, and searched
 [.red]##§13.6.3.##
 A "parse table" is then written, recording the number of words, the length and position of each word and the dictionary address of each word which is recognised. For the format, see the *read* opcode.
 
-'''''
 
+
+:sectnums!:
+
+[[remarks-13]]
 == Remarks
 
 Usually (under Inform, mandatorily) there are three bytes of data in the word entries, so that dictionary entry lengths are 7 and 9 in the early and late Z-machine, respectively.
@@ -87,12 +105,5 @@ Both Infocom and Inform-compiled games contain words whose initial character is 
 
 Linards Ticmanis reports that some of Infocom's interpreters convert question marks to spaces before lexical analysis. This is _not_ Standard behaviour. (Thus, typing "What is a grue?" into 'Zork I' no longer works: the player must type "What is a grue" instead.)
 
-'''''
 
-link:index.html[Contents] / link:preface.html[Preface] / link:overview.html[Overview]
-
-Section link:sect01.html[1] / link:sect02.html[2] / link:sect03.html[3] / link:sect04.html[4] / link:sect05.html[5] / link:sect06.html[6] / link:sect07.html[7] / link:sect08.html[8] / link:sect09.html[9] / link:sect10.html[10] / link:sect11.html[11] / link:sect12.html[12] / link:sect13.html[13] / link:sect14.html[14] / link:sect15.html[15] / link:sect16.html[16]
-
-Appendix link:appa.html[A] / link:appb.html[B] / link:appc.html[C] / link:appd.html[D] / link:appe.html[E] / link:appf.html[F]
-
-'''''
+:sectnums:

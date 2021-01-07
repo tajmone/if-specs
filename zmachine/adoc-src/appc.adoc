@@ -1,13 +1,12 @@
 [appendix]
 = Resources available
 
-____
-...the dead hand of the academy had yet to stifle the unbridled enthusiasms of a small band of amateurs in Europe and America.
+"...the dead hand of the academy had yet to stifle the unbridled enthusiasms of a small band of amateurs in Europe and America."
+-- Michael D. Coe, Breaking the Maya Code
 
-Michael D. Coe, *Breaking the Maya Code*
-____
 
-{empty}[Note: the hypertext links in this appendix are to WWW sites external to the standards document, and were correct as of 21th February 2014.]
+NOTE: the hypertext links in this appendix are to WWW sites external to the standards document, and were correct as of 21th February 2014.
+
 
 The resources below are mainly available from the http://www.ifarchive.org/if-archive/[if-archive] maintained by David Kinder and Stephen Granade.
 
@@ -86,13 +85,3 @@ Andrew Plotkin is the author of the http://www.eblong.com/zarf/blorb/blorb.html[
 The http://www.inform-fiction.org/source/tm/TechMan.txt[Inform Technical Manual] documents the format of parsing tables used in Inform games.
 
 The documentation for Infocom's games is available online (with permission from Activision) courtesy of the http://infodoc.plover.net/[Infocom Documentation Project]. In addition, an archive of the " http://www.ifarchive.org/indexes/if-archiveXinfocomXshipped-documentation.html[samplers]" is publically available, as is http://www.ifarchive.org/indexes/if-archiveXinfocomXarticles.html[an interesting historical archive of magazine articles] concerning Infocom, and articles from Infocom's own publicity magazine [indexed http://www.ifarchive.org/if-archive/infocom/NZT+TSL/NZT+TSL.list[here]].
-
-'''''
-
-link:index.html[Contents] / link:preface.html[Preface] / link:overview.html[Overview]
-
-Section link:sect01.html[1] / link:sect02.html[2] / link:sect03.html[3] / link:sect04.html[4] / link:sect05.html[5] / link:sect06.html[6] / link:sect07.html[7] / link:sect08.html[8] / link:sect09.html[9] / link:sect10.html[10] / link:sect11.html[11] / link:sect12.html[12] / link:sect13.html[13] / link:sect14.html[14] / link:sect15.html[15] / link:sect16.html[16]
-
-Appendix link:appa.html[A] / link:appb.html[B] / link:appc.html[C] / link:appd.html[D] / link:appe.html[E] / link:appf.html[F]
-
-'''''

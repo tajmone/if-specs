@@ -1,15 +1,21 @@
 
 = The game state: storage and routine calls
 
-'''''
 
-6.1 link:#one[Saved states] / 6.2 link:#two[Storage of global variables] / 6.3 link:#three[The stack] / 6.4 link:#four[Routine calls] / 6.5 link:#five[Stack frames] / 6.6 link:#six[User stacks (V6)]
+////
+6.1 link:#one[Saved states] /
+6.2 link:#two[Storage of global variables] /
+6.3 link:#three[The stack] /
+6.4 link:#four[Routine calls] /
+6.5 link:#five[Stack frames] /
+6.6 link:#six[User stacks (V6)]
+////
 
-'''''
 
 // [[one]]
-[[p6.1]]
-[.red]##§6.1.##
+[[s6.1]]
+== Saved states
+
 The "state of play" is defined as the following: the contents of dynamic memory; the contents of the stack; the value of the program counter (PC), and the "routine call state" (that is, the chain of routines which have called each other in sequence, and the values of their local variables). Note that the routine call state, the stack and the PC must be stored outside the Z-machine memory map, in the interpreter's private memory.
 
 // [[section]]
@@ -57,14 +63,18 @@ A "restart" is similar: the entire state is restored from the original story fil
 [.red]##§6.1.4.##
 In Versions 5 and later, an interpreter unable to save the game state into internal memory (for "undo" purposes) must clear bit 4 of 'Flags 2' in the header.
 
+
 // [[two]]
-[[p6.2]]
-[.red]##§6.2.##
+[[s6.2]]
+== Storage of global variables
+
 Global variables (variable numbers *$10* to *$ff*) are stored in a table in the Z-machine's dynamic memory, at a byte address given in word 6 of the header. The table consists of 240 2-byte words and the initial values of the global variables are the values initially contained in the table. (It is legal for a program to alter the table's contents directly in play, though not for it to change the table's address.)
 
+
 // [[three]]
-[[p6.3]]
-[.red]##§6.3.##
+[[s6.3]]
+== The stack
+
 Writing to the stack pointer (variable number *$00*) pushes a value onto the stack; reading from it pulls a value off. Stack entries are 2-byte words as usual.
 
 // [[section-9]]
@@ -93,9 +103,11 @@ Two examples of modern interpreters with increased stack size are *Windows Frotz
 [.red]##§6.3.4.##
 In the seven opcodes that take indirect variable references (*inc*, *dec*, *inc_chk*, *dec_chk*, *load*, *store*, *pull*), an indirect reference to the stack pointer does not push or pull the top item of the stack - it is read or written in place.
 
+
 // [[four]]
-[[p6.4]]
-[.red]##§6.4.##
+[[s6.4]]
+== Routine calls
+
 Routine calls occur in the following circumstances: when one of the *call...* opcodes is executed; in Versions 4 and later, when timed keyboard input is being monitored; in Versions 5 and later, when a sound effect finishes; in Version 6, when the game begins (to call the "main" routine); in Version 6, when a "newline interrupt" occurs.
 
 // [[section-13]]
@@ -128,18 +140,23 @@ It is legal for there to be more arguments than local variables (any spare argum
 [.red]##§6.4.5.##
 The return value of a routine can be any Z-machine number. Returning 'false' means returning 0; returning 'true' means returning 1.
 
+
 // [[five]]
-[[p6.5]]
-[.red]##§6.5.##
+[[s6.5]]
+== Stack frames
+
 A "stack frame" is an index to the routine call state (that is, the call-stack of return addresses from routines currently running, and values of local variables within them). This index is a Z-machine number. The interpreter must be able to produce the current value and to set a value further down the call-stack than the current one, effectively throwing away its recent history (see *catch* and *throw*).
 
 // [[six]]
-[[p6.6]]
-[.red]##§6.6.##
+[[s6.6]]
+== User stacks (V6)
+
 In Version 6, the Z-machine understands a third kind of stack: a "user stack", which is a table of words in dynamic memory. The first word in this table always holds the number of spare slots on the stack (so the initial value is the capacity of the stack). The Z-machine makes no check on stack under-flow (i.e., pulling more values than were pushed) which would over-run the length of the table if the program allowed it to happen.
 
-'''''
 
+:sectnums!:
+
+[[remarks-06]]
 == Remarks
 
 Some interpreters store the whole of dynamic memory to disc as part of their saved game files, which can make them as much as 45K or so long. A player making a serious attack on a game may end up wasting a whole megabyte, more than convenient without a hard disc. A technique invented by Bryan Scattergood, taken up by most modern interpreters, greatly reduces file size by only saving bytes of dynamic memory which differ from the initial state of the game.
@@ -158,12 +175,5 @@ Note that the "state of play" does not include numerous input/output settings (t
 
 Given the existence of Quetzal, a portable saved file format, it is quite possible that after loading, the game may be running on a different interpreter to that on which the game started. As a result, it is strongly advisable for games to recheck any interpreter capabilities (eg Standard version, unicode support, etc) after loading.
 
-'''''
 
-link:index.html[Contents] / link:preface.html[Preface] / link:overview.html[Overview]
-
-Section link:sect01.html[1] / link:sect02.html[2] / link:sect03.html[3] / link:sect04.html[4] / link:sect05.html[5] / link:sect06.html[6] / link:sect07.html[7] / link:sect08.html[8] / link:sect09.html[9] / link:sect10.html[10] / link:sect11.html[11] / link:sect12.html[12] / link:sect13.html[13] / link:sect14.html[14] / link:sect15.html[15] / link:sect16.html[16]
-
-Appendix link:appa.html[A] / link:appb.html[B] / link:appc.html[C] / link:appd.html[D] / link:appe.html[E] / link:appf.html[F]
-
-'''''
+:sectnums:

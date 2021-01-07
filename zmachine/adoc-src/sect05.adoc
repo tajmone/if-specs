@@ -1,20 +1,27 @@
 
 = How routines are encoded
 
-'''''
 
-5.1 link:#one[Start position] / 5.2 link:#two[Header] / 5.3 link:#three[First instruction] / 5.4 link:#four[Main routine (V6)] / 5.5 link:#five[Initial execution point (other versions)]
+////
+5.1 link:#one[Start position] /
+5.2 link:#two[Header] /
+5.3 link:#three[First instruction] /
+5.4 link:#four[Main routine (V6)] /
+5.5 link:#five[Initial execution point (other versions)]
+////
 
-'''''
 
 // [[one]]
-[[p5.1]]
-[.red]##§5.1.##
+[[s5.1]]
+== Start position
+
 A routine is required to begin at an address in memory which can be represented by a packed address (for instance, in Version 5 it must occur at a byte address which is divisible by 4).
 
+
 // [[two]]
-[[p5.2]]
-[.red]##§5.2.##
+[[s5.2]]
+== Header
+
 A routine begins with one byte indicating the number of local variables it has (between 0 and 15 inclusive).
 
 // [[section]]
@@ -22,35 +29,35 @@ A routine begins with one byte indicating the number of local variables it has (
 [.red]##§5.2.1.##
 In Versions 1 to 4, that number of 2-byte words follows, giving initial values for these local variables. In Versions 5 and later, the initial values are all zero.
 
+
 // [[three]]
-[[p5.3]]
-[.red]##§5.3.##
+[[s5.3]]
+== First instruction
+
 Execution of instructions begins from the byte after this header information. There is no formal 'end-marker' for a routine (it is simply assumed that execution eventually results in a return taking place).
 
+
 // [[four]]
-[[p5.4]]
-[.red]##§5.4.##
+[[s5.4]]
+== Main routine (V6)
+
 In Version 6, there is a "main" routine (whose packed address is stored in the word at *$06* in the header) called when the game starts up. It is illegal to return from this routine.
 
+
 // [[five]]
-[[p5.5]]
-[.red]##§5.5.##
+[[s5.5]]
+== Initial execution point (other versions)
+
 In all other Versions, the word at *$06* contains the byte address of the first instruction to execute. The Z-machine starts in an environment with no local variables from which, again, a return is illegal.
 
-'''''
 
+:sectnums!:
+
+[[remarks-05]]
 == Remarks
 
 Note that it is permissible for a routine to be in dynamic memory. Marnix Klooster suggests this might be used for compiling code at run time!
 
 In Versions 3 and 4, Inform always stores 0 as the initial values for local variables.
 
-'''''
-
-link:index.html[Contents] / link:preface.html[Preface] / link:overview.html[Overview]
-
-Section link:sect01.html[1] / link:sect02.html[2] / link:sect03.html[3] / link:sect04.html[4] / link:sect05.html[5] / link:sect06.html[6] / link:sect07.html[7] / link:sect08.html[8] / link:sect09.html[9] / link:sect10.html[10] / link:sect11.html[11] / link:sect12.html[12] / link:sect13.html[13] / link:sect14.html[14] / link:sect15.html[15] / link:sect16.html[16]
-
-Appendix link:appa.html[A] / link:appb.html[B] / link:appc.html[C] / link:appd.html[D] / link:appe.html[E] / link:appf.html[F]
-
-'''''
+:sectnums:

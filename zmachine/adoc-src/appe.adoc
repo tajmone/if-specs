@@ -1,13 +1,14 @@
 [appendix]
 = Statistics
 
+
+[quote, The New Zork Times (Winter 1984)]
 ____
 LORD DIMWIT FLATHEAD: "It must have two hundred thousand rooms, four million takeable objects, and understand a vocabulary of every single word ever spoken in every language ever invented."
-
-*The New Zork Times (Winter 1984)*
 ____
 
-{empty}[Note: the information below has not been updated since the 20th June 1997 revision of this document.]
+
+NOTE: the information below has not been updated since the 20th June 1997 revision of this document.
 
 To give some idea of the sizes found in typical story files, here are a few statistics, mostly gathered by Paul David Doherty, whose "Infocom fact sheet" file is the definitive reference.
 
@@ -78,13 +79,3 @@ So about 2/3rds of all opcodes are those in the top ten; 1 in 8 opcodes is a *je
 ....
 
 Adventure games spend most of the time parsing, and the differences between these tables reflect different parser designs (byte arrays versus word arrays and arrays stored in properties) as well as different compiler code generators (Inform does not use *inc_chk* or *dec_chk*, so it uses *inc*, *dec*, *jl* and *jg* correspondingly more). In the case of 'Zork I', about a third of all opcodes are branches: in the case of 'Museum', almost half.
-
-'''''
-
-link:index.html[Contents] / link:preface.html[Preface] / link:overview.html[Overview]
-
-Section link:sect01.html[1] / link:sect02.html[2] / link:sect03.html[3] / link:sect04.html[4] / link:sect05.html[5] / link:sect06.html[6] / link:sect07.html[7] / link:sect08.html[8] / link:sect09.html[9] / link:sect10.html[10] / link:sect11.html[11] / link:sect12.html[12] / link:sect13.html[13] / link:sect14.html[14] / link:sect15.html[15] / link:sect16.html[16]
-
-Appendix link:appa.html[A] / link:appb.html[B] / link:appc.html[C] / link:appd.html[D] / link:appe.html[E] / link:appf.html[F]
-
-'''''

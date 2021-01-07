@@ -74,11 +74,11 @@ The Z-machine has some lexical acuity but it doesn't contain a full parser: it's
 
 == Acknowledgements
 
-____
-There is an obvious resemblance between an unreadable script and a secret code; similar methods can be employed to break both. But the differences must not be overlooked. The code is deliberately designed to baffle the investigator; the script is only puzzling by accident.
+"There is an obvious resemblance between an unreadable script and a secret code; similar methods can be employed to break both.
+But the differences must not be overlooked.
+The code is deliberately designed to baffle the investigator; the script is only puzzling by accident."
+-- John Chadwick, The Decipherment of Linear B
 
-John Chadwick, *The Decipherment of Linear B*
-____
 
 The Z-machine was originally devised by Joel Berez and Marc Blank in 1979. Marc Blank made most of the Version 4 extensions, and Version 5 was created by Dave Lebling (with contributions from others including Brian Moriarty, Duncan Blanchard and Linde Dynneson). Version 6 was largely the work of Tim Anderson and Dave Lebling.
 
@@ -107,13 +107,3 @@ The Z-Machine Standard Version 1.1 was the work of Kevin Bracey & Jason C. Penne
 _David Fillmore_
 
 _24 February 2014_
-
-'''''
-
-link:index.html[Contents] / link:preface.html[Preface] / link:overview.html[Overview]
-
-Section link:sect01.html[1] / link:sect02.html[2] / link:sect03.html[3] / link:sect04.html[4] / link:sect05.html[5] / link:sect06.html[6] / link:sect07.html[7] / link:sect08.html[8] / link:sect09.html[9] / link:sect10.html[10] / link:sect11.html[11] / link:sect12.html[12] / link:sect13.html[13] / link:sect14.html[14] / link:sect15.html[15] / link:sect16.html[16]
-
-Appendix link:appa.html[A] / link:appb.html[B] / link:appc.html[C] / link:appd.html[D] / link:appe.html[E] / link:appf.html[F]
-
-'''''

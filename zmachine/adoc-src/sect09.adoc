@@ -1,15 +1,19 @@
 
 = Sound effects
 
-'''''
 
-9.1 link:#one[Sound effects] / 9.2 link:#two[Numbering of] / 9.3 link:#three[Volume] / 9.4 link:#four[Sound playing autonymously]
+////
+9.1 link:#one[Sound effects] /
+9.2 link:#two[Numbering of] /
+9.3 link:#three[Volume] /
+9.4 link:#four[Sound playing autonymously]
+////
 
-'''''
 
 // [[one]]
-[[p9.1]]
-[.red]##§9.1.##
+[[s9.1]]
+== Sound effects
+
 Some games, from Version 3 onward, have sound effects attached. These are not stored in the story files (or the Z-machine) itself, and the interpreter is simply expected to know where to find them. Other games have only one sound effect, usable in a much more restricted way: a beep or bell sound, which we shall call a "bleep".
 
 // [[section]]
@@ -22,9 +26,11 @@ In Version 6, the interpreter should set bit 5 of 'Flags 1' if it can provide so
 [.red]##§9.1.2.##
 In Version 5 and later, a game should have bit 7 of 'Flags 2' set in its story file if it wants to use sound effects beyond a bleep. The interpreter should then clear this bit if it cannot oblige.
 
+
 // [[two]]
-[[p9.2]]
-[.red]##§9.2.##
+[[s9.2]]
+== Numbering of
+
 Sound effects are numbered upwards from 1. Number 1 is a high-pitched bleep, number 2 a low-pitched one and effects from 3 upward are supplied by the interpreter somehow for the particular game in question.
 
 // [[section-2]]
@@ -32,14 +38,18 @@ Sound effects are numbered upwards from 1. Number 1 is a high-pitched bleep, num
 [.red]##§9.2.1.##
 ****[1.1]* Aside from bleeps, there are two types of sound effect, samples and music. The game has no way of telling the type of a given sound effect.
 
+
 // [[three]]
-[[p9.3]]
-[.red]##§9.3.##
+[[s9.3]]
+== Volume
+
 Sound effects (other than bleeps) can be played at any volume level from 1 to 8 (8 being loudest of these). The volume level -1 should be implemented as "loudest possible".
 
+
 // [[four]]
-[[p9.4]]
-[.red]##§9.4.##
+[[s9.4]]
+== Sound playing autonymously
+
 Bleeps are immediate and brief. Other sound effects take place in the background, while normal operation of the Z-machine is going on. Control is via the *sound_effect* opcode, allowing the game to prepare, start, stop or finish with an effect.
 
 // [[section-3]]
@@ -67,8 +77,10 @@ Eventually, though, if it has not been stopped, it may end by itself. A routine 
 [.red]##§9.4.5.##
 The game may, but need not, explicitly "finish with" any sound effect which is not likely to occur again for a while: the interpreter can then throw it out of memory.
 
-'''''
 
+:sectnums!:
+
+[[remarks-09]]
 == Remarks
 
 The safest way an Inform program can try to produce a bleep is by executing *@sound_effect 1*. Some ports of *Zip* believe that the first operand of this is the number of bleeps to make (so that *@sound_effect 2* bleeps twice), but this is incorrect.
@@ -108,12 +120,4 @@ Ideally, a sound played at volume _n_ in a SONG played at volume _m_ should soun
 
 If multi-channel effects are used, the overall volume should be independent of the number of channels used in the sound. Thus a stereo AIFF containing the same samples for left and right should sound as loud as a mono AIFF containing the same data. This will need adjustment of volume if stereo AIFFs use two physical channels and mono AIFFs use one. No adjustment would be required if an interpreter reduced all AIFFs to mono.
 
-'''''
-
-link:index.html[Contents] / link:preface.html[Preface] / link:overview.html[Overview]
-
-Section link:sect01.html[1] / link:sect02.html[2] / link:sect03.html[3] / link:sect04.html[4] / link:sect05.html[5] / link:sect06.html[6] / link:sect07.html[7] / link:sect08.html[8] / link:sect09.html[9] / link:sect10.html[10] / link:sect11.html[11] / link:sect12.html[12] / link:sect13.html[13] / link:sect14.html[14] / link:sect15.html[15] / link:sect16.html[16]
-
-Appendix link:appa.html[A] / link:appb.html[B] / link:appc.html[C] / link:appd.html[D] / link:appe.html[E] / link:appf.html[F]
-
-'''''
+:sectnums:

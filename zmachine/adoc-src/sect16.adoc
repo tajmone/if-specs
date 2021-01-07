@@ -236,8 +236,10 @@ The following table of 8x8 bitmaps gives a suitable appearance for font 3. The f
         7########          7########          7########
 ....
 
-'''''
 
+:sectnums!:
+
+[[remarks-16]]
 == Remarks
 
 Two different versions of font 3 were supplied by Infocom, which we shall call the Amiga and PC forms (the Atari form is the same as for the PC). The arrow shape differed slightly and so did the rune alphabet. Each was an attempt to map the late Anglian ("futhorc") runic alphabet, which has 33 characters, onto our Latin alphabet. The drawings above are from the Amiga set.
@@ -276,12 +278,5 @@ if set, it enters MGCA, a graphical screen mode and sets the font width/height t
 
 The "COLOR" command in 'BZ' (typed at the keyboard) also behaves differently depending on the interpreter number, which is legal behaviour and has no impact on the specification.
 
-'''''
 
-link:index.html[Contents] / link:preface.html[Preface] / link:overview.html[Overview]
-
-Section link:sect01.html[1] / link:sect02.html[2] / link:sect03.html[3] / link:sect04.html[4] / link:sect05.html[5] / link:sect06.html[6] / link:sect07.html[7] / link:sect08.html[8] / link:sect09.html[9] / link:sect10.html[10] / link:sect11.html[11] / link:sect12.html[12] / link:sect13.html[13] / link:sect14.html[14] / link:sect15.html[15] / link:sect16.html[16]
-
-Appendix link:appa.html[A] / link:appb.html[B] / link:appc.html[C] / link:appd.html[D] / link:appe.html[E] / link:appf.html[F]
-
-'''''
+:sectnums:

@@ -466,33 +466,66 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <ul class="sectlevel1">
 <li><a href="#_the_memory_map">1. The memory map</a>
 <ul class="sectlevel2">
-<li><a href="#_remarks">1.1. Remarks</a></li>
+<li><a href="#s1.1">1.1. Regions of memory</a></li>
+<li><a href="#s1.2">1.2. Addresses</a></li>
+<li><a href="#remarks-01">Remarks</a></li>
 </ul>
 </li>
 <li><a href="#_numbers_and_arithmetic">2. Numbers and arithmetic</a>
 <ul class="sectlevel2">
-<li><a href="#_remarks_2">2.1. Remarks</a></li>
+<li><a href="#s2.1">2.1. Numbers</a></li>
+<li><a href="#s2.2">2.2. Signed operations</a></li>
+<li><a href="#s2.3">2.3. Arithmetic errors</a></li>
+<li><a href="#s2.4">2.4. Random number generator</a></li>
+<li><a href="#remarks-02">Remarks</a></li>
 </ul>
 </li>
 <li><a href="#_how_text_and_characters_are_encoded">3. How text and characters are encoded</a>
 <ul class="sectlevel2">
-<li><a href="#_remarks_3">3.1. Remarks</a></li>
+<li><a href="#s3.1">3.1. Text</a></li>
+<li><a href="#s3.2">3.2. Alphabets</a></li>
+<li><a href="#s3.3">3.3. Abbreviations</a></li>
+<li><a href="#s3.4">3.4. ZSCII escape</a></li>
+<li><a href="#s3.5">3.5. Alphabet table</a></li>
+<li><a href="#s3.6">3.6. Padding and incompleteness</a></li>
+<li><a href="#s3.7">3.7. Dictionary truncation</a></li>
+<li><a href="#s3.8">3.8. Definition of ZSCII and Unicode</a></li>
+<li><a href="#remarks-03">Remarks</a></li>
 </ul>
 </li>
 <li><a href="#_how_instructions_are_encoded">4. How instructions are encoded</a>
 <ul class="sectlevel2">
-<li><a href="#_remarks_4">4.1. Remarks</a></li>
-<li><a href="#_on_disassembly">4.2. On disassembly</a></li>
+<li><a href="#s4.1">4.1. Instructions</a></li>
+<li><a href="#s4.2">4.2. Operand types</a></li>
+<li><a href="#s4.3">4.3. Form and operand count</a></li>
+<li><a href="#s4.4">4.4. Specifying operand types</a></li>
+<li><a href="#s4.5">4.5. Operands</a></li>
+<li><a href="#s4.6">4.6. Stores</a></li>
+<li><a href="#s4.7">4.7. Branches</a></li>
+<li><a href="#s4.8">4.8. Text opcodes</a></li>
+<li><a href="#remarks-04">Remarks</a></li>
+<li><a href="#_on_disassembly">On disassembly</a></li>
 </ul>
 </li>
 <li><a href="#_how_routines_are_encoded">5. How routines are encoded</a>
 <ul class="sectlevel2">
-<li><a href="#_remarks_5">5.1. Remarks</a></li>
+<li><a href="#s5.1">5.1. Start position</a></li>
+<li><a href="#s5.2">5.2. Header</a></li>
+<li><a href="#s5.3">5.3. First instruction</a></li>
+<li><a href="#s5.4">5.4. Main routine (V6)</a></li>
+<li><a href="#s5.5">5.5. Initial execution point (other versions)</a></li>
+<li><a href="#remarks-05">Remarks</a></li>
 </ul>
 </li>
 <li><a href="#_the_game_state_storage_and_routine_calls">6. The game state: storage and routine calls</a>
 <ul class="sectlevel2">
-<li><a href="#_remarks_6">6.1. Remarks</a></li>
+<li><a href="#s6.1">6.1. Saved states</a></li>
+<li><a href="#s6.2">6.2. Storage of global variables</a></li>
+<li><a href="#s6.3">6.3. The stack</a></li>
+<li><a href="#s6.4">6.4. Routine calls</a></li>
+<li><a href="#s6.5">6.5. Stack frames</a></li>
+<li><a href="#s6.6">6.6. User stacks (V6)</a></li>
+<li><a href="#remarks-06">Remarks</a></li>
 </ul>
 </li>
 </ul>
@@ -501,22 +534,47 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <ul class="sectlevel1">
 <li><a href="#_output_streams_and_file_handling">7. Output streams and file handling</a>
 <ul class="sectlevel2">
-<li><a href="#_remarks_7">7.1. Remarks</a></li>
+<li><a href="#s7.1">7.1. Output streams</a></li>
+<li><a href="#s7.2">7.2. Buffering</a></li>
+<li><a href="#s7.3">7.3. Selection (V1 and V2)</a></li>
+<li><a href="#s7.4">7.4. Selection (later versions)</a></li>
+<li><a href="#s7.5">7.5. Dealing with Unicode or invalid characters</a></li>
+<li><a href="#s7.6">7.6. File handling</a></li>
+<li><a href="#remarks-07">Remarks</a></li>
 </ul>
 </li>
 <li><a href="#_the_screen_model">8. The screen model</a>
 <ul class="sectlevel2">
-<li><a href="#_remarks_8">8.1. Remarks</a></li>
+<li><a href="#s8.1">8.1. Fonts</a></li>
+<li><a href="#s8.2">8.2. Status line</a></li>
+<li><a href="#s8.3">8.3. Text colours</a></li>
+<li><a href="#s8.4">8.4. Screen dimensions</a></li>
+<li><a href="#s8.5">8.5. Screen model (V1, V2)</a></li>
+<li><a href="#s8.6">8.6. Screen model (V3)</a></li>
+<li><a href="#s8.7">8.7. Screen model (V4, V5)</a></li>
+<li><a href="#s8.8">8.8. Screen model (V6)</a></li>
+<li><a href="#remarks-08">Remarks</a></li>
 </ul>
 </li>
 <li><a href="#_sound_effects">9. Sound effects</a>
 <ul class="sectlevel2">
-<li><a href="#_remarks_9">9.1. Remarks</a></li>
+<li><a href="#s9.1">9.1. Sound effects</a></li>
+<li><a href="#s9.2">9.2. Numbering of</a></li>
+<li><a href="#s9.3">9.3. Volume</a></li>
+<li><a href="#s9.4">9.4. Sound playing autonymously</a></li>
+<li><a href="#remarks-09">Remarks</a></li>
 </ul>
 </li>
 <li><a href="#_input_streams_and_devices">10. Input streams and devices</a>
 <ul class="sectlevel2">
-<li><a href="#_remarks_10">10.1. Remarks</a></li>
+<li><a href="#s10.1">10.1. Keyboard only in V1</a></li>
+<li><a href="#s10.2">10.2. Input streams</a></li>
+<li><a href="#s10.3">10.3. Mouse support</a></li>
+<li><a href="#s10.4">10.4. Menu support</a></li>
+<li><a href="#s10.5">10.5. Terminating characters and timed input</a></li>
+<li><a href="#s10.6">10.6. Single keypresses</a></li>
+<li><a href="#s10.7">10.7. Reading ZSCII from the keyboard</a></li>
+<li><a href="#remarks-10">Remarks</a></li>
 </ul>
 </li>
 </ul>
@@ -525,31 +583,28 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <ul class="sectlevel1">
 <li><a href="#_the_format_of_the_header">11. The format of the header</a>
 <ul class="sectlevel2">
-<li><a href="#_11_1">11.1. 11.1</a></li>
-<li><a href="#_11_1_1">11.2. 11.1.1</a></li>
-<li><a href="#_11_1_2">11.3. 11.1.2</a></li>
-<li><a href="#_11_1_3">11.4. 11.1.3</a></li>
-<li><a href="#_11_1_3_1">11.5. 11.1.3.1</a></li>
-<li><a href="#_11_1_4">11.6. 11.1.4</a></li>
-<li><a href="#_11_1_5">11.7. 11.1.5</a></li>
-<li><a href="#_11_1_6">11.8. 11.1.6</a></li>
-<li><a href="#_11_1_7">11.9. 11.1.7</a></li>
-<li><a href="#_11_1_7_1">11.10. 11.1.7.1</a></li>
-<li><a href="#_11_1_7_2">11.11. 11.1.7.2</a></li>
-<li><a href="#_11_1_7_3">11.12. 11.1.7.3</a></li>
-<li><a href="#_11_1_7_4">11.13. 11.1.7.4</a></li>
-<li><a href="#_11_1_7_4_1">11.14. 11.1.7.4.1</a></li>
-<li><a href="#_remarks_11">11.15. Remarks</a></li>
+<li><a href="#remarks-11">Remarks</a></li>
 </ul>
 </li>
 <li><a href="#_the_object_table">12. The object table</a>
 <ul class="sectlevel2">
-<li><a href="#_remarks_12">12.1. Remarks</a></li>
+<li><a href="#s12.1">12.1. Storage</a></li>
+<li><a href="#s12.2">12.2. Property defaults table</a></li>
+<li><a href="#s12.3">12.3. Object tree</a></li>
+<li><a href="#s12.4">12.4. Property tables</a></li>
+<li><a href="#s12.5">12.5. Well-foundedness of the tree</a></li>
+<li><a href="#remarks-12">Remarks</a></li>
 </ul>
 </li>
 <li><a href="#_the_dictionary_and_lexical_analysis">13. The dictionary and lexical analysis</a>
 <ul class="sectlevel2">
-<li><a href="#_remarks_13">13.1. Remarks</a></li>
+<li><a href="#s13.1">13.1. Storage</a></li>
+<li><a href="#s13.2">13.2. Header</a></li>
+<li><a href="#s13.3">13.3. Entries (V1 to V3)</a></li>
+<li><a href="#s13.4">13.4. Entries (later versions)</a></li>
+<li><a href="#s13.5">13.5. Ordering</a></li>
+<li><a href="#s13.6">13.6. Lexical analysis</a></li>
+<li><a href="#remarks-13">Remarks</a></li>
 </ul>
 </li>
 </ul>
@@ -558,9 +613,11 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <ul class="sectlevel1">
 <li><a href="#_complete_table_of_opcodes">14. Complete table of opcodes</a>
 <ul class="sectlevel2">
-<li><a href="#reading">14.1. Reading the opcode tables</a></li>
-<li><a href="#inform">14.2. Inform assembly language</a></li>
-<li><a href="#_remarks_14">14.3. Remarks</a></li>
+<li><a href="#s14.1">14.1. Contents</a></li>
+<li><a href="#s14.2">14.2. Out of range opcodes</a></li>
+<li><a href="#reading">Reading the opcode tables</a></li>
+<li><a href="#inform">Inform assembly language</a></li>
+<li><a href="#remarks-14">Remarks</a></li>
 </ul>
 </li>
 <li><a href="#dict">15. Dictionary of opcodes</a>
@@ -700,7 +757,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_font_3_and_character_graphics">16. Font 3 and character graphics</a>
 <ul class="sectlevel2">
 <li><a href="#_16_1">16.1. 16.1</a></li>
-<li><a href="#_remarks_15">16.2. Remarks</a></li>
+<li><a href="#remarks-16">Remarks</a></li>
 </ul>
 </li>
 </ul>
@@ -891,13 +948,14 @@ This specification is licensed under a <a href="https://creativecommons.org/lice
 <h3 id="_acknowledgements"><a class="anchor" href="#_acknowledgements"></a>Acknowledgements</h3>
 <div class="quoteblock">
 <blockquote>
-<div class="paragraph">
-<p>There is an obvious resemblance between an unreadable script and a secret code; similar methods can be employed to break both. But the differences must not be overlooked. The code is deliberately designed to baffle the investigator; the script is only puzzling by accident.</p>
-</div>
-<div class="paragraph">
-<p>John Chadwick, <strong>The Decipherment of Linear B</strong></p>
-</div>
+There is an obvious resemblance between an unreadable script and a secret code; similar methods can be employed to break both.
+But the differences must not be overlooked.
+The code is deliberately designed to baffle the investigator; the script is only puzzling by accident.
 </blockquote>
+<div class="attribution">
+&#8212; John Chadwick<br>
+<cite>The Decipherment of Linear B</cite>
+</div>
 </div>
 <div class="paragraph">
 <p>The Z-machine was originally devised by Joel Berez and Marc Blank in 1979. Marc Blank made most of the Version 4 extensions, and Version 5 was created by Dave Lebling (with contributions from others including Brian Moriarty, Duncan Blanchard and Linde Dynneson). Version 6 was largely the work of Tim Anderson and Dave Lebling.</p>
@@ -941,24 +999,12 @@ This specification is licensed under a <a href="https://creativecommons.org/lice
 <div class="paragraph">
 <p><em>24 February 2014</em></p>
 </div>
-<hr>
-<div class="paragraph">
-<p><a href="index.html">Contents</a> / <a href="preface.html">Preface</a> / <a href="overview.html">Overview</a></p>
-</div>
-<div class="paragraph">
-<p>Section <a href="sect01.html">1</a> / <a href="sect02.html">2</a> / <a href="sect03.html">3</a> / <a href="sect04.html">4</a> / <a href="sect05.html">5</a> / <a href="sect06.html">6</a> / <a href="sect07.html">7</a> / <a href="sect08.html">8</a> / <a href="sect09.html">9</a> / <a href="sect10.html">10</a> / <a href="sect11.html">11</a> / <a href="sect12.html">12</a> / <a href="sect13.html">13</a> / <a href="sect14.html">14</a> / <a href="sect15.html">15</a> / <a href="sect16.html">16</a></p>
-</div>
-<div class="paragraph">
-<p>Appendix <a href="appa.html">A</a> / <a href="appb.html">B</a> / <a href="appc.html">C</a> / <a href="appd.html">D</a> / <a href="appe.html">E</a> / <a href="appf.html">F</a></p>
-</div>
-<hr>
 </div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="_overview_of_z_machine_architecture"><a class="anchor" href="#_overview_of_z_machine_architecture"></a>Overview of Z-machine architecture</h2>
 <div class="sectionbody">
-<hr>
 <div class="paragraph">
 <p><span class="image"><img src="data:image/gif;base64,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" alt="image"></span></p>
 </div>
@@ -1077,31 +1123,16 @@ l0010: print_ret       "That's difficult unless your eyes are prehensile."</pre>
 <div class="paragraph">
 <p>The first byte of any story file, and so the byte at memory address 0, always contains the <strong>version number</strong> of the Z-machine to be used. The design was evolutionary over a period of a decade: as version number increases, the instruction set grows and tables are reformatted to allow more room for larger games. All of Infocom&#8217;s games can be played using versions between 3 (the majority) and 6. Games compiled by Inform mainly use versions 5 or 8.</p>
 </div>
-<hr>
-<div class="paragraph">
-<p><a href="index.html">Contents</a> / <a href="preface.html">Preface</a> / <a href="overview.html">Overview</a></p>
-</div>
-<div class="paragraph">
-<p>Section <a href="sect01.html">1</a> / <a href="sect02.html">2</a> / <a href="sect03.html">3</a> / <a href="sect04.html">4</a> / <a href="sect05.html">5</a> / <a href="sect06.html">6</a> / <a href="sect07.html">7</a> / <a href="sect08.html">8</a> / <a href="sect09.html">9</a> / <a href="sect10.html">10</a> / <a href="sect11.html">11</a> / <a href="sect12.html">12</a> / <a href="sect13.html">13</a> / <a href="sect14.html">14</a> / <a href="sect15.html">15</a> / <a href="sect16.html">16</a></p>
-</div>
-<div class="paragraph">
-<p>Appendix <a href="appa.html">A</a> / <a href="appb.html">B</a> / <a href="appc.html">C</a> / <a href="appd.html">D</a> / <a href="appe.html">E</a> / <a href="appf.html">F</a></p>
-</div>
-<hr>
 </div>
 </div>
 <h1 id="_fundamentals" class="sect0"><a class="anchor" href="#_fundamentals"></a>Fundamentals</h1>
 <div class="sect1">
 <h2 id="_the_memory_map"><a class="anchor" href="#_the_memory_map"></a>1. The memory map</h2>
 <div class="sectionbody">
-<hr>
+<div class="sect2">
+<h3 id="s1.1"><a class="anchor" href="#s1.1"></a>1.1. Regions of memory</h3>
 <div class="paragraph">
-<p>1.1 <a href="#one">Regions of memory</a> / 1.2 <a href="#two">Addresses</a></p>
-</div>
-<hr>
-<div id="p1.1" class="paragraph">
-<p><span class="red">§1.1.</span>
-The memory map of the Z-machine is an array of bytes with "byte addresses" running from 0 upwards. This is divided into three regions: "dynamic", "static" and "high". Dynamic memory begins from byte address <strong>$00000</strong> and runs up to the byte before the byte address stored in the word at <strong>$0e</strong> in the header. (Dynamic memory must contain at least 64 bytes.) Static memory follows immediately on. Its extent is not defined in the header (or anywhere else), though it must end by the last byte of the story file or by byte address <strong>$0ffff</strong> (whichever is lower). High memory begins at the "high memory mark" (the byte address stored in the word at <strong>$04</strong> in the header) and continues to the end of the story file. The bottom of high memory may overlap with the top of static memory (but not with dynamic memory).</p>
+<p>The memory map of the Z-machine is an array of bytes with "byte addresses" running from 0 upwards. This is divided into three regions: "dynamic", "static" and "high". Dynamic memory begins from byte address <strong>$00000</strong> and runs up to the byte before the byte address stored in the word at <strong>$0e</strong> in the header. (Dynamic memory must contain at least 64 bytes.) Static memory follows immediately on. Its extent is not defined in the header (or anywhere else), though it must end by the last byte of the story file or by byte address <strong>$0ffff</strong> (whichever is lower). High memory begins at the "high memory mark" (the byte address stored in the word at <strong>$04</strong> in the header) and continues to the end of the story file. The bottom of high memory may overlap with the top of static memory (but not with dynamic memory).</p>
 </div>
 <div id="p1.1.1" class="paragraph">
 <p><span class="red">§1.1.1.</span>
@@ -1133,9 +1164,11 @@ The maximum permitted length of a story file depends on the Version, as follows:
     128     256     512</pre>
 </div>
 </div>
-<div id="p1.2" class="paragraph">
-<p><span class="red">§1.2.</span>
-There are three kinds of address in the Z-machine, all of which can be stored in a 2-byte number: byte addresses, word addresses and packed addresses.</p>
+</div>
+<div class="sect2">
+<h3 id="s1.2"><a class="anchor" href="#s1.2"></a>1.2. Addresses</h3>
+<div class="paragraph">
+<p>There are three kinds of address in the Z-machine, all of which can be stored in a 2-byte number: byte addresses, word addresses and packed addresses.</p>
 </div>
 <div id="p1.2.1" class="paragraph">
 <p><span class="red">§1.2.1.</span>
@@ -1252,9 +1285,9 @@ A word address specifies an even address in the bottom 128K of memory (by giving
 </tr>
 </tbody>
 </table>
-<hr>
+</div>
 <div class="sect2">
-<h3 id="_remarks"><a class="anchor" href="#_remarks"></a>1.1. Remarks</h3>
+<h3 id="remarks-01"><a class="anchor" href="#remarks-01"></a>Remarks</h3>
 <div class="paragraph">
 <p>Inform never compiles any overlap between static and high memory (it places all data tables in dynamic memory). However, many Infocom games group tables of static data just above the high memory mark, before routines begin; some, such as 'Nord 'n' Bert&#8230;&#8203;', interleave static data between routines, so that static memory actually overlaps code; and a few, such as 'Seastalker' release 15, even contain routines placed below the high memory mark. (The original idea behind the high memory mark was that everything below it should be stored in the interpreter&#8217;s RAM, while what was above could reasonably be kept in "virtual memory", i.e., loaded off disc as needed.)</p>
 </div>
@@ -1264,44 +1297,30 @@ A word address specifies an even address in the bottom 128K of memory (by giving
 <div class="paragraph">
 <p>Throughout the specification, Versions 7 and 8 are identical to Version 5 except as stated at 1.1.4 and 1.2.3 above.</p>
 </div>
-<hr>
-<div class="paragraph">
-<p><a href="index.html">Contents</a> / <a href="preface.html">Preface</a> / <a href="overview.html">Overview</a></p>
-</div>
-<div class="paragraph">
-<p>Section <a href="sect01.html">1</a> / <a href="sect02.html">2</a> / <a href="sect03.html">3</a> / <a href="sect04.html">4</a> / <a href="sect05.html">5</a> / <a href="sect06.html">6</a> / <a href="sect07.html">7</a> / <a href="sect08.html">8</a> / <a href="sect09.html">9</a> / <a href="sect10.html">10</a> / <a href="sect11.html">11</a> / <a href="sect12.html">12</a> / <a href="sect13.html">13</a> / <a href="sect14.html">14</a> / <a href="sect15.html">15</a> / <a href="sect16.html">16</a></p>
-</div>
-<div class="paragraph">
-<p>Appendix <a href="appa.html">A</a> / <a href="appb.html">B</a> / <a href="appc.html">C</a> / <a href="appd.html">D</a> / <a href="appe.html">E</a> / <a href="appf.html">F</a></p>
-</div>
-<hr>
 </div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="_numbers_and_arithmetic"><a class="anchor" href="#_numbers_and_arithmetic"></a>2. Numbers and arithmetic</h2>
 <div class="sectionbody">
-<hr>
+<div class="sect2">
+<h3 id="s2.1"><a class="anchor" href="#s2.1"></a>2.1. Numbers</h3>
 <div class="paragraph">
-<p>2.1 <a href="#one">Numbers</a> / 2.2 <a href="#two">Signed operations</a> / 2.3 <a href="#three">Arithmetic errors</a> / 2.4 <a href="#four">Random number generator</a></p>
+<p>In the Z-machine, numbers are usually stored in 2 bytes (in the form most-significant-byte first, then least-significant) and hold any value in the range <strong>$0000</strong> to <strong>$ffff</strong> (0 to 65535 decimal).</p>
 </div>
-<hr>
-<div id="p2.1" class="paragraph">
-<p><span class="red">§2.1.</span>
-In the Z-machine, numbers are usually stored in 2 bytes (in the form most-significant-byte first, then least-significant) and hold any value in the range <strong>$0000</strong> to <strong>$ffff</strong> (0 to 65535 decimal).</p>
 </div>
-<div id="p2.2" class="paragraph">
-<p><span class="red">§2.2.</span>
-These values are sometimes regarded as signed, in the range -32768 to 32767. In effect -n is stored as 65536-n and so the top bit is the sign bit.</p>
+<div class="sect2">
+<h3 id="s2.2"><a class="anchor" href="#s2.2"></a>2.2. Signed operations</h3>
+<div class="paragraph">
+<p>These values are sometimes regarded as signed, in the range -32768 to 32767. In effect -n is stored as 65536-n and so the top bit is the sign bit.</p>
 </div>
 <div id="p2.2.1" class="paragraph">
 <p><span class="red">§2.2.1.</span>
 The operations of numerical comparison, multiplication, addition, subtraction, division, remainder-after-division and printing of numbers are signed; bitwise operations are unsigned. (In particular, since comparison is signed, it is unsafe to compare two addresses using simply <strong>jl</strong> and <strong>jg</strong>.)</p>
 </div>
-<div id="p2.3" class="paragraph">
-<p><span class="red">§2.3.</span>
-Arithmetic errors:</p>
 </div>
+<div class="sect2">
+<h3 id="s2.3"><a class="anchor" href="#s2.3"></a>2.3. Arithmetic errors</h3>
 <div id="p2.3.1" class="paragraph">
 <p><span class="red">§2.3.1.</span>
 It is illegal to divide by 0 (or to ask for remainder after division by 0) and an interpreter should halt with an error message if this occurs.</p>
@@ -1310,9 +1329,11 @@ It is illegal to divide by 0 (or to ask for remainder after division by 0) and a
 <p><span class="red">§2.3.2.</span>
 Formally it has never been specified what the result of an out-of-range calculation should be. The author suggests that the result should be reduced modulo <strong>$10000</strong>.</p>
 </div>
-<div id="p2.4" class="paragraph">
-<p><span class="red">§2.4.</span>
-The Z-machine needs a random number generator which at any time has one of two states, "random" and "predictable". When the game starts or restarts the state becomes "random". Ideally the generator should not produce identical sequences after each restart.</p>
+</div>
+<div class="sect2">
+<h3 id="s2.4"><a class="anchor" href="#s2.4"></a>2.4. Random number generator</h3>
+<div class="paragraph">
+<p>The Z-machine needs a random number generator which at any time has one of two states, "random" and "predictable". When the game starts or restarts the state becomes "random". Ideally the generator should not produce identical sequences after each restart.</p>
 </div>
 <div id="p2.4.1" class="paragraph">
 <p><span class="red">§2.4.1.</span>
@@ -1326,9 +1347,9 @@ The generator is switched into "predictable" state with a seed value. On any two
 <p><span class="red">§2.4.3.</span>
 The interpreter is permitted to switch between these states on request of the player. (This is useful for testing purposes.)</p>
 </div>
-<hr>
+</div>
 <div class="sect2">
-<h3 id="_remarks_2"><a class="anchor" href="#_remarks_2"></a>2.1. Remarks</h3>
+<h3 id="remarks-02"><a class="anchor" href="#remarks-02"></a>Remarks</h3>
 <div class="paragraph">
 <p>It is dangerous to rely on the older ANSI C random number routines (rand() and srand()), as some implementations of these are very poor. This has made some games (in particular, 'Balances') unwinnable on some Unix ports of <strong>Zip</strong>.</p>
 </div>
@@ -1359,17 +1380,6 @@ The interpreter is permitted to switch between these states on request of the pl
    -13 % 5 = -3        13 % -5 = 3       -13 % -5 = -3</pre>
 </div>
 </div>
-<hr>
-<div class="paragraph">
-<p><a href="index.html">Contents</a> / <a href="preface.html">Preface</a> / <a href="overview.html">Overview</a></p>
-</div>
-<div class="paragraph">
-<p>Section <a href="sect01.html">1</a> / <a href="sect02.html">2</a> / <a href="sect03.html">3</a> / <a href="sect04.html">4</a> / <a href="sect05.html">5</a> / <a href="sect06.html">6</a> / <a href="sect07.html">7</a> / <a href="sect08.html">8</a> / <a href="sect09.html">9</a> / <a href="sect10.html">10</a> / <a href="sect11.html">11</a> / <a href="sect12.html">12</a> / <a href="sect13.html">13</a> / <a href="sect14.html">14</a> / <a href="sect15.html">15</a> / <a href="sect16.html">16</a></p>
-</div>
-<div class="paragraph">
-<p>Appendix <a href="appa.html">A</a> / <a href="appb.html">B</a> / <a href="appc.html">C</a> / <a href="appd.html">D</a> / <a href="appe.html">E</a> / <a href="appf.html">F</a></p>
-</div>
-<hr>
 </div>
 </div>
 </div>
@@ -1378,26 +1388,23 @@ The interpreter is permitted to switch between these states on request of the pl
 <div class="sectionbody">
 <div class="quoteblock">
 <blockquote>
-<div class="paragraph">
-<p>This technique is similar to the five-bit Baudot code, which was used by early Teletypes before ASCII was invented.</p>
-</div>
-<div class="paragraph">
-<p>Marc S. Blank and S. W. Galley, <strong>How to Fit a Large Program Into a Small Machine</strong></p>
-</div>
+This technique is similar to the five-bit Baudot code, which was used by early Teletypes before ASCII was invented.
 </blockquote>
+<div class="attribution">
+&#8212; Marc S. Blank and S. W. Galley<br>
+<cite>How to Fit a Large Program Into a Small Machine</cite>
 </div>
-<hr>
+</div>
+<div class="sect2">
+<h3 id="s3.1"><a class="anchor" href="#s3.1"></a>3.1. Text</h3>
 <div class="paragraph">
-<p>3.1 <a href="#one">Text</a> / 3.2 <a href="#two">Alphabets</a> / 3.3 <a href="#three">Abbreviations</a> / 3.4 <a href="#four">ZSCII escape</a> / 3.5 <a href="#five">Alphabet table</a> / 3.6 <a href="#six">Padding and incompleteness</a> / 3.7 <a href="#seven">Dictionary truncation</a> / 3.8 <a href="#eight">Definition of ZSCII and Unicode</a></p>
+<p>Z-machine text is a sequence of ZSCII character codes (ZSCII is a system similar to ASCII: see <strong>S</strong> 3.8 below). These ZSCII values are encoded into memory using a string of Z-characters. The process of converting between Z-characters and ZSCII values is given in <strong>SS</strong> 3.2 to 3.7 below.</p>
 </div>
-<hr>
-<div id="p3.1" class="paragraph">
-<p><span class="red">§3.1.</span>
-Z-machine text is a sequence of ZSCII character codes (ZSCII is a system similar to ASCII: see <strong>S</strong> 3.8 below). These ZSCII values are encoded into memory using a string of Z-characters. The process of converting between Z-characters and ZSCII values is given in <strong>SS</strong> 3.2 to 3.7 below.</p>
 </div>
-<div id="p3.2" class="paragraph">
-<p><span class="red">§3.2.</span>
-Text in memory consists of a sequence of 2-byte words. Each word is divided into three 5-bit 'Z-characters', plus 1 bit left over, arranged as</p>
+<div class="sect2">
+<h3 id="s3.2"><a class="anchor" href="#s3.2"></a>3.2. Alphabets</h3>
+<div class="paragraph">
+<p>Text in memory consists of a sequence of 2-byte words. Each word is divided into three 5-bit 'Z-characters', plus 1 bit left over, arranged as</p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -1435,21 +1442,27 @@ In Versions 3 and later, the current alphabet is always A0 unless changed for 1 
 <p><span class="red">§3.2.4.</span>
 An indefinite sequence of shift or shift lock characters is legal (but prints nothing).</p>
 </div>
-<div id="p3.3" class="paragraph">
-<p><span class="red">§3.3.</span>
-In Versions 3 and later, Z-characters 1, 2 and 3 represent abbreviations, sometimes also called 'synonyms' (for traditional reasons): the next Z-character indicates which abbreviation string to print. If z is the first Z-character (1, 2 or 3) and x the subsequent one, then the interpreter must look up entry 32(z-1)+x in the abbreviations table and print the string at that word address. In Version 2, Z-character 1 has this effect (but 2 and 3 do not, so there are only 32 abbreviations).</p>
+</div>
+<div class="sect2">
+<h3 id="s3.3"><a class="anchor" href="#s3.3"></a>3.3. Abbreviations</h3>
+<div class="paragraph">
+<p>In Versions 3 and later, Z-characters 1, 2 and 3 represent abbreviations, sometimes also called 'synonyms' (for traditional reasons): the next Z-character indicates which abbreviation string to print. If z is the first Z-character (1, 2 or 3) and x the subsequent one, then the interpreter must look up entry 32(z-1)+x in the abbreviations table and print the string at that word address. In Version 2, Z-character 1 has this effect (but 2 and 3 do not, so there are only 32 abbreviations).</p>
 </div>
 <div id="p3.3.1" class="paragraph">
 <p><span class="red">§3.3.1.</span>
 Abbreviation string-printing follows all the rules of this section except that an abbreviation string must not itself use abbreviations and must not end with an incomplete multi-Z-character construction (see <strong>S</strong> 3.6.1 below).</p>
 </div>
-<div id="p3.4" class="paragraph">
-<p><span class="red">§3.4.</span>
-Z-character 6 from A2 means that the two subsequent Z-characters specify a ten-bit ZSCII character code: the next Z-character gives the top 5 bits and the one after the bottom 5.</p>
 </div>
-<div id="p3.5" class="paragraph">
-<p><span class="red">§3.5.</span>
-The remaining Z-characters are translated into ZSCII character codes using the "alphabet table".</p>
+<div class="sect2">
+<h3 id="s3.4"><a class="anchor" href="#s3.4"></a>3.4. ZSCII escape</h3>
+<div class="paragraph">
+<p>Z-character 6 from A2 means that the two subsequent Z-characters specify a ten-bit ZSCII character code: the next Z-character gives the top 5 bits and the one after the bottom 5.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="s3.5"><a class="anchor" href="#s3.5"></a>3.5. Alphabet table</h3>
+<div class="paragraph">
+<p>The remaining Z-characters are translated into ZSCII character codes using the "alphabet table".</p>
 </div>
 <div id="p3.5.1" class="paragraph">
 <p><span class="red">§3.5.1.</span>
@@ -1496,17 +1509,21 @@ In Versions 5 and later, the interpreter should look at the word at <strong>$34<
 <p><span class="red">§3.5.5.1.</span>
 Such an alphabet table consists of 78 bytes arranged as 3 blocks of 26 ZSCII values, translating Z-characters 6 to 31 for alphabets A0, A1 and A2. Z-characters 6 and 7 of A2, however, are still translated as escape and newline codes (as above).</p>
 </div>
-<div id="p3.6" class="paragraph">
-<p><span class="red">§3.6.</span>
-Since the end-bit only comes up once every three Z-characters, a string may have to be 'padded out' with null values. This is conventionally achieved with a sequence of 5&#8217;s, though a sequence of (for example) 4&#8217;s would work equally well.</p>
+</div>
+<div class="sect2">
+<h3 id="s3.6"><a class="anchor" href="#s3.6"></a>3.6. Padding and incompleteness</h3>
+<div class="paragraph">
+<p>Since the end-bit only comes up once every three Z-characters, a string may have to be 'padded out' with null values. This is conventionally achieved with a sequence of 5&#8217;s, though a sequence of (for example) 4&#8217;s would work equally well.</p>
 </div>
 <div id="p3.6.1" class="paragraph">
 <p><span class="red">§3.6.1.</span>
 It is legal for the string to end while a multi-Z-character construction is incomplete: for instance, after only the top half of an ASCII value has been given. The partial construction is simply ignored. (This can happen in printing dictionary words which have been guillotined to the dictionary resolution of 6 or 9 Z-characters.)</p>
 </div>
-<div id="p3.7" class="paragraph">
-<p><span class="red">§3.7.</span>
-When an interpreter is encrypting typed-in text to match against dictionary words, the following restrictions apply. Text should be converted to lower case (as a result A1 will not be needed unless the game provides its own alphabet table). Abbreviations may not be used. The pad character, if needed, must be 5. The total string length must be 6 Z-characters (in Versions 1 to 3) or 9 (Versions 4 and later): any multi-Z-character constructions should be left incomplete (rather than omitted) if there&#8217;s no room to finish them. For example, "i" is encrypted as:</p>
+</div>
+<div class="sect2">
+<h3 id="s3.7"><a class="anchor" href="#s3.7"></a>3.7. Dictionary truncation</h3>
+<div class="paragraph">
+<p>When an interpreter is encrypting typed-in text to match against dictionary words, the following restrictions apply. Text should be converted to lower case (as a result A1 will not be needed unless the game provides its own alphabet table). Abbreviations may not be used. The pad character, if needed, must be 5. The total string length must be 6 Z-characters (in Versions 1 to 3) or 9 (Versions 4 and later): any multi-Z-character constructions should be left incomplete (rather than omitted) if there&#8217;s no room to finish them. For example, "i" is encrypted as:</p>
 </div>
 <div class="paragraph">
 <p><strong>14, 5, 5, 5, 5, 5, 5, 5, 5</strong></p>
@@ -1518,9 +1535,11 @@ When an interpreter is encrypting typed-in text to match against dictionary word
 <p><span class="red">§3.7.1.</span>
 In Versions 1 and 2 only, when encoding text for dictionary words, shift-lock Z-characters 4 and 5 are used instead of the single-shift Z-characters 2 and 3 when the next two characters come from the same alphabet.</p>
 </div>
-<div id="p3.8" class="paragraph">
-<p><span class="red">§3.8.</span>
-The character set of the Z-machine is called ZSCII (Zork Standard Code for Information Interchange; pronounced to rhyme with "xyzzy"). ZSCII codes are 10-bit unsigned values between 0 and 1023. Story files may only legally use the values which are defined below. Note that some values are defined only for input and some only for output.</p>
+</div>
+<div class="sect2">
+<h3 id="s3.8"><a class="anchor" href="#s3.8"></a>3.8. Definition of ZSCII and Unicode</h3>
+<div class="paragraph">
+<p>The character set of the Z-machine is called ZSCII (Zork Standard Code for Information Interchange; pronounced to rhyme with "xyzzy"). ZSCII codes are 10-bit unsigned values between 0 and 1023. Story files may only legally use the values which are defined below. Note that some values are defined only for input and some only for output.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 2. <strong>Table 2: summary of the ZSCII rules</strong></caption>
@@ -2280,9 +2299,9 @@ ZSCII code 255 is undefined. (This value is needed in the "terminating character
 </tr>
 </tbody>
 </table>
-<hr>
+</div>
 <div class="sect2">
-<h3 id="_remarks_3"><a class="anchor" href="#_remarks_3"></a>3.1. Remarks</h3>
+<h3 id="remarks-03"><a class="anchor" href="#remarks-03"></a>Remarks</h3>
 <div class="paragraph">
 <p>In practice the text compression factor is not really very good: for instance, 155000 characters of text squashes into 99000 bytes. (Text usually accounts for about 75% of a story file.) Encoding does at least encrypt the text so that casual browsers can&#8217;t read it. Well-chosen abbreviations will reduce total story file size by 10% or so.</p>
 </div>
@@ -2331,17 +2350,6 @@ ZSCII code 255 is undefined. (This value is needed in the "terminating character
 <div class="paragraph">
 <p>Far eastern languages are generally straightforward, except they usually use no spaces, and line wraps can occur almost anywhere. The easiest to way to handle this would be for the game to turn off buffering. A more sophisticated game might include its own formatting engine. Also, fixed-space output is liable to be problematical with most Far Eastern fonts, which use a mixture of "full width" and "half width" forms - all half-width characters would have to be forced to full width.</p>
 </div>
-<hr>
-<div class="paragraph">
-<p><a href="index.html">Contents</a> / <a href="preface.html">Preface</a> / <a href="overview.html">Overview</a></p>
-</div>
-<div class="paragraph">
-<p>Section <a href="sect01.html">1</a> / <a href="sect02.html">2</a> / <a href="sect03.html">3</a> / <a href="sect04.html">4</a> / <a href="sect05.html">5</a> / <a href="sect06.html">6</a> / <a href="sect07.html">7</a> / <a href="sect08.html">8</a> / <a href="sect09.html">9</a> / <a href="sect10.html">10</a> / <a href="sect11.html">11</a> / <a href="sect12.html">12</a> / <a href="sect13.html">13</a> / <a href="sect14.html">14</a> / <a href="sect15.html">15</a> / <a href="sect16.html">16</a></p>
-</div>
-<div class="paragraph">
-<p>Appendix <a href="appa.html">A</a> / <a href="appb.html">B</a> / <a href="appc.html">C</a> / <a href="appd.html">D</a> / <a href="appe.html">E</a> / <a href="appf.html">F</a></p>
-</div>
-<hr>
 </div>
 </div>
 </div>
@@ -2356,19 +2364,16 @@ ZSCII code 255 is undefined. (This value is needed in the "terminating character
 <div class="paragraph">
 <p>Which, being taught, return to plague th' inventor</p>
 </div>
-<div class="paragraph">
-<p>Shakespeare, <strong>Macbeth</strong></p>
-</div>
 </blockquote>
+<div class="attribution">
+&#8212; Shakespeare<br>
+<cite>Macbeth</cite>
 </div>
-<hr>
+</div>
+<div class="sect2">
+<h3 id="s4.1"><a class="anchor" href="#s4.1"></a>4.1. Instructions</h3>
 <div class="paragraph">
-<p>4.1 <a href="#one">Instructions</a> / 4.2 <a href="#two">Operand types</a> / 4.3 <a href="#three">Form and operand count</a> / 4.4 <a href="#four">Specifying operand types</a> / 4.5 <a href="#five">Operands</a> / 4.6 <a href="#six">Stores</a> / 4.7 <a href="#seven">Branches</a> / 4.8 <a href="#eight">Text opcodes</a></p>
-</div>
-<hr>
-<div id="p4.1" class="paragraph">
-<p><span class="red">§4.1.</span>
-A single Z-machine instruction consists of the following sections (and in the order shown):</p>
+<p>A single Z-machine instruction consists of the following sections (and in the order shown):</p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -2383,9 +2388,11 @@ A single Z-machine instruction consists of the following sections (and in the or
 <div class="paragraph">
 <p>Bracketed sections are not present in all opcodes. (A few opcodes take both "store" and "branch".)</p>
 </div>
-<div id="p4.2" class="paragraph">
-<p><span class="red">§4.2.</span>
-There are four 'types' of operand. These are often specified by a number stored in 2 binary digits:</p>
+</div>
+<div class="sect2">
+<h3 id="s4.2"><a class="anchor" href="#s4.2"></a>4.2. Operand types</h3>
+<div class="paragraph">
+<p>There are four 'types' of operand. These are often specified by a number stored in 2 binary digits:</p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -2407,9 +2414,11 @@ Variable number <strong>$00</strong> refers to the top of the stack, <strong>$01
 <p><span class="red">§4.2.3.</span>
 The type 'Variable' really means "variable by value". Some instructions take as an operand a "variable by reference": for instance, <strong>inc</strong> has one operand, the reference number of a variable to increment. This operand usually has type 'Small constant' (and Inform automatically assembles a line like <strong>@inc turns</strong> by writing the operand <strong>turns</strong> as a small constant with value the reference number of the variable <strong>turns</strong>).</p>
 </div>
-<div id="p4.3" class="paragraph">
-<p><span class="red">§4.3.</span>
-Each instruction has a form (long, short, extended or variable) and an operand count (0OP, 1OP, 2OP or VAR). If the top two bits of the opcode are <strong>11* the form is variable; if *10</strong>, the form is short. If the opcode is 190 (<strong>$BE</strong> in hexadecimal) and the version is 5 or later, the form is "extended". Otherwise, the form is "long".</p>
+</div>
+<div class="sect2">
+<h3 id="s4.3"><a class="anchor" href="#s4.3"></a>4.3. Form and operand count</h3>
+<div class="paragraph">
+<p>Each instruction has a form (long, short, extended or variable) and an operand count (0OP, 1OP, 2OP or VAR). If the top two bits of the opcode are <strong>11* the form is variable; if *10</strong>, the form is short. If the opcode is 190 (<strong>$BE</strong> in hexadecimal) and the version is 5 or later, the form is "extended". Otherwise, the form is "long".</p>
 </div>
 <div id="p4.3.1" class="paragraph">
 <p><span class="red">§4.3.1.</span>
@@ -2427,9 +2436,11 @@ In variable form, if bit 5 is 0 then the count is 2OP; if it is 1, then the coun
 <p><span class="red">§4.3.4.</span>
 In extended form, the operand count is VAR. The opcode number is given in a second opcode byte.</p>
 </div>
-<div id="p4.4" class="paragraph">
-<p><span class="red">§4.4.</span>
-Next, the types of the operands are specified.</p>
+</div>
+<div class="sect2">
+<h3 id="s4.4"><a class="anchor" href="#s4.4"></a>4.4. Specifying operand types</h3>
+<div class="paragraph">
+<p>Next, the types of the operands are specified.</p>
 </div>
 <div id="p4.4.1" class="paragraph">
 <p><span class="red">§4.4.1.</span>
@@ -2447,9 +2458,11 @@ In variable or extended forms, a byte of 4 operand types is given next. This con
 <p><span class="red">§4.4.3.1.</span>
 In the special case of the "double variable" VAR opcodes <strong>call_vs2</strong> and <strong>call_vn2</strong> (opcode numbers 12 and 26), a second byte of types is given, containing the types for the next four operands.</p>
 </div>
-<div id="p4.5" class="paragraph">
-<p><span class="red">§4.5.</span>
-The operands are given next. Operand counts of 0OP, 1OP or 2OP require 0, 1 or 2 operands to be given, respectively. If the count is VAR, there must be as many operands as there were types other than 'omitted'.</p>
+</div>
+<div class="sect2">
+<h3 id="s4.5"><a class="anchor" href="#s4.5"></a>4.5. Operands</h3>
+<div class="paragraph">
+<p>The operands are given next. Operand counts of 0OP, 1OP or 2OP require 0, 1 or 2 operands to be given, respectively. If the count is VAR, there must be as many operands as there were types other than 'omitted'.</p>
 </div>
 <div id="p4.5.1" class="paragraph">
 <p><span class="red">§4.5.1.</span>
@@ -2467,13 +2480,17 @@ Opcode operands are always evaluated from first to last - this order is importan
 <div class="paragraph">
 <p>subtracts the second-from-top stack item from the topmost stack item.</p>
 </div>
-<div id="p4.6" class="paragraph">
-<p><span class="red">§4.6.</span>
-"Store" instructions return a value: e.g., <strong>mul</strong> multiplies its two operands together. Such instructions must be followed by a single byte giving the variable number of where to put the result.</p>
 </div>
-<div id="p4.7" class="paragraph">
-<p><span class="red">§4.7.</span>
-Instructions which test a condition are called "branch" instructions. The branch information is stored in one or two bytes, indicating what to do with the result of the test. If bit 7 of the first byte is 0, a branch occurs when the condition was false; if 1, then branch is on true. If bit 6 is set, then the branch occupies 1 byte only, and the "offset" is in the range 0 to 63, given in the bottom 6 bits. If bit 6 is clear, then the offset is a signed 14-bit number given in bits 0 to 5 of the first byte followed by all 8 of the second.</p>
+<div class="sect2">
+<h3 id="s4.6"><a class="anchor" href="#s4.6"></a>4.6. Stores</h3>
+<div class="paragraph">
+<p>"Store" instructions return a value: e.g., <strong>mul</strong> multiplies its two operands together. Such instructions must be followed by a single byte giving the variable number of where to put the result.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="s4.7"><a class="anchor" href="#s4.7"></a>4.7. Branches</h3>
+<div class="paragraph">
+<p>Instructions which test a condition are called "branch" instructions. The branch information is stored in one or two bytes, indicating what to do with the result of the test. If bit 7 of the first byte is 0, a branch occurs when the condition was false; if 1, then branch is on true. If bit 6 is set, then the branch occupies 1 byte only, and the "offset" is in the range 0 to 63, given in the bottom 6 bits. If bit 6 is clear, then the offset is a signed 14-bit number given in bits 0 to 5 of the first byte followed by all 8 of the second.</p>
 </div>
 <div id="p4.7.1" class="paragraph">
 <p><span class="red">§4.7.1.</span>
@@ -2488,13 +2505,15 @@ Otherwise, a branch moves execution to the instruction at address</p>
 <pre>  Address after branch data + Offset - 2.</pre>
 </div>
 </div>
-<div id="p4.8" class="paragraph">
-<p><span class="red">§4.8.</span>
-Two opcodes, <strong>print</strong> and <strong>print_ret</strong>, are followed by a text string. This is stored according to the usual rules: in particular execution continues after the last 2-byte word of text (the one with top bit set).</p>
 </div>
-<hr>
 <div class="sect2">
-<h3 id="_remarks_4"><a class="anchor" href="#_remarks_4"></a>4.1. Remarks</h3>
+<h3 id="s4.8"><a class="anchor" href="#s4.8"></a>4.8. Text opcodes</h3>
+<div class="paragraph">
+<p>Two opcodes, <strong>print</strong> and <strong>print_ret</strong>, are followed by a text string. This is stored according to the usual rules: in particular execution continues after the last 2-byte word of text (the one with top bit set).</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="remarks-04"><a class="anchor" href="#remarks-04"></a>Remarks</h3>
 <div class="paragraph">
 <p>Some opcodes have type VAR only because the available codes for the other types had run out; <strong>print_char</strong>, for instance. Others, especially <strong>call</strong>, need the flexibility to have between 1 and 4 operands.</p>
 </div>
@@ -2526,7 +2545,7 @@ Two opcodes, <strong>print</strong> and <strong>print_ret</strong>, are followed
 <hr>
 </div>
 <div class="sect2">
-<h3 id="_on_disassembly"><a class="anchor" href="#_on_disassembly"></a>4.2. On disassembly</h3>
+<h3 id="_on_disassembly"><a class="anchor" href="#_on_disassembly"></a>On disassembly</h3>
 <div class="paragraph">
 <p>Briefly, the first byte of an instruction can be decoded using the following table:</p>
 </div>
@@ -2570,86 +2589,64 @@ Two opcodes, <strong>print</strong> and <strong>print_ret</strong>, are followed
   .label;</pre>
 </div>
 </div>
-<hr>
-<div class="paragraph">
-<p><a href="index.html">Contents</a> / <a href="preface.html">Preface</a> / <a href="overview.html">Overview</a></p>
-</div>
-<div class="paragraph">
-<p>Section <a href="sect01.html">1</a> / <a href="sect02.html">2</a> / <a href="sect03.html">3</a> / <a href="sect04.html">4</a> / <a href="sect05.html">5</a> / <a href="sect06.html">6</a> / <a href="sect07.html">7</a> / <a href="sect08.html">8</a> / <a href="sect09.html">9</a> / <a href="sect10.html">10</a> / <a href="sect11.html">11</a> / <a href="sect12.html">12</a> / <a href="sect13.html">13</a> / <a href="sect14.html">14</a> / <a href="sect15.html">15</a> / <a href="sect16.html">16</a></p>
-</div>
-<div class="paragraph">
-<p>Appendix <a href="appa.html">A</a> / <a href="appb.html">B</a> / <a href="appc.html">C</a> / <a href="appd.html">D</a> / <a href="appe.html">E</a> / <a href="appf.html">F</a></p>
-</div>
-<hr>
 </div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="_how_routines_are_encoded"><a class="anchor" href="#_how_routines_are_encoded"></a>5. How routines are encoded</h2>
 <div class="sectionbody">
-<hr>
+<div class="sect2">
+<h3 id="s5.1"><a class="anchor" href="#s5.1"></a>5.1. Start position</h3>
 <div class="paragraph">
-<p>5.1 <a href="#one">Start position</a> / 5.2 <a href="#two">Header</a> / 5.3 <a href="#three">First instruction</a> / 5.4 <a href="#four">Main routine (V6)</a> / 5.5 <a href="#five">Initial execution point (other versions)</a></p>
+<p>A routine is required to begin at an address in memory which can be represented by a packed address (for instance, in Version 5 it must occur at a byte address which is divisible by 4).</p>
 </div>
-<hr>
-<div id="p5.1" class="paragraph">
-<p><span class="red">§5.1.</span>
-A routine is required to begin at an address in memory which can be represented by a packed address (for instance, in Version 5 it must occur at a byte address which is divisible by 4).</p>
 </div>
-<div id="p5.2" class="paragraph">
-<p><span class="red">§5.2.</span>
-A routine begins with one byte indicating the number of local variables it has (between 0 and 15 inclusive).</p>
+<div class="sect2">
+<h3 id="s5.2"><a class="anchor" href="#s5.2"></a>5.2. Header</h3>
+<div class="paragraph">
+<p>A routine begins with one byte indicating the number of local variables it has (between 0 and 15 inclusive).</p>
 </div>
 <div id="p5.2.1" class="paragraph">
 <p><span class="red">§5.2.1.</span>
 In Versions 1 to 4, that number of 2-byte words follows, giving initial values for these local variables. In Versions 5 and later, the initial values are all zero.</p>
 </div>
-<div id="p5.3" class="paragraph">
-<p><span class="red">§5.3.</span>
-Execution of instructions begins from the byte after this header information. There is no formal 'end-marker' for a routine (it is simply assumed that execution eventually results in a return taking place).</p>
 </div>
-<div id="p5.4" class="paragraph">
-<p><span class="red">§5.4.</span>
-In Version 6, there is a "main" routine (whose packed address is stored in the word at <strong>$06</strong> in the header) called when the game starts up. It is illegal to return from this routine.</p>
-</div>
-<div id="p5.5" class="paragraph">
-<p><span class="red">§5.5.</span>
-In all other Versions, the word at <strong>$06</strong> contains the byte address of the first instruction to execute. The Z-machine starts in an environment with no local variables from which, again, a return is illegal.</p>
-</div>
-<hr>
 <div class="sect2">
-<h3 id="_remarks_5"><a class="anchor" href="#_remarks_5"></a>5.1. Remarks</h3>
+<h3 id="s5.3"><a class="anchor" href="#s5.3"></a>5.3. First instruction</h3>
+<div class="paragraph">
+<p>Execution of instructions begins from the byte after this header information. There is no formal 'end-marker' for a routine (it is simply assumed that execution eventually results in a return taking place).</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="s5.4"><a class="anchor" href="#s5.4"></a>5.4. Main routine (V6)</h3>
+<div class="paragraph">
+<p>In Version 6, there is a "main" routine (whose packed address is stored in the word at <strong>$06</strong> in the header) called when the game starts up. It is illegal to return from this routine.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="s5.5"><a class="anchor" href="#s5.5"></a>5.5. Initial execution point (other versions)</h3>
+<div class="paragraph">
+<p>In all other Versions, the word at <strong>$06</strong> contains the byte address of the first instruction to execute. The Z-machine starts in an environment with no local variables from which, again, a return is illegal.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="remarks-05"><a class="anchor" href="#remarks-05"></a>Remarks</h3>
 <div class="paragraph">
 <p>Note that it is permissible for a routine to be in dynamic memory. Marnix Klooster suggests this might be used for compiling code at run time!</p>
 </div>
 <div class="paragraph">
 <p>In Versions 3 and 4, Inform always stores 0 as the initial values for local variables.</p>
 </div>
-<hr>
-<div class="paragraph">
-<p><a href="index.html">Contents</a> / <a href="preface.html">Preface</a> / <a href="overview.html">Overview</a></p>
-</div>
-<div class="paragraph">
-<p>Section <a href="sect01.html">1</a> / <a href="sect02.html">2</a> / <a href="sect03.html">3</a> / <a href="sect04.html">4</a> / <a href="sect05.html">5</a> / <a href="sect06.html">6</a> / <a href="sect07.html">7</a> / <a href="sect08.html">8</a> / <a href="sect09.html">9</a> / <a href="sect10.html">10</a> / <a href="sect11.html">11</a> / <a href="sect12.html">12</a> / <a href="sect13.html">13</a> / <a href="sect14.html">14</a> / <a href="sect15.html">15</a> / <a href="sect16.html">16</a></p>
-</div>
-<div class="paragraph">
-<p>Appendix <a href="appa.html">A</a> / <a href="appb.html">B</a> / <a href="appc.html">C</a> / <a href="appd.html">D</a> / <a href="appe.html">E</a> / <a href="appf.html">F</a></p>
-</div>
-<hr>
 </div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="_the_game_state_storage_and_routine_calls"><a class="anchor" href="#_the_game_state_storage_and_routine_calls"></a>6. The game state: storage and routine calls</h2>
 <div class="sectionbody">
-<hr>
+<div class="sect2">
+<h3 id="s6.1"><a class="anchor" href="#s6.1"></a>6.1. Saved states</h3>
 <div class="paragraph">
-<p>6.1 <a href="#one">Saved states</a> / 6.2 <a href="#two">Storage of global variables</a> / 6.3 <a href="#three">The stack</a> / 6.4 <a href="#four">Routine calls</a> / 6.5 <a href="#five">Stack frames</a> / 6.6 <a href="#six">User stacks (V6)</a></p>
-</div>
-<hr>
-<div id="p6.1" class="paragraph">
-<p><span class="red">§6.1.</span>
-The "state of play" is defined as the following: the contents of dynamic memory; the contents of the stack; the value of the program counter (PC), and the "routine call state" (that is, the chain of routines which have called each other in sequence, and the values of their local variables). Note that the routine call state, the stack and the PC must be stored outside the Z-machine memory map, in the interpreter&#8217;s private memory.</p>
+<p>The "state of play" is defined as the following: the contents of dynamic memory; the contents of the stack; the value of the program counter (PC), and the "routine call state" (that is, the chain of routines which have called each other in sequence, and the values of their local variables). Note that the routine call state, the stack and the PC must be stored outside the Z-machine memory map, in the interpreter&#8217;s private memory.</p>
 </div>
 <div id="p6.1.1" class="paragraph">
 <p><span class="red">§6.1.1.</span>
@@ -2687,13 +2684,17 @@ A "restart" is similar: the entire state is restored from the original story fil
 <p><span class="red">§6.1.4.</span>
 In Versions 5 and later, an interpreter unable to save the game state into internal memory (for "undo" purposes) must clear bit 4 of 'Flags 2' in the header.</p>
 </div>
-<div id="p6.2" class="paragraph">
-<p><span class="red">§6.2.</span>
-Global variables (variable numbers <strong>$10</strong> to <strong>$ff</strong>) are stored in a table in the Z-machine&#8217;s dynamic memory, at a byte address given in word 6 of the header. The table consists of 240 2-byte words and the initial values of the global variables are the values initially contained in the table. (It is legal for a program to alter the table&#8217;s contents directly in play, though not for it to change the table&#8217;s address.)</p>
 </div>
-<div id="p6.3" class="paragraph">
-<p><span class="red">§6.3.</span>
-Writing to the stack pointer (variable number <strong>$00</strong>) pushes a value onto the stack; reading from it pulls a value off. Stack entries are 2-byte words as usual.</p>
+<div class="sect2">
+<h3 id="s6.2"><a class="anchor" href="#s6.2"></a>6.2. Storage of global variables</h3>
+<div class="paragraph">
+<p>Global variables (variable numbers <strong>$10</strong> to <strong>$ff</strong>) are stored in a table in the Z-machine&#8217;s dynamic memory, at a byte address given in word 6 of the header. The table consists of 240 2-byte words and the initial values of the global variables are the values initially contained in the table. (It is legal for a program to alter the table&#8217;s contents directly in play, though not for it to change the table&#8217;s address.)</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="s6.3"><a class="anchor" href="#s6.3"></a>6.3. The stack</h3>
+<div class="paragraph">
+<p>Writing to the stack pointer (variable number <strong>$00</strong>) pushes a value onto the stack; reading from it pulls a value off. Stack entries are 2-byte words as usual.</p>
 </div>
 <div id="p6.3.1" class="paragraph">
 <p><span class="red">§6.3.1.</span>
@@ -2720,9 +2721,11 @@ The absolute minimum standard for stack size is defined as:</p>
 <p><span class="red">§6.3.4.</span>
 In the seven opcodes that take indirect variable references (<strong>inc</strong>, <strong>dec</strong>, <strong>inc_chk</strong>, <strong>dec_chk</strong>, <strong>load</strong>, <strong>store</strong>, <strong>pull</strong>), an indirect reference to the stack pointer does not push or pull the top item of the stack - it is read or written in place.</p>
 </div>
-<div id="p6.4" class="paragraph">
-<p><span class="red">§6.4.</span>
-Routine calls occur in the following circumstances: when one of the <strong>call&#8230;&#8203;</strong> opcodes is executed; in Versions 4 and later, when timed keyboard input is being monitored; in Versions 5 and later, when a sound effect finishes; in Version 6, when the game begins (to call the "main" routine); in Version 6, when a "newline interrupt" occurs.</p>
+</div>
+<div class="sect2">
+<h3 id="s6.4"><a class="anchor" href="#s6.4"></a>6.4. Routine calls</h3>
+<div class="paragraph">
+<p>Routine calls occur in the following circumstances: when one of the <strong>call&#8230;&#8203;</strong> opcodes is executed; in Versions 4 and later, when timed keyboard input is being monitored; in Versions 5 and later, when a sound effect finishes; in Version 6, when the game begins (to call the "main" routine); in Version 6, when a "newline interrupt" occurs.</p>
 </div>
 <div id="p6.4.1" class="paragraph">
 <p><span class="red">§6.4.1.</span>
@@ -2748,17 +2751,21 @@ It is legal for there to be more arguments than local variables (any spare argum
 <p><span class="red">§6.4.5.</span>
 The return value of a routine can be any Z-machine number. Returning 'false' means returning 0; returning 'true' means returning 1.</p>
 </div>
-<div id="p6.5" class="paragraph">
-<p><span class="red">§6.5.</span>
-A "stack frame" is an index to the routine call state (that is, the call-stack of return addresses from routines currently running, and values of local variables within them). This index is a Z-machine number. The interpreter must be able to produce the current value and to set a value further down the call-stack than the current one, effectively throwing away its recent history (see <strong>catch</strong> and <strong>throw</strong>).</p>
 </div>
-<div id="p6.6" class="paragraph">
-<p><span class="red">§6.6.</span>
-In Version 6, the Z-machine understands a third kind of stack: a "user stack", which is a table of words in dynamic memory. The first word in this table always holds the number of spare slots on the stack (so the initial value is the capacity of the stack). The Z-machine makes no check on stack under-flow (i.e., pulling more values than were pushed) which would over-run the length of the table if the program allowed it to happen.</p>
-</div>
-<hr>
 <div class="sect2">
-<h3 id="_remarks_6"><a class="anchor" href="#_remarks_6"></a>6.1. Remarks</h3>
+<h3 id="s6.5"><a class="anchor" href="#s6.5"></a>6.5. Stack frames</h3>
+<div class="paragraph">
+<p>A "stack frame" is an index to the routine call state (that is, the call-stack of return addresses from routines currently running, and values of local variables within them). This index is a Z-machine number. The interpreter must be able to produce the current value and to set a value further down the call-stack than the current one, effectively throwing away its recent history (see <strong>catch</strong> and <strong>throw</strong>).</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="s6.6"><a class="anchor" href="#s6.6"></a>6.6. User stacks (V6)</h3>
+<div class="paragraph">
+<p>In Version 6, the Z-machine understands a third kind of stack: a "user stack", which is a table of words in dynamic memory. The first word in this table always holds the number of spare slots on the stack (so the initial value is the capacity of the stack). The Z-machine makes no check on stack under-flow (i.e., pulling more values than were pushed) which would over-run the length of the table if the program allowed it to happen.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="remarks-06"><a class="anchor" href="#remarks-06"></a>Remarks</h3>
 <div class="paragraph">
 <p>Some interpreters store the whole of dynamic memory to disc as part of their saved game files, which can make them as much as 45K or so long. A player making a serious attack on a game may end up wasting a whole megabyte, more than convenient without a hard disc. A technique invented by Bryan Scattergood, taken up by most modern interpreters, greatly reduces file size by only saving bytes of dynamic memory which differ from the initial state of the game.</p>
 </div>
@@ -2783,17 +2790,6 @@ In Version 6, the Z-machine understands a third kind of stack: a "user stack", w
 <div class="paragraph">
 <p>Given the existence of Quetzal, a portable saved file format, it is quite possible that after loading, the game may be running on a different interpreter to that on which the game started. As a result, it is strongly advisable for games to recheck any interpreter capabilities (eg Standard version, unicode support, etc) after loading.</p>
 </div>
-<hr>
-<div class="paragraph">
-<p><a href="index.html">Contents</a> / <a href="preface.html">Preface</a> / <a href="overview.html">Overview</a></p>
-</div>
-<div class="paragraph">
-<p>Section <a href="sect01.html">1</a> / <a href="sect02.html">2</a> / <a href="sect03.html">3</a> / <a href="sect04.html">4</a> / <a href="sect05.html">5</a> / <a href="sect06.html">6</a> / <a href="sect07.html">7</a> / <a href="sect08.html">8</a> / <a href="sect09.html">9</a> / <a href="sect10.html">10</a> / <a href="sect11.html">11</a> / <a href="sect12.html">12</a> / <a href="sect13.html">13</a> / <a href="sect14.html">14</a> / <a href="sect15.html">15</a> / <a href="sect16.html">16</a></p>
-</div>
-<div class="paragraph">
-<p>Appendix <a href="appa.html">A</a> / <a href="appb.html">B</a> / <a href="appc.html">C</a> / <a href="appd.html">D</a> / <a href="appe.html">E</a> / <a href="appf.html">F</a></p>
-</div>
-<hr>
 </div>
 </div>
 </div>
@@ -2801,14 +2797,10 @@ In Version 6, the Z-machine understands a third kind of stack: a "user stack", w
 <div class="sect1">
 <h2 id="_output_streams_and_file_handling"><a class="anchor" href="#_output_streams_and_file_handling"></a>7. Output streams and file handling</h2>
 <div class="sectionbody">
-<hr>
+<div class="sect2">
+<h3 id="s7.1"><a class="anchor" href="#s7.1"></a>7.1. Output streams</h3>
 <div class="paragraph">
-<p>7.1 <a href="#one">Output streams</a> / 7.2 <a href="#two">Buffering</a> / 7.3 <a href="#three">Selection (V1 and V2)</a> / 7.4 <a href="#four">Selection (later versions)</a> / 7.5 <a href="#five">Dealing with Unicode or invalid characters</a> / 7.6 <a href="#six">File handling</a></p>
-</div>
-<hr>
-<div id="p7.1" class="paragraph">
-<p><span class="red">§7.1.</span>
-At any given time text is being output through a selection of "output streams" (possibly none, possibly several at once).</p>
+<p>At any given time text is being output through a selection of "output streams" (possibly none, possibly several at once).</p>
 </div>
 <div id="p7.1.1" class="paragraph">
 <p><span class="red">§7.1.1.</span>
@@ -2846,9 +2838,11 @@ Newlines are written to output stream 3 as ZSCII 13. (A game should never <stron
 <p><span class="red">§7.1.2.3.</span>
 Output stream 4 is unusual in that, when it is selected, the only text printed to it is that of the player&#8217;s commands and keypresses (as read by <strong>read_char</strong>). (Each command is written, in one go, when it has been finished. Time delays and mouse-clicks should ideally be recorded. For suggestions on how this might be achieved, see the remarks section below. Mistypes and uses of 'delete' are not written.)</p>
 </div>
-<div id="p7.2" class="paragraph">
-<p><span class="red">§7.2.</span>
-On output streams 1 and 2 (only), text printing may be "buffered" in that new-lines are automatically printed to ensure that no word (of length less than the width of the screen) spreads across two lines (if the interpreter is able to control this). (This process is sometimes called "word-wrapping".)</p>
+</div>
+<div class="sect2">
+<h3 id="s7.2"><a class="anchor" href="#s7.2"></a>7.2. Buffering</h3>
+<div class="paragraph">
+<p>On output streams 1 and 2 (only), text printing may be "buffered" in that new-lines are automatically printed to ensure that no word (of length less than the width of the screen) spreads across two lines (if the interpreter is able to control this). (This process is sometimes called "word-wrapping".)</p>
 </div>
 <div id="p7.2.1" class="paragraph">
 <p><span class="red">§7.2.1.</span>
@@ -2858,17 +2852,23 @@ In Versions 1 to 3, buffering is always on. In Versions 4 and later it is on by 
 <p><span class="red">§7.2.2.</span>
 In Version 6, each of the eight windows has its own "buffering flag". In Versions 3 to 5, the <strong>buffer_mode</strong> applies only to the lower window, and buffering never happens in the upper window.</p>
 </div>
-<div id="p7.3" class="paragraph">
-<p><span class="red">§7.3.</span>
-In Versions 1 and 2, output stream 1 is always selected and stream 2 can be selected or deselected by the game, by setting or clearing bit 0 of 'Flags 2'.</p>
 </div>
-<div id="p7.4" class="paragraph">
-<p><span class="red">§7.4.</span>
-In Versions 3 and later, all four output streams can be selected or deselected using the <strong>output_stream</strong> opcode. In addition, stream 2 can be selected or deselected by setting or clearing bit 0 of 'Flags 2'. Whichever method is used, the interpreter must ensure that this flag holds the current status of stream 2. ('A Mind Forever Voyaging' requires this.)</p>
+<div class="sect2">
+<h3 id="s7.3"><a class="anchor" href="#s7.3"></a>7.3. Selection (V1 and V2)</h3>
+<div class="paragraph">
+<p>In Versions 1 and 2, output stream 1 is always selected and stream 2 can be selected or deselected by the game, by setting or clearing bit 0 of 'Flags 2'.</p>
 </div>
-<div id="p7.5" class="paragraph">
-<p><span class="red">§7.5.</span>
-<strong>*</strong>*[1.0]* Because of the <strong>print_unicode</strong> opcode, it is possible for arbitrary Unicode characters to be sent to the output streams: that is, for characters which are not in the ZSCII set at all, even in the "extra characters" range.</p>
+</div>
+<div class="sect2">
+<h3 id="s7.4"><a class="anchor" href="#s7.4"></a>7.4. Selection (later versions)</h3>
+<div class="paragraph">
+<p>In Versions 3 and later, all four output streams can be selected or deselected using the <strong>output_stream</strong> opcode. In addition, stream 2 can be selected or deselected by setting or clearing bit 0 of 'Flags 2'. Whichever method is used, the interpreter must ensure that this flag holds the current status of stream 2. ('A Mind Forever Voyaging' requires this.)</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="s7.5"><a class="anchor" href="#s7.5"></a>7.5. Dealing with Unicode or invalid characters</h3>
+<div class="paragraph">
+<p><strong>*</strong>*[1.0]* Because of the <strong>print_unicode</strong> opcode, it is possible for arbitrary Unicode characters to be sent to the output streams: that is, for characters which are not in the ZSCII set at all, even in the "extra characters" range.</p>
 </div>
 <div id="p7.5.1" class="paragraph">
 <p><span class="red">§7.5.1.</span>
@@ -2886,9 +2886,11 @@ When printed to stream 3, Unicode characters should be converted to ZSCII if pos
 <p><span class="red">§7.5.4.</span>
 Non-ZSCII characters never need to be printed to stream 4.</p>
 </div>
-<div id="p7.6" class="paragraph">
-<p><span class="red">§7.6.</span>
-<strong>*</strong>*[1.0]* In Versions 5 and later, the Z-machine has the ability to load and save files (using optional operands with the <strong>save</strong> and <strong>restore</strong> opcodes: these operands were not used in Infocom&#8217;s Version 5 games, but I wish to specify them as in Version 5 anyway).</p>
+</div>
+<div class="sect2">
+<h3 id="s7.6"><a class="anchor" href="#s7.6"></a>7.6. File handling</h3>
+<div class="paragraph">
+<p><strong>*</strong>*[1.0]* In Versions 5 and later, the Z-machine has the ability to load and save files (using optional operands with the <strong>save</strong> and <strong>restore</strong> opcodes: these operands were not used in Infocom&#8217;s Version 5 games, but I wish to specify them as in Version 5 anyway).</p>
 </div>
 <div id="p7.6.1" class="paragraph">
 <p><span class="red">§7.6.1.</span>
@@ -2930,9 +2932,9 @@ An attempt by the game to use save or restore in a manner not supported by the i
 <p><span class="red">§7.6.5.2.</span>
 An attempt by the game to use streams to access external files which is not supported by the interpreter should ideally print a warning to the user that the functionality is not available, and otherwise do nothing.</p>
 </div>
-<hr>
+</div>
 <div class="sect2">
-<h3 id="_remarks_7"><a class="anchor" href="#_remarks_7"></a>7.1. Remarks</h3>
+<h3 id="remarks-07"><a class="anchor" href="#remarks-07"></a>Remarks</h3>
 <div class="paragraph">
 <p>The <strong>ITF</strong> interpreter incorrectly applies buffering when printing to the upper window.</p>
 </div>
@@ -2958,31 +2960,16 @@ An attempt by the game to use streams to access external files which is not supp
 <div class="paragraph">
 <p>A typical auxiliary file might be one containing the player&#8217;s preferred choices. This would be created when he first changed any of the default settings, and loaded (if present) whenever the game started up.</p>
 </div>
-<hr>
-<div class="paragraph">
-<p><a href="index.html">Contents</a> / <a href="preface.html">Preface</a> / <a href="overview.html">Overview</a></p>
-</div>
-<div class="paragraph">
-<p>Section <a href="sect01.html">1</a> / <a href="sect02.html">2</a> / <a href="sect03.html">3</a> / <a href="sect04.html">4</a> / <a href="sect05.html">5</a> / <a href="sect06.html">6</a> / <a href="sect07.html">7</a> / <a href="sect08.html">8</a> / <a href="sect09.html">9</a> / <a href="sect10.html">10</a> / <a href="sect11.html">11</a> / <a href="sect12.html">12</a> / <a href="sect13.html">13</a> / <a href="sect14.html">14</a> / <a href="sect15.html">15</a> / <a href="sect16.html">16</a></p>
-</div>
-<div class="paragraph">
-<p>Appendix <a href="appa.html">A</a> / <a href="appb.html">B</a> / <a href="appc.html">C</a> / <a href="appd.html">D</a> / <a href="appe.html">E</a> / <a href="appf.html">F</a></p>
-</div>
-<hr>
 </div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="_the_screen_model"><a class="anchor" href="#_the_screen_model"></a>8. The screen model</h2>
 <div class="sectionbody">
-<hr>
+<div class="sect2">
+<h3 id="s8.1"><a class="anchor" href="#s8.1"></a>8.1. Fonts</h3>
 <div class="paragraph">
-<p>8.1 <a href="#one">Fonts</a> / 8.2 <a href="#two">Status line</a> / 8.3 <a href="#three">Text colours</a> / 8.4 <a href="#four">Screen dimensions</a> / 8.5 <a href="#five">Screen model (V1, V2)</a> / 8.6 <a href="#six">Screen model (V3)</a> / 8.7 <a href="#seven">Screen model (V4, V5)</a> / 8.8 <a href="#eight">Screen model (V6)</a></p>
-</div>
-<hr>
-<div id="p8.1" class="paragraph">
-<p><span class="red">§8.1.</span>
-Text may be printed in any font of the interpreter&#8217;s choice, variable- or fixed-pitch: except that when bit 1 of 'Flags 2' in the header is set, font 4 has been selected, or when the text style has been set to Fixed Pitch, then a fixed-pitch font must be used. The fixed pitch-bit is deprecated in Version 5 and later, and interpreter support in Version 6 is optional.</p>
+<p>Text may be printed in any font of the interpreter&#8217;s choice, variable- or fixed-pitch: except that when bit 1 of 'Flags 2' in the header is set, font 4 has been selected, or when the text style has been set to Fixed Pitch, then a fixed-pitch font must be used. The fixed pitch-bit is deprecated in Version 5 and later, and interpreter support in Version 6 is optional.</p>
 </div>
 <div id="p8.1.1" class="paragraph">
 <p><span class="red">§8.1.1.</span>
@@ -3027,9 +3014,11 @@ In Version 5 (only), an interpreter which cannot provide the character graphics 
 <p><span class="red">§8.1.6.</span>
 Any new fonts will have numbers higher than 4. Fonts 5-1023 are reserved for future Standards to specify. Local use may be made of higher font numbers.</p>
 </div>
-<div id="p8.2" class="paragraph">
-<p><span class="red">§8.2.</span>
-In Versions 1 to 3, a status line should be printed by the interpreter, as follows. In Version 3, it must set bit 4 of 'Flags 1' in the header if it is unable to produce a status line.</p>
+</div>
+<div class="sect2">
+<h3 id="s8.2"><a class="anchor" href="#s8.2"></a>8.2. Status line</h3>
+<div class="paragraph">
+<p>In Versions 1 to 3, a status line should be printed by the interpreter, as follows. In Version 3, it must set bit 4 of 'Flags 1' in the header if it is unable to produce a status line.</p>
 </div>
 <div id="p8.2.1" class="paragraph">
 <p><span class="red">§8.2.1.</span>
@@ -3063,9 +3052,11 @@ For "time games": the time, in the form <strong>hours:minutes</strong> (held in 
 <p><span class="red">§8.2.4.</span>
 The status line is updated in exactly two circumstances: when a <strong>show_status</strong> opcode is executed, and just before the keyboard is read by <strong>read</strong>. (It is not displayed when the game begins.)</p>
 </div>
-<div id="p8.3" class="paragraph">
-<p><span class="red">§8.3.</span>
-Under Versions 5 and later, text printing has a current foreground and background colour. In Version 6, each window has its own pair. (Note that a Version 6 interpreter going under the Amiga interpreter number must use the same pair of colours for all windows when running Infocom&#8217;s games. If either is changed, then the interpreter must change the colour of all text on the screen to match. This simulates the Amiga hardware, which used two logical colours for text and switched palette to change their physical colour. This behaviour should not occur when running non-Infocom games, and modern games should never expect it. An interpreter that does not wish to handle this behaviour at all should avoid using the Amiga interpreter number when running Infocom&#8217;s Version 6 games.)</p>
+</div>
+<div class="sect2">
+<h3 id="s8.3"><a class="anchor" href="#s8.3"></a>8.3. Text colours</h3>
+<div class="paragraph">
+<p>Under Versions 5 and later, text printing has a current foreground and background colour. In Version 6, each window has its own pair. (Note that a Version 6 interpreter going under the Amiga interpreter number must use the same pair of colours for all windows when running Infocom&#8217;s games. If either is changed, then the interpreter must change the colour of all text on the screen to match. This simulates the Amiga hardware, which used two logical colours for text and switched palette to change their physical colour. This behaviour should not occur when running non-Infocom games, and modern games should never expect it. An interpreter that does not wish to handle this behaviour at all should avoid using the Amiga interpreter number when running Infocom&#8217;s Version 6 games.)</p>
 </div>
 <div id="p8.3.1" class="paragraph">
 <p><span class="red">§8.3.1.</span>
@@ -3158,9 +3149,11 @@ If the colour selected was not one of the standard set (this can happen when usi
 <div class="paragraph">
 <p>True colour specifications are in the sRGB colour space, <strong>$0000</strong> being black and <strong>$7FFF</strong> being white. Colours should be gamma adjusted if necessary. See the <strong>PNG</strong> specification for a good introduction to colour spaces and gamma correction.</p>
 </div>
-<div id="p8.4" class="paragraph">
-<p><span class="red">§8.4.</span>
-The screen should ideally be at least 60 characters wide by 14 lines deep. (Old Apple II interpreters had a 40 character width and some modern laptop ones have a 9 line height, but implementors should seek to avoid these extremes if possible.) The interpreter may change the exact dimensions whenever it likes but must write the current height (in lines) and width (in characters) into bytes <strong>$20</strong> and <strong>$21</strong> in the header.</p>
+</div>
+<div class="sect2">
+<h3 id="s8.4"><a class="anchor" href="#s8.4"></a>8.4. Screen dimensions</h3>
+<div class="paragraph">
+<p>The screen should ideally be at least 60 characters wide by 14 lines deep. (Old Apple II interpreters had a 40 character width and some modern laptop ones have a 9 line height, but implementors should seek to avoid these extremes if possible.) The interpreter may change the exact dimensions whenever it likes but must write the current height (in lines) and width (in characters) into bytes <strong>$20</strong> and <strong>$21</strong> in the header.</p>
 </div>
 <div id="p8.4.1" class="paragraph">
 <p><span class="red">§8.4.1.</span>
@@ -3174,9 +3167,11 @@ Screen dimensions are measured in notional "units". In Versions 1 to 4, one unit
 <p><span class="red">§8.4.3.</span>
 In Version 5 and later, the screen&#8217;s width and height in units should be written to the words at <strong>$22</strong> and <strong>$24</strong>.</p>
 </div>
-<div id="p8.5" class="paragraph">
-<p><span class="red">§8.5.</span>
-The screen model for Versions 1 and 2 is as follows:</p>
+</div>
+<div class="sect2">
+<h3 id="s8.5"><a class="anchor" href="#s8.5"></a>8.5. Screen model (V1, V2)</h3>
+<div class="paragraph">
+<p>The screen model for Versions 1 and 2 is as follows:</p>
 </div>
 <div id="p8.5.1" class="paragraph">
 <p><span class="red">§8.5.1.</span>
@@ -3186,9 +3181,11 @@ The screen can only be printed to (like a teletype) and there is no control of t
 <p><span class="red">§8.5.2.</span>
 At the start of a game, the screen should be cleared and the text cursor placed at the bottom left (so that text scrolls upwards as the game gets under way).</p>
 </div>
-<div id="p8.6" class="paragraph">
-<p><span class="red">§8.6.</span>
-The screen model for Version 3 is as follows:</p>
+</div>
+<div class="sect2">
+<h3 id="s8.6"><a class="anchor" href="#s8.6"></a>8.6. Screen model (V3)</h3>
+<div class="paragraph">
+<p>The screen model for Version 3 is as follows:</p>
 </div>
 <div id="p8.6.1" class="paragraph">
 <p><span class="red">§8.6.1.</span>
@@ -3222,9 +3219,11 @@ When text reaches the bottom right of the lower window, it should be scrolled up
 <p><span class="red">§8.6.3.</span>
 At the start of a game, the screen should be cleared and the text cursor placed at the bottom left (so that text scrolls upwards as the game gets under way).</p>
 </div>
-<div id="p8.7" class="paragraph">
-<p><span class="red">§8.7.</span>
-The screen model for Versions 4 and later, except Version 6, is as follows:</p>
+</div>
+<div class="sect2">
+<h3 id="s8.7"><a class="anchor" href="#s8.7"></a>8.7. Screen model (V4, V5)</h3>
+<div class="paragraph">
+<p>The screen model for Versions 4 and later, except Version 6, is as follows:</p>
 </div>
 <div id="p8.7.1" class="paragraph">
 <p><span class="red">§8.7.1.</span>
@@ -3294,9 +3293,11 @@ Erasing window -1 clears the whole screen to the background colour of the lower 
 <p><span class="red">§8.7.3.4.</span>
 Using <strong>erase_line</strong> in the upper window should erase the current line from the cursor position to the right-hand edge, clearing it to background colour. (Even if the text style is Reverse Video the new blank space should not have reversed colours.)</p>
 </div>
-<div id="p8.8" class="paragraph">
-<p><span class="red">§8.8.</span>
-The screen model for Version 6 is as follows:</p>
+</div>
+<div class="sect2">
+<h3 id="s8.8"><a class="anchor" href="#s8.8"></a>8.8. Screen model (V6)</h3>
+<div class="paragraph">
+<p>The screen model for Version 6 is as follows:</p>
 </div>
 <div id="p8.8.1" class="paragraph">
 <p><span class="red">§8.8.1.</span>
@@ -3502,9 +3503,9 @@ The game may, if it wishes, use the <strong>picture_table</strong> opcode to giv
 <p><span class="red">§8.8.7.2.</span>
 <strong>*</strong>*[1.1]* With buffer_screen in either state, an update of the visible display can be forced immediately by issuing <strong>buffer_screen</strong> -1, without altering the current buffering state. Note that <strong>buffer_screen</strong> -1 does not flush the text buffer.</p>
 </div>
-<hr>
+</div>
 <div class="sect2">
-<h3 id="_remarks_8"><a class="anchor" href="#_remarks_8"></a>8.1. Remarks</h3>
+<h3 id="remarks-08"><a class="anchor" href="#remarks-08"></a>Remarks</h3>
 <div class="paragraph">
 <p>See <strong>S</strong> 16 for comment on how 'Beyond Zork' uses fonts.</p>
 </div>
@@ -3658,31 +3659,16 @@ buffer_mode on    ---</pre>
 <div class="paragraph">
 <p>Due to a bug or an oversight, the V6 story files for all interpreters use <strong>buffer_mode</strong> once: to remove buffering while printing "Please wait&#8230;&#8203;" with a row of full stops trickling out during a slow operation. Buffering would frustrate this, but fortunately on modern computers the operation is no longer slow and so the bug does not cause trouble.</p>
 </div>
-<hr>
-<div class="paragraph">
-<p><a href="index.html">Contents</a> / <a href="preface.html">Preface</a> / <a href="overview.html">Overview</a></p>
-</div>
-<div class="paragraph">
-<p>Section <a href="sect01.html">1</a> / <a href="sect02.html">2</a> / <a href="sect03.html">3</a> / <a href="sect04.html">4</a> / <a href="sect05.html">5</a> / <a href="sect06.html">6</a> / <a href="sect07.html">7</a> / <a href="sect08.html">8</a> / <a href="sect09.html">9</a> / <a href="sect10.html">10</a> / <a href="sect11.html">11</a> / <a href="sect12.html">12</a> / <a href="sect13.html">13</a> / <a href="sect14.html">14</a> / <a href="sect15.html">15</a> / <a href="sect16.html">16</a></p>
-</div>
-<div class="paragraph">
-<p>Appendix <a href="appa.html">A</a> / <a href="appb.html">B</a> / <a href="appc.html">C</a> / <a href="appd.html">D</a> / <a href="appe.html">E</a> / <a href="appf.html">F</a></p>
-</div>
-<hr>
 </div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="_sound_effects"><a class="anchor" href="#_sound_effects"></a>9. Sound effects</h2>
 <div class="sectionbody">
-<hr>
+<div class="sect2">
+<h3 id="s9.1"><a class="anchor" href="#s9.1"></a>9.1. Sound effects</h3>
 <div class="paragraph">
-<p>9.1 <a href="#one">Sound effects</a> / 9.2 <a href="#two">Numbering of</a> / 9.3 <a href="#three">Volume</a> / 9.4 <a href="#four">Sound playing autonymously</a></p>
-</div>
-<hr>
-<div id="p9.1" class="paragraph">
-<p><span class="red">§9.1.</span>
-Some games, from Version 3 onward, have sound effects attached. These are not stored in the story files (or the Z-machine) itself, and the interpreter is simply expected to know where to find them. Other games have only one sound effect, usable in a much more restricted way: a beep or bell sound, which we shall call a "bleep".</p>
+<p>Some games, from Version 3 onward, have sound effects attached. These are not stored in the story files (or the Z-machine) itself, and the interpreter is simply expected to know where to find them. Other games have only one sound effect, usable in a much more restricted way: a beep or bell sound, which we shall call a "bleep".</p>
 </div>
 <div id="p9.1.1" class="paragraph">
 <p><span class="red">§9.1.1.</span>
@@ -3692,21 +3678,27 @@ In Version 6, the interpreter should set bit 5 of 'Flags 1' if it can provide so
 <p><span class="red">§9.1.2.</span>
 In Version 5 and later, a game should have bit 7 of 'Flags 2' set in its story file if it wants to use sound effects beyond a bleep. The interpreter should then clear this bit if it cannot oblige.</p>
 </div>
-<div id="p9.2" class="paragraph">
-<p><span class="red">§9.2.</span>
-Sound effects are numbered upwards from 1. Number 1 is a high-pitched bleep, number 2 a low-pitched one and effects from 3 upward are supplied by the interpreter somehow for the particular game in question.</p>
+</div>
+<div class="sect2">
+<h3 id="s9.2"><a class="anchor" href="#s9.2"></a>9.2. Numbering of</h3>
+<div class="paragraph">
+<p>Sound effects are numbered upwards from 1. Number 1 is a high-pitched bleep, number 2 a low-pitched one and effects from 3 upward are supplied by the interpreter somehow for the particular game in question.</p>
 </div>
 <div id="p9.2.1" class="paragraph">
 <p><span class="red">§9.2.1.</span>
 <strong>*</strong>*[1.1]* Aside from bleeps, there are two types of sound effect, samples and music. The game has no way of telling the type of a given sound effect.</p>
 </div>
-<div id="p9.3" class="paragraph">
-<p><span class="red">§9.3.</span>
-Sound effects (other than bleeps) can be played at any volume level from 1 to 8 (8 being loudest of these). The volume level -1 should be implemented as "loudest possible".</p>
 </div>
-<div id="p9.4" class="paragraph">
-<p><span class="red">§9.4.</span>
-Bleeps are immediate and brief. Other sound effects take place in the background, while normal operation of the Z-machine is going on. Control is via the <strong>sound_effect</strong> opcode, allowing the game to prepare, start, stop or finish with an effect.</p>
+<div class="sect2">
+<h3 id="s9.3"><a class="anchor" href="#s9.3"></a>9.3. Volume</h3>
+<div class="paragraph">
+<p>Sound effects (other than bleeps) can be played at any volume level from 1 to 8 (8 being loudest of these). The volume level -1 should be implemented as "loudest possible".</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="s9.4"><a class="anchor" href="#s9.4"></a>9.4. Sound playing autonymously</h3>
+<div class="paragraph">
+<p>Bleeps are immediate and brief. Other sound effects take place in the background, while normal operation of the Z-machine is going on. Control is via the <strong>sound_effect</strong> opcode, allowing the game to prepare, start, stop or finish with an effect.</p>
 </div>
 <div id="p9.4.1" class="paragraph">
 <p><span class="red">§9.4.1.</span>
@@ -3728,9 +3720,9 @@ Eventually, though, if it has not been stopped, it may end by itself. A routine 
 <p><span class="red">§9.4.5.</span>
 The game may, but need not, explicitly "finish with" any sound effect which is not likely to occur again for a while: the interpreter can then throw it out of memory.</p>
 </div>
-<hr>
+</div>
 <div class="sect2">
-<h3 id="_remarks_9"><a class="anchor" href="#_remarks_9"></a>9.1. Remarks</h3>
+<h3 id="remarks-09"><a class="anchor" href="#remarks-09"></a>Remarks</h3>
 <div class="paragraph">
 <p>The safest way an Inform program can try to produce a bleep is by executing <strong>@sound_effect 1</strong>. Some ports of <strong>Zip</strong> believe that the first operand of this is the number of bleeps to make (so that <strong>@sound_effect 2</strong> bleeps twice), but this is incorrect.</p>
 </div>
@@ -3780,35 +3772,22 @@ The game may, but need not, explicitly "finish with" any sound effect which is n
 <div class="paragraph">
 <p>If multi-channel effects are used, the overall volume should be independent of the number of channels used in the sound. Thus a stereo AIFF containing the same samples for left and right should sound as loud as a mono AIFF containing the same data. This will need adjustment of volume if stereo AIFFs use two physical channels and mono AIFFs use one. No adjustment would be required if an interpreter reduced all AIFFs to mono.</p>
 </div>
-<hr>
-<div class="paragraph">
-<p><a href="index.html">Contents</a> / <a href="preface.html">Preface</a> / <a href="overview.html">Overview</a></p>
-</div>
-<div class="paragraph">
-<p>Section <a href="sect01.html">1</a> / <a href="sect02.html">2</a> / <a href="sect03.html">3</a> / <a href="sect04.html">4</a> / <a href="sect05.html">5</a> / <a href="sect06.html">6</a> / <a href="sect07.html">7</a> / <a href="sect08.html">8</a> / <a href="sect09.html">9</a> / <a href="sect10.html">10</a> / <a href="sect11.html">11</a> / <a href="sect12.html">12</a> / <a href="sect13.html">13</a> / <a href="sect14.html">14</a> / <a href="sect15.html">15</a> / <a href="sect16.html">16</a></p>
-</div>
-<div class="paragraph">
-<p>Appendix <a href="appa.html">A</a> / <a href="appb.html">B</a> / <a href="appc.html">C</a> / <a href="appd.html">D</a> / <a href="appe.html">E</a> / <a href="appf.html">F</a></p>
-</div>
-<hr>
 </div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="_input_streams_and_devices"><a class="anchor" href="#_input_streams_and_devices"></a>10. Input streams and devices</h2>
 <div class="sectionbody">
-<hr>
+<div class="sect2">
+<h3 id="s10.1"><a class="anchor" href="#s10.1"></a>10.1. Keyboard only in V1</h3>
 <div class="paragraph">
-<p>10.1 <a href="#one">Keyboard only in V1</a> / 10.2 <a href="#two">Input streams</a> / 10.3 <a href="#three">Mouse support</a> / 10.4 <a href="#four">Menu support</a> / 10.5 <a href="#five">Terminating characters and timed input</a> / 10.6 <a href="#six">Single keypresses</a> / 10.7 <a href="#seven">Reading ZSCII from the keyboard</a></p>
+<p>In Versions 1 and 2, the player&#8217;s commands can only be drawn from the keyboard.</p>
 </div>
-<hr>
-<div id="p10.1" class="paragraph">
-<p><span class="red">§10.1.</span>
-In Versions 1 and 2, the player&#8217;s commands can only be drawn from the keyboard.</p>
 </div>
-<div id="p10.2" class="paragraph">
-<p><span class="red">§10.2.</span>
-In Versions 3 and later, the player&#8217;s keypresses are drawn from the current "input stream". There are two input streams: numbered 0 (the keyboard) and 1 (a file containing commands). Other inputs (mouse clicks or menu selections), if available, are also implemented as keypresses (see below).</p>
+<div class="sect2">
+<h3 id="s10.2"><a class="anchor" href="#s10.2"></a>10.2. Input streams</h3>
+<div class="paragraph">
+<p>In Versions 3 and later, the player&#8217;s keypresses are drawn from the current "input stream". There are two input streams: numbered 0 (the keyboard) and 1 (a file containing commands). Other inputs (mouse clicks or menu selections), if available, are also implemented as keypresses (see below).</p>
 </div>
 <div id="p10.2.1" class="paragraph">
 <p><span class="red">§10.2.1.</span>
@@ -3826,9 +3805,11 @@ When input stream 1 is first selected, the interpreter may use any method of cho
 <p><span class="red">§10.2.4.</span>
 When the the current stream is stream 1, the interpreter should not hold up long passages of text (by printing "[MORE]" and waiting for a keypress, for instance).</p>
 </div>
-<div id="p10.3" class="paragraph">
-<p><span class="red">§10.3.</span>
-Mouse support is optional but can be provided in Versions 5 and later.</p>
+</div>
+<div class="sect2">
+<h3 id="s10.3"><a class="anchor" href="#s10.3"></a>10.3. Mouse support</h3>
+<div class="paragraph">
+<p>Mouse support is optional but can be provided in Versions 5 and later.</p>
 </div>
 <div id="p10.3.1" class="paragraph">
 <p><span class="red">§10.3.1.</span>
@@ -3856,9 +3837,11 @@ The mouse is presumed to have between 0 and 16 buttons. The state of these butto
 <p><span class="red">§10.3.4.</span>
 In Version 6, the mouse can either be free or constrained to one of the 8 windows: if so, clicks outside the 'mouse window' must be ignored, and the interpreter is at liberty to confine the mouse&#8217;s movement to the boundary of its window.</p>
 </div>
-<div id="p10.4" class="paragraph">
-<p><span class="red">§10.4.</span>
-Menu support can optionally be provided in Version 6.</p>
+</div>
+<div class="sect2">
+<h3 id="s10.4"><a class="anchor" href="#s10.4"></a>10.4. Menu support</h3>
+<div class="paragraph">
+<p>Menu support can optionally be provided in Version 6.</p>
 </div>
 <div id="p10.4.1" class="paragraph">
 <p><span class="red">§10.4.1.</span>
@@ -3876,9 +3859,11 @@ Menus are numbered from 0 upwards. 0, 1 and 2 are reserved for the interpreter t
 <p><span class="red">§10.4.3.</span>
 Menu selection is reported to the game as a keypress (see below). Details of what selection has been made are read with <strong>read_mouse</strong>.</p>
 </div>
-<div id="p10.5" class="paragraph">
-<p><span class="red">§10.5.</span>
-Whole commands are read from the input stream using the <strong>read</strong> opcode. (Note that this has two different internal names in Inform, <strong>sread</strong> for Versions 1 to 4 and <strong>aread</strong> subsequently.)</p>
+</div>
+<div class="sect2">
+<h3 id="s10.5"><a class="anchor" href="#s10.5"></a>10.5. Terminating characters and timed input</h3>
+<div class="paragraph">
+<p>Whole commands are read from the input stream using the <strong>read</strong> opcode. (Note that this has two different internal names in Inform, <strong>sread</strong> for Versions 1 to 4 and <strong>aread</strong> subsequently.)</p>
 </div>
 <div id="p10.5.1" class="paragraph">
 <p><span class="red">§10.5.1.</span>
@@ -3896,13 +3881,17 @@ In Versions 5 and later, the game may provide a "terminating characters table" b
 <p><span class="red">§10.5.3.</span>
 <strong>*</strong>*[1.0]* In Versions 4 and later, an interpreter should ideally be able to time input and to call a (game) routine at periodic intervals: see the <strong>read</strong> opcode. If it is able to do this, it should set bit 7 of 'Flags 1' in the header.</p>
 </div>
-<div id="p10.6" class="paragraph">
-<p><span class="red">§10.6.</span>
-In Versions 4 and later, individual characters can be read from the current input stream, using <strong>read_char</strong>. Again, the interpreter should ideally be able to time input and to call a (game) routine at periodic intervals. If it is able to do this, it should set bit 7 of 'Flags 1' in the header.</p>
 </div>
-<div id="p10.7" class="paragraph">
-<p><span class="red">§10.7.</span>
-The only characters which can be read from the keyboard are ZSCII characters defined for input (see <strong>S</strong> 3).</p>
+<div class="sect2">
+<h3 id="s10.6"><a class="anchor" href="#s10.6"></a>10.6. Single keypresses</h3>
+<div class="paragraph">
+<p>In Versions 4 and later, individual characters can be read from the current input stream, using <strong>read_char</strong>. Again, the interpreter should ideally be able to time input and to call a (game) routine at periodic intervals. If it is able to do this, it should set bit 7 of 'Flags 1' in the header.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="s10.7"><a class="anchor" href="#s10.7"></a>10.7. Reading ZSCII from the keyboard</h3>
+<div class="paragraph">
+<p>The only characters which can be read from the keyboard are ZSCII characters defined for input (see <strong>S</strong> 3).</p>
 </div>
 <div id="p10.7.1" class="paragraph">
 <p><span class="red">§10.7.1.</span>
@@ -3916,9 +3905,9 @@ Only ZSCII characters defined for both input and output can be stored in the tex
 <p><span class="red">§10.7.3.</span>
 The "escape" code is optional: that is, an interpreter need not provide an escape key. (The Inform library clears and quits menus if this code is returned to <strong>read_char</strong>.)</p>
 </div>
-<hr>
+</div>
 <div class="sect2">
-<h3 id="_remarks_10"><a class="anchor" href="#_remarks_10"></a>10.1. Remarks</h3>
+<h3 id="remarks-10"><a class="anchor" href="#remarks-10"></a>Remarks</h3>
 <div class="paragraph">
 <p>Menus in 'Beyond Zork' define cursor up and cursor down as terminating characters, and make use of <strong>read</strong> in the upper window.</p>
 </div>
@@ -3934,17 +3923,6 @@ The "escape" code is optional: that is, an interpreter need not provide an escap
 <div class="paragraph">
 <p>Interpreters may constrain the pointer to the screen as long as buttons are held down - this might aid dragging operations - although this is not required.</p>
 </div>
-<hr>
-<div class="paragraph">
-<p><a href="index.html">Contents</a> / <a href="preface.html">Preface</a> / <a href="overview.html">Overview</a></p>
-</div>
-<div class="paragraph">
-<p>Section <a href="sect01.html">1</a> / <a href="sect02.html">2</a> / <a href="sect03.html">3</a> / <a href="sect04.html">4</a> / <a href="sect05.html">5</a> / <a href="sect06.html">6</a> / <a href="sect07.html">7</a> / <a href="sect08.html">8</a> / <a href="sect09.html">9</a> / <a href="sect10.html">10</a> / <a href="sect11.html">11</a> / <a href="sect12.html">12</a> / <a href="sect13.html">13</a> / <a href="sect14.html">14</a> / <a href="sect15.html">15</a> / <a href="sect16.html">16</a></p>
-</div>
-<div class="paragraph">
-<p>Appendix <a href="appa.html">A</a> / <a href="appb.html">B</a> / <a href="appc.html">C</a> / <a href="appd.html">D</a> / <a href="appe.html">E</a> / <a href="appf.html">F</a></p>
-</div>
-<hr>
 </div>
 </div>
 </div>
@@ -3952,10 +3930,9 @@ The "escape" code is optional: that is, an interpreter need not provide an escap
 <div class="sect1">
 <h2 id="_the_format_of_the_header"><a class="anchor" href="#_the_format_of_the_header"></a>11. The format of the header</h2>
 <div class="sectionbody">
-<div class="sect2">
-<h3 id="_11_1"><a class="anchor" href="#_11_1"></a>11.1. 11.1</h3>
-<div class="paragraph">
-<p>The header table summarises those locations in the Z-machine&#8217;s header which an interpreter must deal with. (For further notes on traditional usage, see <a href="appb.html">Appendix B</a>.) "Hex" means the address, in hexadecimal; "V" the earliest Version to which the rule is applicable; "Dyn" means that the byte or bit may legally be changed by the game during play; "Int" means that the interpreter may change it; "Rst" means that the interpreter must set it correctly after loading the game, after a restore or after a restart.</p>
+<div id="p11.1" class="paragraph">
+<p><span class="red">§11.1.</span>
+The header table summarises those locations in the Z-machine&#8217;s header which an interpreter must deal with. (For further notes on traditional usage, see <a href="appb.html">Appendix B</a>.) "Hex" means the address, in hexadecimal; "V" the earliest Version to which the rule is applicable; "Dyn" means that the byte or bit may legally be changed by the game during play; "Int" means that the interpreter may change it; "Rst" means that the interpreter must set it correctly after loading the game, after a restore or after a restart.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 4. <strong>Header format</strong></caption>
@@ -4429,23 +4406,17 @@ The "escape" code is optional: that is, an interpreter need not provide an escap
 <div class="paragraph">
 <p>Some early Version 3 files do not contain length and checksum data, hence the notation <strong>3+</strong>.</p>
 </div>
+<div id="p11.1.1" class="paragraph">
+<p><span class="red">§11.1.1.</span>
+It is illegal for a game to alter those fields not marked as "Dyn". An interpreter is therefore free to store values of such fields in its own variables.</p>
 </div>
-<div class="sect2">
-<h3 id="_11_1_1"><a class="anchor" href="#_11_1_1"></a>11.2. 11.1.1</h3>
-<div class="paragraph">
-<p>It is illegal for a game to alter those fields not marked as "Dyn". An interpreter is therefore free to store values of such fields in its own variables.</p>
+<div id="p11.1.2" class="paragraph">
+<p><span class="red">§11.1.2.</span>
+The state of the transcription bit (bit 0 of Flags 2) can be changed directly by the game to turn transcribing on or off (see <strong>S</strong> 7.3, <strong>S</strong> 7.4). The interpreter must also alter it if stream 2 is turned on or off, to ensure that the bit always reflects the true state of transcribing. Note that the interpreter ensures that its value survives a restart or restore.</p>
 </div>
-</div>
-<div class="sect2">
-<h3 id="_11_1_2"><a class="anchor" href="#_11_1_2"></a>11.3. 11.1.2</h3>
-<div class="paragraph">
-<p>The state of the transcription bit (bit 0 of Flags 2) can be changed directly by the game to turn transcribing on or off (see <strong>S</strong> 7.3, <strong>S</strong> 7.4). The interpreter must also alter it if stream 2 is turned on or off, to ensure that the bit always reflects the true state of transcribing. Note that the interpreter ensures that its value survives a restart or restore.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_11_1_3"><a class="anchor" href="#_11_1_3"></a>11.4. 11.1.3</h3>
-<div class="paragraph">
-<p>Infocom used the interpreter numbers:</p>
+<div id="p11.1.3" class="paragraph">
+<p><span class="red">§11.1.3.</span>
+Infocom used the interpreter numbers:</p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -4458,56 +4429,40 @@ The "escape" code is optional: that is, an interpreter need not provide an escap
 <div class="paragraph">
 <p>(The DECSystem-20 was Infocom&#8217;s own in-house mainframe.) An interpreter should choose the interpreter number most suitable for the machine it will run on. In Versions up to 5, the main consideration is that the behaviour of 'Beyond Zork' depends on the interpreter number (in terms of its usage of the character graphics font). In Version 6, the decision is more serious, as existing Infocom story files depend on interpreter number in many ways: moreover, some story files expect to be run only on the interpreters for a particular machine. (There are, for instance, specifically Amiga versions.)</p>
 </div>
-</div>
-<div class="sect2">
-<h3 id="_11_1_3_1"><a class="anchor" href="#_11_1_3_1"></a>11.5. 11.1.3.1</h3>
-<div class="paragraph">
-<p>Interpreter versions are conventionally ASCII codes for upper-case letters in Versions 4 and 5 (note that Infocom&#8217;s Version 6 interpreters just store numbers here).</p>
+<div id="p11.1.3.1" class="paragraph">
+<p><span class="red">§11.1.3.1.</span>
+Interpreter versions are conventionally ASCII codes for upper-case letters in Versions 4 and 5 (note that Infocom&#8217;s Version 6 interpreters just store numbers here).</p>
 </div>
 <div class="paragraph">
 <p>Modern games are strongly discouraged from testing the interpreter number or interpreter version header information for any game-changing behaviour. It is rarely meaningful, and a Standard interpreter provides many better ways to query the interpreter for information.</p>
 </div>
+<div id="p11.1.4" class="paragraph">
+<p><span class="red">§11.1.4.</span>
+<strong>*</strong>*[1.0]* The use of bit 7 in 'Flags 1' to signal whether timed input is available was new in the 1.0 document: see the preface.</p>
 </div>
-<div class="sect2">
-<h3 id="_11_1_4"><a class="anchor" href="#_11_1_4"></a>11.6. 11.1.4</h3>
-<div class="paragraph">
-<p><strong>*</strong>*[1.0]* The use of bit 7 in 'Flags 1' to signal whether timed input is available was new in the 1.0 document: see the preface.</p>
+<div id="p11.1.5" class="paragraph">
+<p><span class="red">§11.1.5.</span>
+<strong>*</strong>*[1.0]* If an interpreter obeys Revision <strong>n.m</strong> of this document <em>perfectly</em>, as far as anyone knows, then byte <strong>$32</strong> should be written with <strong>n</strong> and byte <strong>$33</strong> with <strong>m</strong>. If it is an earlier (non-standard) interpreter, it should leave these bytes as 0.</p>
 </div>
+<div id="p11.1.6" class="paragraph">
+<p><span class="red">§11.1.6.</span>
+The file length stored at <strong>$1a</strong> is actually divided by a constant, depending on the Version, to make it fit into a header word. This constant is 2 for Versions 1 to 3, 4 for Versions 4 to 5 or 8 for Versions 6 and later.</p>
 </div>
-<div class="sect2">
-<h3 id="_11_1_5"><a class="anchor" href="#_11_1_5"></a>11.7. 11.1.5</h3>
-<div class="paragraph">
-<p><strong>*</strong>*[1.0]* If an interpreter obeys Revision <strong>n.m</strong> of this document <em>perfectly</em>, as far as anyone knows, then byte <strong>$32</strong> should be written with <strong>n</strong> and byte <strong>$33</strong> with <strong>m</strong>. If it is an earlier (non-standard) interpreter, it should leave these bytes as 0.</p>
+<div id="p11.1.7" class="paragraph">
+<p><span class="red">§11.1.7.</span>
+The header extension table provides potentially unlimited room for further header information. It is a table of word entries, in which the initial word contains the number of words of data to follow.</p>
 </div>
+<div id="p11.1.7.1" class="paragraph">
+<p><span class="red">§11.1.7.1.</span>
+If the interpreter needs to read a word which is beyond the length of the extension table, or the extension table doesn&#8217;t exist at all, then the result is 0.</p>
 </div>
-<div class="sect2">
-<h3 id="_11_1_6"><a class="anchor" href="#_11_1_6"></a>11.8. 11.1.6</h3>
-<div class="paragraph">
-<p>The file length stored at <strong>$1a</strong> is actually divided by a constant, depending on the Version, to make it fit into a header word. This constant is 2 for Versions 1 to 3, 4 for Versions 4 to 5 or 8 for Versions 6 and later.</p>
+<div id="p11.1.7.2" class="paragraph">
+<p><span class="red">§11.1.7.2.</span>
+If the interpreter needs to write a word which is beyond the length of the extension table, or the extension table doesn&#8217;t exist at all, then the result is that nothing happens.</p>
 </div>
-</div>
-<div class="sect2">
-<h3 id="_11_1_7"><a class="anchor" href="#_11_1_7"></a>11.9. 11.1.7</h3>
-<div class="paragraph">
-<p>The header extension table provides potentially unlimited room for further header information. It is a table of word entries, in which the initial word contains the number of words of data to follow.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_11_1_7_1"><a class="anchor" href="#_11_1_7_1"></a>11.10. 11.1.7.1</h3>
-<div class="paragraph">
-<p>If the interpreter needs to read a word which is beyond the length of the extension table, or the extension table doesn&#8217;t exist at all, then the result is 0.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_11_1_7_2"><a class="anchor" href="#_11_1_7_2"></a>11.11. 11.1.7.2</h3>
-<div class="paragraph">
-<p>If the interpreter needs to write a word which is beyond the length of the extension table, or the extension table doesn&#8217;t exist at all, then the result is that nothing happens.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_11_1_7_3"><a class="anchor" href="#_11_1_7_3"></a>11.12. 11.1.7.3</h3>
-<div class="paragraph">
-<p><strong>*</strong>*[1.0][1.1]* Words in the header extension table have been allocated as follows:</p>
+<div id="p11.1.7.3" class="paragraph">
+<p><span class="red">§11.1.7.3.</span>
+<strong>*</strong>*[1.0][1.1]* Words in the header extension table have been allocated as follows:</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 5. <strong>Header extension format</strong></caption>
@@ -4594,22 +4549,16 @@ The "escape" code is optional: that is, an interpreter need not provide an escap
 </tr>
 </tbody>
 </table>
+<div id="p11.1.7.4" class="paragraph">
+<p><span class="red">§11.1.7.4.</span>
+<strong>*</strong>*[1.1]* The bits in Flags 3 are set by the game to request use of a feature. If the interpreter cannot provide a feature, it must clear the relevant bit.</p>
+</div>
+<div id="p11.1.7.4.1" class="paragraph">
+<p><span class="red">§11.1.7.4.1.</span>
+<strong>*</strong>*[1.1]* All unused bits in Flags 3 must be cleared by the interpreter.</p>
 </div>
 <div class="sect2">
-<h3 id="_11_1_7_4"><a class="anchor" href="#_11_1_7_4"></a>11.13. 11.1.7.4</h3>
-<div class="paragraph">
-<p><strong>*</strong>*[1.1]* The bits in Flags 3 are set by the game to request use of a feature. If the interpreter cannot provide a feature, it must clear the relevant bit.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_11_1_7_4_1"><a class="anchor" href="#_11_1_7_4_1"></a>11.14. 11.1.7.4.1</h3>
-<div class="paragraph">
-<p><strong>*</strong>*[1.1]* All unused bits in Flags 3 must be cleared by the interpreter.</p>
-</div>
-<hr>
-</div>
-<div class="sect2">
-<h3 id="_remarks_11"><a class="anchor" href="#_remarks_11"></a>11.15. Remarks</h3>
+<h3 id="remarks-11"><a class="anchor" href="#remarks-11"></a>Remarks</h3>
 <div class="paragraph">
 <p>In the Infocom period, the larger Version 3 story files would not entirely fit on a single Atari 800 disc (though they would fit on a single Apple II, or a single PC disc). Atari versions were therefore made which were identical to the normal ones except for having Flags 1 bit 2 set, and were divided into the resident part on one disc and the rest on another. (This discovery was announced by Stefan Jokisch on 26 August 1997 and sees the end of one of the very few Z-machine mysteries left when Standard 1.0 was first published.)</p>
 </div>
@@ -4634,39 +4583,28 @@ The "escape" code is optional: that is, an interpreter need not provide an escap
 <div class="paragraph">
 <p>Also, it is recommended that interpreters that would prompt for an auxiliary Blorb file should do so immediately on start up if any of the "game wants to use sound/music/graphics" bits are set; this allows the bits to be cleared if no file is forthcoming, before the game starts execution. The game can then take appropriate action.</p>
 </div>
-<hr>
-<div class="paragraph">
-<p><a href="index.html">Contents</a> / <a href="preface.html">Preface</a> / <a href="overview.html">Overview</a></p>
-</div>
-<div class="paragraph">
-<p>Section <a href="sect01.html">1</a> / <a href="sect02.html">2</a> / <a href="sect03.html">3</a> / <a href="sect04.html">4</a> / <a href="sect05.html">5</a> / <a href="sect06.html">6</a> / <a href="sect07.html">7</a> / <a href="sect08.html">8</a> / <a href="sect09.html">9</a> / <a href="sect10.html">10</a> / <a href="sect11.html">11</a> / <a href="sect12.html">12</a> / <a href="sect13.html">13</a> / <a href="sect14.html">14</a> / <a href="sect15.html">15</a> / <a href="sect16.html">16</a></p>
-</div>
-<div class="paragraph">
-<p>Appendix <a href="appa.html">A</a> / <a href="appb.html">B</a> / <a href="appc.html">C</a> / <a href="appd.html">D</a> / <a href="appe.html">E</a> / <a href="appf.html">F</a></p>
-</div>
-<hr>
 </div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="_the_object_table"><a class="anchor" href="#_the_object_table"></a>12. The object table</h2>
 <div class="sectionbody">
-<hr>
+<div class="sect2">
+<h3 id="s12.1"><a class="anchor" href="#s12.1"></a>12.1. Storage</h3>
 <div class="paragraph">
-<p>12.1 <a href="#one">Storage</a> / 12.2 <a href="#two">Property defaults table</a> / 12.3 <a href="#three">Object tree</a> / 12.4 <a href="#four">Property tables</a> / 12.5 <a href="#five">Well-foundedness of the tree</a></p>
+<p>The object table is held in dynamic memory and its byte address is stored in the word at <strong>$0a</strong> in the header. (Recall that objects have flags attached called attributes, numbered from 0 upward, and variables attached called properties, numbered from 1 upward. An object need not provide every property.)</p>
 </div>
-<hr>
-<div id="p12.1" class="paragraph">
-<p><span class="red">§12.1.</span>
-The object table is held in dynamic memory and its byte address is stored in the word at <strong>$0a</strong> in the header. (Recall that objects have flags attached called attributes, numbered from 0 upward, and variables attached called properties, numbered from 1 upward. An object need not provide every property.)</p>
 </div>
-<div id="p12.2" class="paragraph">
-<p><span class="red">§12.2.</span>
-The table begins with a block known as the property defaults table. This contains 31 words in Versions 1 to 3 and 63 in Versions 4 and later. When the game attempts to read the value of property n for an object which does not provide property n, the n-th entry in this table is the resulting value.</p>
+<div class="sect2">
+<h3 id="s12.2"><a class="anchor" href="#s12.2"></a>12.2. Property defaults table</h3>
+<div class="paragraph">
+<p>The table begins with a block known as the property defaults table. This contains 31 words in Versions 1 to 3 and 63 in Versions 4 and later. When the game attempts to read the value of property n for an object which does not provide property n, the n-th entry in this table is the resulting value.</p>
 </div>
-<div id="p12.3" class="paragraph">
-<p><span class="red">§12.3.</span>
-Next is the object tree. Objects are numbered consecutively from 1 upward, with object number 0 being used to mean "nothing" (though there is formally no such object). The table consists of a list of entries, one for each object.</p>
+</div>
+<div class="sect2">
+<h3 id="s12.3"><a class="anchor" href="#s12.3"></a>12.3. Object tree</h3>
+<div class="paragraph">
+<p>Next is the object tree. Objects are numbered consecutively from 1 upward, with object number 0 being used to mean "nothing" (though there is formally no such object). The table consists of a list of entries, one for each object.</p>
 </div>
 <div id="p12.3.1" class="paragraph">
 <p><span class="red">§12.3.1.</span>
@@ -4691,9 +4629,11 @@ In Version 4 and later, there are at most 65535 objects, each having a 14-byte e
    ---48 bits in 6 bytes---   ---3 words, i.e. 6 bytes----  ---2 bytes--</pre>
 </div>
 </div>
-<div id="p12.4" class="paragraph">
-<p><span class="red">§12.4.</span>
-Each object has its own property table. Each of these can be anywhere in dynamic memory (indeed, a game can legally change an object&#8217;s properties table address in play, provided the new address points to another valid properties table). The header of a property table is as follows:</p>
+</div>
+<div class="sect2">
+<h3 id="s12.4"><a class="anchor" href="#s12.4"></a>12.4. Property tables</h3>
+<div class="paragraph">
+<p>Each object has its own property table. Each of these can be anywhere in dynamic memory (indeed, a game can legally change an object&#8217;s properties table address in play, provided the new address points to another valid properties table). The header of a property table is as follows:</p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -4742,9 +4682,11 @@ If the top bit (bit 7) of the first size byte is set, then there are two size-an
 <p><span class="red">§12.4.2.2.</span>
 If the top bit (bit 7) of the first size byte is clear, then there is only one size-and-number byte. Bits 0 to 5 contain the property number; bit 6 is either clear to indicate a property data length of 1, or set to indicate a length of 2; bit 7 is clear.</p>
 </div>
-<div id="p12.5" class="paragraph">
-<p><span class="red">§12.5.</span>
-It is the game&#8217;s responsibility to keep the object tree well-founded: the interpreter is not required to check. "Well-founded" means the following:</p>
+</div>
+<div class="sect2">
+<h3 id="s12.5"><a class="anchor" href="#s12.5"></a>12.5. Well-foundedness of the tree</h3>
+<div class="paragraph">
+<p>It is the game&#8217;s responsibility to keep the object tree well-founded: the interpreter is not required to check. "Well-founded" means the following:</p>
 </div>
 <div class="paragraph">
 <p><strong>(a)</strong> An object with a sibling also has a parent.</p>
@@ -4755,9 +4697,9 @@ It is the game&#8217;s responsibility to keep the object tree well-founded: the 
 <div class="paragraph">
 <p><strong>(c)</strong> Each object can be given a level n, such that parentless objects have level 0 and all children of a level n object have level n+1.</p>
 </div>
-<hr>
+</div>
 <div class="sect2">
-<h3 id="_remarks_12"><a class="anchor" href="#_remarks_12"></a>12.1. Remarks</h3>
+<h3 id="remarks-12"><a class="anchor" href="#remarks-12"></a>Remarks</h3>
 <div class="paragraph">
 <p>The largest valid object number is not directly stored anywhere in the Z-machine. Utility programs like <strong>Infodump</strong> deduce this number by assuming that, initially, the object entries end where the first property table begins.</p>
 </div>
@@ -4773,35 +4715,22 @@ It is the game&#8217;s responsibility to keep the object tree well-founded: the 
 <div class="paragraph">
 <p>Inform can only construct well-founded object trees as the initial game state, but it is easy to compile sequences of code like "move red box to blue box" followed by "move blue box to red box" which leave the object tree in an ill-founded state. (The Inform library protects the standard object-movement verbs against this.)</p>
 </div>
-<hr>
-<div class="paragraph">
-<p><a href="index.html">Contents</a> / <a href="preface.html">Preface</a> / <a href="overview.html">Overview</a></p>
-</div>
-<div class="paragraph">
-<p>Section <a href="sect01.html">1</a> / <a href="sect02.html">2</a> / <a href="sect03.html">3</a> / <a href="sect04.html">4</a> / <a href="sect05.html">5</a> / <a href="sect06.html">6</a> / <a href="sect07.html">7</a> / <a href="sect08.html">8</a> / <a href="sect09.html">9</a> / <a href="sect10.html">10</a> / <a href="sect11.html">11</a> / <a href="sect12.html">12</a> / <a href="sect13.html">13</a> / <a href="sect14.html">14</a> / <a href="sect15.html">15</a> / <a href="sect16.html">16</a></p>
-</div>
-<div class="paragraph">
-<p>Appendix <a href="appa.html">A</a> / <a href="appb.html">B</a> / <a href="appc.html">C</a> / <a href="appd.html">D</a> / <a href="appe.html">E</a> / <a href="appf.html">F</a></p>
-</div>
-<hr>
 </div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="_the_dictionary_and_lexical_analysis"><a class="anchor" href="#_the_dictionary_and_lexical_analysis"></a>13. The dictionary and lexical analysis</h2>
 <div class="sectionbody">
-<hr>
+<div class="sect2">
+<h3 id="s13.1"><a class="anchor" href="#s13.1"></a>13.1. Storage</h3>
 <div class="paragraph">
-<p>13.1 <a href="#one">Storage</a> / 13.2 <a href="#two">Header</a> / 13.3 <a href="#three">Entries (V1 to V3)</a> / 13.4 <a href="#four">Entries (later versions)</a> / 13.5 <a href="#five">Ordering</a> / 13.6 <a href="#six">Lexical analysis</a></p>
+<p>The dictionary table is held in static memory and its byte address is stored in the word at <strong>$08</strong> in the header.</p>
 </div>
-<hr>
-<div id="p13.1" class="paragraph">
-<p><span class="red">§13.1.</span>
-The dictionary table is held in static memory and its byte address is stored in the word at <strong>$08</strong> in the header.</p>
 </div>
-<div id="p13.2" class="paragraph">
-<p><span class="red">§13.2.</span>
-The table begins with a short header:</p>
+<div class="sect2">
+<h3 id="s13.2"><a class="anchor" href="#s13.2"></a>13.2. Header</h3>
+<div class="paragraph">
+<p>The table begins with a short header:</p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -4816,9 +4745,11 @@ The table begins with a short header:</p>
 <p><span class="red">§13.2.1.</span>
 Note that the word-separators table can only contain codes which are defined in ZSCII for both input and output.</p>
 </div>
-<div id="p3" class="paragraph">
-<p><span class="red">§3.</span>
-In Versions 1 to 3, each word has an entry in the form</p>
+</div>
+<div class="sect2">
+<h3 id="s13.3"><a class="anchor" href="#s13.3"></a>13.3. Entries (V1 to V3)</h3>
+<div class="paragraph">
+<p>In Versions 1 to 3, each word has an entry in the form</p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -4829,17 +4760,23 @@ In Versions 1 to 3, each word has an entry in the form</p>
 <div class="paragraph">
 <p>The interpreter ignores the bytes of data (presumably the game&#8217;s parser will use them). The encoded text contains 6 Z-characters (it is always padded out with Z-character 5&#8217;s to make up 4 bytes: see <strong>S</strong> 3). The text may include spaces or other word-separators (though, if so, the interpreter will never match any text to the dictionary word in question: surprisingly, this can be useful and is a trick used in the Inform library).</p>
 </div>
-<div id="p13.4" class="paragraph">
-<p><span class="red">§13.4.</span>
-In Versions 4 and later, the encoded text has 6 bytes and always contains 9 Z-characters.</p>
 </div>
-<div id="p13.5" class="paragraph">
-<p><span class="red">§13.5.</span>
-The word entries follow immediately after the dictionary header and must be given in numerical order of the encoded text (when the encoded text is regarded as a 32 or 48-bit binary number with most-significant byte first). It must not contain two entries with the same encoded text.</p>
+<div class="sect2">
+<h3 id="s13.4"><a class="anchor" href="#s13.4"></a>13.4. Entries (later versions)</h3>
+<div class="paragraph">
+<p>In Versions 4 and later, the encoded text has 6 bytes and always contains 9 Z-characters.</p>
 </div>
-<div id="p13.6" class="paragraph">
-<p><span class="red">§13.6.</span>
-Lexical analysis takes place in two circumstances: on request of a <strong>tokenise</strong> opcode (in which case it can use any dictionary table it likes, in the format above) and during acceptance of a game command (in which case the standard dictionary is used).</p>
+</div>
+<div class="sect2">
+<h3 id="s13.5"><a class="anchor" href="#s13.5"></a>13.5. Ordering</h3>
+<div class="paragraph">
+<p>The word entries follow immediately after the dictionary header and must be given in numerical order of the encoded text (when the encoded text is regarded as a 32 or 48-bit binary number with most-significant byte first). It must not contain two entries with the same encoded text.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="s13.6"><a class="anchor" href="#s13.6"></a>13.6. Lexical analysis</h3>
+<div class="paragraph">
+<p>Lexical analysis takes place in two circumstances: on request of a <strong>tokenise</strong> opcode (in which case it can use any dictionary table it likes, in the format above) and during acceptance of a game command (in which case the standard dictionary is used).</p>
 </div>
 <div id="p13.6.1" class="paragraph">
 <p><span class="red">§13.6.1.</span>
@@ -4858,9 +4795,9 @@ Each word is then encoded as a Z-machine string in dictionary form, and searched
 <p><span class="red">§13.6.3.</span>
 A "parse table" is then written, recording the number of words, the length and position of each word and the dictionary address of each word which is recognised. For the format, see the <strong>read</strong> opcode.</p>
 </div>
-<hr>
+</div>
 <div class="sect2">
-<h3 id="_remarks_13"><a class="anchor" href="#_remarks_13"></a>13.1. Remarks</h3>
+<h3 id="remarks-13"><a class="anchor" href="#remarks-13"></a>Remarks</h3>
 <div class="paragraph">
 <p>Usually (under Inform, mandatorily) there are three bytes of data in the word entries, so that dictionary entry lengths are 7 and 9 in the early and late Z-machine, respectively.</p>
 </div>
@@ -4873,35 +4810,15 @@ A "parse table" is then written, recording the number of words, the length and p
 <div class="paragraph">
 <p>Linards Ticmanis reports that some of Infocom&#8217;s interpreters convert question marks to spaces before lexical analysis. This is <em>not</em> Standard behaviour. (Thus, typing "What is a grue?" into 'Zork I' no longer works: the player must type "What is a grue" instead.)</p>
 </div>
-<hr>
-<div class="paragraph">
-<p><a href="index.html">Contents</a> / <a href="preface.html">Preface</a> / <a href="overview.html">Overview</a></p>
-</div>
-<div class="paragraph">
-<p>Section <a href="sect01.html">1</a> / <a href="sect02.html">2</a> / <a href="sect03.html">3</a> / <a href="sect04.html">4</a> / <a href="sect05.html">5</a> / <a href="sect06.html">6</a> / <a href="sect07.html">7</a> / <a href="sect08.html">8</a> / <a href="sect09.html">9</a> / <a href="sect10.html">10</a> / <a href="sect11.html">11</a> / <a href="sect12.html">12</a> / <a href="sect13.html">13</a> / <a href="sect14.html">14</a> / <a href="sect15.html">15</a> / <a href="sect16.html">16</a></p>
-</div>
-<div class="paragraph">
-<p>Appendix <a href="appa.html">A</a> / <a href="appb.html">B</a> / <a href="appc.html">C</a> / <a href="appd.html">D</a> / <a href="appe.html">E</a> / <a href="appf.html">F</a></p>
-</div>
-<hr>
 </div>
 </div>
 </div>
 <h1 id="_instruction_set" class="sect0"><a class="anchor" href="#_instruction_set"></a>Instruction Set</h1>
-<div class="openblock partintro">
-<div class="content">
-<hr>
-</div>
-</div>
 <div class="sect1">
 <h2 id="_complete_table_of_opcodes"><a class="anchor" href="#_complete_table_of_opcodes"></a>14. Complete table of opcodes</h2>
 <div class="sectionbody">
-<hr>
 <div class="paragraph">
 <p><a href="#2OP">2OP</a> / <a href="#1OP">1OP</a> / <a href="#0OP">0OP</a> / <a href="#VAR">VAR</a> / <a href="#EXT">EXT</a></p>
-</div>
-<div class="paragraph">
-<p>14.1 <a href="#one">Contents</a> / 14.2 <a href="#two">Out of range opcodes</a> / <a href="#reading"><em>Reading the table</em></a> / <a href="#inform"><em>Inform assembly language</em></a></p>
 </div>
 <hr>
 <div class="paragraph">
@@ -6501,13 +6418,16 @@ link:sect15.html#throw[*throw*]</pre>
 </tbody>
 </table>
 <hr>
-<div id="p14.1" class="paragraph">
-<p><span class="red">§14.1.</span>
-This table contains all 119 opcodes and, taken with the dictionary in <strong>S</strong> 15, describes exactly what each should do. In addition, it lists which opcodes are actually used in the known Infocom story files, and documents the Inform assembly language syntax.</p>
+<div class="sect2">
+<h3 id="s14.1"><a class="anchor" href="#s14.1"></a>14.1. Contents</h3>
+<div class="paragraph">
+<p>This table contains all 119 opcodes and, taken with the dictionary in <strong>S</strong> 15, describes exactly what each should do. In addition, it lists which opcodes are actually used in the known Infocom story files, and documents the Inform assembly language syntax.</p>
 </div>
-<div id="p14.2" class="paragraph">
-<p><span class="red">§14.2.</span>
-Formally, it is illegal for a game to contain an opcode not specified for its version. An interpreter should normally halt with a suitable message.</p>
+</div>
+<div class="sect2">
+<h3 id="s14.2"><a class="anchor" href="#s14.2"></a>14.2. Out of range opcodes</h3>
+<div class="paragraph">
+<p>Formally, it is illegal for a game to contain an opcode not specified for its version. An interpreter should normally halt with a suitable message.</p>
 </div>
 <div id="p14.2.1" class="paragraph">
 <p><span class="red">§14.2.1.</span>
@@ -6526,8 +6446,9 @@ Designers who wish to create their own "new" opcodes, for one specific game only
 Interpreter-writers should ideally make this easy by providing a routine which is called if EXT:128 to EXT:255 are found, so that the minimum possible modification to the interpreter is needed.</p>
 </div>
 <hr>
+</div>
 <div class="sect2">
-<h3 id="reading"><a class="anchor" href="#reading"></a>14.1. Reading the opcode tables</h3>
+<h3 id="reading"><a class="anchor" href="#reading"></a>Reading the opcode tables</h3>
 <div class="paragraph">
 <p>The two columns "St" and "Br" (store and branch) mark whether an instruction stores a result in a variable, and whether it must provide a label to jump to, respectively.</p>
 </div>
@@ -6543,10 +6464,9 @@ Interpreter-writers should ideally make this easy by providing a routine which i
 <div class="paragraph">
 <p>The table explicitly marks opcodes which do not exist in any version of the Z-machine as <strong>------</strong>: in addition, none of the extended set of codes after EXT:29 have been used.</p>
 </div>
-<hr>
 </div>
 <div class="sect2">
-<h3 id="inform"><a class="anchor" href="#inform"></a>14.2. Inform assembly language</h3>
+<h3 id="inform"><a class="anchor" href="#inform"></a>Inform assembly language</h3>
 <div class="paragraph">
 <p>This section documents Inform 6 assembly language, which is richer than that of Inform 5. The Inform 6 assembler can generate every legal opcode and automatically sets any consequent header bits (for instance, a usage of <strong>set_colour</strong> will set the "colours needed" bit).</p>
 </div>
@@ -6684,10 +6604,9 @@ Interpreter-writers should ideally make this easy by providing a routine which i
 <div class="paragraph">
 <p>is an exotic new opcode, number 128 in the extended range, which is both Branch and Store, and the assembly of which causes bit 14 to be set in "Flags 2". See <strong>S</strong> 14.2 below for rules on how to number newly created opcodes.</p>
 </div>
-<hr>
 </div>
 <div class="sect2">
-<h3 id="_remarks_14"><a class="anchor" href="#_remarks_14"></a>14.3. Remarks</h3>
+<h3 id="remarks-14"><a class="anchor" href="#remarks-14"></a>Remarks</h3>
 <div class="paragraph">
 <p>The opcodes EXT:5 to EXT:8 were very likely in Infocom&#8217;s own Version 5 specification (documentary records of which are lost): they seem to have been partially implemented in existing Infocom interpreters, but do not occur in any existing Version 5 story file. They are here left unspecified.</p>
 </div>
@@ -6703,18 +6622,6 @@ Interpreter-writers should ideally make this easy by providing a routine which i
 <div class="paragraph">
 <p><strong>picture_table</strong> is used once by 'Shogun' and several times by 'Zork Zero'.</p>
 </div>
-<hr>
-<div class="paragraph">
-<p><a href="index.html">Contents</a> / <a href="preface.html">Preface</a> / <a href="overview.html">Overview</a></p>
-</div>
-<div class="paragraph">
-<p>Section <a href="sect01.html">1</a> / <a href="sect02.html">2</a> / <a href="sect03.html">3</a> / <a href="sect04.html">4</a> / <a href="sect05.html">5</a> / <a href="sect06.html">6</a> / <a href="sect07.html">7</a> / <a href="sect08.html">8</a> / <a href="sect09.html">9</a> / <a href="sect10.html">10</a> / <a href="sect11.html">11</a> / <a href="sect12.html">12</a> / <a href="sect13.html">13</a> / <a href="sect14.html">14</a> / <a href="sect15.html">15</a> / <a href="sect16.html">16</a></p>
-</div>
-<div class="paragraph">
-<p>Appendix <a href="appa.html">A</a> / <a href="appb.html">B</a> / <a href="appc.html">C</a> / <a href="appd.html">D</a> / <a href="appe.html">E</a> / <a href="appf.html">F</a></p>
-</div>
-<hr>
-<hr>
 </div>
 </div>
 </div>
@@ -6723,13 +6630,11 @@ Interpreter-writers should ideally make this easy by providing a routine which i
 <div class="sectionbody">
 <div class="quoteblock">
 <blockquote>
-<div class="paragraph">
-<p>The highest ideal of a translation&#8230;&#8203; is achieved when the reader flings it impatiently into the fire, and begins patiently to learn the language for himself.</p>
-</div>
-<div class="paragraph">
-<p>Philip Vellacott</p>
-</div>
+The highest ideal of a translation&#8230;&#8203; is achieved when the reader flings it impatiently into the fire, and begins patiently to learn the language for himself.
 </blockquote>
+<div class="attribution">
+&#8212; Philip Vellacott
+</div>
 </div>
 <hr>
 <div class="paragraph">
@@ -8260,17 +8165,6 @@ Interpreter-writers should ideally make this easy by providing a routine which i
 <div class="paragraph">
 <p>The operation, by default, is 0, meaning "set to these settings". 1 means "set the bits supplied". 2 means "clear the ones supplied", and 3 means "reverse the bits supplied" (i.e. eXclusive OR).</p>
 </div>
-<hr>
-<div class="paragraph">
-<p><a href="index.html">Contents</a> / <a href="preface.html">Preface</a> / <a href="overview.html">Overview</a></p>
-</div>
-<div class="paragraph">
-<p>Section <a href="sect01.html">1</a> / <a href="sect02.html">2</a> / <a href="sect03.html">3</a> / <a href="sect04.html">4</a> / <a href="sect05.html">5</a> / <a href="sect06.html">6</a> / <a href="sect07.html">7</a> / <a href="sect08.html">8</a> / <a href="sect09.html">9</a> / <a href="sect10.html">10</a> / <a href="sect11.html">11</a> / <a href="sect12.html">12</a> / <a href="sect13.html">13</a> / <a href="sect14.html">14</a> / <a href="sect15.html">15</a> / <a href="sect16.html">16</a></p>
-</div>
-<div class="paragraph">
-<p>Appendix <a href="appa.html">A</a> / <a href="appb.html">B</a> / <a href="appc.html">C</a> / <a href="appd.html">D</a> / <a href="appe.html">E</a> / <a href="appf.html">F</a></p>
-</div>
-<hr>
 </div>
 </div>
 </div>
@@ -8519,10 +8413,9 @@ Interpreter-writers should ideally make this easy by providing a routine which i
         7########          7########          7########</pre>
 </div>
 </div>
-<hr>
 </div>
 <div class="sect2">
-<h3 id="_remarks_15"><a class="anchor" href="#_remarks_15"></a>16.2. Remarks</h3>
+<h3 id="remarks-16"><a class="anchor" href="#remarks-16"></a>Remarks</h3>
 <div class="paragraph">
 <p>Two different versions of font 3 were supplied by Infocom, which we shall call the Amiga and PC forms (the Atari form is the same as for the PC). The arrow shape differed slightly and so did the rune alphabet. Each was an attempt to map the late Anglian ("futhorc") runic alphabet, which has 33 characters, onto our Latin alphabet. The drawings above are from the Amiga set.</p>
 </div>
@@ -8593,17 +8486,6 @@ Interpreter-writers should ideally make this easy by providing a routine which i
 <div class="paragraph">
 <p>The "COLOR" command in 'BZ' (typed at the keyboard) also behaves differently depending on the interpreter number, which is legal behaviour and has no impact on the specification.</p>
 </div>
-<hr>
-<div class="paragraph">
-<p><a href="index.html">Contents</a> / <a href="preface.html">Preface</a> / <a href="overview.html">Overview</a></p>
-</div>
-<div class="paragraph">
-<p>Section <a href="sect01.html">1</a> / <a href="sect02.html">2</a> / <a href="sect03.html">3</a> / <a href="sect04.html">4</a> / <a href="sect05.html">5</a> / <a href="sect06.html">6</a> / <a href="sect07.html">7</a> / <a href="sect08.html">8</a> / <a href="sect09.html">9</a> / <a href="sect10.html">10</a> / <a href="sect11.html">11</a> / <a href="sect12.html">12</a> / <a href="sect13.html">13</a> / <a href="sect14.html">14</a> / <a href="sect15.html">15</a> / <a href="sect16.html">16</a></p>
-</div>
-<div class="paragraph">
-<p>Appendix <a href="appa.html">A</a> / <a href="appb.html">B</a> / <a href="appc.html">C</a> / <a href="appd.html">D</a> / <a href="appe.html">E</a> / <a href="appf.html">F</a></p>
-</div>
-<hr>
 </div>
 </div>
 </div>
@@ -8674,17 +8556,6 @@ Interpreter-writers should ideally make this easy by providing a routine which i
 </li>
 </ul>
 </div>
-<hr>
-<div class="paragraph">
-<p><a href="index.html">Contents</a> / <a href="preface.html">Preface</a> / <a href="overview.html">Overview</a></p>
-</div>
-<div class="paragraph">
-<p>Section <a href="sect01.html">1</a> / <a href="sect02.html">2</a> / <a href="sect03.html">3</a> / <a href="sect04.html">4</a> / <a href="sect05.html">5</a> / <a href="sect06.html">6</a> / <a href="sect07.html">7</a> / <a href="sect08.html">8</a> / <a href="sect09.html">9</a> / <a href="sect10.html">10</a> / <a href="sect11.html">11</a> / <a href="sect12.html">12</a> / <a href="sect13.html">13</a> / <a href="sect14.html">14</a> / <a href="sect15.html">15</a> / <a href="sect16.html">16</a></p>
-</div>
-<div class="paragraph">
-<p>Appendix <a href="appa.html">A</a> / <a href="appb.html">B</a> / <a href="appc.html">C</a> / <a href="appd.html">D</a> / <a href="appe.html">E</a> / <a href="appf.html">F</a></p>
-</div>
-<hr>
 </div>
 </div>
 <div class="sect1">
@@ -8813,17 +8684,6 @@ Interpreter-writers should ideally make this easy by providing a routine which i
 </li>
 </ol>
 </div>
-<hr>
-<div class="paragraph">
-<p><a href="index.html">Contents</a> / <a href="preface.html">Preface</a> / <a href="overview.html">Overview</a></p>
-</div>
-<div class="paragraph">
-<p>Section <a href="sect01.html">1</a> / <a href="sect02.html">2</a> / <a href="sect03.html">3</a> / <a href="sect04.html">4</a> / <a href="sect05.html">5</a> / <a href="sect06.html">6</a> / <a href="sect07.html">7</a> / <a href="sect08.html">8</a> / <a href="sect09.html">9</a> / <a href="sect10.html">10</a> / <a href="sect11.html">11</a> / <a href="sect12.html">12</a> / <a href="sect13.html">13</a> / <a href="sect14.html">14</a> / <a href="sect15.html">15</a> / <a href="sect16.html">16</a></p>
-</div>
-<div class="paragraph">
-<p>Appendix <a href="appa.html">A</a> / <a href="appb.html">B</a> / <a href="appc.html">C</a> / <a href="appd.html">D</a> / <a href="appe.html">E</a> / <a href="appf.html">F</a></p>
-</div>
-<hr>
 </div>
 </div>
 <div class="sect1">
@@ -8831,16 +8691,24 @@ Interpreter-writers should ideally make this easy by providing a routine which i
 <div class="sectionbody">
 <div class="quoteblock">
 <blockquote>
-<div class="paragraph">
-<p>&#8230;&#8203;the dead hand of the academy had yet to stifle the unbridled enthusiasms of a small band of amateurs in Europe and America.</p>
-</div>
-<div class="paragraph">
-<p>Michael D. Coe, <strong>Breaking the Maya Code</strong></p>
-</div>
+&#8230;&#8203;the dead hand of the academy had yet to stifle the unbridled enthusiasms of a small band of amateurs in Europe and America.
 </blockquote>
+<div class="attribution">
+&#8212; Michael D. Coe<br>
+<cite>Breaking the Maya Code</cite>
 </div>
-<div class="paragraph">
-<p>[Note: the hypertext links in this appendix are to WWW sites external to the standards document, and were correct as of 21th February 2014.]</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+the hypertext links in this appendix are to WWW sites external to the standards document, and were correct as of 21th February 2014.
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>The resources below are mainly available from the <a href="http://www.ifarchive.org/if-archive/">if-archive</a> maintained by David Kinder and Stephen Granade.</p>
@@ -8973,17 +8841,6 @@ Interpreter-writers should ideally make this easy by providing a routine which i
 <div class="paragraph">
 <p>The documentation for Infocom&#8217;s games is available online (with permission from Activision) courtesy of the <a href="http://infodoc.plover.net/">Infocom Documentation Project</a>. In addition, an archive of the " <a href="http://www.ifarchive.org/indexes/if-archiveXinfocomXshipped-documentation.html">samplers</a>" is publically available, as is <a href="http://www.ifarchive.org/indexes/if-archiveXinfocomXarticles.html">an interesting historical archive of magazine articles</a> concerning Infocom, and articles from Infocom&#8217;s own publicity magazine [indexed <a href="http://www.ifarchive.org/if-archive/infocom/NZT+TSL/NZT+TSL.list">here</a>].</p>
 </div>
-<hr>
-<div class="paragraph">
-<p><a href="index.html">Contents</a> / <a href="preface.html">Preface</a> / <a href="overview.html">Overview</a></p>
-</div>
-<div class="paragraph">
-<p>Section <a href="sect01.html">1</a> / <a href="sect02.html">2</a> / <a href="sect03.html">3</a> / <a href="sect04.html">4</a> / <a href="sect05.html">5</a> / <a href="sect06.html">6</a> / <a href="sect07.html">7</a> / <a href="sect08.html">8</a> / <a href="sect09.html">9</a> / <a href="sect10.html">10</a> / <a href="sect11.html">11</a> / <a href="sect12.html">12</a> / <a href="sect13.html">13</a> / <a href="sect14.html">14</a> / <a href="sect15.html">15</a> / <a href="sect16.html">16</a></p>
-</div>
-<div class="paragraph">
-<p>Appendix <a href="appa.html">A</a> / <a href="appb.html">B</a> / <a href="appc.html">C</a> / <a href="appd.html">D</a> / <a href="appe.html">E</a> / <a href="appf.html">F</a></p>
-</div>
-<hr>
 </div>
 </div>
 </div>
@@ -9081,17 +8938,6 @@ Version 6   Later games with graphics, mouse support, etc.</pre>
 <div class="paragraph">
 <p>Two new formats, versions 7 and 8, have recently been devised to cope with large Inform games.</p>
 </div>
-<hr>
-<div class="paragraph">
-<p><a href="index.html">Contents</a> / <a href="preface.html">Preface</a> / <a href="overview.html">Overview</a></p>
-</div>
-<div class="paragraph">
-<p>Section <a href="sect01.html">1</a> / <a href="sect02.html">2</a> / <a href="sect03.html">3</a> / <a href="sect04.html">4</a> / <a href="sect05.html">5</a> / <a href="sect06.html">6</a> / <a href="sect07.html">7</a> / <a href="sect08.html">8</a> / <a href="sect09.html">9</a> / <a href="sect10.html">10</a> / <a href="sect11.html">11</a> / <a href="sect12.html">12</a> / <a href="sect13.html">13</a> / <a href="sect14.html">14</a> / <a href="sect15.html">15</a> / <a href="sect16.html">16</a></p>
-</div>
-<div class="paragraph">
-<p>Appendix <a href="appa.html">A</a> / <a href="appb.html">B</a> / <a href="appc.html">C</a> / <a href="appd.html">D</a> / <a href="appe.html">E</a> / <a href="appf.html">F</a></p>
-</div>
-<hr>
 </div>
 </div>
 <div class="sect1">
@@ -9102,13 +8948,22 @@ Version 6   Later games with graphics, mouse support, etc.</pre>
 <div class="paragraph">
 <p>LORD DIMWIT FLATHEAD: "It must have two hundred thousand rooms, four million takeable objects, and understand a vocabulary of every single word ever spoken in every language ever invented."</p>
 </div>
-<div class="paragraph">
-<p><strong>The New Zork Times (Winter 1984)</strong></p>
-</div>
 </blockquote>
+<div class="attribution">
+&#8212; The New Zork Times (Winter 1984)
 </div>
-<div class="paragraph">
-<p>[Note: the information below has not been updated since the 20th June 1997 revision of this document.]</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+the information below has not been updated since the 20th June 1997 revision of this document.
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>To give some idea of the sizes found in typical story files, here are a few statistics, mostly gathered by Paul David Doherty, whose "Infocom fact sheet" file is the definitive reference.</p>
@@ -9198,17 +9053,6 @@ Version 6   Later games with graphics, mouse support, etc.</pre>
 <div class="paragraph">
 <p>Adventure games spend most of the time parsing, and the differences between these tables reflect different parser designs (byte arrays versus word arrays and arrays stored in properties) as well as different compiler code generators (Inform does not use <strong>inc_chk</strong> or <strong>dec_chk</strong>, so it uses <strong>inc</strong>, <strong>dec</strong>, <strong>jl</strong> and <strong>jg</strong> correspondingly more). In the case of 'Zork I', about a third of all opcodes are branches: in the case of 'Museum', almost half.</p>
 </div>
-<hr>
-<div class="paragraph">
-<p><a href="index.html">Contents</a> / <a href="preface.html">Preface</a> / <a href="overview.html">Overview</a></p>
-</div>
-<div class="paragraph">
-<p>Section <a href="sect01.html">1</a> / <a href="sect02.html">2</a> / <a href="sect03.html">3</a> / <a href="sect04.html">4</a> / <a href="sect05.html">5</a> / <a href="sect06.html">6</a> / <a href="sect07.html">7</a> / <a href="sect08.html">8</a> / <a href="sect09.html">9</a> / <a href="sect10.html">10</a> / <a href="sect11.html">11</a> / <a href="sect12.html">12</a> / <a href="sect13.html">13</a> / <a href="sect14.html">14</a> / <a href="sect15.html">15</a> / <a href="sect16.html">16</a></p>
-</div>
-<div class="paragraph">
-<p>Appendix <a href="appa.html">A</a> / <a href="appb.html">B</a> / <a href="appc.html">C</a> / <a href="appd.html">D</a> / <a href="appe.html">E</a> / <a href="appf.html">F</a></p>
-</div>
-<hr>
 </div>
 </div>
 <div class="sect1">
@@ -9516,17 +9360,6 @@ Version 6   Later games with graphics, mouse support, etc.</pre>
 <div class="paragraph">
 <p>Note that a new Infocom game, <em>Zork: The Undiscovered Underground</em> was published by Activision in 1997. 16.970828 is the only public version I know of: however, note that this file was compiled by Inform and not by Zilch. It is therefore not useful as a witness to Z-machine rules.</p>
 </div>
-<hr>
-<div class="paragraph">
-<p><a href="index.html">Contents</a> / <a href="preface.html">Preface</a> / <a href="overview.html">Overview</a></p>
-</div>
-<div class="paragraph">
-<p>Section <a href="sect01.html">1</a> / <a href="sect02.html">2</a> / <a href="sect03.html">3</a> / <a href="sect04.html">4</a> / <a href="sect05.html">5</a> / <a href="sect06.html">6</a> / <a href="sect07.html">7</a> / <a href="sect08.html">8</a> / <a href="sect09.html">9</a> / <a href="sect10.html">10</a> / <a href="sect11.html">11</a> / <a href="sect12.html">12</a> / <a href="sect13.html">13</a> / <a href="sect14.html">14</a> / <a href="sect15.html">15</a> / <a href="sect16.html">16</a></p>
-</div>
-<div class="paragraph">
-<p>Appendix <a href="appa.html">A</a> / <a href="appb.html">B</a> / <a href="appc.html">C</a> / <a href="appd.html">D</a> / <a href="appe.html">E</a> / <a href="appf.html">F</a></p>
-</div>
-<hr>
 </div>
 </div>
 </div>
