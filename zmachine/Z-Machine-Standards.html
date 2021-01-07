@@ -5143,270 +5143,183 @@ A "parse table" is then written, recording the number of words, the length and p
 </tr>
 </tbody>
 </table>
-<div class="paragraph">
-<p><strong>One-operand opcodes 1OP</strong></p>
-</div>
-<div class="paragraph">
-<p>St</p>
-</div>
-<div class="paragraph">
-<p>Br</p>
-</div>
-<div class="paragraph">
-<p>Opcode</p>
-</div>
-<div class="paragraph">
-<p>Hex</p>
-</div>
-<div class="paragraph">
-<p>V</p>
-</div>
-<div class="paragraph">
-<p>Inform name and syntax</p>
-</div>
-<div class="paragraph">
-<p>Link</p>
-</div>
-<div class="paragraph">
-<p>*</p>
-</div>
-<div class="paragraph">
-<p>1OP:128</p>
-</div>
-<div class="paragraph">
-<p>0</p>
-</div>
-<div class="paragraph">
-<p>jz a ?(label)</p>
-</div>
-<div class="paragraph">
-<p><a href="sect15.html#jz"><strong>jz</strong></a></p>
-</div>
-<div class="paragraph">
-<p>*</p>
-</div>
-<div class="paragraph">
-<p>*</p>
-</div>
-<div class="paragraph">
-<p>1OP:129</p>
-</div>
-<div class="paragraph">
-<p>1</p>
-</div>
-<div class="paragraph">
-<p>get_sibling object &#8594; (result) ?(label)</p>
-</div>
-<div class="paragraph">
-<p><a href="sect15.html#get_sibling"><strong>get_sibling</strong></a></p>
-</div>
-<div class="paragraph">
-<p>*</p>
-</div>
-<div class="paragraph">
-<p>*</p>
-</div>
-<div class="paragraph">
-<p>1OP:130</p>
-</div>
-<div class="paragraph">
-<p>2</p>
-</div>
-<div class="paragraph">
-<p>get_child object &#8594; (result) ?(label)</p>
-</div>
-<div class="paragraph">
-<p><a href="sect15.html#get_child"><strong>get_child</strong></a></p>
-</div>
-<div class="paragraph">
-<p>*</p>
-</div>
-<div class="paragraph">
-<p>1OP:131</p>
-</div>
-<div class="paragraph">
-<p>3</p>
-</div>
-<div class="paragraph">
-<p>get_parent object &#8594; (result)</p>
-</div>
-<div class="paragraph">
-<p><a href="sect15.html#get_parent"><strong>get_parent</strong></a></p>
-</div>
-<div class="paragraph">
-<p>*</p>
-</div>
-<div class="paragraph">
-<p>1OP:132</p>
-</div>
-<div class="paragraph">
-<p>4</p>
-</div>
-<div class="paragraph">
-<p>get_prop_len property-address &#8594; (result)</p>
-</div>
-<div class="paragraph">
-<p><a href="sect15.html#get_prop_len"><strong>get_prop_len</strong></a></p>
-</div>
-<div class="paragraph">
-<p>1OP:133</p>
-</div>
-<div class="paragraph">
-<p>5</p>
-</div>
-<div class="paragraph">
-<p>inc (variable)</p>
-</div>
-<div class="paragraph">
-<p><a href="sect15.html#inc"><strong>inc</strong></a></p>
-</div>
-<div class="paragraph">
-<p>1OP:134</p>
-</div>
-<div class="paragraph">
-<p>6</p>
-</div>
-<div class="paragraph">
-<p>dec (variable)</p>
-</div>
-<div class="paragraph">
-<p><a href="sect15.html#dec"><strong>dec</strong></a></p>
-</div>
-<div class="paragraph">
-<p>1OP:135</p>
-</div>
-<div class="paragraph">
-<p>7</p>
-</div>
-<div class="paragraph">
-<p>print_addr byte-address-of-string</p>
-</div>
-<div class="paragraph">
-<p><a href="sect15.html#print_addr"><strong>print_addr</strong></a></p>
-</div>
-<div class="paragraph">
-<p>*</p>
-</div>
-<div class="paragraph">
-<p>1OP:136</p>
-</div>
-<div class="paragraph">
-<p>8</p>
-</div>
-<div class="paragraph">
-<p>4</p>
-</div>
-<div class="paragraph">
-<p>call_1s routine &#8594; (result)</p>
-</div>
-<div class="paragraph">
-<p><a href="sect15.html#call_1s"><strong>call_1s</strong></a></p>
-</div>
-<div class="paragraph">
-<p>1OP:137</p>
-</div>
-<div class="paragraph">
-<p>9</p>
-</div>
-<div class="paragraph">
-<p>remove_obj object</p>
-</div>
-<div class="paragraph">
-<p><a href="sect15.html#remove_obj"><strong>remove_obj</strong></a></p>
-</div>
-<div class="paragraph">
-<p>1OP:138</p>
-</div>
-<div class="paragraph">
-<p>A</p>
-</div>
-<div class="paragraph">
-<p>print_obj object</p>
-</div>
-<div class="paragraph">
-<p><a href="sect15.html#print_obj"><strong>print_obj</strong></a></p>
-</div>
-<div class="paragraph">
-<p>1OP:139</p>
-</div>
-<div class="paragraph">
-<p>B</p>
-</div>
-<div class="paragraph">
-<p>ret value</p>
-</div>
-<div class="paragraph">
-<p><a href="sect15.html#ret"><strong>ret</strong></a></p>
-</div>
-<div class="paragraph">
-<p>1OP:140</p>
-</div>
-<div class="paragraph">
-<p>C</p>
-</div>
-<div class="paragraph">
-<p>jump ?(label)</p>
-</div>
-<div class="paragraph">
-<p><a href="sect15.html#jump"><strong>jump</strong></a></p>
-</div>
-<div class="paragraph">
-<p>1OP:141</p>
-</div>
-<div class="paragraph">
-<p>D</p>
-</div>
-<div class="paragraph">
-<p>print_paddr packed-address-of-string</p>
-</div>
-<div class="paragraph">
-<p><a href="sect15.html#print_paddr"><strong>print_paddr</strong></a></p>
-</div>
-<div class="paragraph">
-<p>*</p>
-</div>
-<div class="paragraph">
-<p>1OP:142</p>
-</div>
-<div class="paragraph">
-<p>E</p>
-</div>
-<div class="paragraph">
-<p>load (variable) &#8594; (result)</p>
-</div>
-<div class="paragraph">
-<p><a href="sect15.html#load"><strong>load</strong></a></p>
-</div>
-<div class="paragraph">
-<p>*</p>
-</div>
-<div class="paragraph">
-<p>1OP:143</p>
-</div>
-<div class="paragraph">
-<p>F</p>
-</div>
-<div class="paragraph">
-<p>1/4</p>
-</div>
-<div class="paragraph">
-<p>not value &#8594; (result)</p>
-</div>
-<div class="paragraph">
-<p><a href="sect15.html#not"><strong>not</strong></a></p>
-</div>
-<div class="paragraph">
-<p>5</p>
-</div>
-<div class="paragraph">
-<p>call_1n routine</p>
-</div>
-<div class="paragraph">
-<p><a href="sect15.html#call_1n"><strong>call_1n</strong></a></p>
-</div>
-<div class="paragraph">
-<p>Opcode numbers 144 to 175: other forms of 1OP with different types.</p>
-</div>
+<table class="tableblock frame-all grid-all fit-content">
+<caption class="title">Table 7. One-operand opcodes 1OP</caption>
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-middle">St</th>
+<th class="tableblock halign-center valign-middle">Br</th>
+<th class="tableblock halign-center valign-middle">Opcode</th>
+<th class="tableblock halign-center valign-middle">Hex</th>
+<th class="tableblock halign-center valign-middle">V</th>
+<th class="tableblock halign-center valign-middle">Inform name and syntax</th>
+<th class="tableblock halign-center valign-middle">Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><strong>*</strong></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>1OP:128</code></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">0</p></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>jz a ?(label)</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="sect15.html#jz"><strong>jz</strong></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><strong>*</strong></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><strong>*</strong></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>1OP:129</code></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">1</p></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>get_sibling object &#8594; (result) ?(label)</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="sect15.html#get_sibling"><strong>get_sibling</strong></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><strong>*</strong></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><strong>*</strong></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>1OP:130</code></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">2</p></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>get_child object &#8594; (result) ?(label)</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="sect15.html#get_child"><strong>get_child</strong></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><strong>*</strong></p></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>1OP:131</code></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">3</p></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>get_parent object &#8594; (result)</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="sect15.html#get_parent"><strong>get_parent</strong></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><strong>*</strong></p></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>1OP:132</code></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">4</p></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>get_prop_len property-address &#8594; (result)</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="sect15.html#get_prop_len"><strong>get_prop_len</strong></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>1OP:133</code></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">5</p></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>inc (variable)</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="sect15.html#inc"><strong>inc</strong></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>1OP:134</code></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">6</p></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>dec (variable)</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="sect15.html#dec"><strong>dec</strong></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>1OP:135</code></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">7</p></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>print_addr byte-address-of-string</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="sect15.html#print_addr"><strong>print_addr</strong></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><strong>*</strong></p></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>1OP:136</code></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">8</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">4</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>call_1s routine &#8594; (result)</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="sect15.html#call_1s"><strong>call_1s</strong></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>1OP:137</code></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">9</p></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>remove_obj object</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="sect15.html#remove_obj"><strong>remove_obj</strong></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>1OP:138</code></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">A</p></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>print_obj object</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="sect15.html#print_obj"><strong>print_obj</strong></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>1OP:139</code></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">B</p></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>ret value</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="sect15.html#ret"><strong>ret</strong></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>1OP:140</code></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">C</p></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>jump ?(label)</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="sect15.html#jump"><strong>jump</strong></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>1OP:141</code></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">D</p></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>print_paddr packed-address-of-string</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="sect15.html#print_paddr"><strong>print_paddr</strong></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><strong>*</strong></p></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>1OP:142</code></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">E</p></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>load (variable) &#8594; (result)</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="sect15.html#load"><strong>load</strong></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle" rowspan="2"><p class="tableblock"><strong>*</strong></p></td>
+<td class="tableblock halign-center valign-middle" rowspan="2"></td>
+<td class="tableblock halign-left valign-middle" rowspan="2"><p class="tableblock"><code>1OP:143</code></p></td>
+<td class="tableblock halign-center valign-middle" rowspan="2"><p class="tableblock">F</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">1/4</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>not value &#8594; (result)</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="sect15.html#not"><strong>not</strong></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">5</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>call_1n routine</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="sect15.html#call_1n"><strong>call_1n</strong></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle" colspan="7"><p class="tableblock"><em>Opcode numbers 144 to 175: other forms of 1OP with different types.</em></p></td>
+</tr>
+</tbody>
+</table>
 <div class="paragraph">
 <p><strong>Zero-operand opcodes 0OP</strong></p>
 </div>
@@ -5711,7 +5624,7 @@ A "parse table" is then written, recording the number of words, the length and p
 <p>Opcode numbers 192 to 223: VAR forms of 2OP:0 to 2OP:31.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 7. <strong>Variable-operand opcodes VAR</strong></caption>
+<caption class="title">Table 8. <strong>Variable-operand opcodes VAR</strong></caption>
 <colgroup>
 <col style="width: 14.2857%;">
 <col style="width: 14.2857%;">
@@ -6094,7 +6007,7 @@ A "parse table" is then written, recording the number of words, the length and p
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 8. <strong>Extended opcodes EXT</strong></caption>
+<caption class="title">Table 9. <strong>Extended opcodes EXT</strong></caption>
 <colgroup>
 <col style="width: 14.2857%;">
 <col style="width: 14.2857%;">
@@ -8555,7 +8468,7 @@ The highest ideal of a translation&#8230;&#8203; is achieved when the reader fli
 <p>As in <strong>S</strong> 11, "Hex" means the address, in hexadecimal; "V" the earliest version in which the feature appeared; "Dyn" means that the byte or bit may legally be changed by the game during play (no others may legally be changed by the game); "Int" means that the interpreter may (in some cases must) do so.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 9. <strong>Conventional usage of unspecified header memory</strong></caption>
+<caption class="title">Table 10. <strong>Conventional usage of unspecified header memory</strong></caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 20%;">
@@ -9060,7 +8973,7 @@ the information below has not been updated since the 20th June 1997 revision of 
 </div>
 <hr>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 10. <strong>Version 1 story file</strong></caption>
+<caption class="title">Table 11. <strong>Version 1 story file</strong></caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -9074,7 +8987,7 @@ the information below has not been updated since the 20th June 1997 revision of 
 </table>
 <hr>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 11. <strong>Version 2 story files</strong></caption>
+<caption class="title">Table 12. <strong>Version 2 story files</strong></caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -9092,7 +9005,7 @@ the information below has not been updated since the 20th June 1997 revision of 
 </table>
 <hr>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 12. <strong>Version 3 story files</strong></caption>
+<caption class="title">Table 13. <strong>Version 3 story files</strong></caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -9216,7 +9129,7 @@ the information below has not been updated since the 20th June 1997 revision of 
 </div>
 <hr>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 13. <strong>Version 4 story files</strong></caption>
+<caption class="title">Table 14. <strong>Version 4 story files</strong></caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -9242,7 +9155,7 @@ the information below has not been updated since the 20th June 1997 revision of 
 </table>
 <hr>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 14. <strong>Version 5 story files</strong></caption>
+<caption class="title">Table 15. <strong>Version 5 story files</strong></caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -9294,7 +9207,7 @@ the information below has not been updated since the 20th June 1997 revision of 
 </div>
 <hr>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 15. <strong>Version 6 story files</strong></caption>
+<caption class="title">Table 16. <strong>Version 6 story files</strong></caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 20%;">
