@@ -800,19 +800,24 @@ Reads a single character from input stream 0 (the keyboard). The first operand m
 
 The four words in the *array* are written with the mouse y coordinate, x coordinate, button bits, and a menu word.
 
-The buttons bits are arranged so that the "primary" button is the lowest bit, the "secondary" (if present) is the next lowest bit, and so on, up to a potential 16 buttons. The ordering of buttons should be that which is most natural for the host system. Here are some suggested assignments:
+The buttons bits are arranged so that the "primary" button is the lowest bit, the "secondary" (if present) is the next lowest bit, and so on, up to a potential 16 buttons.
+The ordering of buttons should be that which is most natural for the host system. Here are some suggested assignments:
 
-....
-                        Button assignments
-             Platform   Bit 0 (low)   Bit 1     Bit 2
-             ----------------------------------------
-             RISC OS    Select        Adjust    Menu
-             MacOS      Primary/only  Secondary Tertiary   ...
-             Windows    Left          Right     Middle
-             X          Left          Right     Middle
-....
+.Button assignments
+[%autowidth]
+[cols="4*<,^"]
+|====================================================
+| Platform | Bit 0 (low)  | Bit 1     | Bit 2   | ...
 
-In the menu word, the upper byte is the menu number and the lower byte is the item number (from 0). (Note that the array isn't a table and has no initial size information. The data is written to words 0 to 3 in the array.)
+| RISC OS  | Select       | Adjust    | Menu    | ...
+| MacOS    | Primary/only | Secondary | Tertiary| ...
+| Windows  | Left         | Right     | Middle  | ...
+| X        | Left         | Right     | Middle  | ...
+|====================================================
+
+In the menu word, the upper byte is the menu number and the lower byte is the item number (from 0).
+(Note that the array isn't a table and has no initial size information.
+The data is written to words 0 to 3 in the array.)
 
 '''''
 

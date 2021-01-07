@@ -7407,21 +7407,62 @@ The highest ideal of a translation&#8230;&#8203; is achieved when the reader fli
 <p>The four words in the <strong>array</strong> are written with the mouse y coordinate, x coordinate, button bits, and a menu word.</p>
 </div>
 <div class="paragraph">
-<p>The buttons bits are arranged so that the "primary" button is the lowest bit, the "secondary" (if present) is the next lowest bit, and so on, up to a potential 16 buttons. The ordering of buttons should be that which is most natural for the host system. Here are some suggested assignments:</p>
+<p>The buttons bits are arranged so that the "primary" button is the lowest bit, the "secondary" (if present) is the next lowest bit, and so on, up to a potential 16 buttons.
+The ordering of buttons should be that which is most natural for the host system. Here are some suggested assignments:</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>                        Button assignments
-             Platform   Bit 0 (low)   Bit 1     Bit 2
-             ----------------------------------------
-             RISC OS    Select        Adjust    Menu
-             MacOS      Primary/only  Secondary Tertiary   ...
-             Windows    Left          Right     Middle
-             X          Left          Right     Middle</pre>
-</div>
-</div>
+<table class="tableblock frame-all grid-all fit-content">
+<caption class="title">Table 11. Button assignments</caption>
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Platform</th>
+<th class="tableblock halign-left valign-top">Bit 0 (low)</th>
+<th class="tableblock halign-left valign-top">Bit 1</th>
+<th class="tableblock halign-left valign-top">Bit 2</th>
+<th class="tableblock halign-center valign-top">&#8230;&#8203;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RISC OS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Adjust</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Menu</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8230;&#8203;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MacOS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Primary/only</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Secondary</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tertiary</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8230;&#8203;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Windows</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Left</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Right</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Middle</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8230;&#8203;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">X</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Left</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Right</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Middle</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8230;&#8203;</p></td>
+</tr>
+</tbody>
+</table>
 <div class="paragraph">
-<p>In the menu word, the upper byte is the menu number and the lower byte is the item number (from 0). (Note that the array isn&#8217;t a table and has no initial size information. The data is written to words 0 to 3 in the array.)</p>
+<p>In the menu word, the upper byte is the menu number and the lower byte is the item number (from 0).
+(Note that the array isn&#8217;t a table and has no initial size information.
+The data is written to words 0 to 3 in the array.)</p>
 </div>
 <hr>
 </div>
@@ -8327,7 +8368,7 @@ The highest ideal of a translation&#8230;&#8203; is achieved when the reader fli
 <p>As in <strong>S</strong> 11, "Hex" means the address, in hexadecimal; "V" the earliest version in which the feature appeared; "Dyn" means that the byte or bit may legally be changed by the game during play (no others may legally be changed by the game); "Int" means that the interpreter may (in some cases must) do so.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 11. <strong>Conventional usage of unspecified header memory</strong></caption>
+<caption class="title">Table 12. <strong>Conventional usage of unspecified header memory</strong></caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 20%;">
@@ -8832,7 +8873,7 @@ the information below has not been updated since the 20th June 1997 revision of 
 </div>
 <hr>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 12. <strong>Version 1 story file</strong></caption>
+<caption class="title">Table 13. <strong>Version 1 story file</strong></caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -8846,7 +8887,7 @@ the information below has not been updated since the 20th June 1997 revision of 
 </table>
 <hr>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 13. <strong>Version 2 story files</strong></caption>
+<caption class="title">Table 14. <strong>Version 2 story files</strong></caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -8864,7 +8905,7 @@ the information below has not been updated since the 20th June 1997 revision of 
 </table>
 <hr>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 14. <strong>Version 3 story files</strong></caption>
+<caption class="title">Table 15. <strong>Version 3 story files</strong></caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -8988,7 +9029,7 @@ the information below has not been updated since the 20th June 1997 revision of 
 </div>
 <hr>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 15. <strong>Version 4 story files</strong></caption>
+<caption class="title">Table 16. <strong>Version 4 story files</strong></caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -9014,7 +9055,7 @@ the information below has not been updated since the 20th June 1997 revision of 
 </table>
 <hr>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 16. <strong>Version 5 story files</strong></caption>
+<caption class="title">Table 17. <strong>Version 5 story files</strong></caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -9066,7 +9107,7 @@ the information below has not been updated since the 20th June 1997 revision of 
 </div>
 <hr>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 17. <strong>Version 6 story files</strong></caption>
+<caption class="title">Table 18. <strong>Version 6 story files</strong></caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 20%;">
