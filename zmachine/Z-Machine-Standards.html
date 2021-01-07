@@ -7718,13 +7718,49 @@ The data is written to words 0 to 3 in the array.)</p>
 <div class="sect2">
 <h3 id="_set_true_colour"><a class="anchor" href="#_set_true_colour"></a>15.109. set_true_colour</h3>
 <div class="paragraph">
-<p><strong><a href="sect14.html#EXT">EXT</a>:13 D 5/</strong> set_true_colour foreground background*</p>
+<p><strong><a href="sect14.html#EXT">EXT</a>:13 D 5/* set_true_colour foreground background</strong></p>
 </div>
 <div class="paragraph">
-<p><strong><a href="sect14.html#EXT">EXT</a>:13 D 6/</strong> set_true_colour foreground background window*</p>
+<p><strong><a href="sect14.html#EXT">EXT</a>:13 D 6/* set_true_colour foreground background window</strong></p>
 </div>
 <div class="paragraph">
 <p>The foreground and background are 15-bit colour values:</p>
+</div>
+<div class="hdlist">
+<table>
+<tr>
+<td class="hdlist1">
+bit 15     
+</td>
+<td class="hdlist2">
+<p>= 0</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+bits 14-10 
+</td>
+<td class="hdlist2">
+<p>&#8594; blue</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+bits 9-5   
+</td>
+<td class="hdlist2">
+<p>&#8594; green</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+bits 4-0   
+</td>
+<td class="hdlist2">
+<p>&#8594; red</p>
+</td>
+</tr>
+</table>
 </div>
 <div class="literalblock">
 <div class="content">

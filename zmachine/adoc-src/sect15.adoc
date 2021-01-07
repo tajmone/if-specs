@@ -1013,18 +1013,17 @@ Sets the text style to: Roman (if 0), Reverse Video (if 1), Bold (if 2), Italic 
 
 == set_true_colour
 
-*link:sect14.html#EXT[EXT]:13 D 5/* set_true_colour foreground background*
+*link:sect14.html#EXT[EXT]:13 D 5/{asterisk} set_true_colour foreground background*
 
-*link:sect14.html#EXT[EXT]:13 D 6/* set_true_colour foreground background window*
+*link:sect14.html#EXT[EXT]:13 D 6/{asterisk} set_true_colour foreground background window*
 
 The foreground and background are 15-bit colour values:
 
-....
- bit 15 = 0
- bits 14-10 blue
- bits 9-5 green
- bits 4-0 red
-....
+[horizontal]
+bit 15     :: = 0
+bits 14-10 :: -> blue
+bits 9-5   :: -> green
+bits 4-0   :: -> red
 
 The optional window parameter is only allowed in V6, and operates the same as in *set_colour*.
 
