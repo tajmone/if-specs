@@ -1,4 +1,5 @@
 [[ch.2]]
+[reftext="section 2"]
 = Numbers and arithmetic
 
 

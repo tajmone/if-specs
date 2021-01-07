@@ -1,4 +1,5 @@
 [[ch.11]]
+[reftext="section 11"]
 = The format of the header
 
 [[p11.1]]

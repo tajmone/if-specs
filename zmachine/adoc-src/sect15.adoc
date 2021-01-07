@@ -1,5 +1,6 @@
 // [[dict]]
 [[ch.15]]
+[reftext="section 15"]
 = Dictionary of opcodes
 
 "The highest ideal of a translation... is achieved when the reader flings it impatiently into the fire, and begins patiently to learn the language for himself."

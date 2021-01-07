@@ -1,4 +1,5 @@
 [[ch.16]]
+[reftext="section 16"]
 = Font 3 and character graphics
 
 == 16.1

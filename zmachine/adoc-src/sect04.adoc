@@ -1,4 +1,5 @@
 [[ch.4]]
+[reftext="section 4"]
 = How instructions are encoded
 
 [quote, Shakespeare, Macbeth]

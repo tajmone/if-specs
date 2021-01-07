@@ -1,4 +1,5 @@
 [[ch.7]]
+[reftext="section 7"]
 = Output streams and file handling
 
 

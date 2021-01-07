@@ -1,4 +1,5 @@
 [[ch.1]]
+[reftext="section 1"]
 = The memory map
 
 

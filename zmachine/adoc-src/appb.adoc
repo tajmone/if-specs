@@ -3,7 +3,7 @@
 [appendix]
 = Conventional contents of the header
 
-The header table in link:sect11.html[section 11] details everything the interpreter needs to know about the header's contents. A few other slots in the header are meaningful but only by convention (since existing Infocom and Inform games write them). These additional slots are described here.
+The header table in <<sect11.adoc#ch.11>> details everything the interpreter needs to know about the header's contents. A few other slots in the header are meaningful but only by convention (since existing Infocom and Inform games write them). These additional slots are described here.
 
 As in *S* 11, "Hex" means the address, in hexadecimal; "V" the earliest version in which the feature appeared; "Dyn" means that the byte or bit may legally be changed by the game during play (no others may legally be changed by the game); "Int" means that the interpreter may (in some cases must) do so.
 
@@ -23,7 +23,7 @@ As in *S* 11, "Hex" means the address, in hexadecimal; "V" the earliest version 
 |3C | | | |Inform 6 stores 4 bytes of ASCII here, giving the version of Inform used to compile the file: for instance, "6.11".
 |===
 
-. In Versions 1 to 3, bits 0 and 7 of 'Flags 1' are unused. (The meaning of bit 2 has recently been discovered: see link:sect11.html[section 11].) In later Versions, bits 0, 6 and 7 are unused. In 'Flags 2', bits 9 and 11-15 are unused. Infocom used up almost the whole header: only the bytes at *$32* and *$33* are unused in any Version, and those are now allocated for standard interpreters to give their Revision numbers.
+. In Versions 1 to 3, bits 0 and 7 of 'Flags 1' are unused. (The meaning of bit 2 has recently been discovered: see <<sect11.adoc#ch.11>>.) In later Versions, bits 0, 6 and 7 are unused. In 'Flags 2', bits 9 and 11-15 are unused. Infocom used up almost the whole header: only the bytes at *$32* and *$33* are unused in any Version, and those are now allocated for standard interpreters to give their Revision numbers.
 . Some early Infocom games were sold by the Tandy Corporation, who seem to have been sensitive souls. 'Zork I' pretends not to have sequels if it finds the Tandy bit set. And to quote Paul David Doherty:
 +
 ____

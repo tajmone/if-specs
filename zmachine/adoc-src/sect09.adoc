@@ -1,4 +1,5 @@
 [[ch.9]]
+[reftext="section 9"]
 = Sound effects
 
 

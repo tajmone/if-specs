@@ -1,4 +1,5 @@
 [[ch.8]]
+[reftext="section 8"]
 = The screen model
 
 

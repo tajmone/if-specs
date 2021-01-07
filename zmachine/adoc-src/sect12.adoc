@@ -1,4 +1,5 @@
 [[ch.12]]
+[reftext="section 12"]
 = The object table
 
 
