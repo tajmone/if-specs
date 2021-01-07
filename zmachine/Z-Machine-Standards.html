@@ -5873,314 +5873,306 @@ A "parse table" is then written, recording the number of words, the length and p
 </tr>
 </tbody>
 </table>
-<table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 10. <strong>Extended opcodes EXT</strong></caption>
+<table class="tableblock frame-all grid-all fit-content">
+<caption class="title">Table 10. Extended opcodes EXT</caption>
 <colgroup>
-<col style="width: 14.2857%;">
-<col style="width: 14.2857%;">
-<col style="width: 14.2857%;">
-<col style="width: 14.2857%;">
-<col style="width: 14.2857%;">
-<col style="width: 14.2857%;">
-<col style="width: 14.2858%;">
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
 </colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-middle">St</th>
+<th class="tableblock halign-center valign-middle">Br</th>
+<th class="tableblock halign-center valign-middle">Opcode</th>
+<th class="tableblock halign-center valign-middle">Hex</th>
+<th class="tableblock halign-center valign-middle">V</th>
+<th class="tableblock halign-center valign-middle">Inform name and syntax</th>
+<th class="tableblock halign-center valign-middle">Link</th>
+</tr>
+</thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">St</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Br</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Opcode</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Hex</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">V</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Inform name and syntax</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Link</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><strong>*</strong></p></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>EXT:0</code></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">0</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">5</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>save table bytes name prompt &#8594; (result)</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="sect15.html#save"><strong>save</strong></a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">*</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">EXT:0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">5</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">save table bytes name prompt &#8594; (result)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="sect15.html#save"><strong>save</strong></a></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><strong>*</strong></p></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>EXT:1</code></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">1</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">5</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>restore table bytes name prompt &#8594; (result)</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="sect15.html#restore"><strong>restore</strong></a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">*</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">EXT:1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">5</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">restore table bytes name prompt &#8594; (result)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="sect15.html#restore"><strong>restore</strong></a></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><strong>*</strong></p></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>EXT:2</code></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">2</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">5</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>log_shift number places &#8594; (result)</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="sect15.html#log_shift"><strong>log_shift</strong></a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">*</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">EXT:2</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">5</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">log_shift number places &#8594; (result)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="sect15.html#log_shift"><strong>log_shift</strong></a></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><strong>*</strong></p></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>EXT:3</code></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">3</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">5/-</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>art_shift number places &#8594; (result)</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="sect15.html#art_shift"><strong>art_shift</strong></a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">*</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">EXT:3</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">5/-</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">art_shift number places &#8594; (result)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="sect15.html#art_shift"><strong>art_shift</strong></a></p></td>
+<td class="tableblock halign-center valign-middle" rowspan="2"><p class="tableblock"><strong>*</strong></p></td>
+<td class="tableblock halign-center valign-middle" rowspan="2"></td>
+<td class="tableblock halign-left valign-middle" rowspan="2"><p class="tableblock"><code>EXT:4</code></p></td>
+<td class="tableblock halign-center valign-middle" rowspan="2"><p class="tableblock">4</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">5</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>set_font font &#8594; (result)</code></p></td>
+<td class="tableblock halign-left valign-middle" rowspan="2"><p class="tableblock"><a href="sect15.html#set_font"><strong>set_font</strong></a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">*</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">EXT:4</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">4</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">5</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">set_font font &#8594; (result)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="sect15.html#set_font"><strong>set_font</strong></a></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">6/-</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>set_font font window &#8594; (result)</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">*</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">6/-</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">set_font font window &#8594; (result)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="sect15.html#set_font"><strong>set_font</strong></a></p></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>EXT:5</code></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">5</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">6</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>draw_picture picture-number y x</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="sect15.html#draw_picture"><strong>draw_picture</strong></a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">EXT:5</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">5</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">6</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">draw_picture picture-number y x</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="sect15.html#draw_picture"><strong>draw_picture</strong></a></p></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><strong>*</strong></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>EXT:6</code></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">6</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">6</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>picture_data picture-number array ?(label)</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="sect15.html#picture_data"><strong>picture_data</strong></a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">*</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">EXT:6</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">6</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">6</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">picture_data picture-number array ?(label)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="sect15.html#picture_data"><strong>picture_data</strong></a></p></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>EXT:7</code></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">7</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">6</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>erase_picture picture-number y x</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="sect15.html#erase_picture"><strong>erase_picture</strong></a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">EXT:7</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">7</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">6</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">erase_picture picture-number y x</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="sect15.html#erase_picture"><strong>erase_picture</strong></a></p></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>EXT:8</code></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">8</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">6</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>set_margins left right window</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="sect15.html#set_margins"><strong>set_margins</strong></a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">EXT:8</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">8</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">6</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">set_margins left right window</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="sect15.html#set_margins"><strong>set_margins</strong></a></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><strong>*</strong></p></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>EXT:9</code></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">9</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">5</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>save_undo &#8594; (result)</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="sect15.html#save_undo"><strong>save_undo</strong></a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">*</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">EXT:9</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">9</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">5</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">save_undo &#8594; (result)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="sect15.html#save_undo"><strong>save_undo</strong></a></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><strong>*</strong></p></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>EXT:10</code></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">A</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">5</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>restore_undo &#8594; (result)</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="sect15.html#restore_undo"><strong>restore_undo</strong></a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">*</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">EXT:10</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">5</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">restore_undo &#8594; (result)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="sect15.html#restore_undo"><strong>restore_undo</strong></a></p></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>EXT:11</code></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">B</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">5/*</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>print_unicode char-number</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="sect15.html#print_unicode"><strong>print_unicode</strong></a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">EXT:11</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">B</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">5/*</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">print_unicode char-number</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="sect15.html#print_unicode"><strong>print_unicode</strong></a></p></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>EXT:12</code></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">C</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">5/*</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>check_unicode char-number &#8594; (result)</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="sect15.html#check_unicode"><strong>check_unicode</strong></a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">EXT:12</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">C</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">5/*</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">check_unicode char-number &#8594; (result)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="sect15.html#check_unicode"><strong>check_unicode</strong></a></p></td>
+<td class="tableblock halign-center valign-middle" rowspan="2"><p class="tableblock"><strong>*</strong></p></td>
+<td class="tableblock halign-center valign-middle" rowspan="2"></td>
+<td class="tableblock halign-left valign-middle" rowspan="2"><p class="tableblock"><code>EXT:13</code></p></td>
+<td class="tableblock halign-center valign-middle" rowspan="2"><p class="tableblock">D</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">5/*</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>set_true_colour foreground background</code></p></td>
+<td class="tableblock halign-left valign-middle" rowspan="2"><p class="tableblock"><a href="sect15.html#set_true_colour"><strong>set_true_colour</strong></a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">EXT:13</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">D</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">5/*</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">set_true_colour foreground background</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="sect15.html#set_true_colour"><strong>set_true_colour</strong></a></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">6/*</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>set_true_colour foreground background window</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">6/*</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">set_true_colour foreground background window</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="sect15.html#set_true_colour"><strong>set_true_colour</strong></a></p></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">E</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+<td class="tableblock halign-left valign-middle"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">-------</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">E</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">---</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">---</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">F</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+<td class="tableblock halign-left valign-middle"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">-------</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">---</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">---</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>EXT:16</code></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">10</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">6</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>move_window window y x</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="sect15.html#move_window"><strong>move_window</strong></a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">EXT:16</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">10</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">6</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">move_window window y x</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="sect15.html#move_window"><strong>move_window</strong></a></p></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>EXT:17</code></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">11</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">6</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>window_size window y x</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="sect15.html#window_size"><strong>window_size</strong></a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">EXT:17</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">11</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">6</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">window_size window y x</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="sect15.html#window_size"><strong>window_size</strong></a></p></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>EXT:18</code></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">12</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">6</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>window_style window flags operation</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="sect15.html#window_style"><strong>window_style</strong></a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">EXT:18</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">12</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">6</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">window_style window flags operation</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="sect15.html#window_style"><strong>window_style</strong></a></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><strong>*</strong></p></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>EXT:19</code></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">13</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">6</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>get_wind_prop window property-number &#8594; (result)</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="sect15.html#get_wind_prop"><strong>get_wind_prop</strong></a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">*</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">EXT:19</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">13</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">6</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">get_wind_prop window property-number &#8594; (result)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="sect15.html#get_wind_prop"><strong>get_wind_prop</strong></a></p></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>EXT:20</code></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">14</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">6</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>scroll_window window pixels</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="sect15.html#scroll_window"><strong>scroll_window</strong></a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">EXT:20</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">14</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">6</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">scroll_window window pixels</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="sect15.html#scroll_window"><strong>scroll_window</strong></a></p></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>EXT:21</code></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">15</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">6</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>pop_stack items stack</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="sect15.html#pop_stack"><strong>pop_stack</strong></a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">EXT:21</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">15</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">6</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">pop_stack items stack</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="sect15.html#pop_stack"><strong>pop_stack</strong></a></p></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>EXT:22</code></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">16</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">6</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>read_mouse array</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="sect15.html#read_mouse"><strong>read_mouse</strong></a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">EXT:22</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">16</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">6</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">read_mouse array</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="sect15.html#read_mouse"><strong>read_mouse</strong></a></p></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>EXT:23</code></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">17</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">6</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>mouse_window window</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="sect15.html#mouse_window"><strong>mouse_window</strong></a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">EXT:23</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">17</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">6</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">mouse_window window</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="sect15.html#mouse_window"><strong>mouse_window</strong></a></p></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><strong>*</strong></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>EXT:24</code></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">18</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">6</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>push_stack value stack ?(label)</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="sect15.html#push_stack"><strong>push_stack</strong></a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">*</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">EXT:24</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">18</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">6</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">push_stack value stack ?(label)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="sect15.html#push_stack"><strong>push_stack</strong></a></p></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>EXT:25</code></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">19</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">6</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>put_wind_prop window property-number value</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="sect15.html#put_wind_prop"><strong>put_wind_prop</strong></a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">EXT:25</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">19</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">6</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">put_wind_prop window property-number value</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="sect15.html#put_wind_prop"><strong>put_wind_prop</strong></a></p></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>EXT:26</code></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">1A</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">6</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>print_form formatted-table</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="sect15.html#print_form"><strong>print_form</strong></a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">EXT:26</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1A</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">6</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">print_form formatted-table</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="sect15.html#print_form"><strong>print_form</strong></a></p></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><strong>*</strong></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>EXT:27</code></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">1B</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">6</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>make_menu number table ?(label)</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="sect15.html#make_menu"><strong>make_menu</strong></a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">*</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">EXT:27</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1B</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">6</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">make_menu number table ?(label)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="sect15.html#make_menu"><strong>make_menu</strong></a></p></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>EXT:28</code></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">1C</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">6</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>picture_table table</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="sect15.html#picture_table"><strong>picture_table</strong></a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">EXT:28</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1C</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">6</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">picture_table table</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="sect15.html#picture_table"><strong>picture_table</strong></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">*</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">EXT:29</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1D</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">6/*</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">buffer_screen mode &#8594; (result)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="sect15.html#buffer_screen"><strong>buffer_screen</strong></a></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><strong>*</strong></p></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>EXT:29</code></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">1D</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">6/*</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>buffer_screen mode &#8594; (result)</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="sect15.html#buffer_screen"><strong>buffer_screen</strong></a></p></td>
 </tr>
 </tbody>
 </table>

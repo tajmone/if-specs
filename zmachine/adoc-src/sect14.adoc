@@ -169,43 +169,45 @@ link:#inform[_Inform assembly language_]
 
 
 
-.*Extended opcodes EXT*
-[cols=",,,,,,",]
-|===
-|St |Br |Opcode |Hex |V |Inform name and syntax |Link
-|* | |EXT:0 |0 |5 |save table bytes name prompt -> (result) |link:sect15.html#save[*save*]
-|* | |EXT:1 |1 |5 |restore table bytes name prompt -> (result) |link:sect15.html#restore[*restore*]
-|* | |EXT:2 |2 |5 |log_shift number places -> (result) |link:sect15.html#log_shift[*log_shift*]
-|* | |EXT:3 |3 |5/- |art_shift number places -> (result) |link:sect15.html#art_shift[*art_shift*]
-|* | |EXT:4 |4 |5 |set_font font -> (result) |link:sect15.html#set_font[*set_font*]
-|* | | | |6/- |set_font font window -> (result) |link:sect15.html#set_font[*set_font*]
-| | |EXT:5 |5 |6 |draw_picture picture-number y x |link:sect15.html#draw_picture[*draw_picture*]
-| |* |EXT:6 |6 |6 |picture_data picture-number array ?(label) |link:sect15.html#picture_data[*picture_data*]
-| | |EXT:7 |7 |6 |erase_picture picture-number y x |link:sect15.html#erase_picture[*erase_picture*]
-| | |EXT:8 |8 |6 |set_margins left right window |link:sect15.html#set_margins[*set_margins*]
-|* | |EXT:9 |9 |5 |save_undo -> (result) |link:sect15.html#save_undo[*save_undo*]
-|* | |EXT:10 |A |5 |restore_undo -> (result) |link:sect15.html#restore_undo[*restore_undo*]
-| | |EXT:11 |B |5/* |print_unicode char-number |link:sect15.html#print_unicode[*print_unicode*]
-| | |EXT:12 |C |5/* |check_unicode char-number -> (result) |link:sect15.html#check_unicode[*check_unicode*]
-| | |EXT:13 |D |5/* |set_true_colour foreground background |link:sect15.html#set_true_colour[*set_true_colour*]
-| | | | |6/* |set_true_colour foreground background window |link:sect15.html#set_true_colour[*set_true_colour*]
-| | |------- |E |--- |--- |
-| | |------- |F |--- |--- |
-| | |EXT:16 |10 |6 |move_window window y x |link:sect15.html#move_window[*move_window*]
-| | |EXT:17 |11 |6 |window_size window y x |link:sect15.html#window_size[*window_size*]
-| | |EXT:18 |12 |6 |window_style window flags operation |link:sect15.html#window_style[*window_style*]
-|* | |EXT:19 |13 |6 |get_wind_prop window property-number -> (result) |link:sect15.html#get_wind_prop[*get_wind_prop*]
-| | |EXT:20 |14 |6 |scroll_window window pixels |link:sect15.html#scroll_window[*scroll_window*]
-| | |EXT:21 |15 |6 |pop_stack items stack |link:sect15.html#pop_stack[*pop_stack*]
-| | |EXT:22 |16 |6 |read_mouse array |link:sect15.html#read_mouse[*read_mouse*]
-| | |EXT:23 |17 |6 |mouse_window window |link:sect15.html#mouse_window[*mouse_window*]
-| |* |EXT:24 |18 |6 |push_stack value stack ?(label) |link:sect15.html#push_stack[*push_stack*]
-| | |EXT:25 |19 |6 |put_wind_prop window property-number value |link:sect15.html#put_wind_prop[*put_wind_prop*]
-| | |EXT:26 |1A |6 |print_form formatted-table |link:sect15.html#print_form[*print_form*]
-| |* |EXT:27 |1B |6 |make_menu number table ?(label) |link:sect15.html#make_menu[*make_menu*]
-| | |EXT:28 |1C |6 |picture_table table |link:sect15.html#picture_table[*picture_table*]
-|* | |EXT:29 |1D |6/* |buffer_screen mode -> (result) |link:sect15.html#buffer_screen[*buffer_screen*]
-|===
+.Extended opcodes EXT
+[%autowidth]
+[cols="2*^.^s,<.^m,2*^.^,<.^m,<.^"]
+|===============================================================================
+| St    | Br  ^| Opcode ^| Hex ^| V   ^| Inform name and syntax  ^| Link
+
+| *     |      | EXT:0     | 0  | 5     | save table bytes name prompt -> (result)         | link:sect15.html#save[*save*]
+| *     |      | EXT:1     | 1  | 5     | restore table bytes name prompt -> (result)      | link:sect15.html#restore[*restore*]
+| *     |      | EXT:2     | 2  | 5     | log_shift number places -> (result)              | link:sect15.html#log_shift[*log_shift*]
+| *     |      | EXT:3     | 3  | 5/-   | art_shift number places -> (result)              | link:sect15.html#art_shift[*art_shift*]
+.2+| * .2+| .2+| EXT:4  .2+| 4  | 5     | set_font font -> (result)                     .2+| link:sect15.html#set_font[*set_font*]
+                               d| 6/- <m| set_font font window -> (result)
+|       |      | EXT:5     | 5  | 6     | draw_picture picture-number y x                  | link:sect15.html#draw_picture[*draw_picture*]
+|       | *    | EXT:6     | 6  | 6     | picture_data picture-number array ?(label)       | link:sect15.html#picture_data[*picture_data*]
+|       |      | EXT:7     | 7  | 6     | erase_picture picture-number y x                 | link:sect15.html#erase_picture[*erase_picture*]
+|       |      | EXT:8     | 8  | 6     | set_margins left right window                    | link:sect15.html#set_margins[*set_margins*]
+| *     |      | EXT:9     | 9  | 5     | save_undo -> (result)                            | link:sect15.html#save_undo[*save_undo*]
+| *     |      | EXT:10    | A  | 5     | restore_undo -> (result)                         | link:sect15.html#restore_undo[*restore_undo*]
+|       |      | EXT:11    | B  | 5/*   | print_unicode char-number                        | link:sect15.html#print_unicode[*print_unicode*]
+|       |      | EXT:12    | C  | 5/*   | check_unicode char-number -> (result)            | link:sect15.html#check_unicode[*check_unicode*]
+.2+| * .2+| .2+| EXT:13 .2+| D  | 5/*   | set_true_colour foreground background         .2+| link:sect15.html#set_true_colour[*set_true_colour*]
+                               d| 6/* <m| set_true_colour foreground background window
+|       |     d| --        | E  | --   d| -- |
+|       |     d| --        | F  | --   d| -- |
+|       |      | EXT:16    | 10 | 6     | move_window window y x                           | link:sect15.html#move_window[*move_window*]
+|       |      | EXT:17    | 11 | 6     | window_size window y x                           | link:sect15.html#window_size[*window_size*]
+|       |      | EXT:18    | 12 | 6     | window_style window flags operation              | link:sect15.html#window_style[*window_style*]
+| *     |      | EXT:19    | 13 | 6     | get_wind_prop window property-number -> (result) | link:sect15.html#get_wind_prop[*get_wind_prop*]
+|       |      | EXT:20    | 14 | 6     | scroll_window window pixels                      | link:sect15.html#scroll_window[*scroll_window*]
+|       |      | EXT:21    | 15 | 6     | pop_stack items stack                            | link:sect15.html#pop_stack[*pop_stack*]
+|       |      | EXT:22    | 16 | 6     | read_mouse array                                 | link:sect15.html#read_mouse[*read_mouse*]
+|       |      | EXT:23    | 17 | 6     | mouse_window window                              | link:sect15.html#mouse_window[*mouse_window*]
+|       | *    | EXT:24    | 18 | 6     | push_stack value stack ?(label)                  | link:sect15.html#push_stack[*push_stack*]
+|       |      | EXT:25    | 19 | 6     | put_wind_prop window property-number value       | link:sect15.html#put_wind_prop[*put_wind_prop*]
+|       |      | EXT:26    | 1A | 6     | print_form formatted-table                       | link:sect15.html#print_form[*print_form*]
+|       | *    | EXT:27    | 1B | 6     | make_menu number table ?(label)                  | link:sect15.html#make_menu[*make_menu*]
+|       |      | EXT:28    | 1C | 6     | picture_table table                              | link:sect15.html#picture_table[*picture_table*]
+| *     |      | EXT:29    | 1D | 6/*   | buffer_screen mode -> (result)                   | link:sect15.html#buffer_screen[*buffer_screen*]
+|===============================================================================
 
 '''''
 
