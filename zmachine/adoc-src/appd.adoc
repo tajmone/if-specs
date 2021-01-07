@@ -5,18 +5,19 @@
 
 Infocom made six main Versions of the Z-machine and several minor variant forms. These are recognisably similar but with labyrinthine differences, like different archaic dialects of the same language. (The archaeological record stops sharply in 1989 when the civilisation in question collapsed.)
 
-Broadly, these fall into two groups: early (Versions 1 to 3) and late (4 to 6). More fully:
+Broadly, these fall into two groups: early (Versions 1 to 3) and late (4 to 6).
+More fully:
 
-....
-Version 1   Early Apple II and TRS-80 Model I games
-Version 2   Early Apple II and TRS-80 Model I games
-Version 3   "Standard" series games
-Version 4   "Plus" series games
-Version 5   "Advanced" series games, or, as the marketing division would
-            have it, "Solid Gold Interactive Fiction" -- a reference to
-            the colour (though not composition) of the boxes they came in
-Version 6   Later games with graphics, mouse support, etc.
-....
+[horizontal]
+Version{nbsp}1 :: Early Apple II and TRS-80 Model I games
+Version{nbsp}2 :: Early Apple II and TRS-80 Model I games
+Version{nbsp}3 :: "Standard" series games
+Version{nbsp}4 :: "Plus" series games
+Version{nbsp}5 :: "Advanced" series games, or, as the marketing division would
+                  have it, "Solid Gold Interactive Fiction" -- a reference to
+                  the colour (though not composition) of the boxes they came in
+Version{nbsp}6 :: Later games with graphics, mouse support, etc.
+
 
 Infocom called their own interpreters ZIP (versions 1 to 3), EZIP/LZIP (V4), XZIP (V5) and YZIP (V6). They speculated on the possibility of an interpreter capable of running all Versions, but never published one.
 
@@ -54,14 +55,17 @@ Although five old games were re-released in Version 5 editions (with an in-game 
 
 It would be wrong, though, to suggest that Infocom regarded text and graphics as incompatible opposites. Infocom had never been puritanically opposed to graphics --
 
-____
-We have nothing against graphics per se. However, given the quality of graphics currently available on home computers, we would rather use that disk space for additional puzzles and richer descriptions.
 
-*The New Zork Times (Spring 1984)*
-____
+"We have nothing against graphics per se.
+However, given the quality of graphics currently available on home computers, we would rather use that disk space for additional puzzles and richer descriptions."
+-- The New Zork Times (Spring 1984)
 
-(and, after all, the same author wrote both 'Trinity' and 'Beyond Zork'). Although the old Infocom parser was considered to have passed its sell-by date, Version 6 did not drop textual input in favour of some inane point-and-click interface. Instead, an entirely new parser was devised from scratch ("using the theory of computational linguistics", according to a puff by Stu Galley: broadly an LALR(1) parser).
 
-Infocom gradually ceased to exist during 1987-9 as its financial problems grew. But its products were increasingly regarded as anachronistic and most of its staff had left since the middle years: if Infocom had not finally been wound up, whether it would have continued to release text games of the classical style is arguable.
+(and, after all, the same author wrote both 'Trinity' and 'Beyond Zork').
+Although the old Infocom parser was considered to have passed its sell-by date, Version 6 did not drop textual input in favour of some inane point-and-click interface.
+Instead, an entirely new parser was devised from scratch ("using the theory of computational linguistics", according to a puff by Stu Galley: broadly an LALR(1) parser).
+
+Infocom gradually ceased to exist during 1987-9 as its financial problems grew.
+But its products were increasingly regarded as anachronistic and most of its staff had left since the middle years: if Infocom had not finally been wound up, whether it would have continued to release text games of the classical style is arguable.
 
 Two new formats, versions 7 and 8, have recently been devised to cope with large Inform games.
