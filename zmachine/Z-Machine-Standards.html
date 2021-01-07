@@ -5320,311 +5320,211 @@ A "parse table" is then written, recording the number of words, the length and p
 </tr>
 </tbody>
 </table>
-<div class="paragraph">
-<p><strong>Zero-operand opcodes 0OP</strong></p>
-</div>
-<div class="paragraph">
-<p>St</p>
-</div>
-<div class="paragraph">
-<p>Br</p>
-</div>
-<div class="paragraph">
-<p>Opcode</p>
-</div>
-<div class="paragraph">
-<p>Hex</p>
-</div>
-<div class="paragraph">
-<p>V</p>
-</div>
-<div class="paragraph">
-<p>Inform name and syntax</p>
-</div>
-<div class="paragraph">
-<p>Link</p>
-</div>
-<div class="paragraph">
-<p>0OP:176</p>
-</div>
-<div class="paragraph">
-<p>0</p>
-</div>
-<div class="paragraph">
-<p>rtrue</p>
-</div>
-<div class="paragraph">
-<p><a href="sect15.html#rtrue"><strong>rtrue</strong></a></p>
-</div>
-<div class="paragraph">
-<p>0OP:177</p>
-</div>
-<div class="paragraph">
-<p>1</p>
-</div>
-<div class="paragraph">
-<p>rfalse</p>
-</div>
-<div class="paragraph">
-<p><a href="sect15.html#rfalse"><strong>rfalse</strong></a></p>
-</div>
-<div class="paragraph">
-<p>0OP:178</p>
-</div>
-<div class="paragraph">
-<p>2</p>
-</div>
-<div class="paragraph">
-<p>print (literal-string)</p>
-</div>
-<div class="paragraph">
-<p><a href="sect15.html#print"><strong>print</strong></a></p>
-</div>
-<div class="paragraph">
-<p>0OP:179</p>
-</div>
-<div class="paragraph">
-<p>3</p>
-</div>
-<div class="paragraph">
-<p>print_ret (literal-string)</p>
-</div>
-<div class="paragraph">
-<p><a href="sect15.html#print_ret"><strong>print_ret</strong></a></p>
-</div>
-<div class="paragraph">
-<p>0OP:180</p>
-</div>
-<div class="paragraph">
-<p>4</p>
-</div>
-<div class="paragraph">
-<p>1/-</p>
-</div>
-<div class="paragraph">
-<p>nop</p>
-</div>
-<div class="paragraph">
-<p><a href="sect15.html#nop"><strong>nop</strong></a></p>
-</div>
-<div class="paragraph">
-<p>*</p>
-</div>
-<div class="paragraph">
-<p>0OP:181</p>
-</div>
-<div class="paragraph">
-<p>5</p>
-</div>
-<div class="paragraph">
-<p>1</p>
-</div>
-<div class="paragraph">
-<p>save ?(label)</p>
-</div>
-<div class="paragraph">
-<p><a href="sect15.html#save"><strong>save</strong></a></p>
-</div>
-<div class="paragraph">
-<p>4</p>
-</div>
-<div class="paragraph">
-<p>save &#8594; (result)</p>
-</div>
-<div class="paragraph">
-<p><a href="sect15.html#save"><strong>save</strong></a></p>
-</div>
-<div class="paragraph">
-<p>5</p>
-</div>
-<div class="paragraph">
-<p>[illegal]</p>
-</div>
-<div class="paragraph">
-<p>*</p>
-</div>
-<div class="paragraph">
-<p>0OP:182</p>
-</div>
-<div class="paragraph">
-<p>6</p>
-</div>
-<div class="paragraph">
-<p>1</p>
-</div>
-<div class="paragraph">
-<p>restore ?(label)</p>
-</div>
-<div class="paragraph">
-<p><a href="sect15.html#restore"><strong>restore</strong></a></p>
-</div>
-<div class="paragraph">
-<p>4</p>
-</div>
-<div class="paragraph">
-<p>restore &#8594; (result)</p>
-</div>
-<div class="paragraph">
-<p><a href="sect15.html#restore"><strong>restore</strong></a></p>
-</div>
-<div class="paragraph">
-<p>5</p>
-</div>
-<div class="paragraph">
-<p>[illegal]</p>
-</div>
-<div class="paragraph">
-<p>0OP:183</p>
-</div>
-<div class="paragraph">
-<p>7</p>
-</div>
-<div class="paragraph">
-<p>restart</p>
-</div>
-<div class="paragraph">
-<p><a href="sect15.html#restart"><strong>restart</strong></a></p>
-</div>
-<div class="paragraph">
-<p>0OP:184</p>
-</div>
-<div class="paragraph">
-<p>8</p>
-</div>
-<div class="paragraph">
-<p>ret_popped</p>
-</div>
-<div class="paragraph">
-<p><a href="sect15.html#ret_popped"><strong>ret_popped</strong></a></p>
-</div>
-<div class="paragraph">
-<p>0OP:185</p>
-</div>
-<div class="paragraph">
-<p>9</p>
-</div>
-<div class="paragraph">
-<p>1</p>
-</div>
-<div class="paragraph">
-<p>pop</p>
-</div>
-<div class="paragraph">
-<p><a href="sect15.html#pop"><strong>pop</strong></a></p>
-</div>
-<div class="paragraph">
-<p>*</p>
-</div>
-<div class="paragraph">
-<p>5/6</p>
-</div>
-<div class="paragraph">
-<p>catch &#8594; (result)</p>
-</div>
-<div class="paragraph">
-<p><a href="sect15.html#catch"><strong>catch</strong></a></p>
-</div>
-<div class="paragraph">
-<p>0OP:186</p>
-</div>
-<div class="paragraph">
-<p>A</p>
-</div>
-<div class="paragraph">
-<p>quit</p>
-</div>
-<div class="paragraph">
-<p><a href="sect15.html#quit"><strong>quit</strong></a></p>
-</div>
-<div class="paragraph">
-<p>0OP:187</p>
-</div>
-<div class="paragraph">
-<p>B</p>
-</div>
-<div class="paragraph">
-<p>new_line</p>
-</div>
-<div class="paragraph">
-<p><a href="sect15.html#new_line"><strong>new_line</strong></a></p>
-</div>
-<div class="paragraph">
-<p>0OP:188</p>
-</div>
-<div class="paragraph">
-<p>C</p>
-</div>
-<div class="paragraph">
-<p>3</p>
-</div>
-<div class="paragraph">
-<p>show_status</p>
-</div>
-<div class="paragraph">
-<p><a href="sect15.html#show_status"><strong>show_status</strong></a></p>
-</div>
-<div class="paragraph">
-<p>4</p>
-</div>
-<div class="paragraph">
-<p>[illegal]</p>
-</div>
-<div class="paragraph">
-<p>*</p>
-</div>
-<div class="paragraph">
-<p>0OP:189</p>
-</div>
-<div class="paragraph">
-<p>D</p>
-</div>
-<div class="paragraph">
-<p>3</p>
-</div>
-<div class="paragraph">
-<p>verify ?(label)</p>
-</div>
-<div class="paragraph">
-<p><a href="sect15.html#verify"><strong>verify</strong></a></p>
-</div>
-<div class="paragraph">
-<p>0OP:190</p>
-</div>
-<div class="paragraph">
-<p>E</p>
-</div>
-<div class="paragraph">
-<p>5</p>
-</div>
-<div class="paragraph">
-<p>[first byte of extended opcode]</p>
-</div>
-<div class="paragraph">
-<p><a href="sect15.html#extended"><strong>extended</strong></a></p>
-</div>
-<div class="paragraph">
-<p>*</p>
-</div>
-<div class="paragraph">
-<p>0OP:191</p>
-</div>
-<div class="paragraph">
-<p>F</p>
-</div>
-<div class="paragraph">
-<p>5/-</p>
-</div>
-<div class="paragraph">
-<p>piracy ?(label)</p>
-</div>
-<div class="paragraph">
-<p><a href="sect15.html#piracy"><strong>piracy</strong></a></p>
-</div>
-<div class="paragraph">
-<p>Opcode numbers 192 to 223: VAR forms of 2OP:0 to 2OP:31.</p>
-</div>
+<table class="tableblock frame-all grid-all fit-content">
+<caption class="title">Table 8. Zero-operand opcodes 0OP</caption>
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-middle">St</th>
+<th class="tableblock halign-center valign-middle">Br</th>
+<th class="tableblock halign-center valign-middle">Opcode</th>
+<th class="tableblock halign-center valign-middle">Hex</th>
+<th class="tableblock halign-center valign-middle">V</th>
+<th class="tableblock halign-center valign-middle">Inform name and syntax</th>
+<th class="tableblock halign-center valign-middle">Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>0OP:176</code></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">0</p></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>rtrue</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="sect15.html#rtrue"><strong>rtrue</strong></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>0OP:177</code></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">1</p></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>rfalse</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="sect15.html#rfalse"><strong>rfalse</strong></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>0OP:178</code></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">2</p></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>print (literal-string)</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="sect15.html#print"><strong>print</strong></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>0OP:179</code></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">3</p></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>print_ret (literal-string)</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="sect15.html#print_ret"><strong>print_ret</strong></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>0OP:180</code></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">4</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">1/-</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>nop</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="sect15.html#nop"><strong>nop</strong></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle" rowspan="3"></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><strong>*</strong></p></td>
+<td class="tableblock halign-left valign-middle" rowspan="3"><p class="tableblock"><code>0OP:181</code></p></td>
+<td class="tableblock halign-center valign-middle" rowspan="3"><p class="tableblock">5</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>save ?(label)</code></p></td>
+<td class="tableblock halign-left valign-middle" rowspan="2"><p class="tableblock"><a href="sect15.html#save"><strong>save</strong></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle" rowspan="2"></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">4</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>save &#8594; (result)</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">5</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><em>[illegal]</em></p></td>
+<td class="tableblock halign-left valign-middle"></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle" rowspan="3"></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><strong>*</strong></p></td>
+<td class="tableblock halign-left valign-middle" rowspan="3"><p class="tableblock"><code>0OP:182</code></p></td>
+<td class="tableblock halign-center valign-middle" rowspan="3"><p class="tableblock">6</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>restore ?(label)</code></p></td>
+<td class="tableblock halign-left valign-middle" rowspan="2"><p class="tableblock"><a href="sect15.html#restore"><strong>restore</strong></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle" rowspan="2"></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">4</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>restore &#8594; (result)</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">5</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><em>[illegal]</em></p></td>
+<td class="tableblock halign-left valign-middle"></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>0OP:183</code></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">7</p></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>restart</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="sect15.html#restart"><strong>restart</strong></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>0OP:184</code></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">8</p></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>ret_popped</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="sect15.html#ret_popped"><strong>ret_popped</strong></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-center valign-middle" rowspan="2"></td>
+<td class="tableblock halign-left valign-middle" rowspan="2"><p class="tableblock"><code>0OP:185</code></p></td>
+<td class="tableblock halign-center valign-middle" rowspan="2"><p class="tableblock">9</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>pop</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="sect15.html#pop"><strong>pop</strong></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><strong>*</strong></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">5/6</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>catch &#8594; (result)</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="sect15.html#catch"><strong>catch</strong></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>0OP:186</code></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">A</p></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>quit</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="sect15.html#quit"><strong>quit</strong></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>0OP:187</code></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">B</p></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>new_line</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="sect15.html#new_line"><strong>new_line</strong></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle" rowspan="2"></td>
+<td class="tableblock halign-center valign-middle" rowspan="2"></td>
+<td class="tableblock halign-left valign-middle" rowspan="2"><p class="tableblock"><code>0OP:188</code></p></td>
+<td class="tableblock halign-center valign-middle" rowspan="2"><p class="tableblock">C</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">3</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>show_status</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="sect15.html#show_status"><strong>show_status</strong></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">4</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><em>[illegal]</em></p></td>
+<td class="tableblock halign-left valign-middle"></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><strong>*</strong></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>0OP:189</code></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">D</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">3</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>verify ?(label)</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="sect15.html#verify"><strong>verify</strong></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>0OP:190</code></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">E</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">5</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><em>[first byte of extended opcode]</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="sect15.html#extended"><strong>extended</strong></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><strong>*</strong></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>0OP:191</code></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">F</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">5/-</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>piracy ?(label)</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="sect15.html#piracy"><strong>piracy</strong></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle" colspan="7"><p class="tableblock"><em>Opcode numbers 192 to 223: VAR forms of 2OP:0 to 2OP:31.</em></p></td>
+</tr>
+</tbody>
+</table>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 8. <strong>Variable-operand opcodes VAR</strong></caption>
+<caption class="title">Table 9. <strong>Variable-operand opcodes VAR</strong></caption>
 <colgroup>
 <col style="width: 14.2857%;">
 <col style="width: 14.2857%;">
@@ -6007,7 +5907,7 @@ A "parse table" is then written, recording the number of words, the length and p
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 9. <strong>Extended opcodes EXT</strong></caption>
+<caption class="title">Table 10. <strong>Extended opcodes EXT</strong></caption>
 <colgroup>
 <col style="width: 14.2857%;">
 <col style="width: 14.2857%;">
@@ -8468,7 +8368,7 @@ The highest ideal of a translation&#8230;&#8203; is achieved when the reader fli
 <p>As in <strong>S</strong> 11, "Hex" means the address, in hexadecimal; "V" the earliest version in which the feature appeared; "Dyn" means that the byte or bit may legally be changed by the game during play (no others may legally be changed by the game); "Int" means that the interpreter may (in some cases must) do so.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 10. <strong>Conventional usage of unspecified header memory</strong></caption>
+<caption class="title">Table 11. <strong>Conventional usage of unspecified header memory</strong></caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 20%;">
@@ -8973,7 +8873,7 @@ the information below has not been updated since the 20th June 1997 revision of 
 </div>
 <hr>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 11. <strong>Version 1 story file</strong></caption>
+<caption class="title">Table 12. <strong>Version 1 story file</strong></caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -8987,7 +8887,7 @@ the information below has not been updated since the 20th June 1997 revision of 
 </table>
 <hr>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 12. <strong>Version 2 story files</strong></caption>
+<caption class="title">Table 13. <strong>Version 2 story files</strong></caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -9005,7 +8905,7 @@ the information below has not been updated since the 20th June 1997 revision of 
 </table>
 <hr>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 13. <strong>Version 3 story files</strong></caption>
+<caption class="title">Table 14. <strong>Version 3 story files</strong></caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -9129,7 +9029,7 @@ the information below has not been updated since the 20th June 1997 revision of 
 </div>
 <hr>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 14. <strong>Version 4 story files</strong></caption>
+<caption class="title">Table 15. <strong>Version 4 story files</strong></caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -9155,7 +9055,7 @@ the information below has not been updated since the 20th June 1997 revision of 
 </table>
 <hr>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 15. <strong>Version 5 story files</strong></caption>
+<caption class="title">Table 16. <strong>Version 5 story files</strong></caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -9207,7 +9107,7 @@ the information below has not been updated since the 20th June 1997 revision of 
 </div>
 <hr>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 16. <strong>Version 6 story files</strong></caption>
+<caption class="title">Table 17. <strong>Version 6 story files</strong></caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 20%;">

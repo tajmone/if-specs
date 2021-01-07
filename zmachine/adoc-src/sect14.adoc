@@ -18,7 +18,7 @@ link:#inform[_Inform assembly language_]
 [%autowidth]
 [cols="2*^.^s,<.^m,2*^.^,<.^m,<.^"]
 |===============================================================================
-| St | Br ^| Opcode   ^| Hex ^| V   ^| Inform name and syntax ^| Link
+| St | Br ^| Opcode   ^| Hex ^| V   ^| Inform name and syntax  ^| Link
 
 |    |      d| --        | 0  | -- d| --                                        |
 |    | *     | 2OP:1     | 1  |     | je a b ?(label)                           | link:sect15.html#je[*je*]
@@ -62,7 +62,7 @@ link:#inform[_Inform assembly language_]
 [%autowidth]
 [cols="2*^.^s,<.^m,2*^.^,<.^m,<.^"]
 |===============================================================================
-| St | Br     ^| Opcode ^| Hex ^| V  ^| Inform name and syntax ^| Link
+| St | Br     ^| Opcode ^| Hex ^| V  ^| Inform name and syntax  ^| Link
 
 |    | *       | 1OP:128    | 0 |     | jz a ?(label)                             | link:sect15.html#jz[*jz*]
 | *  | *       | 1OP:129    | 1 |     | get_sibling object -> (result) ?(label)   | link:sect15.html#get_sibling[*get_sibling*]
@@ -85,216 +85,39 @@ link:#inform[_Inform assembly language_]
 7+^e| Opcode numbers 144 to 175: other forms of 1OP with different types.
 |===============================================================================
 
-////
-// -----------------------------------------------------------------------------
 
+.Zero-operand opcodes 0OP
+[%autowidth]
+[cols="2*^.^s,<.^m,2*^.^,<.^m,<.^"]
+|===============================================================================
+| St | Br   ^| Opcode ^| Hex ^| V  ^| Inform name and syntax  ^| Link
+
+|    |       | 0OP:176    | 0 |     | rtrue                           | link:sect15.html#rtrue[*rtrue*]
+|    |       | 0OP:177    | 1 |     | rfalse                          | link:sect15.html#rfalse[*rfalse*]
+|    |       | 0OP:178    | 2 |     | print (literal-string)          | link:sect15.html#print[*print*]
+|    |       | 0OP:179    | 3 |     | print_ret (literal-string)      | link:sect15.html#print_ret[*print_ret*]
+|    |       | 0OP:180    | 4 | 1/- | nop                             | link:sect15.html#nop[*nop*]
+.3+| | *  .3+| 0OP:181 .3+| 5 | 1   | save ?(label)                .2+| link:sect15.html#save[*save*]
+  .2+|                       d| 4 <m| save -> (result)
+                             d| 5 <e| [illegal]                       |
+.3+| | *  .3+| 0OP:182 .3+| 6 | 1   | restore ?(label)             .2+| link:sect15.html#restore[*restore*]
+  .2+|                       d| 4   | restore -> (result)
+                             d| 5 <e| [illegal]                       |
+|    |       | 0OP:183    | 7 |     | restart                         | link:sect15.html#restart[*restart*]
+|    |       | 0OP:184    | 8 |     | ret_popped                      | link:sect15.html#ret_popped[*ret_popped*]
+| .2+|    .2+| 0OP:185 .2+| 9 | 1   | pop                             | link:sect15.html#pop[*pop*]
+| *                          d| 5/6 | catch -> (result)             <d| link:sect15.html#catch[*catch*]
+|    |       | 0OP:186    | A |     | quit                            | link:sect15.html#quit[*quit*]
+|    |       | 0OP:187    | B |     | new_line                        | link:sect15.html#new_line[*new_line*]
+.2+| .2+| .2+| 0OP:188 .2+| C | 3   | show_status                     | link:sect15.html#show_status[*show_status*]
+                             d| 4 <e| [illegal]                       |
+|    | *     | 0OP:189    | D | 3   | verify ?(label)                 | link:sect15.html#verify[*verify*]
+|    |       | 0OP:190    | E | 5  e| [first byte of extended opcode] | link:sect15.html#extended[*extended*]
+|    | *     | 0OP:191    | F | 5/- | piracy ?(label)                 | link:sect15.html#piracy[*piracy*]
+
+7+^e| Opcode numbers 192 to 223: VAR forms of 2OP:0 to 2OP:31.
+|===============================================================================
 
-
-
-
-////
-
-*Zero-operand opcodes 0OP*
-
-St
-
-Br
-
-Opcode
-
-Hex
-
-V
-
-Inform name and syntax
-
-Link
-
-0OP:176
-
-0
-
-rtrue
-
-link:sect15.html#rtrue[*rtrue*]
-
-0OP:177
-
-1
-
-rfalse
-
-link:sect15.html#rfalse[*rfalse*]
-
-0OP:178
-
-2
-
-print (literal-string)
-
-link:sect15.html#print[*print*]
-
-0OP:179
-
-3
-
-print_ret (literal-string)
-
-link:sect15.html#print_ret[*print_ret*]
-
-0OP:180
-
-4
-
-1/-
-
-nop
-
-link:sect15.html#nop[*nop*]
-
-*
-
-0OP:181
-
-5
-
-1
-
-save ?(label)
-
-link:sect15.html#save[*save*]
-
-4
-
-save -> (result)
-
-link:sect15.html#save[*save*]
-
-5
-
-{empty}[illegal]
-
-*
-
-0OP:182
-
-6
-
-1
-
-restore ?(label)
-
-link:sect15.html#restore[*restore*]
-
-4
-
-restore -> (result)
-
-link:sect15.html#restore[*restore*]
-
-5
-
-{empty}[illegal]
-
-0OP:183
-
-7
-
-restart
-
-link:sect15.html#restart[*restart*]
-
-0OP:184
-
-8
-
-ret_popped
-
-link:sect15.html#ret_popped[*ret_popped*]
-
-0OP:185
-
-9
-
-1
-
-pop
-
-link:sect15.html#pop[*pop*]
-
-*
-
-5/6
-
-catch -> (result)
-
-link:sect15.html#catch[*catch*]
-
-0OP:186
-
-A
-
-quit
-
-link:sect15.html#quit[*quit*]
-
-0OP:187
-
-B
-
-new_line
-
-link:sect15.html#new_line[*new_line*]
-
-0OP:188
-
-C
-
-3
-
-show_status
-
-link:sect15.html#show_status[*show_status*]
-
-4
-
-{empty}[illegal]
-
-*
-
-0OP:189
-
-D
-
-3
-
-verify ?(label)
-
-link:sect15.html#verify[*verify*]
-
-0OP:190
-
-E
-
-5
-
-{empty}[first byte of extended opcode]
-
-link:sect15.html#extended[*extended*]
-
-*
-
-0OP:191
-
-F
-
-5/-
-
-piracy ?(label)
-
-link:sect15.html#piracy[*piracy*]
-
-Opcode numbers 192 to 223: VAR forms of 2OP:0 to 2OP:31.
 
 .*Variable-operand opcodes VAR*
 [cols=",,,,,,",]
