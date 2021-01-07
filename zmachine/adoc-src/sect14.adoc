@@ -14,335 +14,52 @@ link:#inform[_Inform assembly language_]
 
 '''''
 
-*Two-operand opcodes 2OP*
-
-St
-
-Br
-
-Opcode
-
-Hex
-
-V
-
-Inform name and syntax
-
-Link
-
-------
-
-0
-
----
-
----
-
-*
-
-2OP:1
-
-1
-
-je a b ?(label)
-
-link:sect15.html#je[*je*]
-
-*
-
-2OP:2
-
-2
-
-jl a b ?(label)
-
-link:sect15.html#jl[*jl*]
-
-*
-
-2OP:3
-
-3
-
-jg a b ?(label)
-
-link:sect15.html#jg[*jg*]
-
-*
-
-2OP:4
-
-4
-
-dec_chk (variable) value ?(label)
-
-link:sect15.html#dec_chk[*dec_chk*]
-
-*
-
-2OP:5
-
-5
-
-inc_chk (variable) value ?(label)
-
-link:sect15.html#inc_chk[*inc_chk*]
-
-*
-
-2OP:6
-
-6
-
-jin obj1 obj2 ?(label)
-
-link:sect15.html#jin[*jin*]
-
-*
-
-2OP:7
-
-7
-
-test bitmap flags ?(label)
-
-link:sect15.html#test[*test*]
-
-*
-
-2OP:8
-
-8
-
-or a b -> (result)
-
-link:sect15.html#or[*or*]
-
-*
-
-2OP:9
-
-9
-
-and a b -> (result)
-
-link:sect15.html#and[*and*]
-
-*
-
-2OP:10
-
-A
-
-test_attr object attribute ?(label)
-
-link:sect15.html#test_attr[*test_attr*]
-
-2OP:11
-
-B
-
-set_attr object attribute
-
-link:sect15.html#set_attr[*set_attr*]
-
-2OP:12
-
-C
-
-clear_attr object attribute
-
-link:sect15.html#clear_attr[*clear_attr*]
-
-2OP:13
-
-D
-
-store (variable) value
-
-link:sect15.html#store[*store*]
-
-2OP:14
-
-E
-
-insert_obj object destination
-
-link:sect15.html#insert_obj[*insert_obj*]
-
-*
-
-2OP:15
-
-F
-
-loadw array word-index -> (result)
-
-link:sect15.html#loadw[*loadw*]
-
-*
-
-2OP:16
-
-10
-
-loadb array byte-index -> (result)
-
-link:sect15.html#loadb[*loadb*]
-
-*
-
-2OP:17
-
-11
-
-get_prop object property -> (result)
-
-link:sect15.html#get_prop[*get_prop*]
-
-*
-
-2OP:18
-
-12
-
-get_prop_addr object property -> (result)
-
-link:sect15.html#get_prop_addr[*get_prop_addr*]
-
-*
-
-2OP:19
-
-13
-
-get_next_prop object property -> (result)
-
-link:sect15.html#get_next_prop[*get_next_prop*]
-
-*
-
-2OP:20
-
-14
-
-add a b -> (result)
-
-link:sect15.html#add[*add*]
-
-*
-
-2OP:21
-
-15
-
-sub a b -> (result)
-
-link:sect15.html#sub[*sub*]
-
-*
-
-2OP:22
-
-16
-
-mul a b -> (result)
-
-link:sect15.html#mul[*mul*]
-
-*
-
-2OP:23
-
-17
-
-div a b -> (result)
-
-link:sect15.html#div[*div*]
-
-*
-
-2OP:24
-
-18
-
-mod a b -> (result)
-
-link:sect15.html#mod[*mod*]
-
-*
-
-2OP:25
-
-19
-
-4
-
-call_2s routine arg1 -> (result)
-
-link:sect15.html#call_2s[*call_2s*]
-
-2OP:26
-
-1A
-
-5
-
-call_2n routine arg1
-
-link:sect15.html#call_2n[*call_2n*]
-
-2OP:27
-
-1B
-
-5
-
-set_colour foreground background
-
-link:sect15.html#set_colour[*set_colour*]
-
-6
-
-set_colour foreground background window
-
-link:sect15.html#set_colour[*set_colour*]
-
-2OP:28
-
-1C
-
-5/6
-
-throw value stack-frame
-
-link:sect15.html#throw[*throw*]
-
-------
-
-1D
-
----
-
----
-
-------
-
-1E
-
----
-
----
-
-------
-
-1F
-
----
-
----
-
-Opcode numbers 32 to 127: other forms of 2OP with different types.
+.Two-operand opcodes 2OP
+[%autowidth]
+[cols="2*^.^s,<.^m,2*^.^,<.^m,<.^"]
+|===============================================================================
+| St | Br ^| Opcode   ^| Hex ^| V   ^| Inform name and syntax ^| Link
+
+|    |      d| --        | 0  | -- d| --                                        |
+|    | *     | 2OP:1     | 1  |     | je a b ?(label)                           | link:sect15.html#je[*je*]
+|    | *     | 2OP:2     | 2  |     | jl a b ?(label)                           | link:sect15.html#jl[*jl*]
+|    | *     | 2OP:3     | 3  |     | jg a b ?(label)                           | link:sect15.html#jg[*jg*]
+|    | *     | 2OP:4     | 4  |     | dec_chk (variable) value ?(label)         | link:sect15.html#dec_chk[*dec_chk*]
+|    | *     | 2OP:5     | 5  |     | inc_chk (variable) value ?(label)         | link:sect15.html#inc_chk[*inc_chk*]
+|    | *     | 2OP:6     | 6  |     | jin obj1 obj2 ?(label)                    | link:sect15.html#jin[*jin*]
+|    | *     | 2OP:7     | 7  |     | test bitmap flags ?(label)                | link:sect15.html#test[*test*]
+| *  |       | 2OP:8     | 8  |     | or a b -> (result)                        | link:sect15.html#or[*or*]
+| *  |       | 2OP:9     | 9  |     | and a b -> (result)                       | link:sect15.html#and[*and*]
+|    | *     | 2OP:10    | A  |     | test_attr object attribute ?(label)       | link:sect15.html#test_attr[*test_attr*]
+|    |       | 2OP:11    | B  |     | set_attr object attribute                 | link:sect15.html#set_attr[*set_attr*]
+|    |       | 2OP:12    | C  |     | clear_attr object attribute               | link:sect15.html#clear_attr[*clear_attr*]
+|    |       | 2OP:13    | D  |     | store (variable) value                    | link:sect15.html#store[*store*]
+|    |       | 2OP:14    | E  |     | insert_obj object destination             | link:sect15.html#insert_obj[*insert_obj*]
+| *  |       | 2OP:15    | F  |     | loadw array word-index -> (result)        | link:sect15.html#loadw[*loadw*]
+| *  |       | 2OP:16    | 10 |     | loadb array byte-index -> (result)        | link:sect15.html#loadb[*loadb*]
+| *  |       | 2OP:17    | 11 |     | get_prop object property -> (result)      | link:sect15.html#get_prop[*get_prop*]
+| *  |       | 2OP:18    | 12 |     | get_prop_addr object property -> (result) | link:sect15.html#get_prop_addr[*get_prop_addr*]
+| *  |       | 2OP:19    | 13 |     | get_next_prop object property -> (result) | link:sect15.html#get_next_prop[*get_next_prop*]
+| *  |       | 2OP:20    | 14 |     | add a b -> (result)                       | link:sect15.html#add[*add*]
+| *  |       | 2OP:21    | 15 |     | sub a b -> (result)                       | link:sect15.html#sub[*sub*]
+| *  |       | 2OP:22    | 16 |     | mul a b -> (result)                       | link:sect15.html#mul[*mul*]
+| *  |       | 2OP:23    | 17 |     | div a b -> (result)                       | link:sect15.html#div[*div*]
+| *  |       | 2OP:24    | 18 |     | mod a b -> (result)                       | link:sect15.html#mod[*mod*]
+| *  |       | 2OP:25    | 19 | 4   | call_2s routine arg1 -> (result)          | link:sect15.html#call_2s[*call_2s*]
+|    |       | 2OP:26    | 1A | 5   | call_2n routine arg1                      | link:sect15.html#call_2n[*call_2n*]
+.2+| .2+| .2+| 2OP:27 .2+| 1B | 5   | set_colour foreground background       .2+| link:sect15.html#set_colour[*set_colour*]
+                             d| 6  m| set_colour foreground background window
+|    |       | 2OP:28    | 1C | 5/6 | throw value stack-frame                   | link:sect15.html#throw[*throw*]
+|    |      d| --        | 1D | -- d| --                                        |
+|    |      d| --        | 1E | -- d| --                                        |
+|    |      d| --        | 1F | -- d| --                                        |
+
+7+^e| Opcode numbers 32 to 127: other forms of 2OP with different types.
+|===============================================================================
+
+////
+// -----------------------------------------------------------------------------
+////
 
 *One-operand opcodes 1OP*
 

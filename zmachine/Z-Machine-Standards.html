@@ -4823,341 +4823,326 @@ A "parse table" is then written, recording the number of words, the length and p
 <p><a href="#2OP">2OP</a> / <a href="#1OP">1OP</a> / <a href="#0OP">0OP</a> / <a href="#VAR">VAR</a> / <a href="#EXT">EXT</a></p>
 </div>
 <hr>
-<div class="paragraph">
-<p><strong>Two-operand opcodes 2OP</strong></p>
-</div>
-<div class="paragraph">
-<p>St</p>
-</div>
-<div class="paragraph">
-<p>Br</p>
-</div>
-<div class="paragraph">
-<p>Opcode</p>
-</div>
-<div class="paragraph">
-<p>Hex</p>
-</div>
-<div class="paragraph">
-<p>V</p>
-</div>
-<div class="paragraph">
-<p>Inform name and syntax</p>
-</div>
-<div class="paragraph">
-<p>Link</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>0
-
----
-
----
-
-*
-
-2OP:1
-
-1
-
-je a b ?(label)
-
-link:sect15.html#je[*je*]
-
-*
-
-2OP:2
-
-2
-
-jl a b ?(label)
-
-link:sect15.html#jl[*jl*]
-
-*
-
-2OP:3
-
-3
-
-jg a b ?(label)
-
-link:sect15.html#jg[*jg*]
-
-*
-
-2OP:4
-
-4
-
-dec_chk (variable) value ?(label)
-
-link:sect15.html#dec_chk[*dec_chk*]
-
-*
-
-2OP:5
-
-5
-
-inc_chk (variable) value ?(label)
-
-link:sect15.html#inc_chk[*inc_chk*]
-
-*
-
-2OP:6
-
-6
-
-jin obj1 obj2 ?(label)
-
-link:sect15.html#jin[*jin*]
-
-*
-
-2OP:7
-
-7
-
-test bitmap flags ?(label)
-
-link:sect15.html#test[*test*]
-
-*
-
-2OP:8
-
-8
-
-or a b -&gt; (result)
-
-link:sect15.html#or[*or*]
-
-*
-
-2OP:9
-
-9
-
-and a b -&gt; (result)
-
-link:sect15.html#and[*and*]
-
-*
-
-2OP:10
-
-A
-
-test_attr object attribute ?(label)
-
-link:sect15.html#test_attr[*test_attr*]
-
-2OP:11
-
-B
-
-set_attr object attribute
-
-link:sect15.html#set_attr[*set_attr*]
-
-2OP:12
-
-C
-
-clear_attr object attribute
-
-link:sect15.html#clear_attr[*clear_attr*]
-
-2OP:13
-
-D
-
-store (variable) value
-
-link:sect15.html#store[*store*]
-
-2OP:14
-
-E
-
-insert_obj object destination
-
-link:sect15.html#insert_obj[*insert_obj*]
-
-*
-
-2OP:15
-
-F
-
-loadw array word-index -&gt; (result)
-
-link:sect15.html#loadw[*loadw*]
-
-*
-
-2OP:16
-
-10
-
-loadb array byte-index -&gt; (result)
-
-link:sect15.html#loadb[*loadb*]
-
-*
-
-2OP:17
-
-11
-
-get_prop object property -&gt; (result)
-
-link:sect15.html#get_prop[*get_prop*]
-
-*
-
-2OP:18
-
-12
-
-get_prop_addr object property -&gt; (result)
-
-link:sect15.html#get_prop_addr[*get_prop_addr*]
-
-*
-
-2OP:19
-
-13
-
-get_next_prop object property -&gt; (result)
-
-link:sect15.html#get_next_prop[*get_next_prop*]
-
-*
-
-2OP:20
-
-14
-
-add a b -&gt; (result)
-
-link:sect15.html#add[*add*]
-
-*
-
-2OP:21
-
-15
-
-sub a b -&gt; (result)
-
-link:sect15.html#sub[*sub*]
-
-*
-
-2OP:22
-
-16
-
-mul a b -&gt; (result)
-
-link:sect15.html#mul[*mul*]
-
-*
-
-2OP:23
-
-17
-
-div a b -&gt; (result)
-
-link:sect15.html#div[*div*]
-
-*
-
-2OP:24
-
-18
-
-mod a b -&gt; (result)
-
-link:sect15.html#mod[*mod*]
-
-*
-
-2OP:25
-
-19
-
-4
-
-call_2s routine arg1 -&gt; (result)
-
-link:sect15.html#call_2s[*call_2s*]
-
-2OP:26
-
-1A
-
-5
-
-call_2n routine arg1
-
-link:sect15.html#call_2n[*call_2n*]
-
-2OP:27
-
-1B
-
-5
-
-set_colour foreground background
-
-link:sect15.html#set_colour[*set_colour*]
-
-6
-
-set_colour foreground background window
-
-link:sect15.html#set_colour[*set_colour*]
-
-2OP:28
-
-1C
-
-5/6
-
-throw value stack-frame
-
-link:sect15.html#throw[*throw*]</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>1D</p>
-</div>
-<hr>
-<hr>
-<div class="listingblock">
-<div class="content">
-<pre>1E
-
----
-
----</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>1F</p>
-</div>
-<hr>
-<hr>
-<div class="paragraph">
-<p>Opcode numbers 32 to 127: other forms of 2OP with different types.</p>
-</div>
+<table class="tableblock frame-all grid-all fit-content">
+<caption class="title">Table 6. Two-operand opcodes 2OP</caption>
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-middle">St</th>
+<th class="tableblock halign-center valign-middle">Br</th>
+<th class="tableblock halign-center valign-middle">Opcode</th>
+<th class="tableblock halign-center valign-middle">Hex</th>
+<th class="tableblock halign-center valign-middle">V</th>
+<th class="tableblock halign-center valign-middle">Inform name and syntax</th>
+<th class="tableblock halign-center valign-middle">Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">0</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+<td class="tableblock halign-left valign-middle"></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><strong>*</strong></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>2OP:1</code></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">1</p></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>je a b ?(label)</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="sect15.html#je"><strong>je</strong></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><strong>*</strong></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>2OP:2</code></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">2</p></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>jl a b ?(label)</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="sect15.html#jl"><strong>jl</strong></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><strong>*</strong></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>2OP:3</code></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">3</p></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>jg a b ?(label)</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="sect15.html#jg"><strong>jg</strong></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><strong>*</strong></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>2OP:4</code></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">4</p></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>dec_chk (variable) value ?(label)</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="sect15.html#dec_chk"><strong>dec_chk</strong></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><strong>*</strong></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>2OP:5</code></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">5</p></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>inc_chk (variable) value ?(label)</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="sect15.html#inc_chk"><strong>inc_chk</strong></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><strong>*</strong></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>2OP:6</code></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">6</p></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>jin obj1 obj2 ?(label)</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="sect15.html#jin"><strong>jin</strong></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><strong>*</strong></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>2OP:7</code></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">7</p></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>test bitmap flags ?(label)</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="sect15.html#test"><strong>test</strong></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><strong>*</strong></p></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>2OP:8</code></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">8</p></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>or a b &#8594; (result)</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="sect15.html#or"><strong>or</strong></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><strong>*</strong></p></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>2OP:9</code></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">9</p></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>and a b &#8594; (result)</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="sect15.html#and"><strong>and</strong></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><strong>*</strong></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>2OP:10</code></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">A</p></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>test_attr object attribute ?(label)</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="sect15.html#test_attr"><strong>test_attr</strong></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>2OP:11</code></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">B</p></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>set_attr object attribute</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="sect15.html#set_attr"><strong>set_attr</strong></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>2OP:12</code></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">C</p></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>clear_attr object attribute</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="sect15.html#clear_attr"><strong>clear_attr</strong></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>2OP:13</code></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">D</p></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>store (variable) value</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="sect15.html#store"><strong>store</strong></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>2OP:14</code></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">E</p></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>insert_obj object destination</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="sect15.html#insert_obj"><strong>insert_obj</strong></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><strong>*</strong></p></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>2OP:15</code></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">F</p></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>loadw array word-index &#8594; (result)</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="sect15.html#loadw"><strong>loadw</strong></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><strong>*</strong></p></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>2OP:16</code></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">10</p></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>loadb array byte-index &#8594; (result)</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="sect15.html#loadb"><strong>loadb</strong></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><strong>*</strong></p></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>2OP:17</code></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">11</p></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>get_prop object property &#8594; (result)</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="sect15.html#get_prop"><strong>get_prop</strong></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><strong>*</strong></p></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>2OP:18</code></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">12</p></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>get_prop_addr object property &#8594; (result)</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="sect15.html#get_prop_addr"><strong>get_prop_addr</strong></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><strong>*</strong></p></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>2OP:19</code></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">13</p></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>get_next_prop object property &#8594; (result)</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="sect15.html#get_next_prop"><strong>get_next_prop</strong></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><strong>*</strong></p></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>2OP:20</code></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">14</p></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>add a b &#8594; (result)</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="sect15.html#add"><strong>add</strong></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><strong>*</strong></p></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>2OP:21</code></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">15</p></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>sub a b &#8594; (result)</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="sect15.html#sub"><strong>sub</strong></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><strong>*</strong></p></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>2OP:22</code></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">16</p></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>mul a b &#8594; (result)</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="sect15.html#mul"><strong>mul</strong></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><strong>*</strong></p></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>2OP:23</code></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">17</p></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>div a b &#8594; (result)</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="sect15.html#div"><strong>div</strong></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><strong>*</strong></p></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>2OP:24</code></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">18</p></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>mod a b &#8594; (result)</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="sect15.html#mod"><strong>mod</strong></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><strong>*</strong></p></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>2OP:25</code></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">19</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">4</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>call_2s routine arg1 &#8594; (result)</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="sect15.html#call_2s"><strong>call_2s</strong></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>2OP:26</code></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">1A</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">5</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>call_2n routine arg1</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="sect15.html#call_2n"><strong>call_2n</strong></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle" rowspan="2"></td>
+<td class="tableblock halign-center valign-middle" rowspan="2"></td>
+<td class="tableblock halign-left valign-middle" rowspan="2"><p class="tableblock"><code>2OP:27</code></p></td>
+<td class="tableblock halign-center valign-middle" rowspan="2"><p class="tableblock">1B</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">5</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>set_colour foreground background</code></p></td>
+<td class="tableblock halign-left valign-middle" rowspan="2"><p class="tableblock"><a href="sect15.html#set_colour"><strong>set_colour</strong></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">6</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><code>set_colour foreground background window</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>2OP:28</code></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">1C</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">5/6</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>throw value stack-frame</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="sect15.html#throw"><strong>throw</strong></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">1D</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+<td class="tableblock halign-left valign-middle"></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">1E</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+<td class="tableblock halign-left valign-middle"></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-center valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">1F</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+<td class="tableblock halign-left valign-middle"></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle" colspan="7"><p class="tableblock"><em>Opcode numbers 32 to 127: other forms of 2OP with different types.</em></p></td>
+</tr>
+</tbody>
+</table>
 <div class="paragraph">
 <p><strong>One-operand opcodes 1OP</strong></p>
 </div>
@@ -5726,7 +5711,7 @@ link:sect15.html#throw[*throw*]</pre>
 <p>Opcode numbers 192 to 223: VAR forms of 2OP:0 to 2OP:31.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 6. <strong>Variable-operand opcodes VAR</strong></caption>
+<caption class="title">Table 7. <strong>Variable-operand opcodes VAR</strong></caption>
 <colgroup>
 <col style="width: 14.2857%;">
 <col style="width: 14.2857%;">
@@ -6109,7 +6094,7 @@ link:sect15.html#throw[*throw*]</pre>
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 7. <strong>Extended opcodes EXT</strong></caption>
+<caption class="title">Table 8. <strong>Extended opcodes EXT</strong></caption>
 <colgroup>
 <col style="width: 14.2857%;">
 <col style="width: 14.2857%;">
@@ -8570,7 +8555,7 @@ The highest ideal of a translation&#8230;&#8203; is achieved when the reader fli
 <p>As in <strong>S</strong> 11, "Hex" means the address, in hexadecimal; "V" the earliest version in which the feature appeared; "Dyn" means that the byte or bit may legally be changed by the game during play (no others may legally be changed by the game); "Int" means that the interpreter may (in some cases must) do so.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 8. <strong>Conventional usage of unspecified header memory</strong></caption>
+<caption class="title">Table 9. <strong>Conventional usage of unspecified header memory</strong></caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 20%;">
@@ -9075,7 +9060,7 @@ the information below has not been updated since the 20th June 1997 revision of 
 </div>
 <hr>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 9. <strong>Version 1 story file</strong></caption>
+<caption class="title">Table 10. <strong>Version 1 story file</strong></caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -9089,7 +9074,7 @@ the information below has not been updated since the 20th June 1997 revision of 
 </table>
 <hr>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 10. <strong>Version 2 story files</strong></caption>
+<caption class="title">Table 11. <strong>Version 2 story files</strong></caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -9107,7 +9092,7 @@ the information below has not been updated since the 20th June 1997 revision of 
 </table>
 <hr>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 11. <strong>Version 3 story files</strong></caption>
+<caption class="title">Table 12. <strong>Version 3 story files</strong></caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -9231,7 +9216,7 @@ the information below has not been updated since the 20th June 1997 revision of 
 </div>
 <hr>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 12. <strong>Version 4 story files</strong></caption>
+<caption class="title">Table 13. <strong>Version 4 story files</strong></caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -9257,7 +9242,7 @@ the information below has not been updated since the 20th June 1997 revision of 
 </table>
 <hr>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 13. <strong>Version 5 story files</strong></caption>
+<caption class="title">Table 14. <strong>Version 5 story files</strong></caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -9309,7 +9294,7 @@ the information below has not been updated since the 20th June 1997 revision of 
 </div>
 <hr>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 14. <strong>Version 6 story files</strong></caption>
+<caption class="title">Table 15. <strong>Version 6 story files</strong></caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 20%;">
