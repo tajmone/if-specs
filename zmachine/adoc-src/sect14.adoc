@@ -119,51 +119,55 @@ link:#inform[_Inform assembly language_]
 |===============================================================================
 
 
-.*Variable-operand opcodes VAR*
-[cols=",,,,,,",]
-|===
-|St |Br |Opcode |Hex |V |Inform name and syntax |Link
-|* | |VAR:224 |0 |1 |call routine ...0 to 3 args... -> (result) |link:sect15.html#call[*call*]
-| | | | |4 |call_vs routine ...0 to 3 args... -> (result) |link:sect15.html#call_vs[*call_vs*]
-| | |VAR:225 |1 | |storew array word-index value |link:sect15.html#storew[*storew*]
-| | |VAR:226 |2 | |storeb array byte-index value |link:sect15.html#storeb[*storeb*]
-| | |VAR:227 |3 | |put_prop object property value |link:sect15.html#put_prop[*put_prop*]
-| | |VAR:228 |4 |1 |sread text parse |link:sect15.html#sread[*sread*]
-| | | | |4 |sread text parse time routine |link:sect15.html#sread[*sread*]
-|* | | | |5 |aread text parse time routine -> (result) |link:sect15.html#aread[*aread*]
-| | |VAR:229 |5 | |print_char output-character-code |link:sect15.html#print_char[*print_char*]
-| | |VAR:230 |6 | |print_num value |link:sect15.html#print_num[*print_num*]
-|* | |VAR:231 |7 | |random range -> (result) |link:sect15.html#random[*random*]
-| | |VAR:232 |8 | |push value |link:sect15.html#push[*push*]
-| | |VAR:233 |9 |1 |pull (variable) |link:sect15.html#pull[*pull*]
-|* | | | |6 |pull stack -> (result) |link:sect15.html#pull[*pull*]
-| | |VAR:234 |A |3 |split_window lines |link:sect15.html#split_window[*split_window*]
-| | |VAR:235 |B |3 |set_window window |link:sect15.html#set_window[*set_window*]
-|* | |VAR:236 |C |4 |call_vs2 routine ...0 to 7 args... -> (result) |link:sect15.html#call_vs2[*call_vs2*]
-| | |VAR:237 |D |4 |erase_window window |link:sect15.html#erase_window[*erase_window*]
-| | |VAR:238 |E |4/- |erase_line value |link:sect15.html#erase_line[*erase_line*]
-| | | | |6 |erase_line pixels |link:sect15.html#erase_line[*erase_line*]
-| | |VAR:239 |F |4 |set_cursor line column |link:sect15.html#set_cursor[*set_cursor*]
-| | | | |6 |set_cursor line column window |link:sect15.html#set_cursor[*set_cursor*]
-| | |VAR:240 |10 |4/6 |get_cursor array |link:sect15.html#get_cursor[*get_cursor*]
-| | |VAR:241 |11 |4 |set_text_style style |link:sect15.html#set_text_style[*set_text_style*]
-| | |VAR:242 |12 |4 |buffer_mode flag |link:sect15.html#buffer_mode[*buffer_mode*]
-| | |VAR:243 |13 |3 |output_stream number |link:sect15.html#output_stream[*output_stream*]
-| | | | |5 |output_stream number table |link:sect15.html#output_stream[*output_stream*]
-| | | | |6 |output_stream number table width |link:sect15.html#output_stream[*output_stream*]
-| | |VAR:244 |14 |3 |input_stream number |link:sect15.html#input_stream[*input_stream*]
-| | |VAR:245 |15 |5/3 |sound_effect number effect volume routine |link:sect15.html#sound_effect[*sound_effect*]
-|* | |VAR:246 |16 |4 |read_char 1 time routine -> (result) |link:sect15.html#read_char[*read_char*]
-|* |* |VAR:247 |17 |4 |scan_table x table len form -> (result) |link:sect15.html#scan_table[*scan_table*]
-|* | |VAR:248 |18 |5/6 |not value -> (result) |link:sect15.html#not[*not*]
-| | |VAR:249 |19 |5 |call_vn routine ...up to 3 args... |link:sect15.html#call_vn[*call_vn*]
-| | |VAR:250 |1A |5 |call_vn2 routine ...up to 7 args... |link:sect15.html#call_vn2[*call_vn2*]
-| | |VAR:251 |1B |5 |tokenise text parse dictionary flag |link:sect15.html#tokenise[*tokenise*]
-| | |VAR:252 |1C |5 |encode_text zscii-text length from coded-text |link:sect15.html#encode_text[*encode_text*]
-| | |VAR:253 |1D |5 |copy_table first second size |link:sect15.html#copy_table[*copy_table*]
-| | |VAR:254 |1E |5 |print_table zscii-text width height skip |link:sect15.html#print_table[*print_table*]
-| |* |VAR:255 |1F |5 |check_arg_count argument-number |link:sect15.html#check_arg_count[*check_arg_count*]
-|===
+.Variable-operand opcodes VAR
+[%autowidth]
+[cols="2*^.^s,<.^m,2*^.^,<.^m,<.^"]
+|===============================================================================
+| St    | Br ^| Opcode  ^| Hex ^| V  ^| Inform name and syntax  ^| Link
+
+| *  .2+|  .2+| VAR:224 .2+| 0  | 1   | call routine ...0 to 3 args... -> (result)      | link:sect15.html#call[*call*]
+|                              d| 4   | call_vs routine ...0 to 3 args... -> (result) <d| link:sect15.html#call_vs[*call_vs*]
+|       |     | VAR:225    | 1  |     | storew array word-index value                   | link:sect15.html#storew[*storew*]
+|       |     | VAR:226    | 2  |     | storeb array byte-index value                   | link:sect15.html#storeb[*storeb*]
+|       |     | VAR:227    | 3  |     | put_prop object property value                  | link:sect15.html#put_prop[*put_prop*]
+.2+| .3+|  .3+| VAR:228 .3+| 4  | 1   | sread text parse                             .2+| link:sect15.html#sread[*sread*]
+                               d| 4 <m| sread text parse time routine
+| *                            d| 5   | aread text parse time routine -> (result)     <d| link:sect15.html#aread[*aread*]
+|       |     | VAR:229    | 5  |     | print_char output-character-code                | link:sect15.html#print_char[*print_char*]
+|       |     | VAR:230    | 6  |     | print_num value                                 | link:sect15.html#print_num[*print_num*]
+| *     |     | VAR:231    | 7  |     | random range -> (result)                        | link:sect15.html#random[*random*]
+|       |     | VAR:232    | 8  |     | push value                                      | link:sect15.html#push[*push*]
+|    .2+|  .2+| VAR:233 .2+| 9  | 1   | pull (variable)                              .2+| link:sect15.html#pull[*pull*]
+| *                            d| 6   | pull stack -> (result)
+|       |     | VAR:234    | A  | 3   | split_window lines                              | link:sect15.html#split_window[*split_window*]
+|       |     | VAR:235    | B  | 3   | set_window window                               | link:sect15.html#set_window[*set_window*]
+| *     |     | VAR:236    | C  | 4   | call_vs2 routine ...0 to 7 args... -> (result)  | link:sect15.html#call_vs2[*call_vs2*]
+|       |     | VAR:237    | D  | 4   | erase_window window                             | link:sect15.html#erase_window[*erase_window*]
+.2+| .2+|  .2+| VAR:238 .2+| E  | 4/- | erase_line value                             .2+| link:sect15.html#erase_line[*erase_line*]
+                               d| 6 <m| erase_line pixels
+.2+| .2+|  .2+| VAR:239 .2+| F  | 4   | set_cursor line column                       .2+| link:sect15.html#set_cursor[*set_cursor*]
+                               d| 6 <m| set_cursor line column window
+|       |     | VAR:240    | 10 | 4/6 | get_cursor array                                | link:sect15.html#get_cursor[*get_cursor*]
+|       |     | VAR:241    | 11 | 4   | set_text_style style                            | link:sect15.html#set_text_style[*set_text_style*]
+|       |     | VAR:242    | 12 | 4   | buffer_mode flag                                | link:sect15.html#buffer_mode[*buffer_mode*]
+.3+| .3+|  .3+| VAR:243 .3+| 13 | 3   | output_stream number                         .3+| link:sect15.html#output_stream[*output_stream*]
+                               d| 5 <m| output_stream number table
+                               d| 6 <m| output_stream number table width
+|       |     | VAR:244    | 14 | 3   | input_stream number                             | link:sect15.html#input_stream[*input_stream*]
+|       |     | VAR:245    | 15 | 5/3 | sound_effect number effect volume routine       | link:sect15.html#sound_effect[*sound_effect*]
+| *     |     | VAR:246    | 16 | 4   | read_char 1 time routine -> (result)            | link:sect15.html#read_char[*read_char*]
+| *     | *   | VAR:247    | 17 | 4   | scan_table x table len form -> (result)         | link:sect15.html#scan_table[*scan_table*]
+| *     |     | VAR:248    | 18 | 5/6 | not value -> (result)                           | link:sect15.html#not[*not*]
+|       |     | VAR:249    | 19 | 5   | call_vn routine ...up to 3 args...              | link:sect15.html#call_vn[*call_vn*]
+|       |     | VAR:250    | 1A | 5   | call_vn2 routine ...up to 7 args...             | link:sect15.html#call_vn2[*call_vn2*]
+|       |     | VAR:251    | 1B | 5   | tokenise text parse dictionary flag             | link:sect15.html#tokenise[*tokenise*]
+|       |     | VAR:252    | 1C | 5   | encode_text zscii-text length from coded-text   | link:sect15.html#encode_text[*encode_text*]
+|       |     | VAR:253    | 1D | 5   | copy_table first second size                    | link:sect15.html#copy_table[*copy_table*]
+|       |     | VAR:254    | 1E | 5   | print_table zscii-text width height skip        | link:sect15.html#print_table[*print_table*]
+|       | *   | VAR:255    | 1F | 5   | check_arg_count argument-number                 | link:sect15.html#check_arg_count[*check_arg_count*]
+|===============================================================================
+
+
 
 .*Extended opcodes EXT*
 [cols=",,,,,,",]
