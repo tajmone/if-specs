@@ -48,7 +48,9 @@ Ported to AsciiDoc by {PortAuth}.
 
 [WARNING]
 ======================================================================
-This AsciiDoc version of the Z-Machine Standards is still a WIP draft!
+This AsciiDoc version of the
+https://inform-fiction.org/zmachine/standards/z1point1/index.html[Z-Machine Standards Document^,title="View original upstream document"]
+is still a WIP draft!
 
 Draft version {PortVers}, updated on {PortDate}.
 ======================================================================

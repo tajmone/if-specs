@@ -1,4 +1,4 @@
-
+[[ch.6]]
 = The game state: storage and routine calls
 
 

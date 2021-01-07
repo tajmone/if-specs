@@ -1,4 +1,4 @@
-
+[[ch.4]]
 = How instructions are encoded
 
 [quote, Shakespeare, Macbeth]

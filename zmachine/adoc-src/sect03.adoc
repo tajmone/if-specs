@@ -1,3 +1,4 @@
+[[ch.3]]
 = How text and characters are encoded
 
 "This technique is similar to the five-bit Baudot code, which was used by early Teletypes before ASCII was invented."

@@ -1,4 +1,4 @@
-
+[[ch.16]]
 = Font 3 and character graphics
 
 == 16.1

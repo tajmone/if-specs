@@ -1,3 +1,4 @@
+[[app.A]]
 [appendix]
 = Error messages and debugging
 

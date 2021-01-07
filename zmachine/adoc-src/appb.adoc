@@ -1,3 +1,4 @@
+[[app.b]]
 [appendix]
 = Conventional contents of the header
 
