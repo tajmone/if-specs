@@ -1,4 +1,5 @@
 [[app.c]]
+[reftext="Appendix C"]
 [appendix]
 = Resources available
 
@@ -67,7 +68,7 @@ http://www.ifarchive.org/indexes/if-archiveXinfocomXtoolsXreform.html[Reform], b
 . Almost all Infocom's games remain commercially available in anthologies published by http://www.activision.com[Activision]. Copyright resides in them and they should not available by FTP from any site.
 . A few other Infocom story files have existed but are neither on sale nor released from copyright: this applies to several of the Version 6 games, those games involving literary rights or other legal issues ('Shogun', 'Hitch-Hiker's Guide To The Galaxy') and ephemera such as beta-test versions (notably the German version of 'Zork I') which have somehow passed into private circulation.
 
-Most of the Infocom games exist in link:appf.html[several different releases], and some were written for one Version and then ported to later ones. 'Zork I', for instance, has at least 11 releases, 2 early, 8 in Version 3 (with release numbers between 5 to 88 in chronological order) and one in Version 5 (release 52 -- the releases go back to 1 when the version changes).
+Most of the Infocom games exist in <<appf.adoc#app.f,several different releases>>, and some were written for one Version and then ported to later ones. 'Zork I', for instance, has at least 11 releases, 2 early, 8 in Version 3 (with release numbers between 5 to 88 in chronological order) and one in Version 5 (release 52 -- the releases go back to 1 when the version changes).
 
 Version 1 and 2 games are extinct, though there are a few fossils in the hands of collectors.
 

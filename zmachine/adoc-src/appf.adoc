@@ -1,4 +1,5 @@
 [[app.f]]
+[reftext="Appendix F"]
 [appendix]
 = Canonical Story Files
 

@@ -7,7 +7,7 @@ The Z-machine was created on a coffee table in Pittsburgh in 1979. It is an imag
 
 The design's cardinal principle is that any game is 100% portable to different computers: that is, any legal program exactly determines its behaviour. This portability is largely made possible by a willingness to constrain maximum as well as minimum levels of performance (for instance, dynamic memory allocation is impossible).
 
-Infocom's catalogue continues to be sold and to be played under interpreter programs, either original Infocom ones or more recent and generally better freeware ones. About link:appf.html[130 story files] compiled by Infocom's compiler *Zilch* survive and since 1993 very many more story files have been created with the Inform design system.
+Infocom's catalogue continues to be sold and to be played under interpreter programs, either original Infocom ones or more recent and generally better freeware ones. About <<appf.adoc#app.f,130 story files>> compiled by Infocom's compiler *Zilch* survive and since 1993 very many more story files have been created with the Inform design system.
 
 Eight Versions of the Z-machine exist, and the first byte of any "story file" (that is: any Z-machine program) gives the Version number it must be interpreted under.
 

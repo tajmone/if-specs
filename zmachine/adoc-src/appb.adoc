@@ -1,4 +1,5 @@
 [[app.b]]
+[reftext="Appendix B"]
 [appendix]
 = Conventional contents of the header
 

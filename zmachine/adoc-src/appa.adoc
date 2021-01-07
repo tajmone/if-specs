@@ -1,4 +1,5 @@
-[[app.A]]
+[[app.a]]
+[reftext="Appendix A"]
 [appendix]
 = Error messages and debugging
 
