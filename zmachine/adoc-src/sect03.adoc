@@ -19,11 +19,21 @@ Z-machine text is a sequence of ZSCII character codes (ZSCII is a system similar
 
 Text in memory consists of a sequence of 2-byte words. Each word is divided into three 5-bit 'Z-characters', plus 1 bit left over, arranged as
 
-....
-   --first byte-------   --second byte---
-   7    6 5 4 3 2  1 0   7 6 5  4 3 2 1 0
-   bit  --first--  --second---  --third--
-....
+[%autowidth]
+[cols="5*^m",stripes=even]
+|=================================================
+3+| first byte              2+| second byte
+
+  | 7     | 6 5 4 3 2  | 1 0  |  7 6 5 | 4 3 2 1 0
+ d| bit  d| first   2+d| second       d| third
+|=================================================
+
+
+////
+--first byte-------   --second byte---
+7    6 5 4 3 2  1 0   7 6 5  4 3 2 1 0
+bit  --first--  --second---  --third--
+////
 
 The bit is set only on the last 2-byte word of the text, and so marks the end.
 

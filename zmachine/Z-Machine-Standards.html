@@ -1456,13 +1456,36 @@ This technique is similar to the five-bit Baudot code, which was used by early T
 <div class="paragraph">
 <p>Text in memory consists of a sequence of 2-byte words. Each word is divided into three 5-bit 'Z-characters', plus 1 bit left over, arranged as</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>   --first byte-------   --second byte---
-   7    6 5 4 3 2  1 0   7 6 5  4 3 2 1 0
-   bit  --first--  --second---  --third--</pre>
-</div>
-</div>
+<table class="tableblock frame-all grid-all stripes-even fit-content">
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-top" colspan="3">first byte</th>
+<th class="tableblock halign-center valign-top" colspan="2">second byte</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>7</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>6 5 4 3 2</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>1 0</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>7 6 5</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>4 3 2 1 0</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">bit</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">first</p></td>
+<td class="tableblock halign-center valign-top" colspan="2"><p class="tableblock">second</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">third</p></td>
+</tr>
+</tbody>
+</table>
 <div class="paragraph">
 <p>The bit is set only on the last 2-byte word of the text, and so marks the end.</p>
 </div>
