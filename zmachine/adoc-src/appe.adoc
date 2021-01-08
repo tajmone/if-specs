@@ -82,30 +82,36 @@ Early games such as 'Zork I' know about 600 words, but again this rises steeply 
 
 So about 2/3rds of all opcodes are those in the top ten; 1 in 8 opcodes is a *je*, and only 1 in 710000 is a *print_form*.
 
-{empty}(b) An experiment (conducted with the help of Kevin Bracey) sheds some light on the opcodes most frequently interpreted in typical play. Two very different games ('Zork I', Version 5 "solid gold" edition; 'Museum of Inform', a complex Inform example game) were played for about 50000 cycles of the Z-machine (about 20 moves in 'Zork I', rather less in the 'Museum'). The following table records all opcodes with a frequency of at least 1% (i.e., 0.01):
+{empty}(b) An experiment (conducted with the help of Kevin Bracey) sheds some light on the opcodes most frequently interpreted in typical play.
+Two very different games ('Zork I', Version 5 "solid gold" edition; 'Museum of Inform', a complex Inform example game) were played for about 50000 cycles of the Z-machine (about 20 moves in 'Zork I', rather less in the 'Museum').
+The following table records all opcodes with a frequency of at least 1% (i.e., 0.01):
 
-....
-    Zork I Solid Gold (Infocom)    Museum of Inform (Inform)
-    0.116110  loadb                0.104952  je
-    0.103990  storeb               0.101151  jz
-    0.101616  jz                   0.092727  jump
-    0.074979  dec_chk              0.080985  jg
-    0.066375  add                  0.079039  jl
-    0.066283  je                   0.070550  inc
-    0.060760  store                0.070139  store
-    0.053867  loadw                0.047058  loadw
-    0.038095  storew               0.034137  get_prop_addr
-    0.036428  mul                  0.024105  jin
-    0.032069  inc_chk              0.022734  rtrue
-    0.030243  jump                 0.021583  storew
-    0.029170  test_attr            0.020075  add
-    0.020634  call_vs              0.018485  call_vs
-    0.011184  get_sibling          0.016731  and
-                                   0.016082  loadb
-                                   0.012061  call_vn
-                                   0.011879  test_attr
-                                   0.011824  dec
-                                   0.011687  ret
-....
+[%autowidth]
+[cols="<d,<m,<d,<m"]
+|===============================================================================
+2+^| Zork I Solid Gold (Infocom) 2+^| Museum of Inform (Inform)
 
-Adventure games spend most of the time parsing, and the differences between these tables reflect different parser designs (byte arrays versus word arrays and arrays stored in properties) as well as different compiler code generators (Inform does not use *inc_chk* or *dec_chk*, so it uses *inc*, *dec*, *jl* and *jg* correspondingly more). In the case of 'Zork I', about a third of all opcodes are branches: in the case of 'Museum', almost half.
+| 0.116110 | loadb                  | 0.104952 | je
+| 0.103990 | storeb                 | 0.101151 | jz
+| 0.101616 | jz                     | 0.092727 | jump
+| 0.074979 | dec_chk                | 0.080985 | jg
+| 0.066375 | add                    | 0.079039 | jl
+| 0.066283 | je                     | 0.070550 | inc
+| 0.060760 | store                  | 0.070139 | store
+| 0.053867 | loadw                  | 0.047058 | loadw
+| 0.038095 | storew                 | 0.034137 | get_prop_addr
+| 0.036428 | mul                    | 0.024105 | jin
+| 0.032069 | inc_chk                | 0.022734 | rtrue
+| 0.030243 | jump                   | 0.021583 | storew
+| 0.029170 | test_attr              | 0.020075 | add
+| 0.020634 | call_vs                | 0.018485 | call_vs
+| 0.011184 | get_sibling            | 0.016731 | and
+|          |                        | 0.016082 | loadb
+|          |                        | 0.012061 | call_vn
+|          |                        | 0.011879 | test_attr
+|          |                        | 0.011824 | dec
+|          |                        | 0.011687 | ret
+|===============================================================================
+
+Adventure games spend most of the time parsing, and the differences between these tables reflect different parser designs (byte arrays versus word arrays and arrays stored in properties) as well as different compiler code generators (Inform does not use *inc_chk* or *dec_chk*, so it uses *inc*, *dec*, *jl* and *jg* correspondingly more).
+In the case of 'Zork I', about a third of all opcodes are branches: in the case of 'Museum', almost half.
