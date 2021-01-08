@@ -1,9 +1,0 @@
-; We need to make some exceptions to the indentation rules of the converted
-; AsciiDoc sources, due to the verbatim diagrams relying on spaces for custom
-; alignments:
-
-[*.adoc]
-indent_size = unset
-
-; Possibly these conflicts will be resolved once the document is reformatted
-; using proper tables or SVG diagrams.

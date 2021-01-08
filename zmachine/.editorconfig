@@ -1,0 +1,35 @@
+
+## FOLDER SPECIFIC EXCEPTIONS
+#############################
+
+; AsciiDoc Indentation
+; ====================
+;
+; We need to make some exceptions to the indentation rules of the converted
+; AsciiDoc sources, due to the verbatim diagrams relying on spaces for custom
+; alignments:
+
+[*.adoc]
+indent_size = unset
+
+; Possibly these conflicts will be resolved once the document is reformatted
+; using proper tables or SVG diagrams.
+
+
+; HTML Trailing Spaces
+; ====================
+;
+; We also need to disable trailing whitespace checks on generated HTML docs,
+; because Asciidoctor relies on spaces to align terms in description lists with
+; the `[horizontal]` option. E.g.
+;
+;    <td class="hdlist1">
+;    Entry••••••••••
+;    </td>
+;
+; Also, after some recent Asciidoctor update, it seems that the generated HTML
+; docs no longer abide to the previous EditorConfig settings.
+
+[*.html]
+trim_trailing_whitespace = unset
+insert_final_newline = unset
