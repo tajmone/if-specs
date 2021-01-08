@@ -88,9 +88,11 @@ so that *random n* produces the next entry in this sequence modulo n. If _S_ >= 
 
 Note that version 0.2 of this standard mistakenly asserted that division and remainder are unsigned, a myth deriving from a bug in *Zip*. Infocom's interpreters do sign division (this is relied on when calculating pizza cooking times for the microwave oven in 'The Lurking Horror'). Here are some correct Z-machine calculations:
 
-....
-   -11 / 2 = -5       -11 / -2 = 5        11 / -2 = -5
-   -13 % 5 = -3        13 % -5 = 3       -13 % -5 = -3
-....
+[%autowidth]
+[cols="3*>m",frame=none,grid=cols]
+|============================================
+| -11 / 2 = -5 | -11 / -2 = 5 |  11 / -2 = -5
+| -13 % 5 = -3 |  13 % -5 = 3 | -13 % -5 = -3
+|============================================
 
 :sectnums:

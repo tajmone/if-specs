@@ -1411,12 +1411,25 @@ The interpreter is permitted to switch between these states on request of the pl
 <div class="paragraph">
 <p>Note that version 0.2 of this standard mistakenly asserted that division and remainder are unsigned, a myth deriving from a bug in <strong>Zip</strong>. Infocom&#8217;s interpreters do sign division (this is relied on when calculating pizza cooking times for the microwave oven in 'The Lurking Horror'). Here are some correct Z-machine calculations:</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>   -11 / 2 = -5       -11 / -2 = 5        11 / -2 = -5
-   -13 % 5 = -3        13 % -5 = 3       -13 % -5 = -3</pre>
-</div>
-</div>
+<table class="tableblock frame-none grid-cols fit-content">
+<colgroup>
+<col>
+<col>
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><code>-11 / 2 = -5</code></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><code>-11 / -2 = 5</code></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><code>11 / -2 = -5</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><code>-13 % 5 = -3</code></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><code>13 % -5 = 3</code></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><code>-13 % -5 = -3</code></p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
