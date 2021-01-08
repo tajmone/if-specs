@@ -1184,105 +1184,140 @@ A word address specifies an even address in the bottom 128K of memory (by giving
 <p><span class="red">§1.2.3.</span>
 <strong>*</strong>*[1.0]* A packed address specifies where a routine or string begins in high memory. Given a packed address <em>P</em>, the formula to obtain the corresponding byte address <em>B</em> is:</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>  2P           Versions 1, 2 and 3
-  4P           Versions 4 and 5
-  4P + 8R_O    Versions 6 and 7, for routine calls
-  4P + 8S_O    Versions 6 and 7, for print_paddr
-  8P           Version 8</pre>
-</div>
+<div class="hdlist">
+<table>
+<tr>
+<td class="hdlist1">
+2P        
+</td>
+<td class="hdlist2">
+<p>Versions 1, 2 and 3</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+4P        
+</td>
+<td class="hdlist2">
+<p>Versions 4 and 5</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+4P + 8R_O 
+</td>
+<td class="hdlist2">
+<p>Versions 6 and 7, for routine calls</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+4P + 8S_O 
+</td>
+<td class="hdlist2">
+<p>Versions 6 and 7, for <code>print_paddr</code></p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+8P        
+</td>
+<td class="hdlist2">
+<p>Version 8</p>
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p><em>R_O</em> and <em>S_O</em> are the routine and strings offsets (specified in the header as words at <strong>$28</strong> and <strong>$2a</strong>, respectively).</p>
 </div>
 <hr>
-<table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 1. <strong>An example memory map of a small game</strong></caption>
+<table class="tableblock frame-all grid-all fit-content">
+<caption class="title">Table 1. An example memory map of a small game</caption>
 <colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
+<col>
+<col>
+<col>
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Dynamic</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>00000</strong></p></td>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Dynamic</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>00000</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">header</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>00040</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>00040</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">abbreviation strings</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>00042</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>00042</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">abbreviation table</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>00102</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>00102</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">property defaults</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>00140</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>00140</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">objects</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>002f0</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>002f0</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">object descriptions and properties</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>006e3</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>006e3</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">global variables</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>008c3</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>008c3</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">arrays</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Static</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>00b48</strong></p></td>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Static</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>00b48</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">grammar table</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>010a7</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>010a7</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">actions table</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>01153</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>01153</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">preactions table</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>01201</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>01201</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">adjectives table</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>0124d</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>0124d</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">dictionary</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">High</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>01a0a</strong></p></td>
+<th class="tableblock halign-left valign-top"><p class="tableblock">High</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>01a0a</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Z-code</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>05d56</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>05d56</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">static strings</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>06ae6</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>06ae6</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">end of file</p></td>
 </tr>
 </tbody>

@@ -71,38 +71,38 @@ A word address specifies an even address in the bottom 128K of memory (by giving
 [.red]##§1.2.3.##
 ****[1.0]* A packed address specifies where a routine or string begins in high memory. Given a packed address _P_, the formula to obtain the corresponding byte address _B_ is:
 
-....
-  2P           Versions 1, 2 and 3
-  4P           Versions 4 and 5
-  4P + 8R_O    Versions 6 and 7, for routine calls
-  4P + 8S_O    Versions 6 and 7, for print_paddr
-  8P           Version 8
-....
+[horizontal]
+2P        :: Versions 1, 2 and 3
+4P        :: Versions 4 and 5
+4P + 8R_O :: Versions 6 and 7, for routine calls
+4P + 8S_O :: Versions 6 and 7, for `print_paddr`
+8P        :: Version 8
 
 _R_O_ and _S_O_ are the routine and strings offsets (specified in the header as words at *$28* and *$2a*, respectively).
 
 '''''
 
-.*An example memory map of a small game*
-[cols=",,",]
-|===
-|Dynamic |*00000* |header
-| |*00040* |abbreviation strings
-| |*00042* |abbreviation table
-| |*00102* |property defaults
-| |*00140* |objects
-| |*002f0* |object descriptions and properties
-| |*006e3* |global variables
-| |*008c3* |arrays
-|Static |*00b48* |grammar table
-| |*010a7* |actions table
-| |*01153* |preactions table
-| |*01201* |adjectives table
-| |*0124d* |dictionary
-|High |*01a0a* |Z-code
-| |*05d56* |static strings
-| |*06ae6* |end of file
-|===
+.An example memory map of a small game
+[%autowidth]
+[cols="d,m,d"]
+|=====================================================
+h| Dynamic | 00000 | header
+ |         | 00040 | abbreviation strings
+ |         | 00042 | abbreviation table
+ |         | 00102 | property defaults
+ |         | 00140 | objects
+ |         | 002f0 | object descriptions and properties
+ |         | 006e3 | global variables
+ |         | 008c3 | arrays
+h| Static  | 00b48 | grammar table
+ |         | 010a7 | actions table
+ |         | 01153 | preactions table
+ |         | 01201 | adjectives table
+ |         | 0124d | dictionary
+h| High    | 01a0a | Z-code
+ |         | 05d56 | static strings
+ |         | 06ae6 | end of file
+|=====================================================
 
 :sectnums!:
 
