@@ -24,12 +24,12 @@ Text may be printed in any font of the interpreter's choice, variable- or fixed-
 
 // [[section]]
 [[p8.1.1]]
-[.red]##§8.1.1.##
+[.red]##§{nbsp}8.1.1.##{nbsp}{nbsp}
 In Version 5, the height and width of the current font (in units (see below)) should be written to bytes *$27* and *$26* of the header, respectively. In Version 6, these bytes are the other way round (height in *$27*, width in *$26*). The width of a font is defined as the width of its '0' character.
 
 // [[section-1]]
 [[p8.1.2]]
-[.red]##§8.1.2.##
+[.red]##§{nbsp}8.1.2.##{nbsp}{nbsp}
 An interpreter should ideally provide 4 fonts, with ID numbers as follows:
 
 ....
@@ -43,32 +43,32 @@ An interpreter should ideally provide 4 fonts, with ID numbers as follows:
 
 // [[section-2]]
 [[p8.1.3]]
-[.red]##§8.1.3.##
+[.red]##§{nbsp}8.1.3.##{nbsp}{nbsp}
 ****[1.0]* A game must not use fonts other than 1 unless allowed to by the interpreter: see the *set_font* opcode for how to give or refuse permission. (This paragraph is marked ****[1.0]* because existing Infocom games determined the availability of font 3 for 'Beyond Zork' in a complicated and unsatisfactory way: see *S* 16.)
 
 // [[section-3]]
 [[p8.1.3.1]]
-[.red]##§8.1.3.1.##
+[.red]##§{nbsp}8.1.3.1.##{nbsp}{nbsp}
 ****[1.0]* It is legal for a game to change font at any time, including halfway through the printing of a word. (This might be needed to introduce exotic foreign accents in the future.)
 
 // [[section-4]]
 [[p8.1.4]]
-[.red]##§8.1.4.##
+[.red]##§{nbsp}8.1.4.##{nbsp}{nbsp}
 The specification of the "picture font" is unknown (conjecturally, it was intended to provide pictures before Version 6 was properly developed). Interpreters should not implement it, and should refuse permission to any game requesting it.
 
 // [[section-5]]
 [[p8.1.5]]
-[.red]##§8.1.5.##
+[.red]##§{nbsp}8.1.5.##{nbsp}{nbsp}
 The specification of the character graphics font is given in *S* 16.
 
 // [[section-6]]
 [[p8.1.5.1]]
-[.red]##§8.1.5.1.##
+[.red]##§{nbsp}8.1.5.1.##{nbsp}{nbsp}
 In Version 5 (only), an interpreter which cannot provide the character graphics font should clear bit 3 of 'Flags 2' in the header.
 
 // [[section-7]]
 [[p8.1.6]]
-[.red]##§8.1.6.##
+[.red]##§{nbsp}8.1.6.##{nbsp}{nbsp}
 Any new fonts will have numbers higher than 4. Fonts 5-1023 are reserved for future Standards to specify. Local use may be made of higher font numbers.
 
 
@@ -80,42 +80,42 @@ In Versions 1 to 3, a status line should be printed by the interpreter, as follo
 
 // [[section-8]]
 [[p8.2.1]]
-[.red]##§8.2.1.##
+[.red]##§{nbsp}8.2.1.##{nbsp}{nbsp}
 In Versions 1 and 2, all games are "score games". In Version 3, if bit 1 of 'Flags 1' is clear then the game is a "score game"; if it is set, then the game is a "time game".
 
 // [[section-9]]
 [[p8.2.2]]
-[.red]##§8.2.2.##
+[.red]##§{nbsp}8.2.2.##{nbsp}{nbsp}
 The short name of the object whose number is in the first global variable should be printed on the left hand side of the line.
 
 // [[section-10]]
 [[p8.2.2.1]]
-[.red]##§8.2.2.1.##
+[.red]##§{nbsp}8.2.2.1.##{nbsp}{nbsp}
 Whenever the status line is being printed the first global must contain a valid object number. (It would be useful if interpreters could protect themselves in case the game accidentally violates this requirement.)
 
 // [[section-11]]
 [[p8.2.2.2]]
-[.red]##§8.2.2.2.##
+[.red]##§{nbsp}8.2.2.2.##{nbsp}{nbsp}
 If the object's short name exceeds the available room on the status line, the author suggests that an interpreter should break it at the last space and append an ellipsis "...". There is no guaranteed maximum length for location names but an interpreter should expect names of length up to at least 49 characters.
 
 // [[section-12]]
 [[p8.2.3]]
-[.red]##§8.2.3.##
+[.red]##§{nbsp}8.2.3.##{nbsp}{nbsp}
 If there is room, the right hand side of the status line should display:
 
 // [[section-13]]
 [[p8.2.3.1]]
-[.red]##§8.2.3.1.##
+[.red]##§{nbsp}8.2.3.1.##{nbsp}{nbsp}
 For "score games": the score and number of turns, held in the values of the second and third global variables respectively. The score may be assumed to be in the range -99 to 999 inclusive, and the turn number in the range 0 to 9999.
 
 // [[section-14]]
 [[p8.2.3.2]]
-[.red]##§8.2.3.2.##
+[.red]##§{nbsp}8.2.3.2.##{nbsp}{nbsp}
 For "time games": the time, in the form *hours:minutes* (held in the second and third globals). The time may be given on a 24-hour clock or the number of hours may be reduced modulo 12 (but if so, "AM" or "PM" should be appended). Either way the player should be able to see the difference between 4am and 4pm, for example. The hours global may be assumed to be in the range 0 to 23 and the minutes global in the range 0 to 59.
 
 // [[section-15]]
 [[p8.2.4]]
-[.red]##§8.2.4.##
+[.red]##§{nbsp}8.2.4.##{nbsp}{nbsp}
 The status line is updated in exactly two circumstances: when a *show_status* opcode is executed, and just before the keyboard is read by *read*. (It is not displayed when the game begins.)
 
 
@@ -127,7 +127,7 @@ Under Versions 5 and later, text printing has a current foreground and backgroun
 
 // [[section-16]]
 [[p8.3.1]]
-[.red]##§8.3.1.##
+[.red]##§{nbsp}8.3.1.##{nbsp}{nbsp}
 The following codes are used to refer to colours:
 
 ....
@@ -155,44 +155,44 @@ Colours 10, 11, 12, 15 and -1 are available only in Version 6.
 
 // [[section-17]]
 [[p8.3.1.1]]
-[.red]##§8.3.1.1.##
+[.red]##§{nbsp}8.3.1.1.##{nbsp}{nbsp}
 ****[1.1]* The equivalences between the colour numbers and true colours are recommended. The interpreter may allow the user to change the mapping, but the given values should be the default. If necessary, the game can check what true colour is being used for a given colour number using window properties 17 and 18.
 
 Interpreters may provide different colours (eg making colour 10 dark grey), but if and only if they can detect they are running an original Infocom story file.
 
 // [[section-18]]
 [[p8.3.2]]
-[.red]##§8.3.2.##
+[.red]##§{nbsp}8.3.2.##{nbsp}{nbsp}
 If the interpreter cannot produce colours, it should clear bit 0 of 'Flags 1' in the header. In Version 6 it should write colours 2 and 9 (black and white), either way round, into the default background and foreground colours in bytes *$2c* and *$2d* of the header.
 
 // [[section-19]]
 [[p8.3.3]]
-[.red]##§8.3.3.##
+[.red]##§{nbsp}8.3.3.##{nbsp}{nbsp}
 If the interpreter can produce colours, it should set bit 0 of 'Flags 1' in the header, and write its default background and foreground colours into bytes *$2c* and *$2d* of the header.
 
 // [[section-20]]
 [[p8.3.4]]
-[.red]##§8.3.4.##
+[.red]##§{nbsp}8.3.4.##{nbsp}{nbsp}
 If a game wishes to use colours, it should have bit 6 in 'Flags 2' set in its story file. (However, an interpreter should not rule out the use of colours just because this has not been done.)
 
 // [[section-21]]
 [[p8.3.5]]
-[.red]##§8.3.5.##
+[.red]##§{nbsp}8.3.5.##{nbsp}{nbsp}
 If a true colour, or an "under the cursor" colour has been requested by the game, then the foreground or background colour shown in window property 11 is implementation defined, with two exceptions:
 
 // [[section-22]]
 [[p8.3.5.1]]
-[.red]##§8.3.5.1.##
+[.red]##§{nbsp}8.3.5.1.##{nbsp}{nbsp}
 If the colour selected was one of the standard set (2-15), then that colour is indicated in property 11.
 
 // [[section-23]]
 [[p8.3.5.2]]
-[.red]##§8.3.5.2.##
+[.red]##§{nbsp}8.3.5.2.##{nbsp}{nbsp}
 If the colour selected was not one of the standard set (this can happen when using graphics, which may use many more colours), the colour shown in property 11 will be >= 16.
 
 // [[section-24]]
 [[p8.3.6]]
-[.red]##§8.3.6.##
+[.red]##§{nbsp}8.3.6.##{nbsp}{nbsp}
 ****[1.1]* In Version 6 only, colour 15 is defined as transparent. This is only valid as a background colour; an attempt to select it for the foreground should produce a diagnostic. Interpreters not supporting transparency must ignore any attempt to select colour 15.
 
 If the current background colour is transparent, then printed text is superimposed on the current window contents, without filling the background behind the text. *erase_window*, *erase_line* and *erase_picture* become null operations. The intent is to make it possible to superimpose text on non-uniform images. Up until now, only uniform images could be satisfactorily written on by sampling the background colour - that in itself would be problematical if the interpreter used dithering.
@@ -201,7 +201,7 @@ Scrolling with the background set to transparent is not permitted, so transparen
 
 // [[section-25]]
 [[p8.3.7]]
-[.red]##§8.3.7.##
+[.red]##§{nbsp}8.3.7.##{nbsp}{nbsp}
 ****[1.1]* Standard 1.1 adds the ability for games to select many more colours with *set_true_colour*, which uses 15-bit RBG colour values, with the following special values:
 
 ....
@@ -213,7 +213,7 @@ Scrolling with the background set to transparent is not permitted, so transparen
 
 // [[section-26]]
 [[p8.3.7.1]]
-[.red]##§8.3.7.1.##
+[.red]##§{nbsp}8.3.7.1.##{nbsp}{nbsp}
 ****[1.1]* The interpreter selects the closest approximations available to the requested colours. In V6, the interpreter may store the approximations in window properties 16 and 17, so the program can tell how close it got (although it is acceptable for the interpreter to just store the requested value).
 
 In the minimal implementation, interpreters just need to match to the closest of the standard colours and internally call *set_colour* (although that would have to ensure window properties 16 and 17 were updated). In a full implementation this would be turned around and *set_colour* would internally call *set_true_colour*.
@@ -229,17 +229,17 @@ The screen should ideally be at least 60 characters wide by 14 lines deep. (Old 
 
 // [[section-27]]
 [[p8.4.1]]
-[.red]##§8.4.1.##
+[.red]##§{nbsp}8.4.1.##{nbsp}{nbsp}
 The interpreter should use the screen height for calculating when to pause and print "[MORE]". A screen height of 255 lines means "infinite height", in which case the interpreter should never stop printing for a "[MORE]" prompt. (In case, say, the screen is actually a teletype printer, or has very good "scrollback".)
 
 // [[section-28]]
 [[p8.4.2]]
-[.red]##§8.4.2.##
+[.red]##§{nbsp}8.4.2.##{nbsp}{nbsp}
 Screen dimensions are measured in notional "units". In Versions 1 to 4, one unit is simply the height or width of one character. In Version 5 and later, the interpreter is free to implement units as anything from character sizes down to individual pixels.
 
 // [[section-29]]
 [[p8.4.3]]
-[.red]##§8.4.3.##
+[.red]##§{nbsp}8.4.3.##{nbsp}{nbsp}
 In Version 5 and later, the screen's width and height in units should be written to the words at *$22* and *$24*.
 
 
@@ -251,12 +251,12 @@ The screen model for Versions 1 and 2 is as follows:
 
 // [[section-30]]
 [[p8.5.1]]
-[.red]##§8.5.1.##
+[.red]##§{nbsp}8.5.1.##{nbsp}{nbsp}
 The screen can only be printed to (like a teletype) and there is no control of the cursor.
 
 // [[section-31]]
 [[p8.5.2]]
-[.red]##§8.5.2.##
+[.red]##§{nbsp}8.5.2.##{nbsp}{nbsp}
 At the start of a game, the screen should be cleared and the text cursor placed at the bottom left (so that text scrolls upwards as the game gets under way).
 
 
@@ -268,42 +268,42 @@ The screen model for Version 3 is as follows:
 
 // [[section-32]]
 [[p8.6.1]]
-[.red]##§8.6.1.##
+[.red]##§{nbsp}8.6.1.##{nbsp}{nbsp}
 The screen is divided into a lower and an upper window and at any given time one of these is selected. (Initially it is the lower window.) The game uses the *set_window* opcode to select one of the two. Each window has its own cursor position at which text is printed. Operations in the upper window do not move the cursor of the lower. Whenever the upper window is selected, its cursor position is reset to the top left. Selecting, or re-sizing, the upper window does not change the screen's appearance.
 
 // [[section-33]]
 [[p8.6.1.1]]
-[.red]##§8.6.1.1.##
+[.red]##§{nbsp}8.6.1.1.##{nbsp}{nbsp}
 The upper window has variable height (of n lines) and the same width as the screen. This should be displayed on the n lines of the screen below the top one (which continues to hold the status line). Initially the upper window has height 0. When the lower window is selected, the game can split off an upper window of any chosen size by using the *split_window* opcode.
 
 // [[section-34]]
 [[p8.6.1.1.1]]
-[.red]##§8.6.1.1.1.##
+[.red]##§{nbsp}8.6.1.1.1.##{nbsp}{nbsp}
 Printing onto the upper window overlays whatever text is already there.
 
 // [[section-35]]
 [[p8.6.1.1.2]]
-[.red]##§8.6.1.1.2.##
+[.red]##§{nbsp}8.6.1.1.2.##{nbsp}{nbsp}
 When a screen split takes place in Version 3, the upper window is cleared.
 
 // [[section-36]]
 [[p8.6.1.2]]
-[.red]##§8.6.1.2.##
+[.red]##§{nbsp}8.6.1.2.##{nbsp}{nbsp}
 An interpreter need not provide the upper window at all. If it is going to do so, it should set bit 5 of 'Flags 1' in the header to signal this to the game. It is only legal for a game to use *set_window* or *split_window* if this bit has been set.
 
 // [[section-37]]
 [[p8.6.1.3]]
-[.red]##§8.6.1.3.##
+[.red]##§{nbsp}8.6.1.3.##{nbsp}{nbsp}
 Following a "restore" of the game, the interpreter should automatically collapse the upper window to size 0.
 
 // [[section-38]]
 [[p8.6.2]]
-[.red]##§8.6.2.##
+[.red]##§{nbsp}8.6.2.##{nbsp}{nbsp}
 When text reaches the bottom right of the lower window, it should be scrolled upwards. The upper window should never be scrolled: it is legal for a character to be printed on the bottom right position of the upper window (but the position of the cursor after this operation is undefined: the author suggests that it stay put).
 
 // [[section-39]]
 [[p8.6.3]]
-[.red]##§8.6.3.##
+[.red]##§{nbsp}8.6.3.##{nbsp}{nbsp}
 At the start of a game, the screen should be cleared and the text cursor placed at the bottom left (so that text scrolls upwards as the game gets under way).
 
 
@@ -315,87 +315,87 @@ The screen model for Versions 4 and later, except Version 6, is as follows:
 
 // [[section-40]]
 [[p8.7.1]]
-[.red]##§8.7.1.##
+[.red]##§{nbsp}8.7.1.##{nbsp}{nbsp}
 Text can be printed in five different styles (modelled on the VT100 design of terminal). These are: Roman (the default), Bold, Italic, Reverse Video (usually printed with foreground and background colours reversed) and Fixed Pitch. The specification does not require the interpreter to be able to display more than one of these at once (e.g. to combine italic and bold), and most interpreters can't. If the interpreter is going to allow certain combinations, then note that changing back to Roman should turn off all the text styles currently active.
 
 // [[section-41]]
 [[p8.7.1.1]]
-[.red]##§8.7.1.1.##
+[.red]##§{nbsp}8.7.1.1.##{nbsp}{nbsp}
 An interpreter need not provide Bold or Italic (even for font 1) and is free to interpret them broadly. (For example, rendering bold-face by changing the colour, or rendering italic with underlining.)
 
 // [[section-42]]
 [[p8.7.1.2]]
-[.red]##§8.7.1.2.##
+[.red]##§{nbsp}8.7.1.2.##{nbsp}{nbsp}
 It is legal to change text style at any point, including in the middle of a word being printed.
 
 // [[section-43]]
 [[p8.7.1.3]]
-[.red]##§8.7.1.3.##
+[.red]##§{nbsp}8.7.1.3.##{nbsp}{nbsp}
 ****[1.1]* Although a story file can determine which individual styles are available by inspecting the header, this gives no indication of which styles can be combined. To improve this situation, at least for Version 6, Standard 1.1 requires window property 10 to show the actual style combination currently in use; with this a story file can probe for the availability of particular combinations.
 
 // [[section-44]]
 [[p8.7.2]]
-[.red]##§8.7.2.##
+[.red]##§{nbsp}8.7.2.##{nbsp}{nbsp}
 There are two "windows", called "upper" and "lower": at any given time one of these two is selected. (Initially it is the lower window.) The game uses the *set_window* opcode to select one of the two. Each window has its own cursor position at which text is printed. Operations in the upper window do not move the cursor of the lower. Whenever the upper window is selected, its cursor position is reset to the top left.
 
 // [[section-45]]
 [[p8.7.2.1]]
-[.red]##§8.7.2.1.##
+[.red]##§{nbsp}8.7.2.1.##{nbsp}{nbsp}
 The upper window has variable height (of n lines) and the same width as the screen. (It is usual for interpreters to print the upper window on the top n lines of the screen, overlaying any text which is already there, having been printed in the lower window some time ago.) Initially the upper window has height 0. When the lower window is selected, the game can split off an upper window of any chosen size by using the *split_window* opcode.
 
 // [[section-46]]
 [[p8.7.2.1.1]]
-[.red]##§8.7.2.1.1.##
+[.red]##§{nbsp}8.7.2.1.1.##{nbsp}{nbsp}
 It is unclear exactly what *split_window* should do if the upper window is currently selected. The author suggests that it should work as usual, leaving the cursor where it is if the cursor is still inside the new upper window, and otherwise moving the cursor back to the top left. (This is analogous to the Version 6 practice.)
 
 // [[section-47]]
 [[p8.7.2.2]]
-[.red]##§8.7.2.2.##
+[.red]##§{nbsp}8.7.2.2.##{nbsp}{nbsp}
 In Version 4, the lower window's cursor is always on the bottom screen line. In Version 5 it can be at any line which is not underneath the upper window. If a split takes place which would cause the upper window to swallow the lower window's cursor position, the interpreter should move the lower window's cursor down to the line just below the upper window's new size.
 
 // [[section-48]]
 [[p8.7.2.3]]
-[.red]##§8.7.2.3.##
+[.red]##§{nbsp}8.7.2.3.##{nbsp}{nbsp}
 When the upper window is selected, its cursor position can be moved with *set_cursor*. This position is given in characters in the form (row, column), with (1,1) at the top left. The opcode has no effect when the lower window is selected. It is illegal to move the cursor outside the current size of the upper window.
 
 // [[section-49]]
 [[p8.7.2.4]]
-[.red]##§8.7.2.4.##
+[.red]##§{nbsp}8.7.2.4.##{nbsp}{nbsp}
 An interpreter should use a fixed-pitch font when printing on the upper window.
 
 // [[section-50]]
 [[p8.7.2.5]]
-[.red]##§8.7.2.5.##
+[.red]##§{nbsp}8.7.2.5.##{nbsp}{nbsp}
 In Versions 3 to 5, text buffering is never active in the upper window (even if a game begins printing there without having turned it off).
 
 // [[section-51]]
 [[p8.7.3]]
-[.red]##§8.7.3.##
+[.red]##§{nbsp}8.7.3.##{nbsp}{nbsp}
 Clearing regions of the screen:
 
 // [[section-52]]
 [[p8.7.3.1]]
-[.red]##§8.7.3.1.##
+[.red]##§{nbsp}8.7.3.1.##{nbsp}{nbsp}
 When text reaches the bottom right of the lower window, it should be scrolled upwards. (When the text style is Reverse Video the new blank line should *not* have reversed colours.) The upper window should never be scrolled: it is legal for a character to be printed on the bottom right position of the upper window (but the position of the cursor after this operation is undefined: the author suggests that it stay put).
 
 // [[section-53]]
 [[p8.7.3.2]]
-[.red]##§8.7.3.2.##
+[.red]##§{nbsp}8.7.3.2.##{nbsp}{nbsp}
 Using the opcode *erase_window*, the specified window can be cleared to background colour. (Even if the text style is Reverse Video the new blank space should not have reversed colours.)
 
 // [[section-54]]
 [[p8.7.3.2.1]]
-[.red]##§8.7.3.2.1.##
+[.red]##§{nbsp}8.7.3.2.1.##{nbsp}{nbsp}
 In Versions 5 and later, the cursor for the window being erased should be moved to the top left. In Version 4, the lower window's cursor moves to its bottom left, while the upper window's cursor moves to top left.
 
 // [[section-55]]
 [[p8.7.3.3]]
-[.red]##§8.7.3.3.##
+[.red]##§{nbsp}8.7.3.3.##{nbsp}{nbsp}
 Erasing window -1 clears the whole screen to the background colour of the lower screen, collapses the upper window to height 0, moves the cursor of the lower screen to bottom left (in Version 4) or top left (in Versions 5 and later) and selects the lower screen. The same operation should happen at the start of a game.
 
 // [[section-56]]
 [[p8.7.3.4]]
-[.red]##§8.7.3.4.##
+[.red]##§{nbsp}8.7.3.4.##{nbsp}{nbsp}
 Using *erase_line* in the upper window should erase the current line from the cursor position to the right-hand edge, clearing it to background colour. (Even if the text style is Reverse Video the new blank space should not have reversed colours.)
 
 
@@ -407,22 +407,22 @@ The screen model for Version 6 is as follows:
 
 // [[section-57]]
 [[p8.8.1]]
-[.red]##§8.8.1.##
+[.red]##§{nbsp}8.8.1.##{nbsp}{nbsp}
 The display is an array of pixels. Coordinates are usually given (in units) in the form (y,x), with (1,1) in the top left.
 
 // [[section-58]]
 [[p8.8.2]]
-[.red]##§8.8.2.##
+[.red]##§{nbsp}8.8.2.##{nbsp}{nbsp}
 If the interpreter thinks the screen should be redrawn (e.g. because a menu window has been clicked over it), it may set bit 2 of 'Flags 2'. The game is expected to notice, take action and clear the bit. (However, a more efficient interpreter would handle redraws itself.)
 
 // [[section-59]]
 [[p8.8.3]]
-[.red]##§8.8.3.##
+[.red]##§{nbsp}8.8.3.##{nbsp}{nbsp}
 There are eight "windows", numbered 0 to 7. The code -3 is used as a window number to mean "the currently selected window". This selection can be changed with the *set_window* opcode. Windows are invisible and usually lie on top of each other. All text and graphics plotting is always clipped to the current window, and anything showing through is plotted onto the screen. Subsequent movements of the window do not move what was printed and there is no sense in which characters or graphics 'belong' to any particular window once printed. Each window has a position (in units), a size (in units), a cursor position within it (in units, relative to its own origin), a number of flags called "attributes" and a number of variables called "properties".
 
 // [[section-60]]
 [[p8.8.3.1]]
-[.red]##§8.8.3.1.##
+[.red]##§{nbsp}8.8.3.1.##{nbsp}{nbsp}
 There are four attributes, numbered as follows:
 
 ....
@@ -436,22 +436,22 @@ Each can be turned on or off, using the *window_style* opcode.
 
 // [[section-61]]
 [[p8.8.3.1.1]]
-[.red]##§8.8.3.1.1.##
+[.red]##§{nbsp}8.8.3.1.1.##{nbsp}{nbsp}
 "Wrapping" is the continuation of printed text from one line to the next. Text running up to the right margin will continue from the left margin of the following line. If "wrapping" is off then characters will be printed until no more can be fitted in without hitting the right margin, at which point the cursor will move to the right margin and stay there, so that any further text will be ignored.
 
 // [[section-62]]
 [[p8.8.3.1.2]]
-[.red]##§8.8.3.1.2.##
+[.red]##§{nbsp}8.8.3.1.2.##{nbsp}{nbsp}
 "Buffered printing" means that text to be printed in the window is temporarily stored in a buffer and only flushed onto the screen at intervals convenient for the interpreter.
 
 // [[section-63]]
 [[p8.8.3.1.2.1]]
-[.red]##§8.8.3.1.2.1.##
+[.red]##§{nbsp}8.8.3.1.2.1.##{nbsp}{nbsp}
 "Buffered printing" has two practical effects: firstly it causes a delay before printed text actually appears.
 
 // [[section-64]]
 [[p8.8.3.1.2.2]]
-[.red]##§8.8.3.1.2.2.##
+[.red]##§{nbsp}8.8.3.1.2.2.##{nbsp}{nbsp}
 Secondly it affects the way "wrapping" is done. If "buffered printing" is on, then text is wrapped after the last word which could fit on a line. If not, then text is wrapped after the last character that could fit.
 
 Example: suppose the text "Here is an abacus" is printed in a narrow window. The appearance (after the buffer has been flushed, if there is buffered printing) might be:
@@ -471,7 +471,7 @@ where the caret denotes the final position of the cursor. (Games often alter "wr
 
 // [[section-65]]
 [[p8.8.3.2]]
-[.red]##§8.8.3.2.##
+[.red]##§{nbsp}8.8.3.2.##{nbsp}{nbsp}
 There are 16 properties, numbered as follows:
 
 ....
@@ -487,147 +487,147 @@ Each property is a standard Z-machine number and is readable with *get_wind_prop
 
 // [[section-66]]
 [[p8.8.3.2.1]]
-[.red]##§8.8.3.2.1.##
+[.red]##§{nbsp}8.8.3.2.1.##{nbsp}{nbsp}
 If a window has character wrapping, then text is clipped to stay inside the left and right margins. After a new-line, the cursor moves to the left margin on the next line. Margins can be set with *set_margins* but this should only be done just after a newline or just after the window has been selected. (These values are margin sizes in pixels, and are by default 0.)
 
 // [[section-67]]
 [[p8.8.3.2.2]]
-[.red]##§8.8.3.2.2.##
+[.red]##§{nbsp}8.8.3.2.2.##{nbsp}{nbsp}
 If the interrupt countdown is set to a non-zero value (which by default it is not), then the line count is decremented on each new-line, and when it hits zero the routine whose packed address is stored in the "newline interrupt routine" property is called before text printing resumes. (This routine may, for example, meddle with margins to roll text around a crinkly-shaped picture.) The interrupt routine should not attempt to print anything.
 
 // [[section-68]]
 [[p8.8.3.2.2.1]]
-[.red]##§8.8.3.2.2.1.##
+[.red]##§{nbsp}8.8.3.2.2.1.##{nbsp}{nbsp}
 Because of an Infocom bug, if the interpreter number is 6 (for MSDOS) and the story file is 'Zork Zero' release 393.890714, but in no other case, the interpreter must do the following instead: (1) move to the new line, (2) put the cursor at the current left margin, (3) call the interrupt routine (if it's time to do so). This is the least bad way to get around a basic inconsistency in existing Infocom story files and interpreters.
 
 // [[section-69]]
 [[p8.8.3.2.2.2]]
-[.red]##§8.8.3.2.2.2.##
+[.red]##§{nbsp}8.8.3.2.2.2.##{nbsp}{nbsp}
 Note that the *set_margins* opcode, which is often used by newline interrupt routines (to adjust the shape of a margin as it flows past a picture), automatically moves the cursor if the change in margins would leave the cursor outside them. The effect will depend, unfortunately, on which sequence of events above takes place.
 
 // [[section-70]]
 [[p8.8.3.2.2.3]]
-[.red]##§8.8.3.2.2.3.##
+[.red]##§{nbsp}8.8.3.2.2.3.##{nbsp}{nbsp}
 A line count is never decremented below -999.
 
 // [[section-71]]
 [[p8.8.3.2.3]]
-[.red]##§8.8.3.2.3.##
+[.red]##§{nbsp}8.8.3.2.3.##{nbsp}{nbsp}
 The text style is set just as in Version 4, using *set_text_style* (which sets that for the current window). The property holds the operand of that instruction (e.g. 4 for italic).
 
 // [[section-72]]
 [[p8.8.3.2.4]]
-[.red]##§8.8.3.2.4.##
+[.red]##§{nbsp}8.8.3.2.4.##{nbsp}{nbsp}
 The foreground colour is stored in the lower byte of the colour data property, the background colour in the upper byte.
 
 // [[section-73]]
 [[p8.8.3.2.5]]
-[.red]##§8.8.3.2.5.##
+[.red]##§{nbsp}8.8.3.2.5.##{nbsp}{nbsp}
 The font height (in pixels) is stored in the upper byte of the font size property, the font width (in pixels) in the lower byte.
 
 // [[section-74]]
 [[p8.8.3.2.6]]
-[.red]##§8.8.3.2.6.##
+[.red]##§{nbsp}8.8.3.2.6.##{nbsp}{nbsp}
 The interpreter should use the line count to see when it should print "[MORE]". A line count of -999 means "never print [MORE]". (Version 6 games often set line counts to manipulate when "[MORE]" is printed.)
 
 // [[section-75]]
 [[p8.8.3.2.7]]
-[.red]##§8.8.3.2.7.##
+[.red]##§{nbsp}8.8.3.2.7.##{nbsp}{nbsp}
 If an attempt is made by the game to read the cursor position at a time when text is held unprinted in a buffer, then this text should be flushed first, to ensure that the cursor position is accurate before being read.
 
 // [[section-76]]
 [[p8.8.3.2.8]]
-[.red]##§8.8.3.2.8.##
+[.red]##§{nbsp}8.8.3.2.8.##{nbsp}{nbsp}
 ****[1.1]* The true foreground and background colours show the actual colour being used for the foreground and background, whether it was set using *set_colour* or *set_true_colour*. Transparent is indicated as -4. If the colour was sampled from a picture then the value shown may be a 15-bit rounding of a more precise colour, leading to a slight inaccuracy if the colour is read and then written back.
 
 // [[section-77]]
 [[p8.8.3.3]]
-[.red]##§8.8.3.3.##
+[.red]##§{nbsp}8.8.3.3.##{nbsp}{nbsp}
 All eight windows begin at (1,1). Window 0 occupies the whole screen and is initially selected. Window 1 is as wide as the screen but has zero height. Windows 2 to 7 have zero width and height. Window 0 initially has attribute 1 off and 2, 3 and 4 on (scrolling, copy to printer transcript, buffering). Windows 1 to 7 initially have attribute 4 (buffering) on, and the other attributes off.
 
 // [[section-78]]
 [[p8.8.3.4]]
-[.red]##§8.8.3.4.##
+[.red]##§{nbsp}8.8.3.4.##{nbsp}{nbsp}
 A window can be moved with *move_window* and resized with *window_size*. If the window size is reduced so that its cursor lies outside it, the cursor should be reset to the left margin on the top line.
 
 // [[section-79]]
 [[p8.8.3.5]]
-[.red]##§8.8.3.5.##
+[.red]##§{nbsp}8.8.3.5.##{nbsp}{nbsp}
 Each window remembers its own cursor position (relative to its own coordinates, so that the position (1,1) is at its top left). These can be changed using *set_cursor* (and it is legal to move the cursor for an unselected window). It is illegal to move the cursor outside the current window.
 
 // [[section-80]]
 [[p8.8.3.6]]
-[.red]##§8.8.3.6.##
+[.red]##§{nbsp}8.8.3.6.##{nbsp}{nbsp}
 Each window can be scrolled vertically (up or down) any number of pixels, using the *scroll_window* opcode.
 
 // [[section-81]]
 [[p8.8.4]]
-[.red]##§8.8.4.##
+[.red]##§{nbsp}8.8.4.##{nbsp}{nbsp}
 To some extent windows 0 and 1 mimic the behaviour of the lower and upper windows in the Version 4 screen model:
 
 // [[section-82]]
 [[p8.8.4.1]]
-[.red]##§8.8.4.1.##
+[.red]##§{nbsp}8.8.4.1.##{nbsp}{nbsp}
 The *split_screen* opcode tiles windows 0 and 1 together to fill the screen, so that window 1 has the given height and is placed at the top left, while window 0 is placed just below it (with its height suitably shortened, possibly making it disappear altogether if window 1 occupies the whole screen).
 
 // [[section-83]]
 [[p8.8.4.2]]
-[.red]##§8.8.4.2.##
+[.red]##§{nbsp}8.8.4.2.##{nbsp}{nbsp}
 An "unsplit" (that is, a *split_screen 0*) takes place when the entire screen is cleared with *erase_window -1*, if a "split" has previously occurred (meaning that windows 0 and 1 have been set up as above).
 
 // [[section-84]]
 [[p8.8.5]]
-[.red]##§8.8.5.##
+[.red]##§{nbsp}8.8.5.##{nbsp}{nbsp}
 Screen clearing operations:
 
 // [[section-85]]
 [[p8.8.5.1]]
-[.red]##§8.8.5.1.##
+[.red]##§{nbsp}8.8.5.1.##{nbsp}{nbsp}
 Erasing a picture is like drawing it (see below), except that the space where it would appear is painted over with background colour instead.
 
 // [[section-86]]
 [[p8.8.5.2]]
-[.red]##§8.8.5.2.##
+[.red]##§{nbsp}8.8.5.2.##{nbsp}{nbsp}
 The current line can be erased using *erase_line*, either all the way to the right margin or by any positive number of pixels in that direction. The space is painted over with background colour (even if the current text style is Reverse Video).
 
 // [[section-87]]
 [[p8.8.5.3]]
-[.red]##§8.8.5.3.##
+[.red]##§{nbsp}8.8.5.3.##{nbsp}{nbsp}
 Each window can be erased using *erase_window*, erasing to background colour (even if the current text style is Reverse Video).
 
 // [[section-88]]
 [[p8.8.5.3.1]]
-[.red]##§8.8.5.3.1.##
+[.red]##§{nbsp}8.8.5.3.1.##{nbsp}{nbsp}
 Erasing window number -1 erases the entire screen to the background colour of window 0, unsplits windows 0 and 1 (see *S* 8.7.3.3 above) and selects window 0.
 
 // [[section-89]]
 [[p8.8.5.3.2]]
-[.red]##§8.8.5.3.2.##
+[.red]##§{nbsp}8.8.5.3.2.##{nbsp}{nbsp}
 Erasing window -2 erases the entire screen to the current background colour. (It doesn't perform *erase_window* for all the individual windows, and it doesn't change any window attributes or cursor positions.)
 
 // [[section-90]]
 [[p8.8.6]]
-[.red]##§8.8.6.##
+[.red]##§{nbsp}8.8.6.##{nbsp}{nbsp}
 Pictures may accompany the game. They are not stored in the story file (or the Z-machine) itself, and the interpreter is simply expected to know where to find them.
 
 // [[section-91]]
 [[p8.8.6.1]]
-[.red]##§8.8.6.1.##
+[.red]##§{nbsp}8.8.6.1.##{nbsp}{nbsp}
 Pictures are numbered from 1 upwards (not necessarily contiguously). They can be "drawn" or "erased" (using *draw_picture* and *erase_picture*). Before attempting to do so, a game may ask the interpreter about the picture (using *picture_data*): this allows the interpreter to signal that the picture in question is unavailable, or to specify its height and width.
 
 // [[section-92]]
 [[p8.8.6.2]]
-[.red]##§8.8.6.2.##
+[.red]##§{nbsp}8.8.6.2.##{nbsp}{nbsp}
 The game may, if it wishes, use the *picture_table* opcode to give the interpreter advance warning that a group of pictures will soon be needed (for instance, a collection of icons making up a control panel). The interpreter may want to load these pictures off disc and into a memory cache.
 
 // [[section-93]]
 [[p8.8.7]]
-[.red]##§8.8.7.##
+[.red]##§{nbsp}8.8.7.##{nbsp}{nbsp}
 ****[1.1]* Interpreters may use a backing store to store the Z-machine screen state, rather than plotting directly to the screen. This would normally be the case in a windowed operating system environment. If a backing store is in use, display changes executed by the Z-machine may not be immediately made visible to the user. Standard 1.1 adds the new opcode *buffer_screen* to Version 6 to control screen updates. An interpreter is free to ignore the opcode if it doesn't fit its display model (in which case it must act as if *buffer_screen* is always set to 0).
 
 // [[section-94]]
 [[p8.8.7.1]]
-[.red]##§8.8.7.1.##
+[.red]##§{nbsp}8.8.7.1.##{nbsp}{nbsp}
 ****[1.1]* When *buffer_screen* is set to 0 (the default), all display changes are expected to become visible to the user either immediately, or within a short period of time, at the interpreter's discretion. At a minimum, all updates become visible before waiting for input. Any intermediate display states between input requests may not be seen; for example when printing a large amount of new text into a scrolling window, all the intermediate scroll positions may or may not be shown.
 
 When *buffer_screen* is set to 1, the interpreter need not change the visible display at all. Any display changes can be done purely in the backing store. A program may set *buffer_screen* to 1 before carrying out a complex layered graphical composition, to indicate that the intermediate states are not worth showing. It would be extremely ill-advised to prompt for input with *buffer_screen* set to 1.
@@ -636,7 +636,7 @@ When *buffer_screen* is set back to 0, the display is not necessarily updated im
 
 // [[section-95]]
 [[p8.8.7.2]]
-[.red]##§8.8.7.2.##
+[.red]##§{nbsp}8.8.7.2.##{nbsp}{nbsp}
 ****[1.1]* With buffer_screen in either state, an update of the visible display can be forced immediately by issuing *buffer_screen* -1, without altering the current buffering state. Note that *buffer_screen* -1 does not flush the text buffer.
 
 

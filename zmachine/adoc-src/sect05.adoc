@@ -27,7 +27,7 @@ A routine begins with one byte indicating the number of local variables it has (
 
 // [[section]]
 [[p5.2.1]]
-[.red]##§5.2.1.##
+[.red]##§{nbsp}5.2.1.##{nbsp}{nbsp}
 In Versions 1 to 4, that number of 2-byte words follows, giving initial values for these local variables. In Versions 5 and later, the initial values are all zero.
 
 

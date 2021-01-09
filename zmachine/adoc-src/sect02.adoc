@@ -25,7 +25,7 @@ These values are sometimes regarded as signed, in the range -32768 to 32767. In 
 
 // [[section]]
 [[p2.2.1]]
-[.red]##§2.2.1.##
+[.red]##§{nbsp}2.2.1.##{nbsp}{nbsp}
 The operations of numerical comparison, multiplication, addition, subtraction, division, remainder-after-division and printing of numbers are signed; bitwise operations are unsigned. (In particular, since comparison is signed, it is unsafe to compare two addresses using simply *jl* and *jg*.)
 
 
@@ -36,12 +36,12 @@ The operations of numerical comparison, multiplication, addition, subtraction, d
 
 // [[section-1]]
 [[p2.3.1]]
-[.red]##§2.3.1.##
+[.red]##§{nbsp}2.3.1.##{nbsp}{nbsp}
 It is illegal to divide by 0 (or to ask for remainder after division by 0) and an interpreter should halt with an error message if this occurs.
 
 // [[section-2]]
 [[p2.3.2]]
-[.red]##§2.3.2.##
+[.red]##§{nbsp}2.3.2.##{nbsp}{nbsp}
 Formally it has never been specified what the result of an out-of-range calculation should be. The author suggests that the result should be reduced modulo *$10000*.
 
 
@@ -53,17 +53,17 @@ The Z-machine needs a random number generator which at any time has one of two s
 
 // [[section-3]]
 [[p2.4.1]]
-[.red]##§2.4.1.##
+[.red]##§{nbsp}2.4.1.##{nbsp}{nbsp}
 When "random", it must be capable of generating a uniformly random integer in the range 1 <= x <= n, for any value 1 <= n <= 32767. Any method can be used for this (for instance, using the host computer's clock time in milliseconds). The uniformity of randomness should be optimised for low values of n (say, up to 100 or so) and it is especially important to avoid regular patterns appearing in remainders after division (most crudely, being alternately odd and even).
 
 // [[section-4]]
 [[p2.4.2]]
-[.red]##§2.4.2.##
+[.red]##§{nbsp}2.4.2.##{nbsp}{nbsp}
 The generator is switched into "predictable" state with a seed value. On any two occasions when the same seed is sown, identical sequences of values must result (for an indefinite period) until the generator is switched back into "random" mode. The generator should cope well with very low seed values, such as 10, and should not depend on the seed containing many non-zero bits.
 
 // [[section-5]]
 [[p2.4.3]]
-[.red]##§2.4.3.##
+[.red]##§{nbsp}2.4.3.##{nbsp}{nbsp}
 The interpreter is permitted to switch between these states on request of the player. (This is useful for testing purposes.)
 
 

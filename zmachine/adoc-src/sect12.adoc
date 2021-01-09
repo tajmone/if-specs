@@ -34,7 +34,7 @@ Next is the object tree. Objects are numbered consecutively from 1 upward, with 
 
 // [[section]]
 [[p12.3.1]]
-[.red]##§12.3.1.##
+[.red]##§{nbsp}12.3.1.##{nbsp}{nbsp}
 In Versions 1 to 3, there are at most 255 objects, each having a 9-byte entry as follows:
 
 ....
@@ -46,7 +46,7 @@ In Versions 1 to 3, there are at most 255 objects, each having a 9-byte entry as
 
 // [[section-1]]
 [[p12.3.2]]
-[.red]##§12.3.2.##
+[.red]##§{nbsp}12.3.2.##{nbsp}{nbsp}
 In Version 4 and later, there are at most 65535 objects, each having a 14-byte entry as follows:
 
 ....
@@ -70,7 +70,7 @@ where the *text-length* is the number of 2-byte words making up the text, which 
 
 // [[section-2]]
 [[p12.4.1]]
-[.red]##§12.4.1.##
+[.red]##§{nbsp}12.4.1.##{nbsp}{nbsp}
 In Versions 1 to 3, each property is stored as a block
 
 ....
@@ -82,7 +82,7 @@ where the *size byte* is arranged as 32 times the number of data bytes minus one
 
 // [[section-3]]
 [[p12.4.2]]
-[.red]##§12.4.2.##
+[.red]##§{nbsp}12.4.2.##{nbsp}{nbsp}
 In Versions 4 and later, a property block instead has the form
 
 ....
@@ -94,17 +94,17 @@ The property number occupies the bottom 6 bits of the first size byte.
 
 // [[section-4]]
 [[p12.4.2.1]]
-[.red]##§12.4.2.1.##
+[.red]##§{nbsp}12.4.2.1.##{nbsp}{nbsp}
 If the top bit (bit 7) of the first size byte is set, then there are two size-and-number bytes as follows. In the first byte, bits 0 to 5 contain the property number; bit 6 is undetermined (it is clear in all Infocom or Inform story files); bit 7 is set. In the second byte, bits 0 to 5 contain the property data length, counting in bytes; bit 6 is undetermined (it is set in Infocom story files, but clear in Inform ones); bit 7 is always set.
 
 // [[section-5]]
 [[p12.4.2.1.1]]
-[.red]##§12.4.2.1.1.##
+[.red]##§{nbsp}12.4.2.1.1.##{nbsp}{nbsp}
 ****[1.0]* A value of 0 as property data length (in the second byte) should be interpreted as a length of 64. (Inform can compile such properties.)
 
 // [[section-6]]
 [[p12.4.2.2]]
-[.red]##§12.4.2.2.##
+[.red]##§{nbsp}12.4.2.2.##{nbsp}{nbsp}
 If the top bit (bit 7) of the first size byte is clear, then there is only one size-and-number byte. Bits 0 to 5 contain the property number; bit 6 is either clear to indicate a property data length of 1, or set to indicate a length of 2; bit 7 is clear.
 
 

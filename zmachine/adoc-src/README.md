@@ -96,7 +96,7 @@ This adaptation ensures that Asciidoctor will be handle correctly auto-generatio
 
 Section numbers which have no title associated in the TOC were preserved as inline section numbers, but instead of being kept on independent lines they were placed at the beginning of paragraphs, and a section sign (§) was prefixed to them. E.g.:
 
-> §1.1.1. Dynamic memory can […]
+> § 1.1.1.  Dynamic memory can […]
 
 
 -------------------------------------------------------------------------------

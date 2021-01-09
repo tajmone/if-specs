@@ -29,22 +29,22 @@ In Versions 3 and later, the player's keypresses are drawn from the current "inp
 
 // [[section]]
 [[p10.2.1]]
-[.red]##§10.2.1.##
+[.red]##§{nbsp}10.2.1.##{nbsp}{nbsp}
 The format of a file containing commands must be the same as that written in output stream 4.
 
 // [[section-1]]
 [[p10.2.2]]
-[.red]##§10.2.2.##
+[.red]##§{nbsp}10.2.2.##{nbsp}{nbsp}
 The game can change the current input stream itself, using the opcode *input_stream*. It has no way of finding out which input stream is currently in use. An interpreter is free to change the input stream whenever it likes (e.g. at the player's request) or, indeed, to run the entire game under input stream 1 (for testing purposes).
 
 // [[section-2]]
 [[p10.2.3]]
-[.red]##§10.2.3.##
+[.red]##§{nbsp}10.2.3.##{nbsp}{nbsp}
 When input stream 1 is first selected, the interpreter may use any method of choosing a file name for the file of commands. (Good practice is to use the same conventions as when choosing a filename for output to stream 4.)
 
 // [[section-3]]
 [[p10.2.4]]
-[.red]##§10.2.4.##
+[.red]##§{nbsp}10.2.4.##{nbsp}{nbsp}
 When the the current stream is stream 1, the interpreter should not hold up long passages of text (by printing "[MORE]" and waiting for a keypress, for instance).
 
 
@@ -56,17 +56,17 @@ Mouse support is optional but can be provided in Versions 5 and later.
 
 // [[section-4]]
 [[p10.3.1]]
-[.red]##§10.3.1.##
+[.red]##§{nbsp}10.3.1.##{nbsp}{nbsp}
 In a game which wishes to use the mouse, bit 5 of 'Flags 2' in the header should be set in the story file. If it wishes to read the mouse position after clicks, it must provide at least the first two words of a header extension table. (Note that Inform 6.12 and later always provide a header extension table at least this large, but Inform 6.11 and earlier never provide an extension table at all.)
 
 // [[section-5]]
 [[p10.3.1.1]]
-[.red]##§10.3.1.1.##
+[.red]##§{nbsp}10.3.1.1.##{nbsp}{nbsp}
 If the interpreter cannot offer mouse support, then it should clear bit 5 of 'Flags 2' to signal this to the game.
 
 // [[section-6]]
 [[p10.3.2]]
-[.red]##§10.3.2.##
+[.red]##§{nbsp}10.3.2.##{nbsp}{nbsp}
 Whenever a mouse click takes place (and provided the header extension table exists and contains at least 2 words) the interpreter should update the coordinates as follows:
 
 ....
@@ -76,12 +76,12 @@ Whenever a mouse click takes place (and provided the header extension table exis
 
 // [[section-7]]
 [[p10.3.3]]
-[.red]##§10.3.3.##
+[.red]##§{nbsp}10.3.3.##{nbsp}{nbsp}
 The mouse is presumed to have between 0 and 16 buttons. The state of these buttons can be read by the *read_mouse* opcode in Version 6. Otherwise, mouse clicks are treated as keyboard input codes (see below).
 
 // [[section-8]]
 [[p10.3.4]]
-[.red]##§10.3.4.##
+[.red]##§{nbsp}10.3.4.##{nbsp}{nbsp}
 In Version 6, the mouse can either be free or constrained to one of the 8 windows: if so, clicks outside the 'mouse window' must be ignored, and the interpreter is at liberty to confine the mouse's movement to the boundary of its window.
 
 
@@ -93,22 +93,22 @@ Menu support can optionally be provided in Version 6.
 
 // [[section-9]]
 [[p10.4.1]]
-[.red]##§10.4.1.##
+[.red]##§{nbsp}10.4.1.##{nbsp}{nbsp}
 In a game which wishes to use menus, bit 8 of 'Flags 2' in the header should be set in the story file.
 
 // [[section-10]]
 [[p10.4.1.1]]
-[.red]##§10.4.1.1.##
+[.red]##§{nbsp}10.4.1.1.##{nbsp}{nbsp}
 If the interpreter cannot offer menu support, then it should clear bit 8 of 'Flags 2' to signal this to the game.
 
 // [[section-11]]
 [[p10.4.2]]
-[.red]##§10.4.2.##
+[.red]##§{nbsp}10.4.2.##{nbsp}{nbsp}
 Menus are numbered from 0 upwards. 0, 1 and 2 are reserved for the interpreter to manage (this system has only been implemented on the Macintosh, wherein 0 is the Apple menu, 1 the File menu and 2 the Edit menu). Menus numbered 3 and upwards can be created or removed with the *make_menu* opcode.
 
 // [[section-12]]
 [[p10.4.3]]
-[.red]##§10.4.3.##
+[.red]##§{nbsp}10.4.3.##{nbsp}{nbsp}
 Menu selection is reported to the game as a keypress (see below). Details of what selection has been made are read with *read_mouse*.
 
 
@@ -120,22 +120,22 @@ Whole commands are read from the input stream using the *read* opcode. (Note tha
 
 // [[section-13]]
 [[p10.5.1]]
-[.red]##§10.5.1.##
+[.red]##§{nbsp}10.5.1.##{nbsp}{nbsp}
 In Versions 1 to 3, the interpreter must redisplay the status line before it begins accepting input.
 
 // [[section-14]]
 [[p10.5.2]]
-[.red]##§10.5.2.##
+[.red]##§{nbsp}10.5.2.##{nbsp}{nbsp}
 Commands are normally terminated by a new-line (a carriage return or a line feed as appropriate for the machine's keyboard or file format).
 
 // [[section-15]]
 [[p10.5.2.1]]
-[.red]##§10.5.2.1.##
+[.red]##§{nbsp}10.5.2.1.##{nbsp}{nbsp}
 In Versions 5 and later, the game may provide a "terminating characters table" by giving its byte address in the word at *$2e* in the header. This table is a zero-terminated list of input character codes which cause *aread* to finish the command (in addition to new-line). Only function key codes are permitted: these are defined as those between 129 and 154 inclusive, together with 252, 253 and 254. The special value 255 means "any function key code is terminating".
 
 // [[section-16]]
 [[p10.5.3]]
-[.red]##§10.5.3.##
+[.red]##§{nbsp}10.5.3.##{nbsp}{nbsp}
 ****[1.0]* In Versions 4 and later, an interpreter should ideally be able to time input and to call a (game) routine at periodic intervals: see the *read* opcode. If it is able to do this, it should set bit 7 of 'Flags 1' in the header.
 
 
@@ -153,17 +153,17 @@ The only characters which can be read from the keyboard are ZSCII characters def
 
 // [[section-17]]
 [[p10.7.1]]
-[.red]##§10.7.1.##
+[.red]##§{nbsp}10.7.1.##{nbsp}{nbsp}
 Every ZSCII character defined for input can be returned by *read_char*.
 
 // [[section-18]]
 [[p10.7.2]]
-[.red]##§10.7.2.##
+[.red]##§{nbsp}10.7.2.##{nbsp}{nbsp}
 Only ZSCII characters defined for both input and output can be stored in the text buffer supplied to the *read* opcode.
 
 // [[section-19]]
 [[p10.7.3]]
-[.red]##§10.7.3.##
+[.red]##§{nbsp}10.7.3.##{nbsp}{nbsp}
 The "escape" code is optional: that is, an interpreter need not provide an escape key. (The Inform library clears and quits menus if this code is returned to *read_char*.)
 
 

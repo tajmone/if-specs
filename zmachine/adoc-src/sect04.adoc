@@ -42,17 +42,17 @@ There are four 'types' of operand. These are often specified by a number stored 
 
 // [[section]]
 [[p4.2.1]]
-[.red]##§4.2.1.##
+[.red]##§{nbsp}4.2.1.##{nbsp}{nbsp}
 Large constants, like all 2-byte words of data in the Z-machine, are stored with most significant byte first (e.g. *$2478* is stored as *$24* followed by *$78*). A 'large constant' may in fact be a small number.
 
 // [[section-1]]
 [[p4.2.2]]
-[.red]##§4.2.2.##
+[.red]##§{nbsp}4.2.2.##{nbsp}{nbsp}
 Variable number *$00* refers to the top of the stack, *$01* to *$0f* mean the local variables of the current routine and *$10* to *$ff* mean the global variables. It is illegal to refer to local variables which do not exist for the current routine (there may even be none).
 
 // [[section-2]]
 [[p4.2.3]]
-[.red]##§4.2.3.##
+[.red]##§{nbsp}4.2.3.##{nbsp}{nbsp}
 The type 'Variable' really means "variable by value". Some instructions take as an operand a "variable by reference": for instance, *inc* has one operand, the reference number of a variable to increment. This operand usually has type 'Small constant' (and Inform automatically assembles a line like *@inc turns* by writing the operand *turns* as a small constant with value the reference number of the variable *turns*).
 
 
@@ -64,22 +64,22 @@ Each instruction has a form (long, short, extended or variable) and an operand c
 
 // [[section-3]]
 [[p4.3.1]]
-[.red]##§4.3.1.##
+[.red]##§{nbsp}4.3.1.##{nbsp}{nbsp}
 In short form, bits 4 and 5 of the opcode byte give an operand type as above. If this is *$11* then the operand count is 0OP; otherwise, 1OP. In either case the opcode number is given in the bottom 4 bits.
 
 // [[section-4]]
 [[p4.3.2]]
-[.red]##§4.3.2.##
+[.red]##§{nbsp}4.3.2.##{nbsp}{nbsp}
 In long form the operand count is always 2OP. The opcode number is given in the bottom 5 bits.
 
 // [[section-5]]
 [[p4.3.3]]
-[.red]##§4.3.3.##
+[.red]##§{nbsp}4.3.3.##{nbsp}{nbsp}
 In variable form, if bit 5 is 0 then the count is 2OP; if it is 1, then the count is VAR. The opcode number is given in the bottom 5 bits.
 
 // [[section-6]]
 [[p4.3.4]]
-[.red]##§4.3.4.##
+[.red]##§{nbsp}4.3.4.##{nbsp}{nbsp}
 In extended form, the operand count is VAR. The opcode number is given in a second opcode byte.
 
 // [[four]]
@@ -90,22 +90,22 @@ Next, the types of the operands are specified.
 
 // [[section-7]]
 [[p4.4.1]]
-[.red]##§4.4.1.##
+[.red]##§{nbsp}4.4.1.##{nbsp}{nbsp}
 In short form, bits 4 and 5 of the opcode give the type.
 
 // [[section-8]]
 [[p4.4.2]]
-[.red]##§4.4.2.##
+[.red]##§{nbsp}4.4.2.##{nbsp}{nbsp}
 In long form, bit 6 of the opcode gives the type of the first operand, bit 5 of the second. A value of 0 means a small constant and 1 means a variable. (If a 2OP instruction needs a large constant as operand, then it should be assembled in variable rather than long form.)
 
 // [[section-9]]
 [[p4.4.3]]
-[.red]##§4.4.3.##
+[.red]##§{nbsp}4.4.3.##{nbsp}{nbsp}
 In variable or extended forms, a byte of 4 operand types is given next. This contains 4 2-bit fields: bits 6 and 7 are the first field, bits 0 and 1 the fourth. The values are operand types as above. Once one type has been given as 'omitted', all subsequent ones must be. Example: *$$00101111* means large constant followed by variable (and no third or fourth opcode).
 
 // [[section-10]]
 [[p4.4.3.1]]
-[.red]##§4.4.3.1.##
+[.red]##§{nbsp}4.4.3.1.##{nbsp}{nbsp}
 In the special case of the "double variable" VAR opcodes *call_vs2* and *call_vn2* (opcode numbers 12 and 26), a second byte of types is given, containing the types for the next four operands.
 
 // [[five]]
@@ -116,12 +116,12 @@ The operands are given next. Operand counts of 0OP, 1OP or 2OP require 0, 1 or 2
 
 // [[section-11]]
 [[p4.5.1]]
-[.red]##§4.5.1.##
+[.red]##§{nbsp}4.5.1.##{nbsp}{nbsp}
 Note that only *call_vs2* and *call_vn2* can have more than 4 operands, and no instruction can have more than 8.
 
 // [[section-12]]
 [[p4.5.2]]
-[.red]##§4.5.2.##
+[.red]##§{nbsp}4.5.2.##{nbsp}{nbsp}
 Opcode operands are always evaluated from first to last - this order is important when the stack pointer appears as an argument. Thus
 
 ....
@@ -145,12 +145,12 @@ Instructions which test a condition are called "branch" instructions. The branch
 
 // [[section-13]]
 [[p4.7.1]]
-[.red]##§4.7.1.##
+[.red]##§{nbsp}4.7.1.##{nbsp}{nbsp}
 An offset of 0 means "return false from the current routine", and 1 means "return true from the current routine".
 
 // [[section-14]]
 [[p4.7.2]]
-[.red]##§4.7.2.##
+[.red]##§{nbsp}4.7.2.##{nbsp}{nbsp}
 Otherwise, a branch moves execution to the instruction at address
 
 ....

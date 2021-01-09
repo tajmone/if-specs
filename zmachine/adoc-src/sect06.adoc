@@ -21,47 +21,47 @@ The "state of play" is defined as the following: the contents of dynamic memory;
 
 // [[section]]
 [[p6.1.1]]
-[.red]##§6.1.1.##
+[.red]##§{nbsp}6.1.1.##{nbsp}{nbsp}
 The entire state of play must be stored when the game is saved.
 
 // [[section-1]]
 [[p6.1.1.1]]
-[.red]##§6.1.1.1.##
+[.red]##§{nbsp}6.1.1.1.##{nbsp}{nbsp}
 The format of a saved game file is not specified.
 
 // [[section-2]]
 [[p6.1.1.2]]
-[.red]##§6.1.1.2.##
+[.red]##§{nbsp}6.1.1.2.##{nbsp}{nbsp}
 An internal saved game for "undo" purposes (if there is one) is not part of the state of play. This is important: if a saved game file also contained the internal saved game at the time of saving, it would be impossible to undo the act of restoration. It also prevents internal saved games from growing larger and larger as they include their predecessors.
 
 // [[section-3]]
 [[p6.1.1.3]]
-[.red]##§6.1.1.3.##
+[.red]##§{nbsp}6.1.1.3.##{nbsp}{nbsp}
 It is illegal to save the game (either with *save* or *save_undo*) during an "interrupt routine" (one coming about through timed input, sound effect termination or newline interrupts). Therefore saved games need not store information capable of restoring such a position.
 
 // [[section-4]]
 [[p6.1.2]]
-[.red]##§6.1.2.##
+[.red]##§{nbsp}6.1.2.##{nbsp}{nbsp}
 On a "restore" or "undo" (which restores a game saved into internal memory), the entire state of play is written back except that 'Flags 2' in the header is preserved. (This information includes whether the game is being transcribed to printer and whether a fixed-pitch font is being used.)
 
 // [[section-5]]
 [[p6.1.2.1]]
-[.red]##§6.1.2.1.##
+[.red]##§{nbsp}6.1.2.1.##{nbsp}{nbsp}
 Before a "restore", an interpreter should check that the file to be used has been saved from the same game currently being played. (See remark below.)
 
 // [[section-6]]
 [[p6.1.2.2]]
-[.red]##§6.1.2.2.##
+[.red]##§{nbsp}6.1.2.2.##{nbsp}{nbsp}
 After a "restore" or "undo", an interpreter should reset the header values marked *Rst* in the header table of *S* 11. (It should not be assumed that the game was saved by the same interpreter.)
 
 // [[section-7]]
 [[p6.1.3]]
-[.red]##§6.1.3.##
+[.red]##§{nbsp}6.1.3.##{nbsp}{nbsp}
 A "restart" is similar: the entire state is restored from the original story file, and the stack is emptied; but 'Flags 2' is preserved; and the interpreter should reset the *Rst* parts of the header.
 
 // [[section-8]]
 [[p6.1.4]]
-[.red]##§6.1.4.##
+[.red]##§{nbsp}6.1.4.##{nbsp}{nbsp}
 In Versions 5 and later, an interpreter unable to save the game state into internal memory (for "undo" purposes) must clear bit 4 of 'Flags 2' in the header.
 
 
@@ -80,17 +80,17 @@ Writing to the stack pointer (variable number *$00*) pushes a value onto the sta
 
 // [[section-9]]
 [[p6.3.1]]
-[.red]##§6.3.1.##
+[.red]##§{nbsp}6.3.1.##{nbsp}{nbsp}
 The stack is considered as empty at the start of each routine: it is illegal to pull values from it unless values have first been pushed on.
 
 // [[section-10]]
 [[p6.3.2]]
-[.red]##§6.3.2.##
+[.red]##§{nbsp}6.3.2.##{nbsp}{nbsp}
 The stack is left empty at the end of each routine: when a return occurs, any values pushed during the routine are thrown away.
 
 // [[section-11]]
 [[p6.3.3]]
-[.red]##§6.3.3.##
+[.red]##§{nbsp}6.3.3.##{nbsp}{nbsp}
 The absolute minimum standard for stack size is defined as:
 
 let the 'usage' of a routine call be 4 plus the number of local variables it has. During a game the total of the usages for each routine in the recursive chain of routines being called, plus the game's own stack usage, can be assumed to never reach 1024.
@@ -101,7 +101,7 @@ Two examples of modern interpreters with increased stack size are *Windows Frotz
 
 // [[section-12]]
 [[p6.3.4]]
-[.red]##§6.3.4.##
+[.red]##§{nbsp}6.3.4.##{nbsp}{nbsp}
 In the seven opcodes that take indirect variable references (*inc*, *dec*, *inc_chk*, *dec_chk*, *load*, *store*, *pull*), an indirect reference to the stack pointer does not push or pull the top item of the stack - it is read or written in place.
 
 
@@ -113,32 +113,32 @@ Routine calls occur in the following circumstances: when one of the *call...* op
 
 // [[section-13]]
 [[p6.4.1]]
-[.red]##§6.4.1.##
+[.red]##§{nbsp}6.4.1.##{nbsp}{nbsp}
 A routine call may have any number of arguments, from 0 to 3 (in Versions 1 to 3) or 0 to 7 (Versions 4 and later). All routines return a value (though sometimes this value is thrown away afterward: for example by opcodes in the form *call_vn**).
 
 // [[section-14]]
 [[p6.4.2]]
-[.red]##§6.4.2.##
+[.red]##§{nbsp}6.4.2.##{nbsp}{nbsp}
 Routine calls preserve local variables and the stack (except when the return value is stored in a local variable or onto the top of the stack).
 
 // [[section-15]]
 [[p6.4.3]]
-[.red]##§6.4.3.##
+[.red]##§{nbsp}6.4.3.##{nbsp}{nbsp}
 A routine call to packed address 0 is legal: it does nothing and returns false (0). Otherwise it is illegal to call a packed address where no routine is present.
 
 // [[section-16]]
 [[p6.4.4]]
-[.red]##§6.4.4.##
+[.red]##§{nbsp}6.4.4.##{nbsp}{nbsp}
 When a routine is called, its local variables are created with initial values taken from the routine header (Versions 1 to 4) or with initial value 0 (Versions 5 and later). Next, the arguments are written into the local variables (argument 1 into local 1 and so on).
 
 // [[section-17]]
 [[p6.4.4.1]]
-[.red]##§6.4.4.1.##
+[.red]##§{nbsp}6.4.4.1.##{nbsp}{nbsp}
 It is legal for there to be more arguments than local variables (any spare arguments are thrown away) or for there to be fewer.
 
 // [[section-18]]
 [[p6.4.5]]
-[.red]##§6.4.5.##
+[.red]##§{nbsp}6.4.5.##{nbsp}{nbsp}
 The return value of a routine can be any Z-machine number. Returning 'false' means returning 0; returning 'true' means returning 1.
 
 

@@ -34,7 +34,7 @@ The keyboard input codes are "word-separators": typically (and under Inform mand
 
 // [[section]]
 [[p13.2.1]]
-[.red]##§13.2.1.##
+[.red]##§{nbsp}13.2.1.##{nbsp}{nbsp}
 Note that the word-separators table can only contain codes which are defined in ZSCII for both input and output.
 
 
@@ -74,7 +74,7 @@ Lexical analysis takes place in two circumstances: on request of a *tokenise* op
 
 // [[section-1]]
 [[p13.6.1]]
-[.red]##§13.6.1.##
+[.red]##§{nbsp}13.6.1.##{nbsp}{nbsp}
 First, the text is broken up into words. Spaces divide up words and are otherwise ignored. Word separators also divide words, but each one of them is considered a word in its own right. Thus, the erratically-spaced text "fred,go fishing" is divided into four words:
 
 ....
@@ -83,12 +83,12 @@ fred / , / go / fishing
 
 // [[section-2]]
 [[p13.6.2]]
-[.red]##§13.6.2.##
+[.red]##§{nbsp}13.6.2.##{nbsp}{nbsp}
 Each word is then encoded as a Z-machine string in dictionary form, and searched for in the dictionary.
 
 // [[section-3]]
 [[p13.6.3]]
-[.red]##§13.6.3.##
+[.red]##§{nbsp}13.6.3.##{nbsp}{nbsp}
 A "parse table" is then written, recording the number of words, the length and position of each word and the dictionary address of each word which is recognised. For the format, see the *read* opcode.
 
 

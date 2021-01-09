@@ -226,22 +226,22 @@ Formally, it is illegal for a game to contain an opcode not specified for its ve
 
 // [[section]]
 [[p14.2.1]]
-[.red]##§14.2.1.##
+[.red]##§{nbsp}14.2.1.##{nbsp}{nbsp}
 However, extended opcodes in the range EXT:29 to EXT:255 should be simply ignored (perhaps with a warning message somewhere off-screen).
 
 // [[section-1]]
 [[p14.2.2]]
-[.red]##§14.2.2.##
+[.red]##§{nbsp}14.2.2.##{nbsp}{nbsp}
 ****[1.0][1.1]* EXT:11 and EXT:12 were opcodes added in Standard 1.0 and can be generated in code compiled by Inform 6.12 or later. EXT:13 and EXT:29 are new in Standard 1.1. EXT:14 to EXT:15, and EXT:30 to EXT:127, are reserved for future versions of this document to specify.
 
 // [[section-2]]
 [[p14.2.3]]
-[.red]##§14.2.3.##
+[.red]##§{nbsp}14.2.3.##{nbsp}{nbsp}
 Designers who wish to create their own "new" opcodes, for one specific game only, are asked to use opcode numbers in the range EXT:128 to EXT:255. It is easy to modify Inform to name and assemble such opcodes. (Of course the game will then have to be circulated with a suitably modified interpreter to run it.)
 
 // [[section-3]]
 [[p14.2.4]]
-[.red]##§14.2.4.##
+[.red]##§{nbsp}14.2.4.##{nbsp}{nbsp}
 Interpreter-writers should ideally make this easy by providing a routine which is called if EXT:128 to EXT:255 are found, so that the minimum possible modification to the interpreter is needed.
 
 '''''

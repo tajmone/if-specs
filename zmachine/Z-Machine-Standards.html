@@ -1137,27 +1137,27 @@ l0010: print_ret       "That's difficult unless your eyes are prehensile."</pre>
 <p>The memory map of the Z-machine is an array of bytes with "byte addresses" running from 0 upwards. This is divided into three regions: "dynamic", "static" and "high". Dynamic memory begins from byte address <strong>$00000</strong> and runs up to the byte before the byte address stored in the word at <strong>$0e</strong> in the header. (Dynamic memory must contain at least 64 bytes.) Static memory follows immediately on. Its extent is not defined in the header (or anywhere else), though it must end by the last byte of the story file or by byte address <strong>$0ffff</strong> (whichever is lower). High memory begins at the "high memory mark" (the byte address stored in the word at <strong>$04</strong> in the header) and continues to the end of the story file. The bottom of high memory may overlap with the top of static memory (but not with dynamic memory).</p>
 </div>
 <div id="p1.1.1" class="paragraph">
-<p><span class="red">§1.1.1.</span>
+<p><span class="red">§&#160;1.1.1.</span>&#160;&#160;
 Dynamic memory can be read or written to (either directly, using <strong>loadb</strong>, <strong>loadw</strong>, <strong>storeb</strong> and <strong>storew</strong>, or indirectly with opcodes such as <strong>insert_obj</strong> and <strong>remove_obj</strong>).</p>
 </div>
 <div id="p1.1.1.1" class="paragraph">
-<p><span class="red">§1.1.1.1.</span>
+<p><span class="red">§&#160;1.1.1.1.</span>&#160;&#160;
 By tradition, the first 64 bytes are known as the "header". The contents of this are given later but note that games are not permitted to alter many bits inside it.</p>
 </div>
 <div id="p1.1.1.2" class="paragraph">
-<p><span class="red">§1.1.1.2.</span>
+<p><span class="red">§&#160;1.1.1.2.</span>&#160;&#160;
 It is legal for games to alter any of the tables stored in dynamic memory above the header, provided they leave the tables in legal states.</p>
 </div>
 <div id="p1.1.2" class="paragraph">
-<p><span class="red">§1.1.2.</span>
+<p><span class="red">§&#160;1.1.2.</span>&#160;&#160;
 Static memory can be read using the opcodes <strong>loadb</strong> and <strong>loadw</strong>. It is illegal for a game to attempt to write to static memory.</p>
 </div>
 <div id="p1.1.3" class="paragraph">
-<p><span class="red">§1.1.3.</span>
+<p><span class="red">§&#160;1.1.3.</span>&#160;&#160;
 Except for its (possible) overlap with static memory, high memory cannot be directly accessed at all by a game program. It contains routines, which can be called, and strings, which can be printed using <strong>print_paddr</strong>.</p>
 </div>
 <div id="p1.1.4" class="paragraph">
-<p><span class="red">§1.1.4.</span>
+<p><span class="red">§&#160;1.1.4.</span>&#160;&#160;
 The maximum permitted length of a story file depends on the Version, as follows:</p>
 </div>
 <div class="literalblock">
@@ -1173,15 +1173,15 @@ The maximum permitted length of a story file depends on the Version, as follows:
 <p>There are three kinds of address in the Z-machine, all of which can be stored in a 2-byte number: byte addresses, word addresses and packed addresses.</p>
 </div>
 <div id="p1.2.1" class="paragraph">
-<p><span class="red">§1.2.1.</span>
+<p><span class="red">§&#160;1.2.1.</span>&#160;&#160;
 A byte address specifies a byte in memory in the range 0 up to the last byte of static memory.</p>
 </div>
 <div id="p1.2.2" class="paragraph">
-<p><span class="red">§1.2.2.</span>
+<p><span class="red">§&#160;1.2.2.</span>&#160;&#160;
 A word address specifies an even address in the bottom 128K of memory (by giving the address divided by 2). (Word addresses are used only in the abbreviations table.)</p>
 </div>
 <div id="p1.2.3" class="paragraph">
-<p><span class="red">§1.2.3.</span>
+<p><span class="red">§&#160;1.2.3.</span>&#160;&#160;
 <strong>*</strong>*[1.0]* A packed address specifies where a routine or string begins in high memory. Given a packed address <em>P</em>, the formula to obtain the corresponding byte address <em>B</em> is:</p>
 </div>
 <div class="hdlist">
@@ -1352,18 +1352,18 @@ A word address specifies an even address in the bottom 128K of memory (by giving
 <p>These values are sometimes regarded as signed, in the range -32768 to 32767. In effect -n is stored as 65536-n and so the top bit is the sign bit.</p>
 </div>
 <div id="p2.2.1" class="paragraph">
-<p><span class="red">§2.2.1.</span>
+<p><span class="red">§&#160;2.2.1.</span>&#160;&#160;
 The operations of numerical comparison, multiplication, addition, subtraction, division, remainder-after-division and printing of numbers are signed; bitwise operations are unsigned. (In particular, since comparison is signed, it is unsafe to compare two addresses using simply <strong>jl</strong> and <strong>jg</strong>.)</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="s2.3"><a class="anchor" href="#s2.3"></a>2.3. Arithmetic errors</h3>
 <div id="p2.3.1" class="paragraph">
-<p><span class="red">§2.3.1.</span>
+<p><span class="red">§&#160;2.3.1.</span>&#160;&#160;
 It is illegal to divide by 0 (or to ask for remainder after division by 0) and an interpreter should halt with an error message if this occurs.</p>
 </div>
 <div id="p2.3.2" class="paragraph">
-<p><span class="red">§2.3.2.</span>
+<p><span class="red">§&#160;2.3.2.</span>&#160;&#160;
 Formally it has never been specified what the result of an out-of-range calculation should be. The author suggests that the result should be reduced modulo <strong>$10000</strong>.</p>
 </div>
 </div>
@@ -1373,15 +1373,15 @@ Formally it has never been specified what the result of an out-of-range calculat
 <p>The Z-machine needs a random number generator which at any time has one of two states, "random" and "predictable". When the game starts or restarts the state becomes "random". Ideally the generator should not produce identical sequences after each restart.</p>
 </div>
 <div id="p2.4.1" class="paragraph">
-<p><span class="red">§2.4.1.</span>
+<p><span class="red">§&#160;2.4.1.</span>&#160;&#160;
 When "random", it must be capable of generating a uniformly random integer in the range 1 &#8656; x &#8656; n, for any value 1 &#8656; n &#8656; 32767. Any method can be used for this (for instance, using the host computer&#8217;s clock time in milliseconds). The uniformity of randomness should be optimised for low values of n (say, up to 100 or so) and it is especially important to avoid regular patterns appearing in remainders after division (most crudely, being alternately odd and even).</p>
 </div>
 <div id="p2.4.2" class="paragraph">
-<p><span class="red">§2.4.2.</span>
+<p><span class="red">§&#160;2.4.2.</span>&#160;&#160;
 The generator is switched into "predictable" state with a seed value. On any two occasions when the same seed is sown, identical sequences of values must result (for an indefinite period) until the generator is switched back into "random" mode. The generator should cope well with very low seed values, such as 10, and should not depend on the seed containing many non-zero bits.</p>
 </div>
 <div id="p2.4.3" class="paragraph">
-<p><span class="red">§2.4.3.</span>
+<p><span class="red">§&#160;2.4.3.</span>&#160;&#160;
 The interpreter is permitted to switch between these states on request of the player. (This is useful for testing purposes.)</p>
 </div>
 </div>
@@ -1448,7 +1448,9 @@ This technique is similar to the five-bit Baudot code, which was used by early T
 <div class="sect2">
 <h3 id="s3.1"><a class="anchor" href="#s3.1"></a>3.1. Text</h3>
 <div class="paragraph">
-<p>Z-machine text is a sequence of ZSCII character codes (ZSCII is a system similar to ASCII: see <strong>S</strong> 3.8 below). These ZSCII values are encoded into memory using a string of Z-characters. The process of converting between Z-characters and ZSCII values is given in <strong>SS</strong> 3.2 to 3.7 below.</p>
+<p>Z-machine text is a sequence of ZSCII character codes (ZSCII is a system similar to ASCII: see <a href="#s3.8">§&#160;3.8</a> below).
+These ZSCII values are encoded into memory using a string of Z-characters.
+The process of converting between Z-characters and ZSCII values is given in <a href="#s3.2">§§&#160;3.2</a> to <a href="#s3.7">3.7</a> below.</p>
 </div>
 </div>
 <div class="sect2">
@@ -1490,11 +1492,11 @@ This technique is similar to the five-bit Baudot code, which was used by early T
 <p>The bit is set only on the last 2-byte word of the text, and so marks the end.</p>
 </div>
 <div id="p3.2.1" class="paragraph">
-<p><span class="red">§3.2.1.</span>
+<p><span class="red">§&#160;3.2.1.</span>&#160;&#160;
 There are three 'alphabets', A0 (lower case), A1 (upper case) and A2 (punctuation) and during printing one of these is current at any given time. Initially A0 is current. The meaning of a Z-character may depend on which alphabet is current.</p>
 </div>
 <div id="p3.2.2" class="paragraph">
-<p><span class="red">§3.2.2.</span>
+<p><span class="red">§&#160;3.2.2.</span>&#160;&#160;
 In Versions 1 and 2, the current alphabet can be any of the three. The Z-characters 2 and 3 are called 'shift' characters and change the alphabet for the next character only. The new alphabet depends on what the current one is:</p>
 </div>
 <div class="literalblock">
@@ -1508,11 +1510,11 @@ In Versions 1 and 2, the current alphabet can be any of the three. The Z-charact
 <p>Z-characters 4 and 5 permanently change alphabet, according to the same table, and are called 'shift lock' characters.</p>
 </div>
 <div id="p3.2.3" class="paragraph">
-<p><span class="red">§3.2.3.</span>
+<p><span class="red">§&#160;3.2.3.</span>&#160;&#160;
 In Versions 3 and later, the current alphabet is always A0 unless changed for 1 character only: Z-characters 4 and 5 are shift characters. Thus 4 means "the next character is in A1" and 5 means "the next is in A2". There are no shift lock characters.</p>
 </div>
 <div id="p3.2.4" class="paragraph">
-<p><span class="red">§3.2.4.</span>
+<p><span class="red">§&#160;3.2.4.</span>&#160;&#160;
 An indefinite sequence of shift or shift lock characters is legal (but prints nothing).</p>
 </div>
 </div>
@@ -1522,7 +1524,7 @@ An indefinite sequence of shift or shift lock characters is legal (but prints no
 <p>In Versions 3 and later, Z-characters 1, 2 and 3 represent abbreviations, sometimes also called 'synonyms' (for traditional reasons): the next Z-character indicates which abbreviation string to print. If z is the first Z-character (1, 2 or 3) and x the subsequent one, then the interpreter must look up entry 32(z-1)+x in the abbreviations table and print the string at that word address. In Version 2, Z-character 1 has this effect (but 2 and 3 do not, so there are only 32 abbreviations).</p>
 </div>
 <div id="p3.3.1" class="paragraph">
-<p><span class="red">§3.3.1.</span>
+<p><span class="red">§&#160;3.3.1.</span>&#160;&#160;
 Abbreviation string-printing follows all the rules of this section except that an abbreviation string must not itself use abbreviations and must not end with an incomplete multi-Z-character construction (see <strong>S</strong> 3.6.1 below).</p>
 </div>
 </div>
@@ -1538,15 +1540,15 @@ Abbreviation string-printing follows all the rules of this section except that a
 <p>The remaining Z-characters are translated into ZSCII character codes using the "alphabet table".</p>
 </div>
 <div id="p3.5.1" class="paragraph">
-<p><span class="red">§3.5.1.</span>
+<p><span class="red">§&#160;3.5.1.</span>&#160;&#160;
 The Z-character 0 is printed as a space (ZSCII 32).</p>
 </div>
 <div id="p3.5.2" class="paragraph">
-<p><span class="red">§3.5.2.</span>
+<p><span class="red">§&#160;3.5.2.</span>&#160;&#160;
 In Version 1, Z-character 1 is printed as a new-line (ZSCII 13).</p>
 </div>
 <div id="p3.5.3" class="paragraph">
-<p><span class="red">§3.5.3.</span>
+<p><span class="red">§&#160;3.5.3.</span>&#160;&#160;
 In Versions 2 to 4, the alphabet table for converting Z-characters into ZSCII character codes is as follows:</p>
 </div>
 <div class="literalblock">
@@ -1563,7 +1565,7 @@ current   --------------------------
 <p>(Character 6 in A2 is printed as a space here, but is not translated using the alphabet table: see <strong>S</strong> 3.4 above. Character 7 in A2, written here as a circumflex <strong>^</strong>, is a new-line.) For example, in alphabet A1 the Z-character 12 is translated as a capital G (ZSCII character code 71).</p>
 </div>
 <div id="p3.5.4" class="paragraph">
-<p><span class="red">§3.5.4.</span>
+<p><span class="red">§&#160;3.5.4.</span>&#160;&#160;
 Version 1 has a slightly different A2 row in its alphabet table (new-line is not needed, making room for the <strong>&lt;</strong> character):</p>
 </div>
 <div class="literalblock">
@@ -1575,11 +1577,11 @@ Version 1 has a slightly different A2 row in its alphabet table (new-line is not
 </div>
 </div>
 <div id="p3.5.5" class="paragraph">
-<p><span class="red">§3.5.5.</span>
+<p><span class="red">§&#160;3.5.5.</span>&#160;&#160;
 In Versions 5 and later, the interpreter should look at the word at <strong>$34</strong> in the header. If this is zero, then the alphabet table drawn out in <strong>S</strong> 3.5.3 continues in use. Otherwise it is interpreted as the byte address of an alphabet table specific to this story file.</p>
 </div>
 <div id="p3.5.5.1" class="paragraph">
-<p><span class="red">§3.5.5.1.</span>
+<p><span class="red">§&#160;3.5.5.1.</span>&#160;&#160;
 Such an alphabet table consists of 78 bytes arranged as 3 blocks of 26 ZSCII values, translating Z-characters 6 to 31 for alphabets A0, A1 and A2. Z-characters 6 and 7 of A2, however, are still translated as escape and newline codes (as above).</p>
 </div>
 </div>
@@ -1589,7 +1591,7 @@ Such an alphabet table consists of 78 bytes arranged as 3 blocks of 26 ZSCII val
 <p>Since the end-bit only comes up once every three Z-characters, a string may have to be 'padded out' with null values. This is conventionally achieved with a sequence of 5&#8217;s, though a sequence of (for example) 4&#8217;s would work equally well.</p>
 </div>
 <div id="p3.6.1" class="paragraph">
-<p><span class="red">§3.6.1.</span>
+<p><span class="red">§&#160;3.6.1.</span>&#160;&#160;
 It is legal for the string to end while a multi-Z-character construction is incomplete: for instance, after only the top half of an ASCII value has been given. The partial construction is simply ignored. (This can happen in printing dictionary words which have been guillotined to the dictionary resolution of 6 or 9 Z-characters.)</p>
 </div>
 </div>
@@ -1605,7 +1607,7 @@ It is legal for the string to end while a multi-Z-character construction is inco
 <p><strong>$48a5</strong> <strong>$14a5</strong> <strong>$94a5</strong></p>
 </div>
 <div id="p3.7.1" class="paragraph">
-<p><span class="red">§3.7.1.</span>
+<p><span class="red">§&#160;3.7.1.</span>&#160;&#160;
 In Versions 1 and 2 only, when encoding text for dictionary words, shift-lock Z-characters 4 and 5 are used instead of the single-shift Z-characters 2 and 3 when the next two characters come from the same alphabet.</p>
 </div>
 </div>
@@ -1730,39 +1732,39 @@ In Versions 1 and 2 only, when encoding text for dictionary words, shift-lock Z-
 </tbody>
 </table>
 <div id="p3.8.1" class="paragraph">
-<p><span class="red">§3.8.1.</span>
+<p><span class="red">§&#160;3.8.1.</span>&#160;&#160;
 The codes 256 to 1023 are undefined, so that for all practical purposes ZSCII is an 8-bit unsigned code.</p>
 </div>
 <div id="p3.8.2" class="paragraph">
-<p><span class="red">§3.8.2.</span>
+<p><span class="red">§&#160;3.8.2.</span>&#160;&#160;
 The codes 0 to 31 are undefined except as follows:</p>
 </div>
 <div id="p3.8.2.1" class="paragraph">
-<p><span class="red">§3.8.2.1.</span>
+<p><span class="red">§&#160;3.8.2.1.</span>&#160;&#160;
 ZSCII code 0 ("null") is defined for output but has no effect in any output stream. (It is also used as a value meaning "no character" when reporting terminating character codes, but is not formally defined for input.)</p>
 </div>
 <div id="p3.8.2.2" class="paragraph">
-<p><span class="red">§3.8.2.2.</span>
+<p><span class="red">§&#160;3.8.2.2.</span>&#160;&#160;
 ZSCII code 8 ("delete") is defined for input only.</p>
 </div>
 <div id="p3.8.2.3" class="paragraph">
-<p><span class="red">§3.8.2.3.</span>
+<p><span class="red">§&#160;3.8.2.3.</span>&#160;&#160;
 ZSCII code 9 ("tab") is defined for output in Version 6 only. At the start of a screen line this should print a paragraph indentation suitable for the font being used: if it is printed in the middle of a screen line, it should be converted to a space (Infocom&#8217;s own interpreters do not do this, however).</p>
 </div>
 <div id="p3.8.2.4" class="paragraph">
-<p><span class="red">§3.8.2.4.</span>
+<p><span class="red">§&#160;3.8.2.4.</span>&#160;&#160;
 ZSCII code 11 ("sentence space") is defined for output in Version 6 only. This should be printed as a suitable gap between two sentences (in the same way that typographers normally place larger spaces after the full stops ending sentences than after words or commas).</p>
 </div>
 <div id="p3.8.2.5" class="paragraph">
-<p><span class="red">§3.8.2.5.</span>
+<p><span class="red">§&#160;3.8.2.5.</span>&#160;&#160;
 ZSCII code 13 ("carriage return") is defined for input and output.</p>
 </div>
 <div id="p3.8.2.6" class="paragraph">
-<p><span class="red">§3.8.2.6.</span>
+<p><span class="red">§&#160;3.8.2.6.</span>&#160;&#160;
 ZSCII code 27 ("escape" or "break") is defined for input only.</p>
 </div>
 <div id="p3.8.3" class="paragraph">
-<p><span class="red">§3.8.3.</span>
+<p><span class="red">§&#160;3.8.3.</span>&#160;&#160;
 ZSCII codes between 32 ("space") and 126 ("tilde") are defined for input and output, and agree with standard ASCII (as well as all of the ISO 8859 character sets and Unicode). Specifically:</p>
 </div>
 <div class="literalblock">
@@ -1779,11 +1781,11 @@ ZSCII codes between 32 ("space") and 126 ("tilde") are defined for input and out
 <p>Note that code <strong>$23</strong> (35 decimal) is a hash mark, not a pound sign. (Code <strong>$7c</strong> (124 decimal) is a vertical stroke which is shown as <strong>!</strong> here for typesetting reasons.)</p>
 </div>
 <div id="p3.8.3.1" class="paragraph">
-<p><span class="red">§3.8.3.1.</span>
+<p><span class="red">§&#160;3.8.3.1.</span>&#160;&#160;
 ZSCII codes 127 ("delete" in some forms of ASCII) and 128 are undefined.</p>
 </div>
 <div id="p3.8.4" class="paragraph">
-<p><span class="red">§3.8.4.</span>
+<p><span class="red">§&#160;3.8.4.</span>&#160;&#160;
 ZSCII codes 129 to 154 are defined for input only:</p>
 </div>
 <div class="literalblock">
@@ -1794,65 +1796,65 @@ ZSCII codes 129 to 154 are defined for input only:</p>
 </div>
 </div>
 <div id="p3.8.5" class="paragraph">
-<p><span class="red">§3.8.5.</span>
+<p><span class="red">§&#160;3.8.5.</span>&#160;&#160;
 The block of codes between 155 and 251 are the "extra characters" and are used differently by different story files. Some will need accented Latin characters (such as French E-acute), others unusual punctuation (Spanish question mark), others new alphabets (Cyrillic or Hebrew); still others may want dingbat characters, mathematical or musical symbols, and so on.</p>
 </div>
 <div id="p3.8.5.1" class="paragraph">
-<p><span class="red">§3.8.5.1.</span>
+<p><span class="red">§&#160;3.8.5.1.</span>&#160;&#160;
 <strong>*</strong>*[1.0]* To define which characters are required, the Unicode (or ISO 10646-1) Basic Multilingual Plane character set is used: characters are specified by unsigned 16-bit codes. These values agree with ISO 8859 Latin-1 in the range 0 to 255, and with ASCII and ZSCII in the range 32 to 126. The Unicode standard leaves a range of values, the Private Use Area, free: however, an Internet group called the ConScript Unicode Registry is organising a standard mapping of invented scripts (such as Klingon, or Tolkien&#8217;s Elvish) into the Private Use Area, and this should be considered part of the Unicode standard for Z-machine purposes.</p>
 </div>
 <div class="paragraph">
 <p>The Z-machine does not provide access to non-BMP characters (ie characters outside the range U+0000 to U+FFFF).</p>
 </div>
 <div id="p3.8.5.2" class="paragraph">
-<p><span class="red">§3.8.5.2.</span>
+<p><span class="red">§&#160;3.8.5.2.</span>&#160;&#160;
 <strong>*</strong>*[1.0]* The story file chooses its stock of extra characters with a "Unicode translation table" as follows. Under Versions 1 to 4, the "default table" is always used (see below). In Version 5 or later, if Word 3 of the header extension table is present and non-zero then it is interpreted as the byte address of the Unicode translation table. If Word 3 is absent or zero, the default table is used.</p>
 </div>
 <div id="p3.8.5.2.1" class="paragraph">
-<p><span class="red">§3.8.5.2.1.</span>
+<p><span class="red">§&#160;3.8.5.2.1.</span>&#160;&#160;
 The table consists of one byte giving a number N, followed by N two-byte words.</p>
 </div>
 <div id="p3.8.5.2.2" class="paragraph">
-<p><span class="red">§3.8.5.2.2.</span>
+<p><span class="red">§&#160;3.8.5.2.2.</span>&#160;&#160;
 This indicates that ZSCII characters 155 to 155+N-1 are defined for both input and output. (It&#8217;s possible for N to be zero, leaving the whole range 155 to 251 undefined.)</p>
 </div>
 <div id="p3.8.5.2.3" class="paragraph">
-<p><span class="red">§3.8.5.2.3.</span>
+<p><span class="red">§&#160;3.8.5.2.3.</span>&#160;&#160;
 The words in the table give Unicode character codes for each of the ZSCII characters 155 to 155+N-1 in turn.</p>
 </div>
 <div id="p3.8.5.3" class="paragraph">
-<p><span class="red">§3.8.5.3.</span>
+<p><span class="red">§&#160;3.8.5.3.</span>&#160;&#160;
 The default table is as shown in Table 1.</p>
 </div>
 <div id="p3.8.5.4" class="paragraph">
-<p><span class="red">§3.8.5.4.</span>
+<p><span class="red">§&#160;3.8.5.4.</span>&#160;&#160;
 The defined extra characters are entirely normal ZSCII characters. They can appear in a story file&#8217;s alphabet table, in an array created by print stream 3 and so on.</p>
 </div>
 <div id="p3.8.5.4.1" class="paragraph">
-<p><span class="red">§3.8.5.4.1.</span>
+<p><span class="red">§&#160;3.8.5.4.1.</span>&#160;&#160;
 <strong>*</strong>*[1.0]* The interpreter is required to be able to print representations of every defined Unicode character under <strong>$0100</strong> (i.e. of every defined ISO 8859-1 Latin1 character). If no suitable letter forms are available, textual equivalents may be used (such as "ss" in place of German sharp "s").</p>
 </div>
 <div id="p3.8.5.4.2" class="paragraph">
-<p><span class="red">§3.8.5.4.2.</span>
+<p><span class="red">§&#160;3.8.5.4.2.</span>&#160;&#160;
 Normally, and where sensibly possible, all punctuation and letter characters in ISO 8859-1 Latin1 should be readable from the interpreter&#8217;s keyboard. (However, some interpreters may want to provide alternative keyboard mappings, or to run in a different ISO 8859 set: Cyrillic, for example.)</p>
 </div>
 <div id="p3.8.5.4.3" class="paragraph">
-<p><span class="red">§3.8.5.4.3.</span>
+<p><span class="red">§&#160;3.8.5.4.3.</span>&#160;&#160;
 <strong>*</strong>*[1.0]* An interpreter is not required to have suitable letter-forms for printing Unicode characters <strong>$0100</strong> to <strong>$FFFF</strong>. (It may, if it chooses, allow the user to configure certain fonts for certain Unicode ranges; but this is not required.) If a Unicode character must be printed which an interpreter has no letter-form for, a question mark should be printed instead.</p>
 </div>
 <div id="p3.8.5.4.4" class="paragraph">
-<p><span class="red">§3.8.5.4.4.</span>
+<p><span class="red">§&#160;3.8.5.4.4.</span>&#160;&#160;
 The Z-machine is not required to handle complex Unicode formatting like combining characters, bidirectional formatting and unusual line-wrapping rules.</p>
 </div>
 <div class="paragraph">
 <p>In Versions other than 6, interpreters may either handle these features, or not, in window 0. In window 1, and all version 6 windows, they should be ignored.</p>
 </div>
 <div id="p3.8.5.4.5" class="paragraph">
-<p><span class="red">§3.8.5.4.5.</span>
+<p><span class="red">§&#160;3.8.5.4.5.</span>&#160;&#160;
 Unicode characters U+0000 to U+001F and U+007F to U+009F are control codes, and must not be used.</p>
 </div>
 <div id="p3.8.6" class="paragraph">
-<p><span class="red">§3.8.6.</span>
+<p><span class="red">§&#160;3.8.6.</span>&#160;&#160;
 ZSCII codes 252 to 254 are defined for input only:</p>
 </div>
 <div class="literalblock">
@@ -1864,7 +1866,7 @@ ZSCII codes 252 to 254 are defined for input only:</p>
 <p>Menu clicks are available only in Version 6. A single click, or the first click of a double-click, is passed in as 254. The second click of a double-click is passed in as 253. In Versions 5 and later it is recommended that an interpreter should only send code 254, whether the mouse is clicked once or twice.</p>
 </div>
 <div id="p3.8.7" class="paragraph">
-<p><span class="red">§3.8.7.</span>
+<p><span class="red">§&#160;3.8.7.</span>&#160;&#160;
 ZSCII code 255 is undefined. (This value is needed in the "terminating characters table" as a wildcard, indicating "any Input-only character with code 128 or above." However, it cannot itself be printed or read from the keyboard.)</p>
 </div>
 <hr>
@@ -2476,15 +2478,15 @@ ZSCII code 255 is undefined. (This value is needed in the "terminating character
 </div>
 </div>
 <div id="p4.2.1" class="paragraph">
-<p><span class="red">§4.2.1.</span>
+<p><span class="red">§&#160;4.2.1.</span>&#160;&#160;
 Large constants, like all 2-byte words of data in the Z-machine, are stored with most significant byte first (e.g. <strong>$2478</strong> is stored as <strong>$24</strong> followed by <strong>$78</strong>). A 'large constant' may in fact be a small number.</p>
 </div>
 <div id="p4.2.2" class="paragraph">
-<p><span class="red">§4.2.2.</span>
+<p><span class="red">§&#160;4.2.2.</span>&#160;&#160;
 Variable number <strong>$00</strong> refers to the top of the stack, <strong>$01</strong> to <strong>$0f</strong> mean the local variables of the current routine and <strong>$10</strong> to <strong>$ff</strong> mean the global variables. It is illegal to refer to local variables which do not exist for the current routine (there may even be none).</p>
 </div>
 <div id="p4.2.3" class="paragraph">
-<p><span class="red">§4.2.3.</span>
+<p><span class="red">§&#160;4.2.3.</span>&#160;&#160;
 The type 'Variable' really means "variable by value". Some instructions take as an operand a "variable by reference": for instance, <strong>inc</strong> has one operand, the reference number of a variable to increment. This operand usually has type 'Small constant' (and Inform automatically assembles a line like <strong>@inc turns</strong> by writing the operand <strong>turns</strong> as a small constant with value the reference number of the variable <strong>turns</strong>).</p>
 </div>
 </div>
@@ -2494,19 +2496,19 @@ The type 'Variable' really means "variable by value". Some instructions take as 
 <p>Each instruction has a form (long, short, extended or variable) and an operand count (0OP, 1OP, 2OP or VAR). If the top two bits of the opcode are <strong>11* the form is variable; if *10</strong>, the form is short. If the opcode is 190 (<strong>$BE</strong> in hexadecimal) and the version is 5 or later, the form is "extended". Otherwise, the form is "long".</p>
 </div>
 <div id="p4.3.1" class="paragraph">
-<p><span class="red">§4.3.1.</span>
+<p><span class="red">§&#160;4.3.1.</span>&#160;&#160;
 In short form, bits 4 and 5 of the opcode byte give an operand type as above. If this is <strong>$11</strong> then the operand count is 0OP; otherwise, 1OP. In either case the opcode number is given in the bottom 4 bits.</p>
 </div>
 <div id="p4.3.2" class="paragraph">
-<p><span class="red">§4.3.2.</span>
+<p><span class="red">§&#160;4.3.2.</span>&#160;&#160;
 In long form the operand count is always 2OP. The opcode number is given in the bottom 5 bits.</p>
 </div>
 <div id="p4.3.3" class="paragraph">
-<p><span class="red">§4.3.3.</span>
+<p><span class="red">§&#160;4.3.3.</span>&#160;&#160;
 In variable form, if bit 5 is 0 then the count is 2OP; if it is 1, then the count is VAR. The opcode number is given in the bottom 5 bits.</p>
 </div>
 <div id="p4.3.4" class="paragraph">
-<p><span class="red">§4.3.4.</span>
+<p><span class="red">§&#160;4.3.4.</span>&#160;&#160;
 In extended form, the operand count is VAR. The opcode number is given in a second opcode byte.</p>
 </div>
 </div>
@@ -2516,19 +2518,19 @@ In extended form, the operand count is VAR. The opcode number is given in a seco
 <p>Next, the types of the operands are specified.</p>
 </div>
 <div id="p4.4.1" class="paragraph">
-<p><span class="red">§4.4.1.</span>
+<p><span class="red">§&#160;4.4.1.</span>&#160;&#160;
 In short form, bits 4 and 5 of the opcode give the type.</p>
 </div>
 <div id="p4.4.2" class="paragraph">
-<p><span class="red">§4.4.2.</span>
+<p><span class="red">§&#160;4.4.2.</span>&#160;&#160;
 In long form, bit 6 of the opcode gives the type of the first operand, bit 5 of the second. A value of 0 means a small constant and 1 means a variable. (If a 2OP instruction needs a large constant as operand, then it should be assembled in variable rather than long form.)</p>
 </div>
 <div id="p4.4.3" class="paragraph">
-<p><span class="red">§4.4.3.</span>
+<p><span class="red">§&#160;4.4.3.</span>&#160;&#160;
 In variable or extended forms, a byte of 4 operand types is given next. This contains 4 2-bit fields: bits 6 and 7 are the first field, bits 0 and 1 the fourth. The values are operand types as above. Once one type has been given as 'omitted', all subsequent ones must be. Example: <strong>$$00101111</strong> means large constant followed by variable (and no third or fourth opcode).</p>
 </div>
 <div id="p4.4.3.1" class="paragraph">
-<p><span class="red">§4.4.3.1.</span>
+<p><span class="red">§&#160;4.4.3.1.</span>&#160;&#160;
 In the special case of the "double variable" VAR opcodes <strong>call_vs2</strong> and <strong>call_vn2</strong> (opcode numbers 12 and 26), a second byte of types is given, containing the types for the next four operands.</p>
 </div>
 </div>
@@ -2538,11 +2540,11 @@ In the special case of the "double variable" VAR opcodes <strong>call_vs2</stron
 <p>The operands are given next. Operand counts of 0OP, 1OP or 2OP require 0, 1 or 2 operands to be given, respectively. If the count is VAR, there must be as many operands as there were types other than 'omitted'.</p>
 </div>
 <div id="p4.5.1" class="paragraph">
-<p><span class="red">§4.5.1.</span>
+<p><span class="red">§&#160;4.5.1.</span>&#160;&#160;
 Note that only <strong>call_vs2</strong> and <strong>call_vn2</strong> can have more than 4 operands, and no instruction can have more than 8.</p>
 </div>
 <div id="p4.5.2" class="paragraph">
-<p><span class="red">§4.5.2.</span>
+<p><span class="red">§&#160;4.5.2.</span>&#160;&#160;
 Opcode operands are always evaluated from first to last - this order is important when the stack pointer appears as an argument. Thus</p>
 </div>
 <div class="literalblock">
@@ -2566,11 +2568,11 @@ Opcode operands are always evaluated from first to last - this order is importan
 <p>Instructions which test a condition are called "branch" instructions. The branch information is stored in one or two bytes, indicating what to do with the result of the test. If bit 7 of the first byte is 0, a branch occurs when the condition was false; if 1, then branch is on true. If bit 6 is set, then the branch occupies 1 byte only, and the "offset" is in the range 0 to 63, given in the bottom 6 bits. If bit 6 is clear, then the offset is a signed 14-bit number given in bits 0 to 5 of the first byte followed by all 8 of the second.</p>
 </div>
 <div id="p4.7.1" class="paragraph">
-<p><span class="red">§4.7.1.</span>
+<p><span class="red">§&#160;4.7.1.</span>&#160;&#160;
 An offset of 0 means "return false from the current routine", and 1 means "return true from the current routine".</p>
 </div>
 <div id="p4.7.2" class="paragraph">
-<p><span class="red">§4.7.2.</span>
+<p><span class="red">§&#160;4.7.2.</span>&#160;&#160;
 Otherwise, a branch moves execution to the instruction at address</p>
 </div>
 <div class="literalblock">
@@ -2680,7 +2682,7 @@ Otherwise, a branch moves execution to the instruction at address</p>
 <p>A routine begins with one byte indicating the number of local variables it has (between 0 and 15 inclusive).</p>
 </div>
 <div id="p5.2.1" class="paragraph">
-<p><span class="red">§5.2.1.</span>
+<p><span class="red">§&#160;5.2.1.</span>&#160;&#160;
 In Versions 1 to 4, that number of 2-byte words follows, giving initial values for these local variables. In Versions 5 and later, the initial values are all zero.</p>
 </div>
 </div>
@@ -2722,39 +2724,39 @@ In Versions 1 to 4, that number of 2-byte words follows, giving initial values f
 <p>The "state of play" is defined as the following: the contents of dynamic memory; the contents of the stack; the value of the program counter (PC), and the "routine call state" (that is, the chain of routines which have called each other in sequence, and the values of their local variables). Note that the routine call state, the stack and the PC must be stored outside the Z-machine memory map, in the interpreter&#8217;s private memory.</p>
 </div>
 <div id="p6.1.1" class="paragraph">
-<p><span class="red">§6.1.1.</span>
+<p><span class="red">§&#160;6.1.1.</span>&#160;&#160;
 The entire state of play must be stored when the game is saved.</p>
 </div>
 <div id="p6.1.1.1" class="paragraph">
-<p><span class="red">§6.1.1.1.</span>
+<p><span class="red">§&#160;6.1.1.1.</span>&#160;&#160;
 The format of a saved game file is not specified.</p>
 </div>
 <div id="p6.1.1.2" class="paragraph">
-<p><span class="red">§6.1.1.2.</span>
+<p><span class="red">§&#160;6.1.1.2.</span>&#160;&#160;
 An internal saved game for "undo" purposes (if there is one) is not part of the state of play. This is important: if a saved game file also contained the internal saved game at the time of saving, it would be impossible to undo the act of restoration. It also prevents internal saved games from growing larger and larger as they include their predecessors.</p>
 </div>
 <div id="p6.1.1.3" class="paragraph">
-<p><span class="red">§6.1.1.3.</span>
+<p><span class="red">§&#160;6.1.1.3.</span>&#160;&#160;
 It is illegal to save the game (either with <strong>save</strong> or <strong>save_undo</strong>) during an "interrupt routine" (one coming about through timed input, sound effect termination or newline interrupts). Therefore saved games need not store information capable of restoring such a position.</p>
 </div>
 <div id="p6.1.2" class="paragraph">
-<p><span class="red">§6.1.2.</span>
+<p><span class="red">§&#160;6.1.2.</span>&#160;&#160;
 On a "restore" or "undo" (which restores a game saved into internal memory), the entire state of play is written back except that 'Flags 2' in the header is preserved. (This information includes whether the game is being transcribed to printer and whether a fixed-pitch font is being used.)</p>
 </div>
 <div id="p6.1.2.1" class="paragraph">
-<p><span class="red">§6.1.2.1.</span>
+<p><span class="red">§&#160;6.1.2.1.</span>&#160;&#160;
 Before a "restore", an interpreter should check that the file to be used has been saved from the same game currently being played. (See remark below.)</p>
 </div>
 <div id="p6.1.2.2" class="paragraph">
-<p><span class="red">§6.1.2.2.</span>
+<p><span class="red">§&#160;6.1.2.2.</span>&#160;&#160;
 After a "restore" or "undo", an interpreter should reset the header values marked <strong>Rst</strong> in the header table of <strong>S</strong> 11. (It should not be assumed that the game was saved by the same interpreter.)</p>
 </div>
 <div id="p6.1.3" class="paragraph">
-<p><span class="red">§6.1.3.</span>
+<p><span class="red">§&#160;6.1.3.</span>&#160;&#160;
 A "restart" is similar: the entire state is restored from the original story file, and the stack is emptied; but 'Flags 2' is preserved; and the interpreter should reset the <strong>Rst</strong> parts of the header.</p>
 </div>
 <div id="p6.1.4" class="paragraph">
-<p><span class="red">§6.1.4.</span>
+<p><span class="red">§&#160;6.1.4.</span>&#160;&#160;
 In Versions 5 and later, an interpreter unable to save the game state into internal memory (for "undo" purposes) must clear bit 4 of 'Flags 2' in the header.</p>
 </div>
 </div>
@@ -2770,15 +2772,15 @@ In Versions 5 and later, an interpreter unable to save the game state into inter
 <p>Writing to the stack pointer (variable number <strong>$00</strong>) pushes a value onto the stack; reading from it pulls a value off. Stack entries are 2-byte words as usual.</p>
 </div>
 <div id="p6.3.1" class="paragraph">
-<p><span class="red">§6.3.1.</span>
+<p><span class="red">§&#160;6.3.1.</span>&#160;&#160;
 The stack is considered as empty at the start of each routine: it is illegal to pull values from it unless values have first been pushed on.</p>
 </div>
 <div id="p6.3.2" class="paragraph">
-<p><span class="red">§6.3.2.</span>
+<p><span class="red">§&#160;6.3.2.</span>&#160;&#160;
 The stack is left empty at the end of each routine: when a return occurs, any values pushed during the routine are thrown away.</p>
 </div>
 <div id="p6.3.3" class="paragraph">
-<p><span class="red">§6.3.3.</span>
+<p><span class="red">§&#160;6.3.3.</span>&#160;&#160;
 The absolute minimum standard for stack size is defined as:</p>
 </div>
 <div class="paragraph">
@@ -2791,7 +2793,7 @@ The absolute minimum standard for stack size is defined as:</p>
 <p>Two examples of modern interpreters with increased stack size are <strong>Windows Frotz</strong>, with 32768, and <strong>nfrotz</strong> with 61440.</p>
 </div>
 <div id="p6.3.4" class="paragraph">
-<p><span class="red">§6.3.4.</span>
+<p><span class="red">§&#160;6.3.4.</span>&#160;&#160;
 In the seven opcodes that take indirect variable references (<strong>inc</strong>, <strong>dec</strong>, <strong>inc_chk</strong>, <strong>dec_chk</strong>, <strong>load</strong>, <strong>store</strong>, <strong>pull</strong>), an indirect reference to the stack pointer does not push or pull the top item of the stack - it is read or written in place.</p>
 </div>
 </div>
@@ -2801,27 +2803,27 @@ In the seven opcodes that take indirect variable references (<strong>inc</strong
 <p>Routine calls occur in the following circumstances: when one of the <strong>call&#8230;&#8203;</strong> opcodes is executed; in Versions 4 and later, when timed keyboard input is being monitored; in Versions 5 and later, when a sound effect finishes; in Version 6, when the game begins (to call the "main" routine); in Version 6, when a "newline interrupt" occurs.</p>
 </div>
 <div id="p6.4.1" class="paragraph">
-<p><span class="red">§6.4.1.</span>
+<p><span class="red">§&#160;6.4.1.</span>&#160;&#160;
 A routine call may have any number of arguments, from 0 to 3 (in Versions 1 to 3) or 0 to 7 (Versions 4 and later). All routines return a value (though sometimes this value is thrown away afterward: for example by opcodes in the form <strong>call_vn</strong>*).</p>
 </div>
 <div id="p6.4.2" class="paragraph">
-<p><span class="red">§6.4.2.</span>
+<p><span class="red">§&#160;6.4.2.</span>&#160;&#160;
 Routine calls preserve local variables and the stack (except when the return value is stored in a local variable or onto the top of the stack).</p>
 </div>
 <div id="p6.4.3" class="paragraph">
-<p><span class="red">§6.4.3.</span>
+<p><span class="red">§&#160;6.4.3.</span>&#160;&#160;
 A routine call to packed address 0 is legal: it does nothing and returns false (0). Otherwise it is illegal to call a packed address where no routine is present.</p>
 </div>
 <div id="p6.4.4" class="paragraph">
-<p><span class="red">§6.4.4.</span>
+<p><span class="red">§&#160;6.4.4.</span>&#160;&#160;
 When a routine is called, its local variables are created with initial values taken from the routine header (Versions 1 to 4) or with initial value 0 (Versions 5 and later). Next, the arguments are written into the local variables (argument 1 into local 1 and so on).</p>
 </div>
 <div id="p6.4.4.1" class="paragraph">
-<p><span class="red">§6.4.4.1.</span>
+<p><span class="red">§&#160;6.4.4.1.</span>&#160;&#160;
 It is legal for there to be more arguments than local variables (any spare arguments are thrown away) or for there to be fewer.</p>
 </div>
 <div id="p6.4.5" class="paragraph">
-<p><span class="red">§6.4.5.</span>
+<p><span class="red">§&#160;6.4.5.</span>&#160;&#160;
 The return value of a routine can be any Z-machine number. Returning 'false' means returning 0; returning 'true' means returning 1.</p>
 </div>
 </div>
@@ -2876,39 +2878,39 @@ The return value of a routine can be any Z-machine number. Returning 'false' mea
 <p>At any given time text is being output through a selection of "output streams" (possibly none, possibly several at once).</p>
 </div>
 <div id="p7.1.1" class="paragraph">
-<p><span class="red">§7.1.1.</span>
+<p><span class="red">§&#160;7.1.1.</span>&#160;&#160;
 Two output streams are common to all Versions: number 1 (the screen) and 2 (the game transcript, usually printed to a printer or a file).</p>
 </div>
 <div id="p7.1.1.1" class="paragraph">
-<p><span class="red">§7.1.1.1.</span>
+<p><span class="red">§&#160;7.1.1.1.</span>&#160;&#160;
 In Versions 1 to 5, the player&#8217;s input to the <strong>read</strong> opcode should be echoed to output streams 1 and 2 (if stream 2 is active), so that text typed in appears in any transcript. In Version 6 input should be sent only to stream 1 and it is the game&#8217;s responsibility to write to the transcript.</p>
 </div>
 <div id="p7.1.1.2" class="paragraph">
-<p><span class="red">§7.1.1.2.</span>
+<p><span class="red">§&#160;7.1.1.2.</span>&#160;&#160;
 In Infocom&#8217;s Version 4 game 'A Mind Forever Voyaging', which anticipated a printer rather than a file to receive the transcript, stream 2 is turned off and on again several times in quick succession. Thus if an interpreter decides where to send the transcript by asking the player for a filename, this question should only be asked once per game session, not every time stream 2 is selected.</p>
 </div>
 <div id="p7.1.2" class="paragraph">
-<p><span class="red">§7.1.2.</span>
+<p><span class="red">§&#160;7.1.2.</span>&#160;&#160;
 Versions 3 and later supply these and two other output streams, numbered 3 (Z-machine memory) and 4 (a script file of the player&#8217;s whole commands and of individual keypresses as read by <strong>read_char</strong>).</p>
 </div>
 <div id="p7.1.2.1" class="paragraph">
-<p><span class="red">§7.1.2.1.</span>
+<p><span class="red">§&#160;7.1.2.1.</span>&#160;&#160;
 Output stream 3 writes to a table in dynamic memory. When the stream is selected, the table may have any contents (even the initial 'size' word will be ignored by the interpreter). While the stream is selected, the table&#8217;s contents are unspecified (and a game cannot safely read or write to it). When the stream is deselected, the initial word of the table holds the number of characters printed and subsequent bytes hold those characters. Similarly, in Version 6, the total width of printing (in units) will then be stored in the word at <strong>$30</strong> in the header. (It is the programmer&#8217;s responsibility to make the table large enough: the interpreter performs no overflow checking.)</p>
 </div>
 <div id="p7.1.2.1.1" class="paragraph">
-<p><span class="red">§7.1.2.1.1.</span>
+<p><span class="red">§&#160;7.1.2.1.1.</span>&#160;&#160;
 <strong>*</strong>*[1.0]* It is possible for stream 3 to be selected while it is already on. If this happens, the previous table address is remembered and the previous table is resumed when the new one is finished. This nesting can reach a depth of up to 16: if stream 3 is opened for a seventeenth time, the interpreter should halt with an error message.</p>
 </div>
 <div id="p7.1.2.2" class="paragraph">
-<p><span class="red">§7.1.2.2.</span>
+<p><span class="red">§&#160;7.1.2.2.</span>&#160;&#160;
 Output stream 3 is unusual in that, while it is selected, no text is sent to any other output streams which are selected. (However, they remain selected.)</p>
 </div>
 <div id="p7.1.2.2.1" class="paragraph">
-<p><span class="red">§7.1.2.2.1.</span>
+<p><span class="red">§&#160;7.1.2.2.1.</span>&#160;&#160;
 Newlines are written to output stream 3 as ZSCII 13. (A game should never <strong>print_char</strong> the value 10, or any other value which is undefined as a ZSCII output code.)</p>
 </div>
 <div id="p7.1.2.3" class="paragraph">
-<p><span class="red">§7.1.2.3.</span>
+<p><span class="red">§&#160;7.1.2.3.</span>&#160;&#160;
 Output stream 4 is unusual in that, when it is selected, the only text printed to it is that of the player&#8217;s commands and keypresses (as read by <strong>read_char</strong>). (Each command is written, in one go, when it has been finished. Time delays and mouse-clicks should ideally be recorded. For suggestions on how this might be achieved, see the remarks section below. Mistypes and uses of 'delete' are not written.)</p>
 </div>
 </div>
@@ -2918,11 +2920,11 @@ Output stream 4 is unusual in that, when it is selected, the only text printed t
 <p>On output streams 1 and 2 (only), text printing may be "buffered" in that new-lines are automatically printed to ensure that no word (of length less than the width of the screen) spreads across two lines (if the interpreter is able to control this). (This process is sometimes called "word-wrapping".)</p>
 </div>
 <div id="p7.2.1" class="paragraph">
-<p><span class="red">§7.2.1.</span>
+<p><span class="red">§&#160;7.2.1.</span>&#160;&#160;
 In Versions 1 to 3, buffering is always on. In Versions 4 and later it is on by default (at the start of a game) and a game can switch it on or off using the <strong>buffer_mode</strong> opcode.</p>
 </div>
 <div id="p7.2.2" class="paragraph">
-<p><span class="red">§7.2.2.</span>
+<p><span class="red">§&#160;7.2.2.</span>&#160;&#160;
 In Version 6, each of the eight windows has its own "buffering flag". In Versions 3 to 5, the <strong>buffer_mode</strong> applies only to the lower window, and buffering never happens in the upper window.</p>
 </div>
 </div>
@@ -2944,19 +2946,19 @@ In Version 6, each of the eight windows has its own "buffering flag". In Version
 <p><strong>*</strong>*[1.0]* Because of the <strong>print_unicode</strong> opcode, it is possible for arbitrary Unicode characters to be sent to the output streams: that is, for characters which are not in the ZSCII set at all, even in the "extra characters" range.</p>
 </div>
 <div id="p7.5.1" class="paragraph">
-<p><span class="red">§7.5.1.</span>
+<p><span class="red">§&#160;7.5.1.</span>&#160;&#160;
 See <strong>S</strong> 3.8.5.4 for rules on printing Unicode to stream 1.</p>
 </div>
 <div id="p7.5.2" class="paragraph">
-<p><span class="red">§7.5.2.</span>
+<p><span class="red">§&#160;7.5.2.</span>&#160;&#160;
 Interpreters are free to use any representation of non-ASCII Unicode characters in stream 2. For example, they might print "[1a05]" to signify Unicode character <strong>$1a05</strong>; or they might be configurable to write transcript files which conform to any chosen ISO 8859 set.</p>
 </div>
 <div id="p7.5.3" class="paragraph">
-<p><span class="red">§7.5.3.</span>
+<p><span class="red">§&#160;7.5.3.</span>&#160;&#160;
 When printed to stream 3, Unicode characters should be converted to ZSCII if possible. If this is not possible, a question mark should be printed to stream 3.</p>
 </div>
 <div id="p7.5.4" class="paragraph">
-<p><span class="red">§7.5.4.</span>
+<p><span class="red">§&#160;7.5.4.</span>&#160;&#160;
 Non-ZSCII characters never need to be printed to stream 4.</p>
 </div>
 </div>
@@ -2966,43 +2968,43 @@ Non-ZSCII characters never need to be printed to stream 4.</p>
 <p><strong>*</strong>*[1.0]* In Versions 5 and later, the Z-machine has the ability to load and save files (using optional operands with the <strong>save</strong> and <strong>restore</strong> opcodes: these operands were not used in Infocom&#8217;s Version 5 games, but I wish to specify them as in Version 5 anyway).</p>
 </div>
 <div id="p7.6.1" class="paragraph">
-<p><span class="red">§7.6.1.</span>
+<p><span class="red">§&#160;7.6.1.</span>&#160;&#160;
 <strong>*</strong>*[1.0]* Filenames have the following format (approximately the MS-DOS 8.3 rule): one to eight alphanumeric characters, a full stop and zero to three alphanumeric characters (the "file extension").</p>
 </div>
 <div id="p7.6.1.1" class="paragraph">
-<p><span class="red">§7.6.1.1.</span>
+<p><span class="red">§&#160;7.6.1.1.</span>&#160;&#160;
 The interpreter must convert all filenames to upper case before use. If no full stop is given, ".AUX" should be appended.</p>
 </div>
 <div id="p7.6.1.2" class="paragraph">
-<p><span class="red">§7.6.1.2.</span>
+<p><span class="red">§&#160;7.6.1.2.</span>&#160;&#160;
 Games should avoid the extensions ".INF", ".H", ".Z" followed by a number or ".SAV": otherwise they may be in danger of erasing their own object code, source code or saved game files.</p>
 </div>
 <div id="p7.6.1.3" class="paragraph">
-<p><span class="red">§7.6.1.3.</span>
+<p><span class="red">§&#160;7.6.1.3.</span>&#160;&#160;
 <strong>*</strong>*[1.1]* The interpreter should delete from the filename any characters illegal for a filename. This will include all of the following characters (and more, if the OS requires it): slash, backslash, angle brackets (less-than and greater-than), colon, double-quote, pipe (vertical bar), question-mark, asterisk. The library should also truncate the argument at the first full stop (delete the first full stop and any following characters). If the result is the empty string, change it to the string "NULL".</p>
 </div>
 <div id="p7.6.2" class="paragraph">
-<p><span class="red">§7.6.2.</span>
+<p><span class="red">§&#160;7.6.2.</span>&#160;&#160;
 <strong>*</strong>*[1.0]* Saved files are not associated with any particular session of a game. They are not part of the "state of play".</p>
 </div>
 <div id="p7.6.3" class="paragraph">
-<p><span class="red">§7.6.3.</span>
+<p><span class="red">§&#160;7.6.3.</span>&#160;&#160;
 <strong>*</strong>*[1.0]* A game may depend on having up to 32 auxiliary files (with different names).</p>
 </div>
 <div id="p7.6.4" class="paragraph">
-<p><span class="red">§7.6.4.</span>
+<p><span class="red">§&#160;7.6.4.</span>&#160;&#160;
 File-handling errors such as "disc corrupt" and "disc full" should be reported directly to the player by the interpreter. The error "file not found" should only cause a failure return code from <strong>restore</strong>.</p>
 </div>
 <div id="p7.6.5" class="paragraph">
-<p><span class="red">§7.6.5.</span>
+<p><span class="red">§&#160;7.6.5.</span>&#160;&#160;
 Interpreters are allowed to not support access to external files (such as with output_stream 2, or the extra features of save and restore), or to only support some methods of access. Interpreters should support these features if possible, as some games may rely on external files, and in any case transcripts are very useful for testing, but in some environments such access is not feasible.</p>
 </div>
 <div id="p7.6.5.1" class="paragraph">
-<p><span class="red">§7.6.5.1.</span>
+<p><span class="red">§&#160;7.6.5.1.</span>&#160;&#160;
 An attempt by the game to use save or restore in a manner not supported by the interpreter should simply return 0 as with any failure, and the game should notice and take appropriate actions.</p>
 </div>
 <div id="p7.6.5.2" class="paragraph">
-<p><span class="red">§7.6.5.2.</span>
+<p><span class="red">§&#160;7.6.5.2.</span>&#160;&#160;
 An attempt by the game to use streams to access external files which is not supported by the interpreter should ideally print a warning to the user that the functionality is not available, and otherwise do nothing.</p>
 </div>
 </div>
@@ -3045,11 +3047,11 @@ An attempt by the game to use streams to access external files which is not supp
 <p>Text may be printed in any font of the interpreter&#8217;s choice, variable- or fixed-pitch: except that when bit 1 of 'Flags 2' in the header is set, font 4 has been selected, or when the text style has been set to Fixed Pitch, then a fixed-pitch font must be used. The fixed pitch-bit is deprecated in Version 5 and later, and interpreter support in Version 6 is optional.</p>
 </div>
 <div id="p8.1.1" class="paragraph">
-<p><span class="red">§8.1.1.</span>
+<p><span class="red">§&#160;8.1.1.</span>&#160;&#160;
 In Version 5, the height and width of the current font (in units (see below)) should be written to bytes <strong>$27</strong> and <strong>$26</strong> of the header, respectively. In Version 6, these bytes are the other way round (height in <strong>$27</strong>, width in <strong>$26</strong>). The width of a font is defined as the width of its '0' character.</p>
 </div>
 <div id="p8.1.2" class="paragraph">
-<p><span class="red">§8.1.2.</span>
+<p><span class="red">§&#160;8.1.2.</span>&#160;&#160;
 An interpreter should ideally provide 4 fonts, with ID numbers as follows:</p>
 </div>
 <div class="literalblock">
@@ -3064,27 +3066,27 @@ An interpreter should ideally provide 4 fonts, with ID numbers as follows:</p>
 <p>(Selecting font ID 0 is legal, and does not change the current font.) Ideally all text styles should be available for each font (for instance, Courier bold should be obtainable) except that font 3 need only be available in Roman and Reverse Video. Each font should provide characters for character codes 32 to 126 (plus character codes for any accented characters with codes greater than 127 which are being implemented as single accented letters on-screen).</p>
 </div>
 <div id="p8.1.3" class="paragraph">
-<p><span class="red">§8.1.3.</span>
+<p><span class="red">§&#160;8.1.3.</span>&#160;&#160;
 <strong><strong>*[1.0]</strong> A game must not use fonts other than 1 unless allowed to by the interpreter: see the <strong>set_font</strong> opcode for how to give or refuse permission. (This paragraph is marked </strong><strong>*[1.0]</strong> because existing Infocom games determined the availability of font 3 for 'Beyond Zork' in a complicated and unsatisfactory way: see <strong>S</strong> 16.)</p>
 </div>
 <div id="p8.1.3.1" class="paragraph">
-<p><span class="red">§8.1.3.1.</span>
+<p><span class="red">§&#160;8.1.3.1.</span>&#160;&#160;
 <strong>*</strong>*[1.0]* It is legal for a game to change font at any time, including halfway through the printing of a word. (This might be needed to introduce exotic foreign accents in the future.)</p>
 </div>
 <div id="p8.1.4" class="paragraph">
-<p><span class="red">§8.1.4.</span>
+<p><span class="red">§&#160;8.1.4.</span>&#160;&#160;
 The specification of the "picture font" is unknown (conjecturally, it was intended to provide pictures before Version 6 was properly developed). Interpreters should not implement it, and should refuse permission to any game requesting it.</p>
 </div>
 <div id="p8.1.5" class="paragraph">
-<p><span class="red">§8.1.5.</span>
+<p><span class="red">§&#160;8.1.5.</span>&#160;&#160;
 The specification of the character graphics font is given in <strong>S</strong> 16.</p>
 </div>
 <div id="p8.1.5.1" class="paragraph">
-<p><span class="red">§8.1.5.1.</span>
+<p><span class="red">§&#160;8.1.5.1.</span>&#160;&#160;
 In Version 5 (only), an interpreter which cannot provide the character graphics font should clear bit 3 of 'Flags 2' in the header.</p>
 </div>
 <div id="p8.1.6" class="paragraph">
-<p><span class="red">§8.1.6.</span>
+<p><span class="red">§&#160;8.1.6.</span>&#160;&#160;
 Any new fonts will have numbers higher than 4. Fonts 5-1023 are reserved for future Standards to specify. Local use may be made of higher font numbers.</p>
 </div>
 </div>
@@ -3094,35 +3096,35 @@ Any new fonts will have numbers higher than 4. Fonts 5-1023 are reserved for fut
 <p>In Versions 1 to 3, a status line should be printed by the interpreter, as follows. In Version 3, it must set bit 4 of 'Flags 1' in the header if it is unable to produce a status line.</p>
 </div>
 <div id="p8.2.1" class="paragraph">
-<p><span class="red">§8.2.1.</span>
+<p><span class="red">§&#160;8.2.1.</span>&#160;&#160;
 In Versions 1 and 2, all games are "score games". In Version 3, if bit 1 of 'Flags 1' is clear then the game is a "score game"; if it is set, then the game is a "time game".</p>
 </div>
 <div id="p8.2.2" class="paragraph">
-<p><span class="red">§8.2.2.</span>
+<p><span class="red">§&#160;8.2.2.</span>&#160;&#160;
 The short name of the object whose number is in the first global variable should be printed on the left hand side of the line.</p>
 </div>
 <div id="p8.2.2.1" class="paragraph">
-<p><span class="red">§8.2.2.1.</span>
+<p><span class="red">§&#160;8.2.2.1.</span>&#160;&#160;
 Whenever the status line is being printed the first global must contain a valid object number. (It would be useful if interpreters could protect themselves in case the game accidentally violates this requirement.)</p>
 </div>
 <div id="p8.2.2.2" class="paragraph">
-<p><span class="red">§8.2.2.2.</span>
+<p><span class="red">§&#160;8.2.2.2.</span>&#160;&#160;
 If the object&#8217;s short name exceeds the available room on the status line, the author suggests that an interpreter should break it at the last space and append an ellipsis "&#8230;&#8203;". There is no guaranteed maximum length for location names but an interpreter should expect names of length up to at least 49 characters.</p>
 </div>
 <div id="p8.2.3" class="paragraph">
-<p><span class="red">§8.2.3.</span>
+<p><span class="red">§&#160;8.2.3.</span>&#160;&#160;
 If there is room, the right hand side of the status line should display:</p>
 </div>
 <div id="p8.2.3.1" class="paragraph">
-<p><span class="red">§8.2.3.1.</span>
+<p><span class="red">§&#160;8.2.3.1.</span>&#160;&#160;
 For "score games": the score and number of turns, held in the values of the second and third global variables respectively. The score may be assumed to be in the range -99 to 999 inclusive, and the turn number in the range 0 to 9999.</p>
 </div>
 <div id="p8.2.3.2" class="paragraph">
-<p><span class="red">§8.2.3.2.</span>
+<p><span class="red">§&#160;8.2.3.2.</span>&#160;&#160;
 For "time games": the time, in the form <strong>hours:minutes</strong> (held in the second and third globals). The time may be given on a 24-hour clock or the number of hours may be reduced modulo 12 (but if so, "AM" or "PM" should be appended). Either way the player should be able to see the difference between 4am and 4pm, for example. The hours global may be assumed to be in the range 0 to 23 and the minutes global in the range 0 to 59.</p>
 </div>
 <div id="p8.2.4" class="paragraph">
-<p><span class="red">§8.2.4.</span>
+<p><span class="red">§&#160;8.2.4.</span>&#160;&#160;
 The status line is updated in exactly two circumstances: when a <strong>show_status</strong> opcode is executed, and just before the keyboard is read by <strong>read</strong>. (It is not displayed when the game begins.)</p>
 </div>
 </div>
@@ -3132,7 +3134,7 @@ The status line is updated in exactly two circumstances: when a <strong>show_sta
 <p>Under Versions 5 and later, text printing has a current foreground and background colour. In Version 6, each window has its own pair. (Note that a Version 6 interpreter going under the Amiga interpreter number must use the same pair of colours for all windows when running Infocom&#8217;s games. If either is changed, then the interpreter must change the colour of all text on the screen to match. This simulates the Amiga hardware, which used two logical colours for text and switched palette to change their physical colour. This behaviour should not occur when running non-Infocom games, and modern games should never expect it. An interpreter that does not wish to handle this behaviour at all should avoid using the Amiga interpreter number when running Infocom&#8217;s Version 6 games.)</p>
 </div>
 <div id="p8.3.1" class="paragraph">
-<p><span class="red">§8.3.1.</span>
+<p><span class="red">§&#160;8.3.1.</span>&#160;&#160;
 The following codes are used to refer to colours:</p>
 </div>
 <div class="literalblock">
@@ -3160,38 +3162,38 @@ The following codes are used to refer to colours:</p>
 <p>Colours 10, 11, 12, 15 and -1 are available only in Version 6.</p>
 </div>
 <div id="p8.3.1.1" class="paragraph">
-<p><span class="red">§8.3.1.1.</span>
+<p><span class="red">§&#160;8.3.1.1.</span>&#160;&#160;
 <strong>*</strong>*[1.1]* The equivalences between the colour numbers and true colours are recommended. The interpreter may allow the user to change the mapping, but the given values should be the default. If necessary, the game can check what true colour is being used for a given colour number using window properties 17 and 18.</p>
 </div>
 <div class="paragraph">
 <p>Interpreters may provide different colours (eg making colour 10 dark grey), but if and only if they can detect they are running an original Infocom story file.</p>
 </div>
 <div id="p8.3.2" class="paragraph">
-<p><span class="red">§8.3.2.</span>
+<p><span class="red">§&#160;8.3.2.</span>&#160;&#160;
 If the interpreter cannot produce colours, it should clear bit 0 of 'Flags 1' in the header. In Version 6 it should write colours 2 and 9 (black and white), either way round, into the default background and foreground colours in bytes <strong>$2c</strong> and <strong>$2d</strong> of the header.</p>
 </div>
 <div id="p8.3.3" class="paragraph">
-<p><span class="red">§8.3.3.</span>
+<p><span class="red">§&#160;8.3.3.</span>&#160;&#160;
 If the interpreter can produce colours, it should set bit 0 of 'Flags 1' in the header, and write its default background and foreground colours into bytes <strong>$2c</strong> and <strong>$2d</strong> of the header.</p>
 </div>
 <div id="p8.3.4" class="paragraph">
-<p><span class="red">§8.3.4.</span>
+<p><span class="red">§&#160;8.3.4.</span>&#160;&#160;
 If a game wishes to use colours, it should have bit 6 in 'Flags 2' set in its story file. (However, an interpreter should not rule out the use of colours just because this has not been done.)</p>
 </div>
 <div id="p8.3.5" class="paragraph">
-<p><span class="red">§8.3.5.</span>
+<p><span class="red">§&#160;8.3.5.</span>&#160;&#160;
 If a true colour, or an "under the cursor" colour has been requested by the game, then the foreground or background colour shown in window property 11 is implementation defined, with two exceptions:</p>
 </div>
 <div id="p8.3.5.1" class="paragraph">
-<p><span class="red">§8.3.5.1.</span>
+<p><span class="red">§&#160;8.3.5.1.</span>&#160;&#160;
 If the colour selected was one of the standard set (2-15), then that colour is indicated in property 11.</p>
 </div>
 <div id="p8.3.5.2" class="paragraph">
-<p><span class="red">§8.3.5.2.</span>
+<p><span class="red">§&#160;8.3.5.2.</span>&#160;&#160;
 If the colour selected was not one of the standard set (this can happen when using graphics, which may use many more colours), the colour shown in property 11 will be &gt;= 16.</p>
 </div>
 <div id="p8.3.6" class="paragraph">
-<p><span class="red">§8.3.6.</span>
+<p><span class="red">§&#160;8.3.6.</span>&#160;&#160;
 <strong>*</strong>*[1.1]* In Version 6 only, colour 15 is defined as transparent. This is only valid as a background colour; an attempt to select it for the foreground should produce a diagnostic. Interpreters not supporting transparency must ignore any attempt to select colour 15.</p>
 </div>
 <div class="paragraph">
@@ -3201,7 +3203,7 @@ If the colour selected was not one of the standard set (this can happen when usi
 <p>Scrolling with the background set to transparent is not permitted, so transparent should only be requested in a non-scrolling window. It is not valid to use Reverse Video style with the background set to transparent. Instructions that prompt for user input, such as <strong>read</strong> and <strong>save</strong>, should beavoided when the background is set to transparent, as it will not generally be possible for text entry to take place satisfactorily in the absence of a defined background colour. Printing text multiple times on top itself with the background set to transparent should be avoided, as the interpreter may use anti-aliasing, resulting in the text getting progressively heavier.</p>
 </div>
 <div id="p8.3.7" class="paragraph">
-<p><span class="red">§8.3.7.</span>
+<p><span class="red">§&#160;8.3.7.</span>&#160;&#160;
 <strong>*</strong>*[1.1]* Standard 1.1 adds the ability for games to select many more colours with <strong>set_true_colour</strong>, which uses 15-bit RBG colour values, with the following special values:</p>
 </div>
 <div class="literalblock">
@@ -3213,7 +3215,7 @@ If the colour selected was not one of the standard set (this can happen when usi
 </div>
 </div>
 <div id="p8.3.7.1" class="paragraph">
-<p><span class="red">§8.3.7.1.</span>
+<p><span class="red">§&#160;8.3.7.1.</span>&#160;&#160;
 <strong>*</strong>*[1.1]* The interpreter selects the closest approximations available to the requested colours. In V6, the interpreter may store the approximations in window properties 16 and 17, so the program can tell how close it got (although it is acceptable for the interpreter to just store the requested value).</p>
 </div>
 <div class="paragraph">
@@ -3229,15 +3231,15 @@ If the colour selected was not one of the standard set (this can happen when usi
 <p>The screen should ideally be at least 60 characters wide by 14 lines deep. (Old Apple II interpreters had a 40 character width and some modern laptop ones have a 9 line height, but implementors should seek to avoid these extremes if possible.) The interpreter may change the exact dimensions whenever it likes but must write the current height (in lines) and width (in characters) into bytes <strong>$20</strong> and <strong>$21</strong> in the header.</p>
 </div>
 <div id="p8.4.1" class="paragraph">
-<p><span class="red">§8.4.1.</span>
+<p><span class="red">§&#160;8.4.1.</span>&#160;&#160;
 The interpreter should use the screen height for calculating when to pause and print "[MORE]". A screen height of 255 lines means "infinite height", in which case the interpreter should never stop printing for a "[MORE]" prompt. (In case, say, the screen is actually a teletype printer, or has very good "scrollback".)</p>
 </div>
 <div id="p8.4.2" class="paragraph">
-<p><span class="red">§8.4.2.</span>
+<p><span class="red">§&#160;8.4.2.</span>&#160;&#160;
 Screen dimensions are measured in notional "units". In Versions 1 to 4, one unit is simply the height or width of one character. In Version 5 and later, the interpreter is free to implement units as anything from character sizes down to individual pixels.</p>
 </div>
 <div id="p8.4.3" class="paragraph">
-<p><span class="red">§8.4.3.</span>
+<p><span class="red">§&#160;8.4.3.</span>&#160;&#160;
 In Version 5 and later, the screen&#8217;s width and height in units should be written to the words at <strong>$22</strong> and <strong>$24</strong>.</p>
 </div>
 </div>
@@ -3247,11 +3249,11 @@ In Version 5 and later, the screen&#8217;s width and height in units should be w
 <p>The screen model for Versions 1 and 2 is as follows:</p>
 </div>
 <div id="p8.5.1" class="paragraph">
-<p><span class="red">§8.5.1.</span>
+<p><span class="red">§&#160;8.5.1.</span>&#160;&#160;
 The screen can only be printed to (like a teletype) and there is no control of the cursor.</p>
 </div>
 <div id="p8.5.2" class="paragraph">
-<p><span class="red">§8.5.2.</span>
+<p><span class="red">§&#160;8.5.2.</span>&#160;&#160;
 At the start of a game, the screen should be cleared and the text cursor placed at the bottom left (so that text scrolls upwards as the game gets under way).</p>
 </div>
 </div>
@@ -3261,35 +3263,35 @@ At the start of a game, the screen should be cleared and the text cursor placed 
 <p>The screen model for Version 3 is as follows:</p>
 </div>
 <div id="p8.6.1" class="paragraph">
-<p><span class="red">§8.6.1.</span>
+<p><span class="red">§&#160;8.6.1.</span>&#160;&#160;
 The screen is divided into a lower and an upper window and at any given time one of these is selected. (Initially it is the lower window.) The game uses the <strong>set_window</strong> opcode to select one of the two. Each window has its own cursor position at which text is printed. Operations in the upper window do not move the cursor of the lower. Whenever the upper window is selected, its cursor position is reset to the top left. Selecting, or re-sizing, the upper window does not change the screen&#8217;s appearance.</p>
 </div>
 <div id="p8.6.1.1" class="paragraph">
-<p><span class="red">§8.6.1.1.</span>
+<p><span class="red">§&#160;8.6.1.1.</span>&#160;&#160;
 The upper window has variable height (of n lines) and the same width as the screen. This should be displayed on the n lines of the screen below the top one (which continues to hold the status line). Initially the upper window has height 0. When the lower window is selected, the game can split off an upper window of any chosen size by using the <strong>split_window</strong> opcode.</p>
 </div>
 <div id="p8.6.1.1.1" class="paragraph">
-<p><span class="red">§8.6.1.1.1.</span>
+<p><span class="red">§&#160;8.6.1.1.1.</span>&#160;&#160;
 Printing onto the upper window overlays whatever text is already there.</p>
 </div>
 <div id="p8.6.1.1.2" class="paragraph">
-<p><span class="red">§8.6.1.1.2.</span>
+<p><span class="red">§&#160;8.6.1.1.2.</span>&#160;&#160;
 When a screen split takes place in Version 3, the upper window is cleared.</p>
 </div>
 <div id="p8.6.1.2" class="paragraph">
-<p><span class="red">§8.6.1.2.</span>
+<p><span class="red">§&#160;8.6.1.2.</span>&#160;&#160;
 An interpreter need not provide the upper window at all. If it is going to do so, it should set bit 5 of 'Flags 1' in the header to signal this to the game. It is only legal for a game to use <strong>set_window</strong> or <strong>split_window</strong> if this bit has been set.</p>
 </div>
 <div id="p8.6.1.3" class="paragraph">
-<p><span class="red">§8.6.1.3.</span>
+<p><span class="red">§&#160;8.6.1.3.</span>&#160;&#160;
 Following a "restore" of the game, the interpreter should automatically collapse the upper window to size 0.</p>
 </div>
 <div id="p8.6.2" class="paragraph">
-<p><span class="red">§8.6.2.</span>
+<p><span class="red">§&#160;8.6.2.</span>&#160;&#160;
 When text reaches the bottom right of the lower window, it should be scrolled upwards. The upper window should never be scrolled: it is legal for a character to be printed on the bottom right position of the upper window (but the position of the cursor after this operation is undefined: the author suggests that it stay put).</p>
 </div>
 <div id="p8.6.3" class="paragraph">
-<p><span class="red">§8.6.3.</span>
+<p><span class="red">§&#160;8.6.3.</span>&#160;&#160;
 At the start of a game, the screen should be cleared and the text cursor placed at the bottom left (so that text scrolls upwards as the game gets under way).</p>
 </div>
 </div>
@@ -3299,71 +3301,71 @@ At the start of a game, the screen should be cleared and the text cursor placed 
 <p>The screen model for Versions 4 and later, except Version 6, is as follows:</p>
 </div>
 <div id="p8.7.1" class="paragraph">
-<p><span class="red">§8.7.1.</span>
+<p><span class="red">§&#160;8.7.1.</span>&#160;&#160;
 Text can be printed in five different styles (modelled on the VT100 design of terminal). These are: Roman (the default), Bold, Italic, Reverse Video (usually printed with foreground and background colours reversed) and Fixed Pitch. The specification does not require the interpreter to be able to display more than one of these at once (e.g. to combine italic and bold), and most interpreters can&#8217;t. If the interpreter is going to allow certain combinations, then note that changing back to Roman should turn off all the text styles currently active.</p>
 </div>
 <div id="p8.7.1.1" class="paragraph">
-<p><span class="red">§8.7.1.1.</span>
+<p><span class="red">§&#160;8.7.1.1.</span>&#160;&#160;
 An interpreter need not provide Bold or Italic (even for font 1) and is free to interpret them broadly. (For example, rendering bold-face by changing the colour, or rendering italic with underlining.)</p>
 </div>
 <div id="p8.7.1.2" class="paragraph">
-<p><span class="red">§8.7.1.2.</span>
+<p><span class="red">§&#160;8.7.1.2.</span>&#160;&#160;
 It is legal to change text style at any point, including in the middle of a word being printed.</p>
 </div>
 <div id="p8.7.1.3" class="paragraph">
-<p><span class="red">§8.7.1.3.</span>
+<p><span class="red">§&#160;8.7.1.3.</span>&#160;&#160;
 <strong>*</strong>*[1.1]* Although a story file can determine which individual styles are available by inspecting the header, this gives no indication of which styles can be combined. To improve this situation, at least for Version 6, Standard 1.1 requires window property 10 to show the actual style combination currently in use; with this a story file can probe for the availability of particular combinations.</p>
 </div>
 <div id="p8.7.2" class="paragraph">
-<p><span class="red">§8.7.2.</span>
+<p><span class="red">§&#160;8.7.2.</span>&#160;&#160;
 There are two "windows", called "upper" and "lower": at any given time one of these two is selected. (Initially it is the lower window.) The game uses the <strong>set_window</strong> opcode to select one of the two. Each window has its own cursor position at which text is printed. Operations in the upper window do not move the cursor of the lower. Whenever the upper window is selected, its cursor position is reset to the top left.</p>
 </div>
 <div id="p8.7.2.1" class="paragraph">
-<p><span class="red">§8.7.2.1.</span>
+<p><span class="red">§&#160;8.7.2.1.</span>&#160;&#160;
 The upper window has variable height (of n lines) and the same width as the screen. (It is usual for interpreters to print the upper window on the top n lines of the screen, overlaying any text which is already there, having been printed in the lower window some time ago.) Initially the upper window has height 0. When the lower window is selected, the game can split off an upper window of any chosen size by using the <strong>split_window</strong> opcode.</p>
 </div>
 <div id="p8.7.2.1.1" class="paragraph">
-<p><span class="red">§8.7.2.1.1.</span>
+<p><span class="red">§&#160;8.7.2.1.1.</span>&#160;&#160;
 It is unclear exactly what <strong>split_window</strong> should do if the upper window is currently selected. The author suggests that it should work as usual, leaving the cursor where it is if the cursor is still inside the new upper window, and otherwise moving the cursor back to the top left. (This is analogous to the Version 6 practice.)</p>
 </div>
 <div id="p8.7.2.2" class="paragraph">
-<p><span class="red">§8.7.2.2.</span>
+<p><span class="red">§&#160;8.7.2.2.</span>&#160;&#160;
 In Version 4, the lower window&#8217;s cursor is always on the bottom screen line. In Version 5 it can be at any line which is not underneath the upper window. If a split takes place which would cause the upper window to swallow the lower window&#8217;s cursor position, the interpreter should move the lower window&#8217;s cursor down to the line just below the upper window&#8217;s new size.</p>
 </div>
 <div id="p8.7.2.3" class="paragraph">
-<p><span class="red">§8.7.2.3.</span>
+<p><span class="red">§&#160;8.7.2.3.</span>&#160;&#160;
 When the upper window is selected, its cursor position can be moved with <strong>set_cursor</strong>. This position is given in characters in the form (row, column), with (1,1) at the top left. The opcode has no effect when the lower window is selected. It is illegal to move the cursor outside the current size of the upper window.</p>
 </div>
 <div id="p8.7.2.4" class="paragraph">
-<p><span class="red">§8.7.2.4.</span>
+<p><span class="red">§&#160;8.7.2.4.</span>&#160;&#160;
 An interpreter should use a fixed-pitch font when printing on the upper window.</p>
 </div>
 <div id="p8.7.2.5" class="paragraph">
-<p><span class="red">§8.7.2.5.</span>
+<p><span class="red">§&#160;8.7.2.5.</span>&#160;&#160;
 In Versions 3 to 5, text buffering is never active in the upper window (even if a game begins printing there without having turned it off).</p>
 </div>
 <div id="p8.7.3" class="paragraph">
-<p><span class="red">§8.7.3.</span>
+<p><span class="red">§&#160;8.7.3.</span>&#160;&#160;
 Clearing regions of the screen:</p>
 </div>
 <div id="p8.7.3.1" class="paragraph">
-<p><span class="red">§8.7.3.1.</span>
+<p><span class="red">§&#160;8.7.3.1.</span>&#160;&#160;
 When text reaches the bottom right of the lower window, it should be scrolled upwards. (When the text style is Reverse Video the new blank line should <strong>not</strong> have reversed colours.) The upper window should never be scrolled: it is legal for a character to be printed on the bottom right position of the upper window (but the position of the cursor after this operation is undefined: the author suggests that it stay put).</p>
 </div>
 <div id="p8.7.3.2" class="paragraph">
-<p><span class="red">§8.7.3.2.</span>
+<p><span class="red">§&#160;8.7.3.2.</span>&#160;&#160;
 Using the opcode <strong>erase_window</strong>, the specified window can be cleared to background colour. (Even if the text style is Reverse Video the new blank space should not have reversed colours.)</p>
 </div>
 <div id="p8.7.3.2.1" class="paragraph">
-<p><span class="red">§8.7.3.2.1.</span>
+<p><span class="red">§&#160;8.7.3.2.1.</span>&#160;&#160;
 In Versions 5 and later, the cursor for the window being erased should be moved to the top left. In Version 4, the lower window&#8217;s cursor moves to its bottom left, while the upper window&#8217;s cursor moves to top left.</p>
 </div>
 <div id="p8.7.3.3" class="paragraph">
-<p><span class="red">§8.7.3.3.</span>
+<p><span class="red">§&#160;8.7.3.3.</span>&#160;&#160;
 Erasing window -1 clears the whole screen to the background colour of the lower screen, collapses the upper window to height 0, moves the cursor of the lower screen to bottom left (in Version 4) or top left (in Versions 5 and later) and selects the lower screen. The same operation should happen at the start of a game.</p>
 </div>
 <div id="p8.7.3.4" class="paragraph">
-<p><span class="red">§8.7.3.4.</span>
+<p><span class="red">§&#160;8.7.3.4.</span>&#160;&#160;
 Using <strong>erase_line</strong> in the upper window should erase the current line from the cursor position to the right-hand edge, clearing it to background colour. (Even if the text style is Reverse Video the new blank space should not have reversed colours.)</p>
 </div>
 </div>
@@ -3373,19 +3375,19 @@ Using <strong>erase_line</strong> in the upper window should erase the current l
 <p>The screen model for Version 6 is as follows:</p>
 </div>
 <div id="p8.8.1" class="paragraph">
-<p><span class="red">§8.8.1.</span>
+<p><span class="red">§&#160;8.8.1.</span>&#160;&#160;
 The display is an array of pixels. Coordinates are usually given (in units) in the form (y,x), with (1,1) in the top left.</p>
 </div>
 <div id="p8.8.2" class="paragraph">
-<p><span class="red">§8.8.2.</span>
+<p><span class="red">§&#160;8.8.2.</span>&#160;&#160;
 If the interpreter thinks the screen should be redrawn (e.g. because a menu window has been clicked over it), it may set bit 2 of 'Flags 2'. The game is expected to notice, take action and clear the bit. (However, a more efficient interpreter would handle redraws itself.)</p>
 </div>
 <div id="p8.8.3" class="paragraph">
-<p><span class="red">§8.8.3.</span>
+<p><span class="red">§&#160;8.8.3.</span>&#160;&#160;
 There are eight "windows", numbered 0 to 7. The code -3 is used as a window number to mean "the currently selected window". This selection can be changed with the <strong>set_window</strong> opcode. Windows are invisible and usually lie on top of each other. All text and graphics plotting is always clipped to the current window, and anything showing through is plotted onto the screen. Subsequent movements of the window do not move what was printed and there is no sense in which characters or graphics 'belong' to any particular window once printed. Each window has a position (in units), a size (in units), a cursor position within it (in units, relative to its own origin), a number of flags called "attributes" and a number of variables called "properties".</p>
 </div>
 <div id="p8.8.3.1" class="paragraph">
-<p><span class="red">§8.8.3.1.</span>
+<p><span class="red">§&#160;8.8.3.1.</span>&#160;&#160;
 There are four attributes, numbered as follows:</p>
 </div>
 <div class="literalblock">
@@ -3400,19 +3402,19 @@ There are four attributes, numbered as follows:</p>
 <p>Each can be turned on or off, using the <strong>window_style</strong> opcode.</p>
 </div>
 <div id="p8.8.3.1.1" class="paragraph">
-<p><span class="red">§8.8.3.1.1.</span>
+<p><span class="red">§&#160;8.8.3.1.1.</span>&#160;&#160;
 "Wrapping" is the continuation of printed text from one line to the next. Text running up to the right margin will continue from the left margin of the following line. If "wrapping" is off then characters will be printed until no more can be fitted in without hitting the right margin, at which point the cursor will move to the right margin and stay there, so that any further text will be ignored.</p>
 </div>
 <div id="p8.8.3.1.2" class="paragraph">
-<p><span class="red">§8.8.3.1.2.</span>
+<p><span class="red">§&#160;8.8.3.1.2.</span>&#160;&#160;
 "Buffered printing" means that text to be printed in the window is temporarily stored in a buffer and only flushed onto the screen at intervals convenient for the interpreter.</p>
 </div>
 <div id="p8.8.3.1.2.1" class="paragraph">
-<p><span class="red">§8.8.3.1.2.1.</span>
+<p><span class="red">§&#160;8.8.3.1.2.1.</span>&#160;&#160;
 "Buffered printing" has two practical effects: firstly it causes a delay before printed text actually appears.</p>
 </div>
 <div id="p8.8.3.1.2.2" class="paragraph">
-<p><span class="red">§8.8.3.1.2.2.</span>
+<p><span class="red">§&#160;8.8.3.1.2.2.</span>&#160;&#160;
 Secondly it affects the way "wrapping" is done. If "buffered printing" is on, then text is wrapped after the last word which could fit on a line. If not, then text is wrapped after the last character that could fit.</p>
 </div>
 <div class="paragraph">
@@ -3434,7 +3436,7 @@ Secondly it affects the way "wrapping" is done. If "buffered printing" is on, th
 <p>where the caret denotes the final position of the cursor. (Games often alter "wrapping": it would normally be on for a window holding running text but off for a status-line window, which is why window 0 has "wrapping" on by default but all other windows have "wrapping" off by default. On the other hand all windows have "buffered printing" on by default and games only alter this in rare circumstances to avoid delays in the appearance of individual printed characters.)</p>
 </div>
 <div id="p8.8.3.2" class="paragraph">
-<p><span class="red">§8.8.3.2.</span>
+<p><span class="red">§&#160;8.8.3.2.</span>&#160;&#160;
 There are 16 properties, numbered as follows:</p>
 </div>
 <div class="literalblock">
@@ -3451,119 +3453,119 @@ There are 16 properties, numbered as follows:</p>
 <p>Each property is a standard Z-machine number and is readable with <strong>get_wind_prop</strong>. Properties 0 through 15 are writeable with <strong>put_wind_prop</strong>. However, a game should only use <strong>put_wind_prop</strong> to set the newline interrupt routine, the interrupt countdown and the line count: everything else is either set by the interpreter or by specialised opcodes (such as <strong>set_font</strong>). The true foreground and true background properties must not be written by put_wind_prop.</p>
 </div>
 <div id="p8.8.3.2.1" class="paragraph">
-<p><span class="red">§8.8.3.2.1.</span>
+<p><span class="red">§&#160;8.8.3.2.1.</span>&#160;&#160;
 If a window has character wrapping, then text is clipped to stay inside the left and right margins. After a new-line, the cursor moves to the left margin on the next line. Margins can be set with <strong>set_margins</strong> but this should only be done just after a newline or just after the window has been selected. (These values are margin sizes in pixels, and are by default 0.)</p>
 </div>
 <div id="p8.8.3.2.2" class="paragraph">
-<p><span class="red">§8.8.3.2.2.</span>
+<p><span class="red">§&#160;8.8.3.2.2.</span>&#160;&#160;
 If the interrupt countdown is set to a non-zero value (which by default it is not), then the line count is decremented on each new-line, and when it hits zero the routine whose packed address is stored in the "newline interrupt routine" property is called before text printing resumes. (This routine may, for example, meddle with margins to roll text around a crinkly-shaped picture.) The interrupt routine should not attempt to print anything.</p>
 </div>
 <div id="p8.8.3.2.2.1" class="paragraph">
-<p><span class="red">§8.8.3.2.2.1.</span>
+<p><span class="red">§&#160;8.8.3.2.2.1.</span>&#160;&#160;
 Because of an Infocom bug, if the interpreter number is 6 (for MSDOS) and the story file is 'Zork Zero' release 393.890714, but in no other case, the interpreter must do the following instead: (1) move to the new line, (2) put the cursor at the current left margin, (3) call the interrupt routine (if it&#8217;s time to do so). This is the least bad way to get around a basic inconsistency in existing Infocom story files and interpreters.</p>
 </div>
 <div id="p8.8.3.2.2.2" class="paragraph">
-<p><span class="red">§8.8.3.2.2.2.</span>
+<p><span class="red">§&#160;8.8.3.2.2.2.</span>&#160;&#160;
 Note that the <strong>set_margins</strong> opcode, which is often used by newline interrupt routines (to adjust the shape of a margin as it flows past a picture), automatically moves the cursor if the change in margins would leave the cursor outside them. The effect will depend, unfortunately, on which sequence of events above takes place.</p>
 </div>
 <div id="p8.8.3.2.2.3" class="paragraph">
-<p><span class="red">§8.8.3.2.2.3.</span>
+<p><span class="red">§&#160;8.8.3.2.2.3.</span>&#160;&#160;
 A line count is never decremented below -999.</p>
 </div>
 <div id="p8.8.3.2.3" class="paragraph">
-<p><span class="red">§8.8.3.2.3.</span>
+<p><span class="red">§&#160;8.8.3.2.3.</span>&#160;&#160;
 The text style is set just as in Version 4, using <strong>set_text_style</strong> (which sets that for the current window). The property holds the operand of that instruction (e.g. 4 for italic).</p>
 </div>
 <div id="p8.8.3.2.4" class="paragraph">
-<p><span class="red">§8.8.3.2.4.</span>
+<p><span class="red">§&#160;8.8.3.2.4.</span>&#160;&#160;
 The foreground colour is stored in the lower byte of the colour data property, the background colour in the upper byte.</p>
 </div>
 <div id="p8.8.3.2.5" class="paragraph">
-<p><span class="red">§8.8.3.2.5.</span>
+<p><span class="red">§&#160;8.8.3.2.5.</span>&#160;&#160;
 The font height (in pixels) is stored in the upper byte of the font size property, the font width (in pixels) in the lower byte.</p>
 </div>
 <div id="p8.8.3.2.6" class="paragraph">
-<p><span class="red">§8.8.3.2.6.</span>
+<p><span class="red">§&#160;8.8.3.2.6.</span>&#160;&#160;
 The interpreter should use the line count to see when it should print "[MORE]". A line count of -999 means "never print [MORE]". (Version 6 games often set line counts to manipulate when "[MORE]" is printed.)</p>
 </div>
 <div id="p8.8.3.2.7" class="paragraph">
-<p><span class="red">§8.8.3.2.7.</span>
+<p><span class="red">§&#160;8.8.3.2.7.</span>&#160;&#160;
 If an attempt is made by the game to read the cursor position at a time when text is held unprinted in a buffer, then this text should be flushed first, to ensure that the cursor position is accurate before being read.</p>
 </div>
 <div id="p8.8.3.2.8" class="paragraph">
-<p><span class="red">§8.8.3.2.8.</span>
+<p><span class="red">§&#160;8.8.3.2.8.</span>&#160;&#160;
 <strong>*</strong>*[1.1]* The true foreground and background colours show the actual colour being used for the foreground and background, whether it was set using <strong>set_colour</strong> or <strong>set_true_colour</strong>. Transparent is indicated as -4. If the colour was sampled from a picture then the value shown may be a 15-bit rounding of a more precise colour, leading to a slight inaccuracy if the colour is read and then written back.</p>
 </div>
 <div id="p8.8.3.3" class="paragraph">
-<p><span class="red">§8.8.3.3.</span>
+<p><span class="red">§&#160;8.8.3.3.</span>&#160;&#160;
 All eight windows begin at (1,1). Window 0 occupies the whole screen and is initially selected. Window 1 is as wide as the screen but has zero height. Windows 2 to 7 have zero width and height. Window 0 initially has attribute 1 off and 2, 3 and 4 on (scrolling, copy to printer transcript, buffering). Windows 1 to 7 initially have attribute 4 (buffering) on, and the other attributes off.</p>
 </div>
 <div id="p8.8.3.4" class="paragraph">
-<p><span class="red">§8.8.3.4.</span>
+<p><span class="red">§&#160;8.8.3.4.</span>&#160;&#160;
 A window can be moved with <strong>move_window</strong> and resized with <strong>window_size</strong>. If the window size is reduced so that its cursor lies outside it, the cursor should be reset to the left margin on the top line.</p>
 </div>
 <div id="p8.8.3.5" class="paragraph">
-<p><span class="red">§8.8.3.5.</span>
+<p><span class="red">§&#160;8.8.3.5.</span>&#160;&#160;
 Each window remembers its own cursor position (relative to its own coordinates, so that the position (1,1) is at its top left). These can be changed using <strong>set_cursor</strong> (and it is legal to move the cursor for an unselected window). It is illegal to move the cursor outside the current window.</p>
 </div>
 <div id="p8.8.3.6" class="paragraph">
-<p><span class="red">§8.8.3.6.</span>
+<p><span class="red">§&#160;8.8.3.6.</span>&#160;&#160;
 Each window can be scrolled vertically (up or down) any number of pixels, using the <strong>scroll_window</strong> opcode.</p>
 </div>
 <div id="p8.8.4" class="paragraph">
-<p><span class="red">§8.8.4.</span>
+<p><span class="red">§&#160;8.8.4.</span>&#160;&#160;
 To some extent windows 0 and 1 mimic the behaviour of the lower and upper windows in the Version 4 screen model:</p>
 </div>
 <div id="p8.8.4.1" class="paragraph">
-<p><span class="red">§8.8.4.1.</span>
+<p><span class="red">§&#160;8.8.4.1.</span>&#160;&#160;
 The <strong>split_screen</strong> opcode tiles windows 0 and 1 together to fill the screen, so that window 1 has the given height and is placed at the top left, while window 0 is placed just below it (with its height suitably shortened, possibly making it disappear altogether if window 1 occupies the whole screen).</p>
 </div>
 <div id="p8.8.4.2" class="paragraph">
-<p><span class="red">§8.8.4.2.</span>
+<p><span class="red">§&#160;8.8.4.2.</span>&#160;&#160;
 An "unsplit" (that is, a <strong>split_screen 0</strong>) takes place when the entire screen is cleared with <strong>erase_window -1</strong>, if a "split" has previously occurred (meaning that windows 0 and 1 have been set up as above).</p>
 </div>
 <div id="p8.8.5" class="paragraph">
-<p><span class="red">§8.8.5.</span>
+<p><span class="red">§&#160;8.8.5.</span>&#160;&#160;
 Screen clearing operations:</p>
 </div>
 <div id="p8.8.5.1" class="paragraph">
-<p><span class="red">§8.8.5.1.</span>
+<p><span class="red">§&#160;8.8.5.1.</span>&#160;&#160;
 Erasing a picture is like drawing it (see below), except that the space where it would appear is painted over with background colour instead.</p>
 </div>
 <div id="p8.8.5.2" class="paragraph">
-<p><span class="red">§8.8.5.2.</span>
+<p><span class="red">§&#160;8.8.5.2.</span>&#160;&#160;
 The current line can be erased using <strong>erase_line</strong>, either all the way to the right margin or by any positive number of pixels in that direction. The space is painted over with background colour (even if the current text style is Reverse Video).</p>
 </div>
 <div id="p8.8.5.3" class="paragraph">
-<p><span class="red">§8.8.5.3.</span>
+<p><span class="red">§&#160;8.8.5.3.</span>&#160;&#160;
 Each window can be erased using <strong>erase_window</strong>, erasing to background colour (even if the current text style is Reverse Video).</p>
 </div>
 <div id="p8.8.5.3.1" class="paragraph">
-<p><span class="red">§8.8.5.3.1.</span>
+<p><span class="red">§&#160;8.8.5.3.1.</span>&#160;&#160;
 Erasing window number -1 erases the entire screen to the background colour of window 0, unsplits windows 0 and 1 (see <strong>S</strong> 8.7.3.3 above) and selects window 0.</p>
 </div>
 <div id="p8.8.5.3.2" class="paragraph">
-<p><span class="red">§8.8.5.3.2.</span>
+<p><span class="red">§&#160;8.8.5.3.2.</span>&#160;&#160;
 Erasing window -2 erases the entire screen to the current background colour. (It doesn&#8217;t perform <strong>erase_window</strong> for all the individual windows, and it doesn&#8217;t change any window attributes or cursor positions.)</p>
 </div>
 <div id="p8.8.6" class="paragraph">
-<p><span class="red">§8.8.6.</span>
+<p><span class="red">§&#160;8.8.6.</span>&#160;&#160;
 Pictures may accompany the game. They are not stored in the story file (or the Z-machine) itself, and the interpreter is simply expected to know where to find them.</p>
 </div>
 <div id="p8.8.6.1" class="paragraph">
-<p><span class="red">§8.8.6.1.</span>
+<p><span class="red">§&#160;8.8.6.1.</span>&#160;&#160;
 Pictures are numbered from 1 upwards (not necessarily contiguously). They can be "drawn" or "erased" (using <strong>draw_picture</strong> and <strong>erase_picture</strong>). Before attempting to do so, a game may ask the interpreter about the picture (using <strong>picture_data</strong>): this allows the interpreter to signal that the picture in question is unavailable, or to specify its height and width.</p>
 </div>
 <div id="p8.8.6.2" class="paragraph">
-<p><span class="red">§8.8.6.2.</span>
+<p><span class="red">§&#160;8.8.6.2.</span>&#160;&#160;
 The game may, if it wishes, use the <strong>picture_table</strong> opcode to give the interpreter advance warning that a group of pictures will soon be needed (for instance, a collection of icons making up a control panel). The interpreter may want to load these pictures off disc and into a memory cache.</p>
 </div>
 <div id="p8.8.7" class="paragraph">
-<p><span class="red">§8.8.7.</span>
+<p><span class="red">§&#160;8.8.7.</span>&#160;&#160;
 <strong>*</strong>*[1.1]* Interpreters may use a backing store to store the Z-machine screen state, rather than plotting directly to the screen. This would normally be the case in a windowed operating system environment. If a backing store is in use, display changes executed by the Z-machine may not be immediately made visible to the user. Standard 1.1 adds the new opcode <strong>buffer_screen</strong> to Version 6 to control screen updates. An interpreter is free to ignore the opcode if it doesn&#8217;t fit its display model (in which case it must act as if <strong>buffer_screen</strong> is always set to 0).</p>
 </div>
 <div id="p8.8.7.1" class="paragraph">
-<p><span class="red">§8.8.7.1.</span>
+<p><span class="red">§&#160;8.8.7.1.</span>&#160;&#160;
 <strong>*</strong>*[1.1]* When <strong>buffer_screen</strong> is set to 0 (the default), all display changes are expected to become visible to the user either immediately, or within a short period of time, at the interpreter&#8217;s discretion. At a minimum, all updates become visible before waiting for input. Any intermediate display states between input requests may not be seen; for example when printing a large amount of new text into a scrolling window, all the intermediate scroll positions may or may not be shown.</p>
 </div>
 <div class="paragraph">
@@ -3573,7 +3575,7 @@ The game may, if it wishes, use the <strong>picture_table</strong> opcode to giv
 <p>When <strong>buffer_screen</strong> is set back to 0, the display is not necessarily updated immediately. If this is required, the game must request it seperately (see <strong>S</strong> 8.8.7.2 below).</p>
 </div>
 <div id="p8.8.7.2" class="paragraph">
-<p><span class="red">§8.8.7.2.</span>
+<p><span class="red">§&#160;8.8.7.2.</span>&#160;&#160;
 <strong>*</strong>*[1.1]* With buffer_screen in either state, an update of the visible display can be forced immediately by issuing <strong>buffer_screen</strong> -1, without altering the current buffering state. Note that <strong>buffer_screen</strong> -1 does not flush the text buffer.</p>
 </div>
 </div>
@@ -3744,11 +3746,11 @@ buffer_mode on    ---</pre>
 <p>Some games, from Version 3 onward, have sound effects attached. These are not stored in the story files (or the Z-machine) itself, and the interpreter is simply expected to know where to find them. Other games have only one sound effect, usable in a much more restricted way: a beep or bell sound, which we shall call a "bleep".</p>
 </div>
 <div id="p9.1.1" class="paragraph">
-<p><span class="red">§9.1.1.</span>
+<p><span class="red">§&#160;9.1.1.</span>&#160;&#160;
 In Version 6, the interpreter should set bit 5 of 'Flags 1' if it can provide sound effects beyond a bleep.</p>
 </div>
 <div id="p9.1.2" class="paragraph">
-<p><span class="red">§9.1.2.</span>
+<p><span class="red">§&#160;9.1.2.</span>&#160;&#160;
 In Version 5 and later, a game should have bit 7 of 'Flags 2' set in its story file if it wants to use sound effects beyond a bleep. The interpreter should then clear this bit if it cannot oblige.</p>
 </div>
 </div>
@@ -3758,7 +3760,7 @@ In Version 5 and later, a game should have bit 7 of 'Flags 2' set in its story f
 <p>Sound effects are numbered upwards from 1. Number 1 is a high-pitched bleep, number 2 a low-pitched one and effects from 3 upward are supplied by the interpreter somehow for the particular game in question.</p>
 </div>
 <div id="p9.2.1" class="paragraph">
-<p><span class="red">§9.2.1.</span>
+<p><span class="red">§&#160;9.2.1.</span>&#160;&#160;
 <strong>*</strong>*[1.1]* Aside from bleeps, there are two types of sound effect, samples and music. The game has no way of telling the type of a given sound effect.</p>
 </div>
 </div>
@@ -3774,23 +3776,23 @@ In Version 5 and later, a game should have bit 7 of 'Flags 2' set in its story f
 <p>Bleeps are immediate and brief. Other sound effects take place in the background, while normal operation of the Z-machine is going on. Control is via the <strong>sound_effect</strong> opcode, allowing the game to prepare, start, stop or finish with an effect.</p>
 </div>
 <div id="p9.4.1" class="paragraph">
-<p><span class="red">§9.4.1.</span>
+<p><span class="red">§&#160;9.4.1.</span>&#160;&#160;
 The game may (but need not) "prepare" a sound effect before use. This would indicate to the interpreter that the game intends to use the effect soon: an interpreter might act on this information by loading the sampled sound off disc and into a memory cache.</p>
 </div>
 <div id="p9.4.2" class="paragraph">
-<p><span class="red">§9.4.2.</span>
+<p><span class="red">§&#160;9.4.2.</span>&#160;&#160;
 <strong>*</strong>*[1.1]* A sound effect (other than a bleep) can then be "stopped" or "started". Only one sound effect of each type can play at any given time, so that starting a new music sound effect stops any current music playing, and starting any new sample sound effect stops any current sample sound playing. Samples and music do not interrupt each other.</p>
 </div>
 <div id="p9.4.3" class="paragraph">
-<p><span class="red">§9.4.3.</span>
+<p><span class="red">§&#160;9.4.3.</span>&#160;&#160;
 In Versions 5 and later, a sound effect may repeat any specified number of times, or repeat forever (until stopped).</p>
 </div>
 <div id="p9.4.4" class="paragraph">
-<p><span class="red">§9.4.4.</span>
+<p><span class="red">§&#160;9.4.4.</span>&#160;&#160;
 Eventually, though, if it has not been stopped, it may end by itself. A routine (specified at start time) can then be called. The intention is that this routine may implement effects such as fading in and out, by replaying the sound effect at a different volume. (A game should not place any important code in such a routine.) The routine is only called when the sound has played the requested number of times. If manually stopped or interrupted by another sound, the routine is not called.</p>
 </div>
 <div id="p9.4.5" class="paragraph">
-<p><span class="red">§9.4.5.</span>
+<p><span class="red">§&#160;9.4.5.</span>&#160;&#160;
 The game may, but need not, explicitly "finish with" any sound effect which is not likely to occur again for a while: the interpreter can then throw it out of memory.</p>
 </div>
 </div>
@@ -3863,19 +3865,19 @@ The game may, but need not, explicitly "finish with" any sound effect which is n
 <p>In Versions 3 and later, the player&#8217;s keypresses are drawn from the current "input stream". There are two input streams: numbered 0 (the keyboard) and 1 (a file containing commands). Other inputs (mouse clicks or menu selections), if available, are also implemented as keypresses (see below).</p>
 </div>
 <div id="p10.2.1" class="paragraph">
-<p><span class="red">§10.2.1.</span>
+<p><span class="red">§&#160;10.2.1.</span>&#160;&#160;
 The format of a file containing commands must be the same as that written in output stream 4.</p>
 </div>
 <div id="p10.2.2" class="paragraph">
-<p><span class="red">§10.2.2.</span>
+<p><span class="red">§&#160;10.2.2.</span>&#160;&#160;
 The game can change the current input stream itself, using the opcode <strong>input_stream</strong>. It has no way of finding out which input stream is currently in use. An interpreter is free to change the input stream whenever it likes (e.g. at the player&#8217;s request) or, indeed, to run the entire game under input stream 1 (for testing purposes).</p>
 </div>
 <div id="p10.2.3" class="paragraph">
-<p><span class="red">§10.2.3.</span>
+<p><span class="red">§&#160;10.2.3.</span>&#160;&#160;
 When input stream 1 is first selected, the interpreter may use any method of choosing a file name for the file of commands. (Good practice is to use the same conventions as when choosing a filename for output to stream 4.)</p>
 </div>
 <div id="p10.2.4" class="paragraph">
-<p><span class="red">§10.2.4.</span>
+<p><span class="red">§&#160;10.2.4.</span>&#160;&#160;
 When the the current stream is stream 1, the interpreter should not hold up long passages of text (by printing "[MORE]" and waiting for a keypress, for instance).</p>
 </div>
 </div>
@@ -3885,15 +3887,15 @@ When the the current stream is stream 1, the interpreter should not hold up long
 <p>Mouse support is optional but can be provided in Versions 5 and later.</p>
 </div>
 <div id="p10.3.1" class="paragraph">
-<p><span class="red">§10.3.1.</span>
+<p><span class="red">§&#160;10.3.1.</span>&#160;&#160;
 In a game which wishes to use the mouse, bit 5 of 'Flags 2' in the header should be set in the story file. If it wishes to read the mouse position after clicks, it must provide at least the first two words of a header extension table. (Note that Inform 6.12 and later always provide a header extension table at least this large, but Inform 6.11 and earlier never provide an extension table at all.)</p>
 </div>
 <div id="p10.3.1.1" class="paragraph">
-<p><span class="red">§10.3.1.1.</span>
+<p><span class="red">§&#160;10.3.1.1.</span>&#160;&#160;
 If the interpreter cannot offer mouse support, then it should clear bit 5 of 'Flags 2' to signal this to the game.</p>
 </div>
 <div id="p10.3.2" class="paragraph">
-<p><span class="red">§10.3.2.</span>
+<p><span class="red">§&#160;10.3.2.</span>&#160;&#160;
 Whenever a mouse click takes place (and provided the header extension table exists and contains at least 2 words) the interpreter should update the coordinates as follows:</p>
 </div>
 <div class="literalblock">
@@ -3903,11 +3905,11 @@ Whenever a mouse click takes place (and provided the header extension table exis
 </div>
 </div>
 <div id="p10.3.3" class="paragraph">
-<p><span class="red">§10.3.3.</span>
+<p><span class="red">§&#160;10.3.3.</span>&#160;&#160;
 The mouse is presumed to have between 0 and 16 buttons. The state of these buttons can be read by the <strong>read_mouse</strong> opcode in Version 6. Otherwise, mouse clicks are treated as keyboard input codes (see below).</p>
 </div>
 <div id="p10.3.4" class="paragraph">
-<p><span class="red">§10.3.4.</span>
+<p><span class="red">§&#160;10.3.4.</span>&#160;&#160;
 In Version 6, the mouse can either be free or constrained to one of the 8 windows: if so, clicks outside the 'mouse window' must be ignored, and the interpreter is at liberty to confine the mouse&#8217;s movement to the boundary of its window.</p>
 </div>
 </div>
@@ -3917,19 +3919,19 @@ In Version 6, the mouse can either be free or constrained to one of the 8 window
 <p>Menu support can optionally be provided in Version 6.</p>
 </div>
 <div id="p10.4.1" class="paragraph">
-<p><span class="red">§10.4.1.</span>
+<p><span class="red">§&#160;10.4.1.</span>&#160;&#160;
 In a game which wishes to use menus, bit 8 of 'Flags 2' in the header should be set in the story file.</p>
 </div>
 <div id="p10.4.1.1" class="paragraph">
-<p><span class="red">§10.4.1.1.</span>
+<p><span class="red">§&#160;10.4.1.1.</span>&#160;&#160;
 If the interpreter cannot offer menu support, then it should clear bit 8 of 'Flags 2' to signal this to the game.</p>
 </div>
 <div id="p10.4.2" class="paragraph">
-<p><span class="red">§10.4.2.</span>
+<p><span class="red">§&#160;10.4.2.</span>&#160;&#160;
 Menus are numbered from 0 upwards. 0, 1 and 2 are reserved for the interpreter to manage (this system has only been implemented on the Macintosh, wherein 0 is the Apple menu, 1 the File menu and 2 the Edit menu). Menus numbered 3 and upwards can be created or removed with the <strong>make_menu</strong> opcode.</p>
 </div>
 <div id="p10.4.3" class="paragraph">
-<p><span class="red">§10.4.3.</span>
+<p><span class="red">§&#160;10.4.3.</span>&#160;&#160;
 Menu selection is reported to the game as a keypress (see below). Details of what selection has been made are read with <strong>read_mouse</strong>.</p>
 </div>
 </div>
@@ -3939,19 +3941,19 @@ Menu selection is reported to the game as a keypress (see below). Details of wha
 <p>Whole commands are read from the input stream using the <strong>read</strong> opcode. (Note that this has two different internal names in Inform, <strong>sread</strong> for Versions 1 to 4 and <strong>aread</strong> subsequently.)</p>
 </div>
 <div id="p10.5.1" class="paragraph">
-<p><span class="red">§10.5.1.</span>
+<p><span class="red">§&#160;10.5.1.</span>&#160;&#160;
 In Versions 1 to 3, the interpreter must redisplay the status line before it begins accepting input.</p>
 </div>
 <div id="p10.5.2" class="paragraph">
-<p><span class="red">§10.5.2.</span>
+<p><span class="red">§&#160;10.5.2.</span>&#160;&#160;
 Commands are normally terminated by a new-line (a carriage return or a line feed as appropriate for the machine&#8217;s keyboard or file format).</p>
 </div>
 <div id="p10.5.2.1" class="paragraph">
-<p><span class="red">§10.5.2.1.</span>
+<p><span class="red">§&#160;10.5.2.1.</span>&#160;&#160;
 In Versions 5 and later, the game may provide a "terminating characters table" by giving its byte address in the word at <strong>$2e</strong> in the header. This table is a zero-terminated list of input character codes which cause <strong>aread</strong> to finish the command (in addition to new-line). Only function key codes are permitted: these are defined as those between 129 and 154 inclusive, together with 252, 253 and 254. The special value 255 means "any function key code is terminating".</p>
 </div>
 <div id="p10.5.3" class="paragraph">
-<p><span class="red">§10.5.3.</span>
+<p><span class="red">§&#160;10.5.3.</span>&#160;&#160;
 <strong>*</strong>*[1.0]* In Versions 4 and later, an interpreter should ideally be able to time input and to call a (game) routine at periodic intervals: see the <strong>read</strong> opcode. If it is able to do this, it should set bit 7 of 'Flags 1' in the header.</p>
 </div>
 </div>
@@ -3967,15 +3969,15 @@ In Versions 5 and later, the game may provide a "terminating characters table" b
 <p>The only characters which can be read from the keyboard are ZSCII characters defined for input (see <strong>S</strong> 3).</p>
 </div>
 <div id="p10.7.1" class="paragraph">
-<p><span class="red">§10.7.1.</span>
+<p><span class="red">§&#160;10.7.1.</span>&#160;&#160;
 Every ZSCII character defined for input can be returned by <strong>read_char</strong>.</p>
 </div>
 <div id="p10.7.2" class="paragraph">
-<p><span class="red">§10.7.2.</span>
+<p><span class="red">§&#160;10.7.2.</span>&#160;&#160;
 Only ZSCII characters defined for both input and output can be stored in the text buffer supplied to the <strong>read</strong> opcode.</p>
 </div>
 <div id="p10.7.3" class="paragraph">
-<p><span class="red">§10.7.3.</span>
+<p><span class="red">§&#160;10.7.3.</span>&#160;&#160;
 The "escape" code is optional: that is, an interpreter need not provide an escape key. (The Inform library clears and quits menus if this code is returned to <strong>read_char</strong>.)</p>
 </div>
 </div>
@@ -4004,7 +4006,7 @@ The "escape" code is optional: that is, an interpreter need not provide an escap
 <h2 id="ch.11"><a class="anchor" href="#ch.11"></a>11. The format of the header</h2>
 <div class="sectionbody">
 <div id="p11.1" class="paragraph">
-<p><span class="red">§11.1.</span>
+<p><span class="red">§&#160;11.1.</span>&#160;&#160;
 The header table summarises those locations in the Z-machine&#8217;s header which an interpreter must deal with. (For further notes on traditional usage, see <a href="#app.b">Appendix B</a>.) "Hex" means the address, in hexadecimal; "V" the earliest Version to which the rule is applicable; "Dyn" means that the byte or bit may legally be changed by the game during play; "Int" means that the interpreter may change it; "Rst" means that the interpreter must set it correctly after loading the game, after a restore or after a restart.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
@@ -4480,15 +4482,15 @@ The header table summarises those locations in the Z-machine&#8217;s header whic
 <p>Some early Version 3 files do not contain length and checksum data, hence the notation <strong>3+</strong>.</p>
 </div>
 <div id="p11.1.1" class="paragraph">
-<p><span class="red">§11.1.1.</span>
+<p><span class="red">§&#160;11.1.1.</span>&#160;&#160;
 It is illegal for a game to alter those fields not marked as "Dyn". An interpreter is therefore free to store values of such fields in its own variables.</p>
 </div>
 <div id="p11.1.2" class="paragraph">
-<p><span class="red">§11.1.2.</span>
+<p><span class="red">§&#160;11.1.2.</span>&#160;&#160;
 The state of the transcription bit (bit 0 of Flags 2) can be changed directly by the game to turn transcribing on or off (see <strong>S</strong> 7.3, <strong>S</strong> 7.4). The interpreter must also alter it if stream 2 is turned on or off, to ensure that the bit always reflects the true state of transcribing. Note that the interpreter ensures that its value survives a restart or restore.</p>
 </div>
 <div id="p11.1.3" class="paragraph">
-<p><span class="red">§11.1.3.</span>
+<p><span class="red">§&#160;11.1.3.</span>&#160;&#160;
 Infocom used the interpreter numbers:</p>
 </div>
 <div class="literalblock">
@@ -4503,38 +4505,38 @@ Infocom used the interpreter numbers:</p>
 <p>(The DECSystem-20 was Infocom&#8217;s own in-house mainframe.) An interpreter should choose the interpreter number most suitable for the machine it will run on. In Versions up to 5, the main consideration is that the behaviour of 'Beyond Zork' depends on the interpreter number (in terms of its usage of the character graphics font). In Version 6, the decision is more serious, as existing Infocom story files depend on interpreter number in many ways: moreover, some story files expect to be run only on the interpreters for a particular machine. (There are, for instance, specifically Amiga versions.)</p>
 </div>
 <div id="p11.1.3.1" class="paragraph">
-<p><span class="red">§11.1.3.1.</span>
+<p><span class="red">§&#160;11.1.3.1.</span>&#160;&#160;
 Interpreter versions are conventionally ASCII codes for upper-case letters in Versions 4 and 5 (note that Infocom&#8217;s Version 6 interpreters just store numbers here).</p>
 </div>
 <div class="paragraph">
 <p>Modern games are strongly discouraged from testing the interpreter number or interpreter version header information for any game-changing behaviour. It is rarely meaningful, and a Standard interpreter provides many better ways to query the interpreter for information.</p>
 </div>
 <div id="p11.1.4" class="paragraph">
-<p><span class="red">§11.1.4.</span>
+<p><span class="red">§&#160;11.1.4.</span>&#160;&#160;
 <strong>*</strong>*[1.0]* The use of bit 7 in 'Flags 1' to signal whether timed input is available was new in the 1.0 document: see the preface.</p>
 </div>
 <div id="p11.1.5" class="paragraph">
-<p><span class="red">§11.1.5.</span>
+<p><span class="red">§&#160;11.1.5.</span>&#160;&#160;
 <strong>*</strong>*[1.0]* If an interpreter obeys Revision <strong>n.m</strong> of this document <em>perfectly</em>, as far as anyone knows, then byte <strong>$32</strong> should be written with <strong>n</strong> and byte <strong>$33</strong> with <strong>m</strong>. If it is an earlier (non-standard) interpreter, it should leave these bytes as 0.</p>
 </div>
 <div id="p11.1.6" class="paragraph">
-<p><span class="red">§11.1.6.</span>
+<p><span class="red">§&#160;11.1.6.</span>&#160;&#160;
 The file length stored at <strong>$1a</strong> is actually divided by a constant, depending on the Version, to make it fit into a header word. This constant is 2 for Versions 1 to 3, 4 for Versions 4 to 5 or 8 for Versions 6 and later.</p>
 </div>
 <div id="p11.1.7" class="paragraph">
-<p><span class="red">§11.1.7.</span>
+<p><span class="red">§&#160;11.1.7.</span>&#160;&#160;
 The header extension table provides potentially unlimited room for further header information. It is a table of word entries, in which the initial word contains the number of words of data to follow.</p>
 </div>
 <div id="p11.1.7.1" class="paragraph">
-<p><span class="red">§11.1.7.1.</span>
+<p><span class="red">§&#160;11.1.7.1.</span>&#160;&#160;
 If the interpreter needs to read a word which is beyond the length of the extension table, or the extension table doesn&#8217;t exist at all, then the result is 0.</p>
 </div>
 <div id="p11.1.7.2" class="paragraph">
-<p><span class="red">§11.1.7.2.</span>
+<p><span class="red">§&#160;11.1.7.2.</span>&#160;&#160;
 If the interpreter needs to write a word which is beyond the length of the extension table, or the extension table doesn&#8217;t exist at all, then the result is that nothing happens.</p>
 </div>
 <div id="p11.1.7.3" class="paragraph">
-<p><span class="red">§11.1.7.3.</span>
+<p><span class="red">§&#160;11.1.7.3.</span>&#160;&#160;
 <strong>*</strong>*[1.0][1.1]* Words in the header extension table have been allocated as follows:</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
@@ -4623,11 +4625,11 @@ If the interpreter needs to write a word which is beyond the length of the exten
 </tbody>
 </table>
 <div id="p11.1.7.4" class="paragraph">
-<p><span class="red">§11.1.7.4.</span>
+<p><span class="red">§&#160;11.1.7.4.</span>&#160;&#160;
 <strong>*</strong>*[1.1]* The bits in Flags 3 are set by the game to request use of a feature. If the interpreter cannot provide a feature, it must clear the relevant bit.</p>
 </div>
 <div id="p11.1.7.4.1" class="paragraph">
-<p><span class="red">§11.1.7.4.1.</span>
+<p><span class="red">§&#160;11.1.7.4.1.</span>&#160;&#160;
 <strong>*</strong>*[1.1]* All unused bits in Flags 3 must be cleared by the interpreter.</p>
 </div>
 <div class="sect2">
@@ -4680,7 +4682,7 @@ If the interpreter needs to write a word which is beyond the length of the exten
 <p>Next is the object tree. Objects are numbered consecutively from 1 upward, with object number 0 being used to mean "nothing" (though there is formally no such object). The table consists of a list of entries, one for each object.</p>
 </div>
 <div id="p12.3.1" class="paragraph">
-<p><span class="red">§12.3.1.</span>
+<p><span class="red">§&#160;12.3.1.</span>&#160;&#160;
 In Versions 1 to 3, there are at most 255 objects, each having a 9-byte entry as follows:</p>
 </div>
 <div class="literalblock">
@@ -4693,7 +4695,7 @@ In Versions 1 to 3, there are at most 255 objects, each having a 9-byte entry as
 <p><strong>parent</strong>, <strong>sibling</strong> and <strong>child</strong> must all hold valid object numbers. The <strong>properties</strong> pointer is the byte address of the list of properties attached to the object. Attributes 0 to 31 are flags (at any given time, they are either on (1) or off (0)) and are stored topmost bit first: e.g., attribute 0 is stored in bit 7 of the first byte, attribute 31 is stored in bit 0 of the fourth.</p>
 </div>
 <div id="p12.3.2" class="paragraph">
-<p><span class="red">§12.3.2.</span>
+<p><span class="red">§&#160;12.3.2.</span>&#160;&#160;
 In Version 4 and later, there are at most 65535 objects, each having a 14-byte entry as follows:</p>
 </div>
 <div class="literalblock">
@@ -4718,7 +4720,7 @@ In Version 4 and later, there are at most 65535 objects, each having a 14-byte e
 <p>where the <strong>text-length</strong> is the number of 2-byte words making up the text, which is stored in the usual format. (This means that an object&#8217;s short name is limited to 765 Z-characters.) After the header, the properties are listed in descending numerical order. (This order is essential and is not a matter of convention.)</p>
 </div>
 <div id="p12.4.1" class="paragraph">
-<p><span class="red">§12.4.1.</span>
+<p><span class="red">§&#160;12.4.1.</span>&#160;&#160;
 In Versions 1 to 3, each property is stored as a block</p>
 </div>
 <div class="literalblock">
@@ -4731,7 +4733,7 @@ In Versions 1 to 3, each property is stored as a block</p>
 <p>where the <strong>size byte</strong> is arranged as 32 times the number of data bytes minus one, plus the property number. A property list is terminated by a size byte of 0. (It is otherwise illegal for a size byte to be a multiple of 32.)</p>
 </div>
 <div id="p12.4.2" class="paragraph">
-<p><span class="red">§12.4.2.</span>
+<p><span class="red">§&#160;12.4.2.</span>&#160;&#160;
 In Versions 4 and later, a property block instead has the form</p>
 </div>
 <div class="literalblock">
@@ -4744,15 +4746,15 @@ In Versions 4 and later, a property block instead has the form</p>
 <p>The property number occupies the bottom 6 bits of the first size byte.</p>
 </div>
 <div id="p12.4.2.1" class="paragraph">
-<p><span class="red">§12.4.2.1.</span>
+<p><span class="red">§&#160;12.4.2.1.</span>&#160;&#160;
 If the top bit (bit 7) of the first size byte is set, then there are two size-and-number bytes as follows. In the first byte, bits 0 to 5 contain the property number; bit 6 is undetermined (it is clear in all Infocom or Inform story files); bit 7 is set. In the second byte, bits 0 to 5 contain the property data length, counting in bytes; bit 6 is undetermined (it is set in Infocom story files, but clear in Inform ones); bit 7 is always set.</p>
 </div>
 <div id="p12.4.2.1.1" class="paragraph">
-<p><span class="red">§12.4.2.1.1.</span>
+<p><span class="red">§&#160;12.4.2.1.1.</span>&#160;&#160;
 <strong>*</strong>*[1.0]* A value of 0 as property data length (in the second byte) should be interpreted as a length of 64. (Inform can compile such properties.)</p>
 </div>
 <div id="p12.4.2.2" class="paragraph">
-<p><span class="red">§12.4.2.2.</span>
+<p><span class="red">§&#160;12.4.2.2.</span>&#160;&#160;
 If the top bit (bit 7) of the first size byte is clear, then there is only one size-and-number byte. Bits 0 to 5 contain the property number; bit 6 is either clear to indicate a property data length of 1, or set to indicate a length of 2; bit 7 is clear.</p>
 </div>
 </div>
@@ -4815,7 +4817,7 @@ If the top bit (bit 7) of the first size byte is clear, then there is only one s
 <p>The keyboard input codes are "word-separators": typically (and under Inform mandatorily) these are the ZSCII codes for full stop, comma and double-quote. Note that a space character (32) should never be a word-separator. The "entry length" is the length of each word&#8217;s entry in the dictionary table. (It must be at least 4 in Versions 1 to 3, and at least 6 in later Versions.)</p>
 </div>
 <div id="p13.2.1" class="paragraph">
-<p><span class="red">§13.2.1.</span>
+<p><span class="red">§&#160;13.2.1.</span>&#160;&#160;
 Note that the word-separators table can only contain codes which are defined in ZSCII for both input and output.</p>
 </div>
 </div>
@@ -4852,7 +4854,7 @@ Note that the word-separators table can only contain codes which are defined in 
 <p>Lexical analysis takes place in two circumstances: on request of a <strong>tokenise</strong> opcode (in which case it can use any dictionary table it likes, in the format above) and during acceptance of a game command (in which case the standard dictionary is used).</p>
 </div>
 <div id="p13.6.1" class="paragraph">
-<p><span class="red">§13.6.1.</span>
+<p><span class="red">§&#160;13.6.1.</span>&#160;&#160;
 First, the text is broken up into words. Spaces divide up words and are otherwise ignored. Word separators also divide words, but each one of them is considered a word in its own right. Thus, the erratically-spaced text "fred,go fishing" is divided into four words:</p>
 </div>
 <div class="literalblock">
@@ -4861,11 +4863,11 @@ First, the text is broken up into words. Spaces divide up words and are otherwis
 </div>
 </div>
 <div id="p13.6.2" class="paragraph">
-<p><span class="red">§13.6.2.</span>
+<p><span class="red">§&#160;13.6.2.</span>&#160;&#160;
 Each word is then encoded as a Z-machine string in dictionary form, and searched for in the dictionary.</p>
 </div>
 <div id="p13.6.3" class="paragraph">
-<p><span class="red">§13.6.3.</span>
+<p><span class="red">§&#160;13.6.3.</span>&#160;&#160;
 A "parse table" is then written, recording the number of words, the length and position of each word and the dictionary address of each word which is recognised. For the format, see the <strong>read</strong> opcode.</p>
 </div>
 </div>
@@ -6260,19 +6262,19 @@ A "parse table" is then written, recording the number of words, the length and p
 <p>Formally, it is illegal for a game to contain an opcode not specified for its version. An interpreter should normally halt with a suitable message.</p>
 </div>
 <div id="p14.2.1" class="paragraph">
-<p><span class="red">§14.2.1.</span>
+<p><span class="red">§&#160;14.2.1.</span>&#160;&#160;
 However, extended opcodes in the range EXT:29 to EXT:255 should be simply ignored (perhaps with a warning message somewhere off-screen).</p>
 </div>
 <div id="p14.2.2" class="paragraph">
-<p><span class="red">§14.2.2.</span>
+<p><span class="red">§&#160;14.2.2.</span>&#160;&#160;
 <strong>*</strong>*[1.0][1.1]* EXT:11 and EXT:12 were opcodes added in Standard 1.0 and can be generated in code compiled by Inform 6.12 or later. EXT:13 and EXT:29 are new in Standard 1.1. EXT:14 to EXT:15, and EXT:30 to EXT:127, are reserved for future versions of this document to specify.</p>
 </div>
 <div id="p14.2.3" class="paragraph">
-<p><span class="red">§14.2.3.</span>
+<p><span class="red">§&#160;14.2.3.</span>&#160;&#160;
 Designers who wish to create their own "new" opcodes, for one specific game only, are asked to use opcode numbers in the range EXT:128 to EXT:255. It is easy to modify Inform to name and assemble such opcodes. (Of course the game will then have to be circulated with a suitably modified interpreter to run it.)</p>
 </div>
 <div id="p14.2.4" class="paragraph">
-<p><span class="red">§14.2.4.</span>
+<p><span class="red">§&#160;14.2.4.</span>&#160;&#160;
 Interpreter-writers should ideally make this easy by providing a routine which is called if EXT:128 to EXT:255 are found, so that the minimum possible modification to the interpreter is needed.</p>
 </div>
 <hr>

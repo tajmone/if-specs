@@ -3,7 +3,7 @@
 = The format of the header
 
 [[p11.1]]
-[.red]##§11.1.##
+[.red]##§{nbsp}11.1.##{nbsp}{nbsp}
 The header table summarises those locations in the Z-machine's header which an interpreter must deal with. (For further notes on traditional usage, see <<appb.adoc#app.b>>.) "Hex" means the address, in hexadecimal; "V" the earliest Version to which the rule is applicable; "Dyn" means that the byte or bit may legally be changed by the game during play; "Int" means that the interpreter may change it; "Rst" means that the interpreter must set it correctly after loading the game, after a restore or after a restart.
 
 .*Header format*
@@ -71,15 +71,15 @@ The header table summarises those locations in the Z-machine's header which an i
 Some early Version 3 files do not contain length and checksum data, hence the notation *3+*.
 
 [[p11.1.1]]
-[.red]##§11.1.1.##
+[.red]##§{nbsp}11.1.1.##{nbsp}{nbsp}
 It is illegal for a game to alter those fields not marked as "Dyn". An interpreter is therefore free to store values of such fields in its own variables.
 
 [[p11.1.2]]
-[.red]##§11.1.2.##
+[.red]##§{nbsp}11.1.2.##{nbsp}{nbsp}
 The state of the transcription bit (bit 0 of Flags 2) can be changed directly by the game to turn transcribing on or off (see *S* 7.3, *S* 7.4). The interpreter must also alter it if stream 2 is turned on or off, to ensure that the bit always reflects the true state of transcribing. Note that the interpreter ensures that its value survives a restart or restore.
 
 [[p11.1.3]]
-[.red]##§11.1.3.##
+[.red]##§{nbsp}11.1.3.##{nbsp}{nbsp}
 Infocom used the interpreter numbers:
 
 ....
@@ -92,37 +92,37 @@ Infocom used the interpreter numbers:
 (The DECSystem-20 was Infocom's own in-house mainframe.) An interpreter should choose the interpreter number most suitable for the machine it will run on. In Versions up to 5, the main consideration is that the behaviour of 'Beyond Zork' depends on the interpreter number (in terms of its usage of the character graphics font). In Version 6, the decision is more serious, as existing Infocom story files depend on interpreter number in many ways: moreover, some story files expect to be run only on the interpreters for a particular machine. (There are, for instance, specifically Amiga versions.)
 
 [[p11.1.3.1]]
-[.red]##§11.1.3.1.##
+[.red]##§{nbsp}11.1.3.1.##{nbsp}{nbsp}
 Interpreter versions are conventionally ASCII codes for upper-case letters in Versions 4 and 5 (note that Infocom's Version 6 interpreters just store numbers here).
 
 Modern games are strongly discouraged from testing the interpreter number or interpreter version header information for any game-changing behaviour. It is rarely meaningful, and a Standard interpreter provides many better ways to query the interpreter for information.
 
 [[p11.1.4]]
-[.red]##§11.1.4.##
+[.red]##§{nbsp}11.1.4.##{nbsp}{nbsp}
 ****[1.0]* The use of bit 7 in 'Flags 1' to signal whether timed input is available was new in the 1.0 document: see the preface.
 
 [[p11.1.5]]
-[.red]##§11.1.5.##
+[.red]##§{nbsp}11.1.5.##{nbsp}{nbsp}
 ****[1.0]* If an interpreter obeys Revision *n.m* of this document _perfectly_, as far as anyone knows, then byte *$32* should be written with *n* and byte *$33* with *m*. If it is an earlier (non-standard) interpreter, it should leave these bytes as 0.
 
 [[p11.1.6]]
-[.red]##§11.1.6.##
+[.red]##§{nbsp}11.1.6.##{nbsp}{nbsp}
 The file length stored at *$1a* is actually divided by a constant, depending on the Version, to make it fit into a header word. This constant is 2 for Versions 1 to 3, 4 for Versions 4 to 5 or 8 for Versions 6 and later.
 
 [[p11.1.7]]
-[.red]##§11.1.7.##
+[.red]##§{nbsp}11.1.7.##{nbsp}{nbsp}
 The header extension table provides potentially unlimited room for further header information. It is a table of word entries, in which the initial word contains the number of words of data to follow.
 
 [[p11.1.7.1]]
-[.red]##§11.1.7.1.##
+[.red]##§{nbsp}11.1.7.1.##{nbsp}{nbsp}
 If the interpreter needs to read a word which is beyond the length of the extension table, or the extension table doesn't exist at all, then the result is 0.
 
 [[p11.1.7.2]]
-[.red]##§11.1.7.2.##
+[.red]##§{nbsp}11.1.7.2.##{nbsp}{nbsp}
 If the interpreter needs to write a word which is beyond the length of the extension table, or the extension table doesn't exist at all, then the result is that nothing happens.
 
 [[p11.1.7.3]]
-[.red]##§11.1.7.3.##
+[.red]##§{nbsp}11.1.7.3.##{nbsp}{nbsp}
 ****[1.0][1.1]* Words in the header extension table have been allocated as follows:
 
 .*Header extension format*
@@ -140,11 +140,11 @@ If the interpreter needs to write a word which is beyond the length of the exten
 |===
 
 [[p11.1.7.4]]
-[.red]##§11.1.7.4.##
+[.red]##§{nbsp}11.1.7.4.##{nbsp}{nbsp}
 ****[1.1]* The bits in Flags 3 are set by the game to request use of a feature. If the interpreter cannot provide a feature, it must clear the relevant bit.
 
 [[p11.1.7.4.1]]
-[.red]##§11.1.7.4.1.##
+[.red]##§{nbsp}11.1.7.4.1.##{nbsp}{nbsp}
 ****[1.1]* All unused bits in Flags 3 must be cleared by the interpreter.
 
 
