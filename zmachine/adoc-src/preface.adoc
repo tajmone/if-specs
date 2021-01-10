@@ -89,7 +89,7 @@ In any event, Infocom's original shipped interpreters do not conform to this sta
 
 == Notation
 
-Hexadecimal numbers are written with an initial dollar, as in *$ff*, while binary numbers are written with a double-dollar as in *$$11011*, according to Inform conventions.
+Hexadecimal numbers are written with an initial dollar, as in *$ff*, while binary numbers are written with a double-dollar as in *+++$$11011+++*, according to Inform conventions.
 The bits in a byte are numbered 0 to 7, 0 being the least significant and the top bit, 7, the most.
 
 Story files are mechanically best identified by their release number and serial code, which are written into the header information at the bottom of Z-machine memory.
