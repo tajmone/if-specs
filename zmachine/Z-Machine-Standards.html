@@ -1958,30 +1958,36 @@ The words in the table give Unicode character codes for each of the ZSCII charac
 </div>
 <div id="p3.8.5.3" class="paragraph">
 <p><span class="red">§&#160;3.8.5.3.</span>&#160;&#160;
-The default table is as shown in Table 1.</p>
+The default table is as shown in <a href="#table.unicode-default">Table 3</a>.</p>
 </div>
 <div id="p3.8.5.4" class="paragraph">
 <p><span class="red">§&#160;3.8.5.4.</span>&#160;&#160;
-The defined extra characters are entirely normal ZSCII characters. They can appear in a story file&#8217;s alphabet table, in an array created by print stream 3 and so on.</p>
+The defined extra characters are entirely normal ZSCII characters.
+They can appear in a story file&#8217;s alphabet table, in an array created by print stream 3 and so on.</p>
 </div>
 <div id="p3.8.5.4.1" class="paragraph">
 <p><span class="red">§&#160;3.8.5.4.1.</span>&#160;&#160;
-<strong>*</strong>*[1.0]* The interpreter is required to be able to print representations of every defined Unicode character under <strong>$0100</strong> (i.e. of every defined ISO 8859-1 Latin1 character). If no suitable letter forms are available, textual equivalents may be used (such as "ss" in place of German sharp "s").</p>
+<strong>*</strong>*[1.0]* The interpreter is required to be able to print representations of every defined Unicode character under <strong>$0100</strong> (i.e. of every defined ISO 8859-1 Latin1 character).
+If no suitable letter forms are available, textual equivalents may be used (such as &#8220;ss&#8221; in place of German sharp &#8220;s&#8221;).</p>
 </div>
 <div id="p3.8.5.4.2" class="paragraph">
 <p><span class="red">§&#160;3.8.5.4.2.</span>&#160;&#160;
-Normally, and where sensibly possible, all punctuation and letter characters in ISO 8859-1 Latin1 should be readable from the interpreter&#8217;s keyboard. (However, some interpreters may want to provide alternative keyboard mappings, or to run in a different ISO 8859 set: Cyrillic, for example.)</p>
+Normally, and where sensibly possible, all punctuation and letter characters in ISO 8859-1 Latin1 should be readable from the interpreter&#8217;s keyboard.
+(However, some interpreters may want to provide alternative keyboard mappings, or to run in a different ISO 8859 set: Cyrillic, for example.)</p>
 </div>
 <div id="p3.8.5.4.3" class="paragraph">
 <p><span class="red">§&#160;3.8.5.4.3.</span>&#160;&#160;
-<strong>*</strong>*[1.0]* An interpreter is not required to have suitable letter-forms for printing Unicode characters <strong>$0100</strong> to <strong>$FFFF</strong>. (It may, if it chooses, allow the user to configure certain fonts for certain Unicode ranges; but this is not required.) If a Unicode character must be printed which an interpreter has no letter-form for, a question mark should be printed instead.</p>
+<strong>*</strong>*[1.0]* An interpreter is not required to have suitable letter-forms for printing Unicode characters <strong>$0100</strong> to <strong>$FFFF</strong>.
+(It may, if it chooses, allow the user to configure certain fonts for certain Unicode ranges; but this is not required.)
+If a Unicode character must be printed which an interpreter has no letter-form for, a question mark should be printed instead.</p>
 </div>
 <div id="p3.8.5.4.4" class="paragraph">
 <p><span class="red">§&#160;3.8.5.4.4.</span>&#160;&#160;
 The Z-machine is not required to handle complex Unicode formatting like combining characters, bidirectional formatting and unusual line-wrapping rules.</p>
 </div>
 <div class="paragraph">
-<p>In Versions other than 6, interpreters may either handle these features, or not, in window 0. In window 1, and all version 6 windows, they should be ignored.</p>
+<p>In Versions other than 6, interpreters may either handle these features, or not, in window 0.
+In window 1, and all version 6 windows, they should be ignored.</p>
 </div>
 <div id="p3.8.5.4.5" class="paragraph">
 <p><span class="red">§&#160;3.8.5.4.5.</span>&#160;&#160;
@@ -1991,520 +1997,541 @@ Unicode characters U+0000 to U+001F and U+007F to U+009F are control codes, and 
 <p><span class="red">§&#160;3.8.6.</span>&#160;&#160;
 ZSCII codes 252 to 254 are defined for input only:</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>252: menu click   253: mouse double-click   254: mouse single-click</pre>
-</div>
-</div>
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock">252:</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">menu click</p></td>
+<th class="tableblock halign-center valign-top"><p class="tableblock">253:</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mouse double-click</p></td>
+<th class="tableblock halign-center valign-top"><p class="tableblock">254:</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mouse single-click</p></td>
+</tr>
+</tbody>
+</table>
 <div class="paragraph">
-<p>Menu clicks are available only in Version 6. A single click, or the first click of a double-click, is passed in as 254. The second click of a double-click is passed in as 253. In Versions 5 and later it is recommended that an interpreter should only send code 254, whether the mouse is clicked once or twice.</p>
+<p>Menu clicks are available only in Version 6.
+A single click, or the first click of a double-click, is passed in as 254.
+The second click of a double-click is passed in as 253.
+In Versions 5 and later it is recommended that an interpreter should only send code 254, whether the mouse is clicked once or twice.</p>
 </div>
 <div id="p3.8.7" class="paragraph">
 <p><span class="red">§&#160;3.8.7.</span>&#160;&#160;
-ZSCII code 255 is undefined. (This value is needed in the "terminating characters table" as a wildcard, indicating "any Input-only character with code 128 or above." However, it cannot itself be printed or read from the keyboard.)</p>
+ZSCII code 255 is undefined.
+(This value is needed in the &#8220;terminating characters table&#8221; as a wildcard, indicating &#8220;any Input-only character with code 128 or above.&#8221;
+However, it cannot itself be printed or read from the keyboard.)</p>
 </div>
 <hr>
-<table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 3. <strong>Table 1: default Unicode translations (see S 3.8.5.3)</strong></caption>
+<table id="table.unicode-default" class="tableblock frame-all grid-all fit-content">
+<caption class="title">Table 3. Default Unicode translations (see <a href="#p3.8.5.3">§&#160;3.8.5.3</a>)</caption>
 <colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
+<col>
+<col>
+<col>
+<col>
+<col>
 </colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">ZSCII code (dec)</th>
-<th class="tableblock halign-left valign-top">Unicode code (hex)</th>
-<th class="tableblock halign-left valign-top">Name</th>
-<th class="tableblock halign-left valign-top">Character</th>
-<th class="tableblock halign-left valign-top">Textual Equivalent</th>
-</tr>
-</thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">155</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0e4</p></td>
+<th class="tableblock halign-center valign-top"><p class="tableblock">ZSCII<br>
+      code (dec)</p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock">Unicode<br>
+      code (hex)</p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock">Name</p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock">Character</p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock">Textual<br>
+      Equivalent</p></th>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">155</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>0e4</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">a-diaeresis</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ä</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ae</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">ä</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">ae</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">156</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0f6</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">156</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>0f6</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">o-diaeresis</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ö</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">oe</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">ö</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">oe</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">157</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0fc</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">157</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>0fc</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">u-diaeresis</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ü</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ue</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">ü</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">ue</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">158</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0c4</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">158</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>0c4</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">A-diaeresis</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Ä</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Ae</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Ä</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Ae</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">159</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0d6</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">159</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>0d6</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">O-diaeresis</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Ö</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Oe</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Ö</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Oe</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">160</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0dc</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">160</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>0dc</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">U-diaeresis</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Ü</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Ue</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Ü</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Ue</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">161</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0df</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">161</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>0df</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">sz-ligature</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ß</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ss</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">ß</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">ss</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">162</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0bb</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">162</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>0bb</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">quotation</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">»</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&gt;&gt; or "</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">»</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&gt;&gt; or "</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">163</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0ab</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">163</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>0ab</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">marks</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">«</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;&lt; or "</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">«</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&lt;&lt; or "</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">164</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0eb</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">164</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>0eb</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">e-diaeresis</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ë</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">e</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">ë</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">e</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">165</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0ef</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">165</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>0ef</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">i-diaeresis</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ï</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">i</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">ï</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">i</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">166</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0ff</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">166</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>0ff</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">y-diaeresis</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ÿ</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">y</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">ÿ</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">y</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">167</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0cb</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">167</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>0cb</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">E-diaeresis</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Ë</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">E</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Ë</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">E</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">168</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0cf</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">168</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>0cf</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">I-diaeresis</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Ï</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">I</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Ï</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">I</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">169</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0e1</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">169</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>0e1</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">a-acute</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">á</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">a</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">á</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">a</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">170</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0e9</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">170</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>0e9</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">e-acute</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">é</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">e</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">é</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">e</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">171</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0ed</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">171</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>0ed</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">i-acute</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">í</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">i</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">í</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">i</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">172</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0f3</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">172</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>0f3</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">o-acute</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ó</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">o</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">ó</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">o</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">173</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0fa</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">173</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>0fa</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">u-acute</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ú</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">u</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">ú</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">u</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">174</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0fd</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">174</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>0fd</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">y-acute</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ý</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">y</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">ý</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">y</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">175</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0c1</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">175</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>0c1</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">A-acute</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Á</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Á</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">A</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">176</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0c9</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">176</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>0c9</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">E-acute</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">É</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">E</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">É</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">E</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">177</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0cd</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">177</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>0cd</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">I-acute</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Í</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">I</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Í</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">I</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">178</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0d3</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">178</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>0d3</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">O-acute</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Ó</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">O</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Ó</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">O</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">179</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0da</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">179</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>0da</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">U-acute</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Ú</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">U</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Ú</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">U</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">180</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0dd</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">180</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>0dd</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Y-acute</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Ý</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Y</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Ý</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Y</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">181</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0e0</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">181</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>0e0</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">a-grave</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">à</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">a</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">à</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">a</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">182</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0e8</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">182</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>0e8</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">e-grave</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">è</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">e</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">è</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">e</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">183</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0ec</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">183</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>0ec</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">i-grave</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ì</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">i</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">ì</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">i</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">184</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0f2</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">184</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>0f2</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">o-grave</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ò</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">o</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">ò</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">o</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">185</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0f9</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">185</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>0f9</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">u-grave</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ù</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">u</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">ù</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">u</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">186</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0c0</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">186</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>0c0</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">A-grave</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">À</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">À</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">A</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">187</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0c8</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">187</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>0c8</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">E-grave</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">È</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">E</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">È</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">E</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">188</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0cc</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">188</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>0cc</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">I-grave</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Ì</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">I</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Ì</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">I</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">189</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0d2</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">189</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>0d2</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">O-grave</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Ò</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">O</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Ò</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">O</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">190</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0d9</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">190</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>0d9</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">U-grave</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Ù</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">U</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Ù</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">U</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">191</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0e2</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">191</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>0e2</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">a-circumflex</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">â</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">a</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">â</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">a</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">192</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0ea</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">192</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>0ea</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">e-circumflex</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ê</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">e</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">ê</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">e</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">193</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0ee</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">193</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>0ee</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">i-circumflex</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">î</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">i</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">î</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">i</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">194</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0f4</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">194</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>0f4</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">o-circumflex</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ô</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">o</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">ô</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">o</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">195</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0fb</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">195</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>0fb</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">u-circumflex</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">û</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">u</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">û</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">u</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">196</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0c2</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">196</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>0c2</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">A-circumflex</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Â</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Â</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">A</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">197</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0ca</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">197</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>0ca</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">E-circumflex</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Ê</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">E</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Ê</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">E</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">198</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0ce</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">198</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>0ce</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">I-circumflex</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Î</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">I</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Î</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">I</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">199</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0d4</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">199</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>0d4</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">O-circumflex</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Ô</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">O</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Ô</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">O</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">200</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0db</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">200</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>0db</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">U-circumflex</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Û</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">U</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Û</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">U</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">201</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0e5</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">201</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>0e5</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">a-ring</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">å</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">a</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">å</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">a</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">202</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0c5</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">202</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>0c5</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">A-ring</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Å</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Å</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">A</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">203</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0f8</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">203</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>0f8</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">o-slash</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ø</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">o</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">ø</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">o</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">204</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0d8</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">204</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>0d8</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">O-slash</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Ø</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">O</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Ø</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">O</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">205</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0e3</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">205</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>0e3</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">a-tilde</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ã</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">a</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">ã</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">a</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">206</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0f1</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">206</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>0f1</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">n-tilde</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ñ</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">n</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">ñ</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">n</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">207</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0f5</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">207</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>0f5</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">o-tilde</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">õ</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">o</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">õ</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">o</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">208</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0c3</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">208</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>0c3</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">A-tilde</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Ã</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Ã</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">A</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">209</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0d1</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">209</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>0d1</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">N-tilde</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Ñ</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">N</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Ñ</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">N</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">210</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0d5</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">210</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>0d5</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">O-tilde</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Õ</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">O</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Õ</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">O</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">211</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0e6</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">211</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>0e6</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ae-ligature</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">æ</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ae</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">æ</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">ae</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">212</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0c6</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">212</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>0c6</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">AE-ligature</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Æ</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">AE</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Æ</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">AE</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">213</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0e7</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">213</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>0e7</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">c-cedilla</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ç</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">c</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">ç</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">c</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">214</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0c7</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">214</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>0c7</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">C-cedilla</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Ç</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">C</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Ç</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">C</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">215</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0fe</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">215</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>0fe</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Icelandic thorn</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">þ</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">th</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">þ</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">th</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">216</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0f0</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">216</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>0f0</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Icelandic eth</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ð</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">th</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">ð</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">th</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">217</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0de</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">217</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>0de</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Icelandic Thorn</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Þ</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Th</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Þ</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Th</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">218</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0d0</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">218</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>0d0</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Icelandic Eth</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Ð</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Th</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Ð</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Th</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">219</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0a3</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">219</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>0a3</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">pound symbol</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">£</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">L</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">£</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">L</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">220</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">153</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">220</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>153</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">oe-ligature</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">œ</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">oe</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">œ</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">oe</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">221</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">152</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">221</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>152</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">OE-ligature</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Œ</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OE</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Œ</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">OE</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">222</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0a1</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">222</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>0a1</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">inverted !</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">¡</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">!</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">¡</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">!</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">223</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0bf</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">223</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>0bf</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">inverted ?</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">¿</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">¿</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">?</p></td>
 </tr>
 </tbody>
 </table>
@@ -2512,52 +2539,69 @@ ZSCII code 255 is undefined. (This value is needed in the "terminating character
 <div class="sect2">
 <h3 id="remarks-03"><a class="anchor" href="#remarks-03"></a>Remarks</h3>
 <div class="paragraph">
-<p>In practice the text compression factor is not really very good: for instance, 155000 characters of text squashes into 99000 bytes. (Text usually accounts for about 75% of a story file.) Encoding does at least encrypt the text so that casual browsers can&#8217;t read it. Well-chosen abbreviations will reduce total story file size by 10% or so.</p>
+<p>In practice the text compression factor is not really very good: for instance, 155000 characters of text squashes into 99000 bytes.
+(Text usually accounts for about 75% of a story file.)
+Encoding does at least encrypt the text so that casual browsers can&#8217;t read it.
+Well-chosen abbreviations will reduce total story file size by 10% or so.</p>
 </div>
 <div class="paragraph">
-<p>The German translation of 'Zork I' uses an alphabet table to make accented letters (from the standard extra characters set) efficient in dictionary words. In Version 6, 'Shogun' also uses an alphabet table.</p>
+<p>The German translation of &#8216;Zork I&#8217; uses an alphabet table to make accented letters (from the standard extra characters set) efficient in dictionary words.
+In Version 6, &#8216;Shogun&#8217; also uses an alphabet table.</p>
 </div>
 <div class="paragraph">
 <p>Unicode translation tables are new in Standard 1.0: in Standard 0.2, the extra characters were always mapped using the default Unicode translation table.</p>
 </div>
 <div class="paragraph">
-<p>Note that if a random stretch of memory is accidentally printed as a string (due to an error in the story file), illegal ZSCII codes may well be printed using the 4-Z-character escape sequence. It&#8217;s helpful for interpreters to filter out any such illegal codes so that the resulting on-screen mess will not cause trouble for the terminal (e.g. by causing the interpreter to print ASCII 12, clear screen, or 7, bell sound).</p>
+<p>Note that if a random stretch of memory is accidentally printed as a string (due to an error in the story file), illegal ZSCII codes may well be printed using the 4-Z-character escape sequence.
+It&#8217;s helpful for interpreters to filter out any such illegal codes so that the resulting on-screen mess will not cause trouble for the terminal (e.g. by causing the interpreter to print ASCII 12, clear screen, or 7, bell sound).</p>
 </div>
 <div class="paragraph">
 <p>The continental European quotation marks <strong>&lt;&lt;</strong> and <strong>&gt;&gt;</strong> should have spacing which looks sensible either in French style <strong>&lt;&lt;</strong>Merci!<strong>&gt;&gt;</strong> or in German style <strong>&gt;&gt;</strong>Danke!<strong>&lt;&lt;</strong>.</p>
 </div>
 <div class="paragraph">
-<p>Ideally, an interpreter should be able to read time delays (for timed input) from stream 1 (i.e., from a script file). See the remarks in <strong>S</strong> 7.</p>
+<p>Ideally, an interpreter should be able to read time delays (for timed input) from stream 1 (i.e., from a script file).
+See the remarks in <a href="#ch.7">§&#160;7</a>.</p>
 </div>
 <div class="paragraph">
-<p>The 'Beyond Zork' story file is capable of receiving both mouse-click codes (253 and 254), listing both in its terminating characters table and treating them equally.</p>
+<p>The &#8216;Beyond Zork&#8217; story file is capable of receiving both mouse-click codes (253 and 254), listing both in its terminating characters table and treating them equally.</p>
 </div>
 <div class="paragraph">
-<p>The extant Infocom games in Versions 4 and 5 use the control characters 1 to 31 only as follows: they all accept 10 or 13 as equivalent, except that 'Bureaucracy' will only accept 13. 'Bureaucracy' needs either 127 or 8 to be a delete code. No other codes are used.</p>
+<p>The extant Infocom games in Versions 4 and 5 use the control characters 1 to 31 only as follows: they all accept 10 or 13 as equivalent, except that &#8216;Bureaucracy&#8217; will only accept 13. &#8216;Bureaucracy&#8217; needs either 127 or 8 to be a delete code.
+No other codes are used.</p>
 </div>
 <div class="paragraph">
-<p>Curiously, 'Nord 'n' Bert Couldn&#8217;t Make Head Nor Tail Of It' and 'A Mind Forever Voyaging' allow some letter characters to be typed in with the top bit set. That is, if reading an A, they would recognise 65 or 91 (upper or lower case) and also 193 or 219. Matthew Russotto suggests this was an accommodation for the Apple II, whose keyboard primitives returned the last key pressed in the bottom 7 bits of a byte, plus a top bit flag indicating whether or not the keyboard had been hit since last time.</p>
+<p>Curiously, &#8216;Nord 'n' Bert Couldn&#8217;t Make Head Nor Tail Of It&#8217; and &#8216;A Mind Forever Voyaging&#8217; allow some letter characters to be typed in with the top bit set.
+That is, if reading an A, they would recognise 65 or 91 (upper or lower case) and also 193 or 219.
+Matthew Russotto suggests this was an accommodation for the Apple II, whose keyboard primitives returned the last key pressed in the bottom 7 bits of a byte, plus a top bit flag indicating whether or not the keyboard had been hit since last time.</p>
 </div>
 <div class="paragraph">
-<p>In the past, not just in the Z-machine world, there has been general confusion over the rendering of ASCII/ZSCII/Latin-1/Unicode characters $27 and $60. For the Z-machine, the traditional interpretations of right-single-quote/apostrophe and left-single-quote are preferred over the modern neutral-single-quote and grave accent - see Table 2A of the Inform Designer&#8217;s Manual. $22 is a neutral double-quote.</p>
+<p>In the past, not just in the Z-machine world, there has been general confusion over the rendering of ASCII/ZSCII/Latin-1/Unicode characters $27 and $60.
+For the Z-machine, the traditional interpretations of right-single-quote/apostrophe and left-single-quote are preferred over the modern neutral-single-quote and grave accent&#8201;&#8212;&#8201;see Table 2A of the Inform Designer&#8217;s Manual.
+$22 is a neutral double-quote.</p>
 </div>
 <div class="paragraph">
 <p>An alternative rendering is to interpret both $27 and $60 as neutral quotes, but interpreting $60 as a grave accent is to be avoided.</p>
 </div>
 <div class="paragraph">
-<p>No doubt aware of this confusion, Infocom never used character $60, and used $27 almost exclusively as an apostrophe - hardly any single quotes appear in Infocom games. Modern authors would do well to follow their lead.</p>
+<p>No doubt aware of this confusion, Infocom never used character $60, and used $27 almost exclusively as an apostrophe&#8201;&#8212;&#8201;hardly any single quotes appear in Infocom games.
+Modern authors would do well to follow their lead.</p>
 </div>
 <div class="paragraph">
-<p>The few Infocom games that do use single quotes use $27 for both opening and closing - but even on many of their interpreters this looked a little odd, so suggesting that $27 be a right quote introduces no extra compatibility problems.</p>
+<p>The few Infocom games that do use single quotes use $27 for both opening and closing&#8201;&#8212;&#8201;but even on many of their interpreters this looked a little odd, so suggesting that $27 be a right quote introduces no extra compatibility problems.</p>
 </div>
 <div class="paragraph">
-<p>In Version 3 and later, many of Infocom&#8217;s interpreters (and some subsequent interpreters, such as ITF&#8217;s) treat two consecutive Z-characters 4 or 5 as shift locks, contrary to the Standard. As a result, story files should not use multiple consecutive 4 or 5 codes except for padding at the end of strings and dictionary words. In any case, these shift locks are not used in dictionary words, or any of Infocom&#8217;s story files.</p>
+<p>In Version 3 and later, many of Infocom&#8217;s interpreters (and some subsequent interpreters, such as ITF&#8217;s) treat two consecutive Z-characters 4 or 5 as shift locks, contrary to the Standard.
+As a result, story files should not use multiple consecutive 4 or 5 codes except for padding at the end of strings and dictionary words.
+In any case, these shift locks are not used in dictionary words, or any of Infocom&#8217;s story files.</p>
 </div>
 <div class="paragraph">
-<p>To handle languages like Arabic or Hebrew, text would have to be output "visually", with manual line breaks (possibly via an in-game formatting engine).</p>
+<p>To handle languages like Arabic or Hebrew, text would have to be output &#8220;visually&#8221;, with manual line breaks (possibly via an in-game formatting engine).</p>
 </div>
 <div class="paragraph">
-<p>Far eastern languages are generally straightforward, except they usually use no spaces, and line wraps can occur almost anywhere. The easiest to way to handle this would be for the game to turn off buffering. A more sophisticated game might include its own formatting engine. Also, fixed-space output is liable to be problematical with most Far Eastern fonts, which use a mixture of "full width" and "half width" forms - all half-width characters would have to be forced to full width.</p>
+<p>Far eastern languages are generally straightforward, except they usually use no spaces, and line wraps can occur almost anywhere.
+The easiest to way to handle this would be for the game to turn off buffering.
+A more sophisticated game might include its own formatting engine.
+Also, fixed-space output is liable to be problematical with most Far Eastern fonts, which use a mixture of &#8220;full width&#8221; and &#8220;half width&#8221; forms&#8201;&#8212;&#8201;all half-width characters would have to be forced to full width.</p>
 </div>
 </div>
 </div>

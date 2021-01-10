@@ -18,9 +18,9 @@ Graham Nelson
 :sectnums:
 :sectnumlevels: 4
 // Cross References:
-:xrefstyle: full
-:section-refsig: Sec.
-:section-refsig: section
+:xrefstyle: short
+:section-refsig: §{nbsp}
+:chapter-refsig: §{nbsp}
 // Misc Settings:
 :experimental: true
 :icons: font

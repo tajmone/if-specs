@@ -420,47 +420,49 @@ This indicates that ZSCII characters 155 to 155+N-1 are defined for both input a
 The words in the table give Unicode character codes for each of the ZSCII characters 155 to 155+N-1 in turn.
 
 
-
-
-// @POLISHED UP TO HERE!!!!!
-
-// @FIXME: "as shown in Table 1" -> refers to the first table in this Chapter,
-//         which has no caption, but if we do add a caption its number would
-//         be something other than 1 due to AsciiDoc auto-numbering.
-//         Probably here it's best to add an X-Ref with the appropriate Table
-//         number, even though it will differ from the original!
+// @NOTE: Original -> "as shown in Table 1"
+//    Due to AsciiDoc global auto-numbering of tables, the table number in the
+//    final XRef differs from the original! This should an acceptable editorial
+//    change, since it doesn't really alter the document contents meaning-wise.
 
 // [[section-30]]
 [[p3.8.5.3]]
+[reftext="§{nbsp}3.8.5.3"]
 [.red]##§{nbsp}3.8.5.3.##{nbsp}{nbsp}
-The default table is as shown in Table 1.
+The default table is as shown in <<table.unicode-default>>.
 
 // [[section-31]]
 [[p3.8.5.4]]
 [.red]##§{nbsp}3.8.5.4.##{nbsp}{nbsp}
-The defined extra characters are entirely normal ZSCII characters. They can appear in a story file's alphabet table, in an array created by print stream 3 and so on.
+The defined extra characters are entirely normal ZSCII characters.
+They can appear in a story file's alphabet table, in an array created by print stream 3 and so on.
 
 // [[section-32]]
 [[p3.8.5.4.1]]
 [.red]##§{nbsp}3.8.5.4.1.##{nbsp}{nbsp}
-****[1.0]* The interpreter is required to be able to print representations of every defined Unicode character under *$0100* (i.e. of every defined ISO 8859-1 Latin1 character). If no suitable letter forms are available, textual equivalents may be used (such as "ss" in place of German sharp "s").
+****[1.0]* The interpreter is required to be able to print representations of every defined Unicode character under *$0100* (i.e. of every defined ISO 8859-1 Latin1 character).
+If no suitable letter forms are available, textual equivalents may be used (such as "`ss`" in place of German sharp "`s`").
 
 // [[section-33]]
 [[p3.8.5.4.2]]
 [.red]##§{nbsp}3.8.5.4.2.##{nbsp}{nbsp}
-Normally, and where sensibly possible, all punctuation and letter characters in ISO 8859-1 Latin1 should be readable from the interpreter's keyboard. (However, some interpreters may want to provide alternative keyboard mappings, or to run in a different ISO 8859 set: Cyrillic, for example.)
+Normally, and where sensibly possible, all punctuation and letter characters in ISO 8859-1 Latin1 should be readable from the interpreter's keyboard.
+(However, some interpreters may want to provide alternative keyboard mappings, or to run in a different ISO 8859 set: Cyrillic, for example.)
 
 // [[section-34]]
 [[p3.8.5.4.3]]
 [.red]##§{nbsp}3.8.5.4.3.##{nbsp}{nbsp}
-****[1.0]* An interpreter is not required to have suitable letter-forms for printing Unicode characters *$0100* to *$FFFF*. (It may, if it chooses, allow the user to configure certain fonts for certain Unicode ranges; but this is not required.) If a Unicode character must be printed which an interpreter has no letter-form for, a question mark should be printed instead.
+****[1.0]* An interpreter is not required to have suitable letter-forms for printing Unicode characters *$0100* to *$FFFF*.
+(It may, if it chooses, allow the user to configure certain fonts for certain Unicode ranges; but this is not required.)
+If a Unicode character must be printed which an interpreter has no letter-form for, a question mark should be printed instead.
 
 // [[section-35]]
 [[p3.8.5.4.4]]
 [.red]##§{nbsp}3.8.5.4.4.##{nbsp}{nbsp}
 The Z-machine is not required to handle complex Unicode formatting like combining characters, bidirectional formatting and unusual line-wrapping rules.
 
-In Versions other than 6, interpreters may either handle these features, or not, in window 0. In window 1, and all version 6 windows, they should be ignored.
+In Versions other than 6, interpreters may either handle these features, or not, in window 0.
+In window 1, and all version 6 windows, they should be ignored.
 
 // [[section-36]]
 [[p3.8.5.4.5]]
@@ -472,131 +474,173 @@ Unicode characters U+0000 to U+001F and U+007F to U+009F are control codes, and 
 [.red]##§{nbsp}3.8.6.##{nbsp}{nbsp}
 ZSCII codes 252 to 254 are defined for input only:
 
-....
-252: menu click   253: mouse double-click   254: mouse single-click
-....
 
-Menu clicks are available only in Version 6. A single click, or the first click of a double-click, is passed in as 254. The second click of a double-click is passed in as 253. In Versions 5 and later it is recommended that an interpreter should only send code 254, whether the mouse is clicked once or twice.
+[%autowidth]
+[cols="^h,<d,^h,<d,^h,<d"]
+|==========================
+| 252: | menu click
+| 253: | mouse double-click
+| 254: | mouse single-click
+|==========================
+
+
+Menu clicks are available only in Version 6.
+A single click, or the first click of a double-click, is passed in as 254.
+The second click of a double-click is passed in as 253.
+In Versions 5 and later it is recommended that an interpreter should only send code 254, whether the mouse is clicked once or twice.
 
 // [[section-38]]
 [[p3.8.7]]
 [.red]##§{nbsp}3.8.7.##{nbsp}{nbsp}
-ZSCII code 255 is undefined. (This value is needed in the "terminating characters table" as a wildcard, indicating "any Input-only character with code 128 or above." However, it cannot itself be printed or read from the keyboard.)
+ZSCII code 255 is undefined.
+(This value is needed in the "`terminating characters table`" as a wildcard, indicating "`any Input-only character with code 128 or above.`"
+However, it cannot itself be printed or read from the keyboard.)
 
 '''''
 
-.*Table 1: default Unicode translations (see S 3.8.5.3)*
-[cols=",,,,",options="header",]
-|===
-|ZSCII code (dec) |Unicode code (hex) |Name |Character |Textual Equivalent
-|155 |0e4 |a-diaeresis |ä |ae
-|156 |0f6 |o-diaeresis |ö |oe
-|157 |0fc |u-diaeresis |ü |ue
-|158 |0c4 |A-diaeresis |Ä |Ae
-|159 |0d6 |O-diaeresis |Ö |Oe
-|160 |0dc |U-diaeresis |Ü |Ue
-|161 |0df |sz-ligature |ß |ss
-|162 |0bb |quotation |» |>> or "
-|163 |0ab |marks |« |<< or "
-|164 |0eb |e-diaeresis |ë |e
-|165 |0ef |i-diaeresis |ï |i
-|166 |0ff |y-diaeresis |ÿ |y
-|167 |0cb |E-diaeresis |Ë |E
-|168 |0cf |I-diaeresis |Ï |I
-|169 |0e1 |a-acute |á |a
-|170 |0e9 |e-acute |é |e
-|171 |0ed |i-acute |í |i
-|172 |0f3 |o-acute |ó |o
-|173 |0fa |u-acute |ú |u
-|174 |0fd |y-acute |ý |y
-|175 |0c1 |A-acute |Á |A
-|176 |0c9 |E-acute |É |E
-|177 |0cd |I-acute |Í |I
-|178 |0d3 |O-acute |Ó |O
-|179 |0da |U-acute |Ú |U
-|180 |0dd |Y-acute |Ý |Y
-|181 |0e0 |a-grave |à |a
-|182 |0e8 |e-grave |è |e
-|183 |0ec |i-grave |ì |i
-|184 |0f2 |o-grave |ò |o
-|185 |0f9 |u-grave |ù |u
-|186 |0c0 |A-grave |À |A
-|187 |0c8 |E-grave |È |E
-|188 |0cc |I-grave |Ì |I
-|189 |0d2 |O-grave |Ò |O
-|190 |0d9 |U-grave |Ù |U
-|191 |0e2 |a-circumflex |â |a
-|192 |0ea |e-circumflex |ê |e
-|193 |0ee |i-circumflex |î |i
-|194 |0f4 |o-circumflex |ô |o
-|195 |0fb |u-circumflex |û |u
-|196 |0c2 |A-circumflex |Â |A
-|197 |0ca |E-circumflex |Ê |E
-|198 |0ce |I-circumflex |Î |I
-|199 |0d4 |O-circumflex |Ô |O
-|200 |0db |U-circumflex |Û |U
-|201 |0e5 |a-ring |å |a
-|202 |0c5 |A-ring |Å |A
-|203 |0f8 |o-slash |ø |o
-|204 |0d8 |O-slash |Ø |O
-|205 |0e3 |a-tilde |ã |a
-|206 |0f1 |n-tilde |ñ |n
-|207 |0f5 |o-tilde |õ |o
-|208 |0c3 |A-tilde |Ã |A
-|209 |0d1 |N-tilde |Ñ |N
-|210 |0d5 |O-tilde |Õ |O
-|211 |0e6 |ae-ligature |æ |ae
-|212 |0c6 |AE-ligature |Æ |AE
-|213 |0e7 |c-cedilla |ç |c
-|214 |0c7 |C-cedilla |Ç |C
-|215 |0fe |Icelandic thorn |þ |th
-|216 |0f0 |Icelandic eth |ð |th
-|217 |0de |Icelandic Thorn |Þ |Th
-|218 |0d0 |Icelandic Eth |Ð |Th
-|219 |0a3 |pound symbol |£ |L
-|220 |153 |oe-ligature |œ |oe
-|221 |152 |OE-ligature |Œ |OE
-|222 |0a1 |inverted ! |¡ |!
-|223 |0bf |inverted ? |¿ |?
-|===
+// @FIXME: "Table 1" will actually end up having a different number in AsciiDoc
+//          due to global numbering.
 
+[[table.unicode-default]]
+.Default Unicode translations (see <<p3.8.5.3>>)
+[%autowidth]
+[cols="^d,^m,<d,^d,^d"]
+|===============================================================================
+^.<h| ZSCII +
+      code (dec)
+^.<h| Unicode +
+      code (hex)
+^.<h| Name
+^.<h| Character
+^.<h| Textual +
+      Equivalent
+
+| 155 | 0e4 | a-diaeresis     | ä | ae
+| 156 | 0f6 | o-diaeresis     | ö | oe
+| 157 | 0fc | u-diaeresis     | ü | ue
+| 158 | 0c4 | A-diaeresis     | Ä | Ae
+| 159 | 0d6 | O-diaeresis     | Ö | Oe
+| 160 | 0dc | U-diaeresis     | Ü | Ue
+| 161 | 0df | sz-ligature     | ß | ss
+| 162 | 0bb | quotation       | » | >> or "
+| 163 | 0ab | marks           | « | << or "
+| 164 | 0eb | e-diaeresis     | ë | e
+| 165 | 0ef | i-diaeresis     | ï | i
+| 166 | 0ff | y-diaeresis     | ÿ | y
+| 167 | 0cb | E-diaeresis     | Ë | E
+| 168 | 0cf | I-diaeresis     | Ï | I
+| 169 | 0e1 | a-acute         | á | a
+| 170 | 0e9 | e-acute         | é | e
+| 171 | 0ed | i-acute         | í | i
+| 172 | 0f3 | o-acute         | ó | o
+| 173 | 0fa | u-acute         | ú | u
+| 174 | 0fd | y-acute         | ý | y
+| 175 | 0c1 | A-acute         | Á | A
+| 176 | 0c9 | E-acute         | É | E
+| 177 | 0cd | I-acute         | Í | I
+| 178 | 0d3 | O-acute         | Ó | O
+| 179 | 0da | U-acute         | Ú | U
+| 180 | 0dd | Y-acute         | Ý | Y
+| 181 | 0e0 | a-grave         | à | a
+| 182 | 0e8 | e-grave         | è | e
+| 183 | 0ec | i-grave         | ì | i
+| 184 | 0f2 | o-grave         | ò | o
+| 185 | 0f9 | u-grave         | ù | u
+| 186 | 0c0 | A-grave         | À | A
+| 187 | 0c8 | E-grave         | È | E
+| 188 | 0cc | I-grave         | Ì | I
+| 189 | 0d2 | O-grave         | Ò | O
+| 190 | 0d9 | U-grave         | Ù | U
+| 191 | 0e2 | a-circumflex    | â | a
+| 192 | 0ea | e-circumflex    | ê | e
+| 193 | 0ee | i-circumflex    | î | i
+| 194 | 0f4 | o-circumflex    | ô | o
+| 195 | 0fb | u-circumflex    | û | u
+| 196 | 0c2 | A-circumflex    | Â | A
+| 197 | 0ca | E-circumflex    | Ê | E
+| 198 | 0ce | I-circumflex    | Î | I
+| 199 | 0d4 | O-circumflex    | Ô | O
+| 200 | 0db | U-circumflex    | Û | U
+| 201 | 0e5 | a-ring          | å | a
+| 202 | 0c5 | A-ring          | Å | A
+| 203 | 0f8 | o-slash         | ø | o
+| 204 | 0d8 | O-slash         | Ø | O
+| 205 | 0e3 | a-tilde         | ã | a
+| 206 | 0f1 | n-tilde         | ñ | n
+| 207 | 0f5 | o-tilde         | õ | o
+| 208 | 0c3 | A-tilde         | Ã | A
+| 209 | 0d1 | N-tilde         | Ñ | N
+| 210 | 0d5 | O-tilde         | Õ | O
+| 211 | 0e6 | ae-ligature     | æ | ae
+| 212 | 0c6 | AE-ligature     | Æ | AE
+| 213 | 0e7 | c-cedilla       | ç | c
+| 214 | 0c7 | C-cedilla       | Ç | C
+| 215 | 0fe | Icelandic thorn | þ | th
+| 216 | 0f0 | Icelandic eth   | ð | th
+| 217 | 0de | Icelandic Thorn | Þ | Th
+| 218 | 0d0 | Icelandic Eth   | Ð | Th
+| 219 | 0a3 | pound symbol    | £ | L
+| 220 | 153 | oe-ligature     | œ | oe
+| 221 | 152 | OE-ligature     | Œ | OE
+| 222 | 0a1 | inverted !      | ¡ | !
+| 223 | 0bf | inverted ?      | ¿ | ?
+|===============================================================================
+
+// @POLISHED UP TO HERE!!!!!
 
 :sectnums!:
 
 [[remarks-03]]
 == Remarks
 
-In practice the text compression factor is not really very good: for instance, 155000 characters of text squashes into 99000 bytes. (Text usually accounts for about 75% of a story file.) Encoding does at least encrypt the text so that casual browsers can't read it. Well-chosen abbreviations will reduce total story file size by 10% or so.
+In practice the text compression factor is not really very good: for instance, 155000 characters of text squashes into 99000 bytes.
+(Text usually accounts for about 75% of a story file.)
+Encoding does at least encrypt the text so that casual browsers can't read it.
+Well-chosen abbreviations will reduce total story file size by 10% or so.
 
-The German translation of 'Zork I' uses an alphabet table to make accented letters (from the standard extra characters set) efficient in dictionary words. In Version 6, 'Shogun' also uses an alphabet table.
+The German translation of '`Zork I`' uses an alphabet table to make accented letters (from the standard extra characters set) efficient in dictionary words.
+In Version 6, '`Shogun`' also uses an alphabet table.
 
 Unicode translation tables are new in Standard 1.0: in Standard 0.2, the extra characters were always mapped using the default Unicode translation table.
 
-Note that if a random stretch of memory is accidentally printed as a string (due to an error in the story file), illegal ZSCII codes may well be printed using the 4-Z-character escape sequence. It's helpful for interpreters to filter out any such illegal codes so that the resulting on-screen mess will not cause trouble for the terminal (e.g. by causing the interpreter to print ASCII 12, clear screen, or 7, bell sound).
+Note that if a random stretch of memory is accidentally printed as a string (due to an error in the story file), illegal ZSCII codes may well be printed using the 4-Z-character escape sequence.
+It's helpful for interpreters to filter out any such illegal codes so that the resulting on-screen mess will not cause trouble for the terminal (e.g. by causing the interpreter to print ASCII 12, clear screen, or 7, bell sound).
 
 The continental European quotation marks *<<* and *>>* should have spacing which looks sensible either in French style **<<**Merci!*>>* or in German style **>>**Danke!*<<*.
 
-Ideally, an interpreter should be able to read time delays (for timed input) from stream 1 (i.e., from a script file). See the remarks in *S* 7.
+Ideally, an interpreter should be able to read time delays (for timed input) from stream 1 (i.e., from a script file).
+See the remarks in <<ch.7,§{nbsp}7>>.
 
-The 'Beyond Zork' story file is capable of receiving both mouse-click codes (253 and 254), listing both in its terminating characters table and treating them equally.
+The '`Beyond Zork`' story file is capable of receiving both mouse-click codes (253 and 254), listing both in its terminating characters table and treating them equally.
 
-The extant Infocom games in Versions 4 and 5 use the control characters 1 to 31 only as follows: they all accept 10 or 13 as equivalent, except that 'Bureaucracy' will only accept 13. 'Bureaucracy' needs either 127 or 8 to be a delete code. No other codes are used.
+The extant Infocom games in Versions 4 and 5 use the control characters 1 to 31 only as follows: they all accept 10 or 13 as equivalent, except that '`Bureaucracy`' will only accept 13. '`Bureaucracy`' needs either 127 or 8 to be a delete code.
+No other codes are used.
 
-Curiously, 'Nord 'n' Bert Couldn't Make Head Nor Tail Of It' and 'A Mind Forever Voyaging' allow some letter characters to be typed in with the top bit set. That is, if reading an A, they would recognise 65 or 91 (upper or lower case) and also 193 or 219. Matthew Russotto suggests this was an accommodation for the Apple II, whose keyboard primitives returned the last key pressed in the bottom 7 bits of a byte, plus a top bit flag indicating whether or not the keyboard had been hit since last time.
+Curiously, '`Nord 'n' Bert Couldn't Make Head Nor Tail Of It`' and '`A Mind Forever Voyaging`' allow some letter characters to be typed in with the top bit set.
+That is, if reading an A, they would recognise 65 or 91 (upper or lower case) and also 193 or 219.
+Matthew Russotto suggests this was an accommodation for the Apple II, whose keyboard primitives returned the last key pressed in the bottom 7 bits of a byte, plus a top bit flag indicating whether or not the keyboard had been hit since last time.
 
-In the past, not just in the Z-machine world, there has been general confusion over the rendering of ASCII/ZSCII/Latin-1/Unicode characters $27 and $60. For the Z-machine, the traditional interpretations of right-single-quote/apostrophe and left-single-quote are preferred over the modern neutral-single-quote and grave accent - see Table 2A of the Inform Designer's Manual. $22 is a neutral double-quote.
+In the past, not just in the Z-machine world, there has been general confusion over the rendering of ASCII/ZSCII/Latin-1/Unicode characters $27 and $60.
+For the Z-machine, the traditional interpretations of right-single-quote/apostrophe and left-single-quote are preferred over the modern neutral-single-quote and grave accent -- see Table 2A of the Inform Designer's Manual.
+$22 is a neutral double-quote.
 
 An alternative rendering is to interpret both $27 and $60 as neutral quotes, but interpreting $60 as a grave accent is to be avoided.
 
-No doubt aware of this confusion, Infocom never used character $60, and used $27 almost exclusively as an apostrophe - hardly any single quotes appear in Infocom games. Modern authors would do well to follow their lead.
+No doubt aware of this confusion, Infocom never used character $60, and used $27 almost exclusively as an apostrophe -- hardly any single quotes appear in Infocom games.
+Modern authors would do well to follow their lead.
 
-The few Infocom games that do use single quotes use $27 for both opening and closing - but even on many of their interpreters this looked a little odd, so suggesting that $27 be a right quote introduces no extra compatibility problems.
+The few Infocom games that do use single quotes use $27 for both opening and closing -- but even on many of their interpreters this looked a little odd, so suggesting that $27 be a right quote introduces no extra compatibility problems.
 
-In Version 3 and later, many of Infocom's interpreters (and some subsequent interpreters, such as ITF's) treat two consecutive Z-characters 4 or 5 as shift locks, contrary to the Standard. As a result, story files should not use multiple consecutive 4 or 5 codes except for padding at the end of strings and dictionary words. In any case, these shift locks are not used in dictionary words, or any of Infocom's story files.
+In Version 3 and later, many of Infocom's interpreters (and some subsequent interpreters, such as ITF's) treat two consecutive Z-characters 4 or 5 as shift locks, contrary to the Standard.
+As a result, story files should not use multiple consecutive 4 or 5 codes except for padding at the end of strings and dictionary words.
+In any case, these shift locks are not used in dictionary words, or any of Infocom's story files.
 
-To handle languages like Arabic or Hebrew, text would have to be output "visually", with manual line breaks (possibly via an in-game formatting engine).
+To handle languages like Arabic or Hebrew, text would have to be output "`visually`", with manual line breaks (possibly via an in-game formatting engine).
 
-Far eastern languages are generally straightforward, except they usually use no spaces, and line wraps can occur almost anywhere. The easiest to way to handle this would be for the game to turn off buffering. A more sophisticated game might include its own formatting engine. Also, fixed-space output is liable to be problematical with most Far Eastern fonts, which use a mixture of "full width" and "half width" forms - all half-width characters would have to be forced to full width.
+Far eastern languages are generally straightforward, except they usually use no spaces, and line wraps can occur almost anywhere.
+The easiest to way to handle this would be for the game to turn off buffering.
+A more sophisticated game might include its own formatting engine.
+Also, fixed-space output is liable to be problematical with most Far Eastern fonts, which use a mixture of "`full width`" and "`half width`" forms -- all half-width characters would have to be forced to full width.
 
 
 :sectnums:
