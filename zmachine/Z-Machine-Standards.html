@@ -1385,11 +1385,13 @@ A packed address specifies where a routine or string begins in high memory. Give
 <div class="sect2">
 <h3 id="s2.2"><a class="anchor" href="#s2.2"></a>2.2. Signed operations</h3>
 <div class="paragraph">
-<p>These values are sometimes regarded as signed, in the range -32768 to 32767. In effect -n is stored as 65536-n and so the top bit is the sign bit.</p>
+<p>These values are sometimes regarded as signed, in the range -32768 to 32767.
+In effect -n is stored as 65536-n and so the top bit is the sign bit.</p>
 </div>
 <div id="p2.2.1" class="paragraph">
 <p><span class="red">§&#160;2.2.1.</span>&#160;&#160;
-The operations of numerical comparison, multiplication, addition, subtraction, division, remainder-after-division and printing of numbers are signed; bitwise operations are unsigned. (In particular, since comparison is signed, it is unsafe to compare two addresses using simply <strong>jl</strong> and <strong>jg</strong>.)</p>
+The operations of numerical comparison, multiplication, addition, subtraction, division, remainder-after-division and printing of numbers are signed; bitwise operations are unsigned.
+(In particular, since comparison is signed, it is unsafe to compare two addresses using simply <code>jl</code> and <code>jg</code>.)</p>
 </div>
 </div>
 <div class="sect2">
@@ -1400,52 +1402,70 @@ It is illegal to divide by 0 (or to ask for remainder after division by 0) and a
 </div>
 <div id="p2.3.2" class="paragraph">
 <p><span class="red">§&#160;2.3.2.</span>&#160;&#160;
-Formally it has never been specified what the result of an out-of-range calculation should be. The author suggests that the result should be reduced modulo <strong>$10000</strong>.</p>
+Formally it has never been specified what the result of an out-of-range calculation should be.
+The author suggests that the result should be reduced modulo <strong>$10000</strong>.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="s2.4"><a class="anchor" href="#s2.4"></a>2.4. Random number generator</h3>
 <div class="paragraph">
-<p>The Z-machine needs a random number generator which at any time has one of two states, "random" and "predictable". When the game starts or restarts the state becomes "random". Ideally the generator should not produce identical sequences after each restart.</p>
+<p>The Z-machine needs a random number generator which at any time has one of two states, &#8220;random&#8221; and &#8220;predictable&#8221;.
+When the game starts or restarts the state becomes &#8220;random&#8221;.
+Ideally the generator should not produce identical sequences after each restart.</p>
 </div>
 <div id="p2.4.1" class="paragraph">
 <p><span class="red">§&#160;2.4.1.</span>&#160;&#160;
-When "random", it must be capable of generating a uniformly random integer in the range 1 &#8656; x &#8656; n, for any value 1 &#8656; n &#8656; 32767. Any method can be used for this (for instance, using the host computer&#8217;s clock time in milliseconds). The uniformity of randomness should be optimised for low values of n (say, up to 100 or so) and it is especially important to avoid regular patterns appearing in remainders after division (most crudely, being alternately odd and even).</p>
+When &#8220;random&#8221;, it must be capable of generating a uniformly random integer in the range 1 &#8656; x &#8656; n, for any value 1 &#8656; n &#8656; 32767.
+Any method can be used for this (for instance, using the host computer&#8217;s clock time in milliseconds).
+The uniformity of randomness should be optimised for low values of n (say, up to 100 or so) and it is especially important to avoid regular patterns appearing in remainders after division (most crudely, being alternately odd and even).</p>
 </div>
 <div id="p2.4.2" class="paragraph">
 <p><span class="red">§&#160;2.4.2.</span>&#160;&#160;
-The generator is switched into "predictable" state with a seed value. On any two occasions when the same seed is sown, identical sequences of values must result (for an indefinite period) until the generator is switched back into "random" mode. The generator should cope well with very low seed values, such as 10, and should not depend on the seed containing many non-zero bits.</p>
+The generator is switched into &#8220;predictable&#8221; state with a seed value.
+On any two occasions when the same seed is sown, identical sequences of values must result (for an indefinite period) until the generator is switched back into &#8220;random&#8221; mode.
+The generator should cope well with very low seed values, such as 10, and should not depend on the seed containing many non-zero bits.</p>
 </div>
 <div id="p2.4.3" class="paragraph">
 <p><span class="red">§&#160;2.4.3.</span>&#160;&#160;
-The interpreter is permitted to switch between these states on request of the player. (This is useful for testing purposes.)</p>
+The interpreter is permitted to switch between these states on request of the player.
+(This is useful for testing purposes.)</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="remarks-02"><a class="anchor" href="#remarks-02"></a>Remarks</h3>
 <div class="paragraph">
-<p>It is dangerous to rely on the older ANSI C random number routines (rand() and srand()), as some implementations of these are very poor. This has made some games (in particular, 'Balances') unwinnable on some Unix ports of <strong>Zip</strong>.</p>
+<p>It is dangerous to rely on the older ANSI C random number routines (<code>rand()</code> and <code>srand()</code>), as some implementations of these are very poor.
+This has made some games (in particular, &#8216;Balances&#8217;) unwinnable on some Unix ports of <strong>Zip</strong>.</p>
 </div>
 <div class="paragraph">
 <p>The author suggests the following algorithm:</p>
 </div>
-<div class="paragraph">
-<p><strong>1.</strong> In "random" mode, the generator uses the host computer&#8217;s clock to obtain a random sequence of bits.</p>
-</div>
-<div class="paragraph">
-<p><strong>2.</strong> In "predictable" mode, the generator should store the seed value <em>S</em>. If <em>S</em> &lt; 1000 it should then internally generate</p>
-</div>
-<div class="paragraph">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>In &#8220;random&#8221; mode, the generator uses the host computer&#8217;s clock to obtain a random sequence of bits.</p>
+</li>
+<li>
+<p>In &#8220;predictable&#8221; mode, the generator should store the seed value <em>S</em>.
+If <em>S</em> &lt; 1000 it should then internally generate</p>
+<div class="paragraph text-center">
 <p>1, 2, 3, &#8230;&#8203;, <em>S</em>, 1, 2, 3, &#8230;&#8203;, <em>S</em>, 1, &#8230;&#8203;</p>
 </div>
 <div class="paragraph">
-<p>so that <strong>random n</strong> produces the next entry in this sequence modulo n. If <em>S</em> &gt;= 1000 then <em>S</em> is used as a seed in a standard seeded random-number generator.</p>
+<p>so that <code>random <em>n</em></code> produces the next entry in this sequence modulo <em>n</em>.
+If <em>S</em> &gt;= 1000 then <em>S</em> is used as a seed in a standard seeded random-number generator.</p>
+</div>
+</li>
+</ol>
 </div>
 <div class="paragraph">
-<p>(The rising sequence is useful for testing, since it will produce all possible values in sequence. On the other hand, a seeded but fairly random generator is useful for testing entire scripts.)</p>
+<p>(The rising sequence is useful for testing, since it will produce all possible values in sequence.
+On the other hand, a seeded but fairly random generator is useful for testing entire scripts.)</p>
 </div>
 <div class="paragraph">
-<p>Note that version 0.2 of this standard mistakenly asserted that division and remainder are unsigned, a myth deriving from a bug in <strong>Zip</strong>. Infocom&#8217;s interpreters do sign division (this is relied on when calculating pizza cooking times for the microwave oven in 'The Lurking Horror'). Here are some correct Z-machine calculations:</p>
+<p>Note that version 0.2 of this standard mistakenly asserted that division and remainder are unsigned, a myth deriving from a bug in <strong>Zip</strong>.
+Infocom&#8217;s interpreters do sign division (this is relied on when calculating pizza cooking times for the microwave oven in &#8216;The Lurking Horror&#8217;).
+Here are some correct Z-machine calculations:</p>
 </div>
 <table class="tableblock frame-none grid-cols fit-content">
 <colgroup>
