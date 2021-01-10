@@ -48,7 +48,7 @@ To call itself "Standard", an interpreter should (as far as anyone knows) obey t
 
 Few arbitrary choices have been made in writing this document. Where Infocom's own shipped interpreters disagree, or contain manifest bugs, it has usually been possible to decide which was "correct". Elsewhere, minimum levels of performance have been invented where necessary. (For example, a minimum call-stack size is needed for programmers to be sure of what level of recursion is safe.)
 
-Those paragraphs which genuinely extend the Infocom format are marked ****[n.m]*, where *n* and *m* are the major and minor version numbers for the Standard in which the feature was added. In any event, Infocom's original shipped interpreters do not conform to this standard document, because of bugs or because of slight variations between the Inform output format and Infocom's.
+Those paragraphs which genuinely extend the Infocom format are marked ##**{Asterisk}{Asterisk}{Asterisk}[n.m]**##, where *n* and *m* are the major and minor version numbers for the Standard in which the feature was added. In any event, Infocom's original shipped interpreters do not conform to this standard document, because of bugs or because of slight variations between the Inform output format and Infocom's.
 
 '''''
 

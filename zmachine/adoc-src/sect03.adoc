@@ -389,7 +389,8 @@ Some will need accented Latin characters (such as French E-acute), others unusua
 // [[section-25]]
 [[p3.8.5.1]]
 [.red]##§{nbsp}3.8.5.1.##{nbsp}{nbsp}
-****[1.0]* To define which characters are required, the Unicode (or ISO 10646-1) Basic Multilingual Plane character set is used: characters are specified by unsigned 16-bit codes.
+##**{Asterisk}{Asterisk}{Asterisk}[1.0]**##
+To define which characters are required, the Unicode (or ISO 10646-1) Basic Multilingual Plane character set is used: characters are specified by unsigned 16-bit codes.
 These values agree with ISO 8859 Latin-1 in the range 0 to 255, and with ASCII and ZSCII in the range 32 to 126.
 The Unicode standard leaves a range of values, the Private Use Area, free: however, an Internet group called the ConScript Unicode Registry is organising a standard mapping of invented scripts (such as Klingon, or Tolkien's Elvish) into the Private Use Area, and this should be considered part of the Unicode standard for Z-machine purposes.
 
@@ -398,7 +399,8 @@ The Z-machine does not provide access to non-BMP characters (ie characters outsi
 // [[section-26]]
 [[p3.8.5.2]]
 [.red]##§{nbsp}3.8.5.2.##{nbsp}{nbsp}
-****[1.0]* The story file chooses its stock of extra characters with a "`Unicode translation table`" as follows.
+##**{Asterisk}{Asterisk}{Asterisk}[1.0]**##
+The story file chooses its stock of extra characters with a "`Unicode translation table`" as follows.
 Under Versions 1 to 4, the "`default table`" is always used (see below).
 In Version 5 or later, if Word 3 of the header extension table is present and non-zero then it is interpreted as the byte address of the Unicode translation table.
 If Word 3 is absent or zero, the default table is used.
@@ -440,7 +442,8 @@ They can appear in a story file's alphabet table, in an array created by print s
 // [[section-32]]
 [[p3.8.5.4.1]]
 [.red]##§{nbsp}3.8.5.4.1.##{nbsp}{nbsp}
-****[1.0]* The interpreter is required to be able to print representations of every defined Unicode character under *$0100* (i.e. of every defined ISO 8859-1 Latin1 character).
+##**{Asterisk}{Asterisk}{Asterisk}[1.0]**##
+The interpreter is required to be able to print representations of every defined Unicode character under *$0100* (i.e. of every defined ISO 8859-1 Latin1 character).
 If no suitable letter forms are available, textual equivalents may be used (such as "`ss`" in place of German sharp "`s`").
 
 // [[section-33]]
@@ -452,7 +455,8 @@ Normally, and where sensibly possible, all punctuation and letter characters in 
 // [[section-34]]
 [[p3.8.5.4.3]]
 [.red]##§{nbsp}3.8.5.4.3.##{nbsp}{nbsp}
-****[1.0]* An interpreter is not required to have suitable letter-forms for printing Unicode characters *$0100* to *$FFFF*.
+##**{Asterisk}{Asterisk}{Asterisk}[1.0]**##
+An interpreter is not required to have suitable letter-forms for printing Unicode characters *$0100* to *$FFFF*.
 (It may, if it chooses, allow the user to configure certain fonts for certain Unicode ranges; but this is not required.)
 If a Unicode character must be printed which an interpreter has no letter-form for, a question mark should be printed instead.
 

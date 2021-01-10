@@ -80,7 +80,8 @@ The return value is the old buffer_screen state.
 
 See *S* 8 for more details.
 
-****[1.1]* This opcode will only be present in interpreters obeying Standard 1.1 or later, so story files should check the standard number of the interpreter before executing this opcode.
+##**{Asterisk}{Asterisk}{Asterisk}[1.1]**##
+This opcode will only be present in interpreters obeying Standard 1.1 or later, so story files should check the standard number of the interpreter before executing this opcode.
 
 '''''
 
@@ -178,7 +179,8 @@ Branches if the given argument-number (counting from 1) has been provided by the
 
 Determines whether or not the interpreter can print, or receive from the keyboard, the given Unicode character. Bit 0 of the result should be set if and only if the interpreter can print the character; bit 1 if and only if the interpreter can receive it from the keyboard. Bits 2 to 15 are undefined.
 
-****[1.0]* This opcode will only be present in interpreters obeying Standard 1.0 or later, so story files should check the standard number of the interpreter before executing this opcode.
+##**{Asterisk}{Asterisk}{Asterisk}[1.0]**##
+This opcode will only be present in interpreters obeying Standard 1.0 or later, so story files should check the standard number of the interpreter before executing this opcode.
 
 '''''
 
@@ -684,7 +686,8 @@ Print a rectangle of text on screen spreading right and down from the current cu
 
 Print a Unicode character. See *S* 3.8.5.4 and *S* 7.5 for details. The given character code must be defined in Unicode.
 
-****[1.0]* This opcode will only be present in interpreters obeying Standard 1.0 or later, so story files should check the standard number of the interpreter before executing this opcode.
+##**{Asterisk}{Asterisk}{Asterisk}[1.0]**##
+This opcode will only be present in interpreters obeying Standard 1.0 or later, so story files should check the standard number of the interpreter before executing this opcode.
 
 '''''
 
@@ -851,7 +854,8 @@ See *save*. In Version 3, the branch is never actually made, since either the ga
 
 As with *restart*, the transcription and fixed font bits survive. The interpreter gives the game a way of knowing that a restore has just happened (see *save*).
 
-****[1.0]* From Version 5 it can have optional parameters as *save* does, and returns the number of bytes loaded if so. (Whether Infocom intended these options as part of Version 5 is doubtful, but it's too useful a feature to exclude from this Standard.)
+##**{Asterisk}{Asterisk}{Asterisk}[1.0]**##
+From Version 5 it can have optional parameters as *save* does, and returns the number of bytes loaded if so. (Whether Infocom intended these options as part of Version 5 is doubtful, but it's too useful a feature to exclude from this Standard.)
 
 If the restore fails, 0 is returned, but once again this necessarily happens since otherwise control is already elsewhere.
 
@@ -909,9 +913,11 @@ On Versions 3 and 4, attempts to save the game (all questions about filenames ar
 
 It is illegal to use this opcode within an interrupt routine (one called asynchronously by a sound effect, or keyboard timing, or newline counting).
 
-****[1.0]* The extension also has (optional) parameters, which save a region of the save area, whose address and length are in bytes, and provides a suggested filename: *name* is a pointer to an array of ASCII characters giving this name (as usual preceded by a byte giving the number of characters). See *S* 7.6. (Whether Infocom intended these options as part of Version 5 is doubtful, but it's too useful a feature to exclude from this Standard.)
+##**{Asterisk}{Asterisk}{Asterisk}[1.0]**##
+The extension also has (optional) parameters, which save a region of the save area, whose address and length are in bytes, and provides a suggested filename: *name* is a pointer to an array of ASCII characters giving this name (as usual preceded by a byte giving the number of characters). See *S* 7.6. (Whether Infocom intended these options as part of Version 5 is doubtful, but it's too useful a feature to exclude from this Standard.)
 
-****[1.1]* As of Standard 1.1 an additional optional parameter, *prompt*, is allowed on Version 5 extended save/restore. This allows a game author to tell the interpreter whether it should ask for confirmation of the provided file name (*prompt* is 1), or just silently save/restore using the provided filename (*prompt* is 0). If the parameter is not provided, whether to prompt or not is a matter for the interpreter - this might be globally user-configurable. Infocom's interpreters do prompt for filenames, many modern ones do not.
+##**{Asterisk}{Asterisk}{Asterisk}[1.1]**##
+As of Standard 1.1 an additional optional parameter, *prompt*, is allowed on Version 5 extended save/restore. This allows a game author to tell the interpreter whether it should ask for confirmation of the provided file name (*prompt* is 1), or just silently save/restore using the provided filename (*prompt* is 0). If the parameter is not provided, whether to prompt or not is a matter for the interpreter - this might be globally user-configurable. Infocom's interpreters do prompt for filenames, many modern ones do not.
 
 '''''
 
@@ -989,7 +995,8 @@ If the font ID requested is 0, the font is not changed, and the ID of the curren
 
 (Infocom's old interpreters did not store 0 for an unavailable font, but the feature is clearly useful and so was introduced in release 0.2 of this Standard.
 
-****[1.1]* In Version 6, *set_font* has an optional window parameter, as for *set_colour*. This was part of the original Infocom design, but omitted by earlier Standards. It is reinstated here, as it is useful to be able to measure a font that is about to be used in another window, so that window can be sized before attempting to place the cursor in it. A window number of -3 signifies "the currently selected window"
+##**{Asterisk}{Asterisk}{Asterisk}[1.1]**##
+In Version 6, *set_font* has an optional window parameter, as for *set_colour*. This was part of the original Infocom design, but omitted by earlier Standards. It is reinstated here, as it is useful to be able to measure a font that is about to be used in another window, so that window can be sized before attempting to place the cursor in it. A window number of -3 signifies "the currently selected window"
 
 '''''
 
@@ -1007,7 +1014,8 @@ Sets the margin widths (in pixels) on the left and right for the given window (w
 
 Sets the text style to: Roman (if 0), Reverse Video (if 1), Bold (if 2), Italic (4), Fixed Pitch (8). In some interpreters (though this is not required) a combination of styles is possible (such as reverse video and bold). In these, changing to Roman should turn off all the other styles currently set.
 
-****[1.1]* As of Standard 1.1, it is legal to request style combinations in a single *set_text_style* opcode by adding the values (which are powers of two) together. If the parameter is non-zero, then all the styles given are activated. If the parameter is zero, then all styles are deactivated. If the interpreter is unable to provide the requested style combination, it must give precedence first to the styles requested in the most recent call to *set_text_style*, and within that to the highest bit, making the priority Fixed, Italic, Bold, Reverse.
+##**{Asterisk}{Asterisk}{Asterisk}[1.1]**##
+As of Standard 1.1, it is legal to request style combinations in a single *set_text_style* opcode by adding the values (which are powers of two) together. If the parameter is non-zero, then all the styles given are activated. If the parameter is zero, then all styles are deactivated. If the interpreter is unable to provide the requested style combination, it must give precedence first to the styles requested in the most recent call to *set_text_style*, and within that to the highest bit, making the priority Fixed, Italic, Bold, Reverse.
 
 '''''
 
@@ -1027,7 +1035,8 @@ bits 4-0   :: -> red
 
 The optional window parameter is only allowed in V6, and operates the same as in *set_colour*.
 
-****[1.1]* This opcode will only be present in interpreters obeying Standard 1.1 or later, so story files should check the standard number of the interpreter before executing this opcode.
+##**{Asterisk}{Asterisk}{Asterisk}[1.1]**##
+This opcode will only be present in interpreters obeying Standard 1.1 or later, so story files should check the standard number of the interpreter before executing this opcode.
 
 '''''
 

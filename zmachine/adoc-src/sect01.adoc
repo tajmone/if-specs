@@ -69,7 +69,8 @@ A word address specifies an even address in the bottom 128K of memory (by giving
 // [[section-8]]
 [[p1.2.3]]
 [.red]##§{nbsp}1.2.3.##{nbsp}{nbsp}
-****[1.0]* A packed address specifies where a routine or string begins in high memory. Given a packed address _P_, the formula to obtain the corresponding byte address _B_ is:
+##**{Asterisk}{Asterisk}{Asterisk}[1.0]**##
+A packed address specifies where a routine or string begins in high memory. Given a packed address _P_, the formula to obtain the corresponding byte address _B_ is:
 
 [horizontal]
 2P        :: Versions 1, 2 and 3

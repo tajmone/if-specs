@@ -99,11 +99,13 @@ Modern games are strongly discouraged from testing the interpreter number or int
 
 [[p11.1.4]]
 [.red]##§{nbsp}11.1.4.##{nbsp}{nbsp}
-****[1.0]* The use of bit 7 in 'Flags 1' to signal whether timed input is available was new in the 1.0 document: see the preface.
+##**{Asterisk}{Asterisk}{Asterisk}[1.0]**##
+The use of bit 7 in 'Flags 1' to signal whether timed input is available was new in the 1.0 document: see the preface.
 
 [[p11.1.5]]
 [.red]##§{nbsp}11.1.5.##{nbsp}{nbsp}
-****[1.0]* If an interpreter obeys Revision *n.m* of this document _perfectly_, as far as anyone knows, then byte *$32* should be written with *n* and byte *$33* with *m*. If it is an earlier (non-standard) interpreter, it should leave these bytes as 0.
+##**{Asterisk}{Asterisk}{Asterisk}[1.0]**##
+If an interpreter obeys Revision *n.m* of this document _perfectly_, as far as anyone knows, then byte *$32* should be written with *n* and byte *$33* with *m*. If it is an earlier (non-standard) interpreter, it should leave these bytes as 0.
 
 [[p11.1.6]]
 [.red]##§{nbsp}11.1.6.##{nbsp}{nbsp}
@@ -141,11 +143,13 @@ If the interpreter needs to write a word which is beyond the length of the exten
 
 [[p11.1.7.4]]
 [.red]##§{nbsp}11.1.7.4.##{nbsp}{nbsp}
-****[1.1]* The bits in Flags 3 are set by the game to request use of a feature. If the interpreter cannot provide a feature, it must clear the relevant bit.
+##**{Asterisk}{Asterisk}{Asterisk}[1.1]**##
+The bits in Flags 3 are set by the game to request use of a feature. If the interpreter cannot provide a feature, it must clear the relevant bit.
 
 [[p11.1.7.4.1]]
 [.red]##§{nbsp}11.1.7.4.1.##{nbsp}{nbsp}
-****[1.1]* All unused bits in Flags 3 must be cleared by the interpreter.
+##**{Asterisk}{Asterisk}{Asterisk}[1.1]**##
+All unused bits in Flags 3 must be cleared by the interpreter.
 
 
 

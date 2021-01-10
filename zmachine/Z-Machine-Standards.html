@@ -916,7 +916,7 @@ is still a WIP draft!</p>
 <p>Few arbitrary choices have been made in writing this document. Where Infocom&#8217;s own shipped interpreters disagree, or contain manifest bugs, it has usually been possible to decide which was "correct". Elsewhere, minimum levels of performance have been invented where necessary. (For example, a minimum call-stack size is needed for programmers to be sure of what level of recursion is safe.)</p>
 </div>
 <div class="paragraph">
-<p>Those paragraphs which genuinely extend the Infocom format are marked <strong>*</strong>*<strong class="n.m">, where *n</strong> and <strong>m</strong> are the major and minor version numbers for the Standard in which the feature was added. In any event, Infocom&#8217;s original shipped interpreters do not conform to this standard document, because of bugs or because of slight variations between the Inform output format and Infocom&#8217;s.</p>
+<p>Those paragraphs which genuinely extend the Infocom format are marked <mark><strong>***[n.m]</strong></mark>, where <strong>n</strong> and <strong>m</strong> are the major and minor version numbers for the Standard in which the feature was added. In any event, Infocom&#8217;s original shipped interpreters do not conform to this standard document, because of bugs or because of slight variations between the Inform output format and Infocom&#8217;s.</p>
 </div>
 <hr>
 </div>
@@ -1182,7 +1182,8 @@ A word address specifies an even address in the bottom 128K of memory (by giving
 </div>
 <div id="p1.2.3" class="paragraph">
 <p><span class="red">§&#160;1.2.3.</span>&#160;&#160;
-<strong>*</strong>*[1.0]* A packed address specifies where a routine or string begins in high memory. Given a packed address <em>P</em>, the formula to obtain the corresponding byte address <em>B</em> is:</p>
+<mark><strong>***[1.0]</strong></mark>
+A packed address specifies where a routine or string begins in high memory. Given a packed address <em>P</em>, the formula to obtain the corresponding byte address <em>B</em> is:</p>
 </div>
 <div class="hdlist">
 <table>
@@ -1929,7 +1930,8 @@ Some will need accented Latin characters (such as French E-acute), others unusua
 </div>
 <div id="p3.8.5.1" class="paragraph">
 <p><span class="red">§&#160;3.8.5.1.</span>&#160;&#160;
-<strong>*</strong>*[1.0]* To define which characters are required, the Unicode (or ISO 10646-1) Basic Multilingual Plane character set is used: characters are specified by unsigned 16-bit codes.
+<mark><strong>***[1.0]</strong></mark>
+To define which characters are required, the Unicode (or ISO 10646-1) Basic Multilingual Plane character set is used: characters are specified by unsigned 16-bit codes.
 These values agree with ISO 8859 Latin-1 in the range 0 to 255, and with ASCII and ZSCII in the range 32 to 126.
 The Unicode standard leaves a range of values, the Private Use Area, free: however, an Internet group called the ConScript Unicode Registry is organising a standard mapping of invented scripts (such as Klingon, or Tolkien&#8217;s Elvish) into the Private Use Area, and this should be considered part of the Unicode standard for Z-machine purposes.</p>
 </div>
@@ -1938,7 +1940,8 @@ The Unicode standard leaves a range of values, the Private Use Area, free: howev
 </div>
 <div id="p3.8.5.2" class="paragraph">
 <p><span class="red">§&#160;3.8.5.2.</span>&#160;&#160;
-<strong>*</strong>*[1.0]* The story file chooses its stock of extra characters with a &#8220;Unicode translation table&#8221; as follows.
+<mark><strong>***[1.0]</strong></mark>
+The story file chooses its stock of extra characters with a &#8220;Unicode translation table&#8221; as follows.
 Under Versions 1 to 4, the &#8220;default table&#8221; is always used (see below).
 In Version 5 or later, if Word 3 of the header extension table is present and non-zero then it is interpreted as the byte address of the Unicode translation table.
 If Word 3 is absent or zero, the default table is used.</p>
@@ -1967,7 +1970,8 @@ They can appear in a story file&#8217;s alphabet table, in an array created by p
 </div>
 <div id="p3.8.5.4.1" class="paragraph">
 <p><span class="red">§&#160;3.8.5.4.1.</span>&#160;&#160;
-<strong>*</strong>*[1.0]* The interpreter is required to be able to print representations of every defined Unicode character under <strong>$0100</strong> (i.e. of every defined ISO 8859-1 Latin1 character).
+<mark><strong>***[1.0]</strong></mark>
+The interpreter is required to be able to print representations of every defined Unicode character under <strong>$0100</strong> (i.e. of every defined ISO 8859-1 Latin1 character).
 If no suitable letter forms are available, textual equivalents may be used (such as &#8220;ss&#8221; in place of German sharp &#8220;s&#8221;).</p>
 </div>
 <div id="p3.8.5.4.2" class="paragraph">
@@ -1977,7 +1981,8 @@ Normally, and where sensibly possible, all punctuation and letter characters in 
 </div>
 <div id="p3.8.5.4.3" class="paragraph">
 <p><span class="red">§&#160;3.8.5.4.3.</span>&#160;&#160;
-<strong>*</strong>*[1.0]* An interpreter is not required to have suitable letter-forms for printing Unicode characters <strong>$0100</strong> to <strong>$FFFF</strong>.
+<mark><strong>***[1.0]</strong></mark>
+An interpreter is not required to have suitable letter-forms for printing Unicode characters <strong>$0100</strong> to <strong>$FFFF</strong>.
 (It may, if it chooses, allow the user to configure certain fonts for certain Unicode ranges; but this is not required.)
 If a Unicode character must be printed which an interpreter has no letter-form for, a question mark should be printed instead.</p>
 </div>
@@ -3077,7 +3082,8 @@ Output stream 3 writes to a table in dynamic memory. When the stream is selected
 </div>
 <div id="p7.1.2.1.1" class="paragraph">
 <p><span class="red">§&#160;7.1.2.1.1.</span>&#160;&#160;
-<strong>*</strong>*[1.0]* It is possible for stream 3 to be selected while it is already on. If this happens, the previous table address is remembered and the previous table is resumed when the new one is finished. This nesting can reach a depth of up to 16: if stream 3 is opened for a seventeenth time, the interpreter should halt with an error message.</p>
+<mark><strong>***[1.0]</strong></mark>
+It is possible for stream 3 to be selected while it is already on. If this happens, the previous table address is remembered and the previous table is resumed when the new one is finished. This nesting can reach a depth of up to 16: if stream 3 is opened for a seventeenth time, the interpreter should halt with an error message.</p>
 </div>
 <div id="p7.1.2.2" class="paragraph">
 <p><span class="red">§&#160;7.1.2.2.</span>&#160;&#160;
@@ -3121,7 +3127,8 @@ In Version 6, each of the eight windows has its own "buffering flag". In Version
 <div class="sect2">
 <h3 id="s7.5"><a class="anchor" href="#s7.5"></a>7.5. Dealing with Unicode or invalid characters</h3>
 <div class="paragraph">
-<p><strong>*</strong>*[1.0]* Because of the <strong>print_unicode</strong> opcode, it is possible for arbitrary Unicode characters to be sent to the output streams: that is, for characters which are not in the ZSCII set at all, even in the "extra characters" range.</p>
+<p><mark><strong>***[1.0]</strong></mark>
+Because of the <strong>print_unicode</strong> opcode, it is possible for arbitrary Unicode characters to be sent to the output streams: that is, for characters which are not in the ZSCII set at all, even in the "extra characters" range.</p>
 </div>
 <div id="p7.5.1" class="paragraph">
 <p><span class="red">§&#160;7.5.1.</span>&#160;&#160;
@@ -3143,11 +3150,13 @@ Non-ZSCII characters never need to be printed to stream 4.</p>
 <div class="sect2">
 <h3 id="s7.6"><a class="anchor" href="#s7.6"></a>7.6. File handling</h3>
 <div class="paragraph">
-<p><strong>*</strong>*[1.0]* In Versions 5 and later, the Z-machine has the ability to load and save files (using optional operands with the <strong>save</strong> and <strong>restore</strong> opcodes: these operands were not used in Infocom&#8217;s Version 5 games, but I wish to specify them as in Version 5 anyway).</p>
+<p><mark><strong>***[1.0]</strong></mark>
+In Versions 5 and later, the Z-machine has the ability to load and save files (using optional operands with the <strong>save</strong> and <strong>restore</strong> opcodes: these operands were not used in Infocom&#8217;s Version 5 games, but I wish to specify them as in Version 5 anyway).</p>
 </div>
 <div id="p7.6.1" class="paragraph">
 <p><span class="red">§&#160;7.6.1.</span>&#160;&#160;
-<strong>*</strong>*[1.0]* Filenames have the following format (approximately the MS-DOS 8.3 rule): one to eight alphanumeric characters, a full stop and zero to three alphanumeric characters (the "file extension").</p>
+<mark><strong>***[1.0]</strong></mark>
+Filenames have the following format (approximately the MS-DOS 8.3 rule): one to eight alphanumeric characters, a full stop and zero to three alphanumeric characters (the "file extension").</p>
 </div>
 <div id="p7.6.1.1" class="paragraph">
 <p><span class="red">§&#160;7.6.1.1.</span>&#160;&#160;
@@ -3159,15 +3168,18 @@ Games should avoid the extensions ".INF", ".H", ".Z" followed by a number or ".S
 </div>
 <div id="p7.6.1.3" class="paragraph">
 <p><span class="red">§&#160;7.6.1.3.</span>&#160;&#160;
-<strong>*</strong>*[1.1]* The interpreter should delete from the filename any characters illegal for a filename. This will include all of the following characters (and more, if the OS requires it): slash, backslash, angle brackets (less-than and greater-than), colon, double-quote, pipe (vertical bar), question-mark, asterisk. The library should also truncate the argument at the first full stop (delete the first full stop and any following characters). If the result is the empty string, change it to the string "NULL".</p>
+<mark><strong>***[1.1]</strong></mark>
+The interpreter should delete from the filename any characters illegal for a filename. This will include all of the following characters (and more, if the OS requires it): slash, backslash, angle brackets (less-than and greater-than), colon, double-quote, pipe (vertical bar), question-mark, asterisk. The library should also truncate the argument at the first full stop (delete the first full stop and any following characters). If the result is the empty string, change it to the string "NULL".</p>
 </div>
 <div id="p7.6.2" class="paragraph">
 <p><span class="red">§&#160;7.6.2.</span>&#160;&#160;
-<strong>*</strong>*[1.0]* Saved files are not associated with any particular session of a game. They are not part of the "state of play".</p>
+<mark><strong>***[1.0]</strong></mark>
+Saved files are not associated with any particular session of a game. They are not part of the "state of play".</p>
 </div>
 <div id="p7.6.3" class="paragraph">
 <p><span class="red">§&#160;7.6.3.</span>&#160;&#160;
-<strong>*</strong>*[1.0]* A game may depend on having up to 32 auxiliary files (with different names).</p>
+<mark><strong>***[1.0]</strong></mark>
+A game may depend on having up to 32 auxiliary files (with different names).</p>
 </div>
 <div id="p7.6.4" class="paragraph">
 <p><span class="red">§&#160;7.6.4.</span>&#160;&#160;
@@ -3245,11 +3257,14 @@ An interpreter should ideally provide 4 fonts, with ID numbers as follows:</p>
 </div>
 <div id="p8.1.3" class="paragraph">
 <p><span class="red">§&#160;8.1.3.</span>&#160;&#160;
-<strong><strong>*[1.0]</strong> A game must not use fonts other than 1 unless allowed to by the interpreter: see the <strong>set_font</strong> opcode for how to give or refuse permission. (This paragraph is marked </strong><strong>*[1.0]</strong> because existing Infocom games determined the availability of font 3 for 'Beyond Zork' in a complicated and unsatisfactory way: see <strong>S</strong> 16.)</p>
+<mark><strong>***[1.0]</strong></mark>
+A game must not use fonts other than 1 unless allowed to by the interpreter: see the <strong>set_font</strong> opcode for how to give or refuse permission. (This paragraph is marked <mark><strong>***[1.0]</strong></mark>
+because existing Infocom games determined the availability of font 3 for 'Beyond Zork' in a complicated and unsatisfactory way: see <strong>S</strong> 16.)</p>
 </div>
 <div id="p8.1.3.1" class="paragraph">
 <p><span class="red">§&#160;8.1.3.1.</span>&#160;&#160;
-<strong>*</strong>*[1.0]* It is legal for a game to change font at any time, including halfway through the printing of a word. (This might be needed to introduce exotic foreign accents in the future.)</p>
+<mark><strong>***[1.0]</strong></mark>
+It is legal for a game to change font at any time, including halfway through the printing of a word. (This might be needed to introduce exotic foreign accents in the future.)</p>
 </div>
 <div id="p8.1.4" class="paragraph">
 <p><span class="red">§&#160;8.1.4.</span>&#160;&#160;
@@ -3341,7 +3356,8 @@ The following codes are used to refer to colours:</p>
 </div>
 <div id="p8.3.1.1" class="paragraph">
 <p><span class="red">§&#160;8.3.1.1.</span>&#160;&#160;
-<strong>*</strong>*[1.1]* The equivalences between the colour numbers and true colours are recommended. The interpreter may allow the user to change the mapping, but the given values should be the default. If necessary, the game can check what true colour is being used for a given colour number using window properties 17 and 18.</p>
+<mark><strong>***[1.1]</strong></mark>
+The equivalences between the colour numbers and true colours are recommended. The interpreter may allow the user to change the mapping, but the given values should be the default. If necessary, the game can check what true colour is being used for a given colour number using window properties 17 and 18.</p>
 </div>
 <div class="paragraph">
 <p>Interpreters may provide different colours (eg making colour 10 dark grey), but if and only if they can detect they are running an original Infocom story file.</p>
@@ -3372,7 +3388,8 @@ If the colour selected was not one of the standard set (this can happen when usi
 </div>
 <div id="p8.3.6" class="paragraph">
 <p><span class="red">§&#160;8.3.6.</span>&#160;&#160;
-<strong>*</strong>*[1.1]* In Version 6 only, colour 15 is defined as transparent. This is only valid as a background colour; an attempt to select it for the foreground should produce a diagnostic. Interpreters not supporting transparency must ignore any attempt to select colour 15.</p>
+<mark><strong>***[1.1]</strong></mark>
+In Version 6 only, colour 15 is defined as transparent. This is only valid as a background colour; an attempt to select it for the foreground should produce a diagnostic. Interpreters not supporting transparency must ignore any attempt to select colour 15.</p>
 </div>
 <div class="paragraph">
 <p>If the current background colour is transparent, then printed text is superimposed on the current window contents, without filling the background behind the text. <strong>erase_window</strong>, <strong>erase_line</strong> and <strong>erase_picture</strong> become null operations. The intent is to make it possible to superimpose text on non-uniform images. Up until now, only uniform images could be satisfactorily written on by sampling the background colour - that in itself would be problematical if the interpreter used dithering.</p>
@@ -3382,7 +3399,8 @@ If the colour selected was not one of the standard set (this can happen when usi
 </div>
 <div id="p8.3.7" class="paragraph">
 <p><span class="red">§&#160;8.3.7.</span>&#160;&#160;
-<strong>*</strong>*[1.1]* Standard 1.1 adds the ability for games to select many more colours with <strong>set_true_colour</strong>, which uses 15-bit RBG colour values, with the following special values:</p>
+<mark><strong>***[1.1]</strong></mark>
+Standard 1.1 adds the ability for games to select many more colours with <strong>set_true_colour</strong>, which uses 15-bit RBG colour values, with the following special values:</p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -3394,7 +3412,8 @@ If the colour selected was not one of the standard set (this can happen when usi
 </div>
 <div id="p8.3.7.1" class="paragraph">
 <p><span class="red">§&#160;8.3.7.1.</span>&#160;&#160;
-<strong>*</strong>*[1.1]* The interpreter selects the closest approximations available to the requested colours. In V6, the interpreter may store the approximations in window properties 16 and 17, so the program can tell how close it got (although it is acceptable for the interpreter to just store the requested value).</p>
+<mark><strong>***[1.1]</strong></mark>
+The interpreter selects the closest approximations available to the requested colours. In V6, the interpreter may store the approximations in window properties 16 and 17, so the program can tell how close it got (although it is acceptable for the interpreter to just store the requested value).</p>
 </div>
 <div class="paragraph">
 <p>In the minimal implementation, interpreters just need to match to the closest of the standard colours and internally call <strong>set_colour</strong> (although that would have to ensure window properties 16 and 17 were updated). In a full implementation this would be turned around and <strong>set_colour</strong> would internally call <strong>set_true_colour</strong>.</p>
@@ -3492,7 +3511,8 @@ It is legal to change text style at any point, including in the middle of a word
 </div>
 <div id="p8.7.1.3" class="paragraph">
 <p><span class="red">§&#160;8.7.1.3.</span>&#160;&#160;
-<strong>*</strong>*[1.1]* Although a story file can determine which individual styles are available by inspecting the header, this gives no indication of which styles can be combined. To improve this situation, at least for Version 6, Standard 1.1 requires window property 10 to show the actual style combination currently in use; with this a story file can probe for the availability of particular combinations.</p>
+<mark><strong>***[1.1]</strong></mark>
+Although a story file can determine which individual styles are available by inspecting the header, this gives no indication of which styles can be combined. To improve this situation, at least for Version 6, Standard 1.1 requires window property 10 to show the actual style combination currently in use; with this a story file can probe for the availability of particular combinations.</p>
 </div>
 <div id="p8.7.2" class="paragraph">
 <p><span class="red">§&#160;8.7.2.</span>&#160;&#160;
@@ -3672,7 +3692,8 @@ If an attempt is made by the game to read the cursor position at a time when tex
 </div>
 <div id="p8.8.3.2.8" class="paragraph">
 <p><span class="red">§&#160;8.8.3.2.8.</span>&#160;&#160;
-<strong>*</strong>*[1.1]* The true foreground and background colours show the actual colour being used for the foreground and background, whether it was set using <strong>set_colour</strong> or <strong>set_true_colour</strong>. Transparent is indicated as -4. If the colour was sampled from a picture then the value shown may be a 15-bit rounding of a more precise colour, leading to a slight inaccuracy if the colour is read and then written back.</p>
+<mark><strong>***[1.1]</strong></mark>
+The true foreground and background colours show the actual colour being used for the foreground and background, whether it was set using <strong>set_colour</strong> or <strong>set_true_colour</strong>. Transparent is indicated as -4. If the colour was sampled from a picture then the value shown may be a 15-bit rounding of a more precise colour, leading to a slight inaccuracy if the colour is read and then written back.</p>
 </div>
 <div id="p8.8.3.3" class="paragraph">
 <p><span class="red">§&#160;8.8.3.3.</span>&#160;&#160;
@@ -3740,11 +3761,13 @@ The game may, if it wishes, use the <strong>picture_table</strong> opcode to giv
 </div>
 <div id="p8.8.7" class="paragraph">
 <p><span class="red">§&#160;8.8.7.</span>&#160;&#160;
-<strong>*</strong>*[1.1]* Interpreters may use a backing store to store the Z-machine screen state, rather than plotting directly to the screen. This would normally be the case in a windowed operating system environment. If a backing store is in use, display changes executed by the Z-machine may not be immediately made visible to the user. Standard 1.1 adds the new opcode <strong>buffer_screen</strong> to Version 6 to control screen updates. An interpreter is free to ignore the opcode if it doesn&#8217;t fit its display model (in which case it must act as if <strong>buffer_screen</strong> is always set to 0).</p>
+<mark><strong>***[1.1]</strong></mark>
+Interpreters may use a backing store to store the Z-machine screen state, rather than plotting directly to the screen. This would normally be the case in a windowed operating system environment. If a backing store is in use, display changes executed by the Z-machine may not be immediately made visible to the user. Standard 1.1 adds the new opcode <strong>buffer_screen</strong> to Version 6 to control screen updates. An interpreter is free to ignore the opcode if it doesn&#8217;t fit its display model (in which case it must act as if <strong>buffer_screen</strong> is always set to 0).</p>
 </div>
 <div id="p8.8.7.1" class="paragraph">
 <p><span class="red">§&#160;8.8.7.1.</span>&#160;&#160;
-<strong>*</strong>*[1.1]* When <strong>buffer_screen</strong> is set to 0 (the default), all display changes are expected to become visible to the user either immediately, or within a short period of time, at the interpreter&#8217;s discretion. At a minimum, all updates become visible before waiting for input. Any intermediate display states between input requests may not be seen; for example when printing a large amount of new text into a scrolling window, all the intermediate scroll positions may or may not be shown.</p>
+<mark><strong>***[1.1]</strong></mark>
+When <strong>buffer_screen</strong> is set to 0 (the default), all display changes are expected to become visible to the user either immediately, or within a short period of time, at the interpreter&#8217;s discretion. At a minimum, all updates become visible before waiting for input. Any intermediate display states between input requests may not be seen; for example when printing a large amount of new text into a scrolling window, all the intermediate scroll positions may or may not be shown.</p>
 </div>
 <div class="paragraph">
 <p>When <strong>buffer_screen</strong> is set to 1, the interpreter need not change the visible display at all. Any display changes can be done purely in the backing store. A program may set <strong>buffer_screen</strong> to 1 before carrying out a complex layered graphical composition, to indicate that the intermediate states are not worth showing. It would be extremely ill-advised to prompt for input with <strong>buffer_screen</strong> set to 1.</p>
@@ -3754,7 +3777,8 @@ The game may, if it wishes, use the <strong>picture_table</strong> opcode to giv
 </div>
 <div id="p8.8.7.2" class="paragraph">
 <p><span class="red">§&#160;8.8.7.2.</span>&#160;&#160;
-<strong>*</strong>*[1.1]* With buffer_screen in either state, an update of the visible display can be forced immediately by issuing <strong>buffer_screen</strong> -1, without altering the current buffering state. Note that <strong>buffer_screen</strong> -1 does not flush the text buffer.</p>
+<mark><strong>***[1.1]</strong></mark>
+With buffer_screen in either state, an update of the visible display can be forced immediately by issuing <strong>buffer_screen</strong> -1, without altering the current buffering state. Note that <strong>buffer_screen</strong> -1 does not flush the text buffer.</p>
 </div>
 </div>
 <div class="sect2">
@@ -3939,7 +3963,8 @@ In Version 5 and later, a game should have bit 7 of 'Flags 2' set in its story f
 </div>
 <div id="p9.2.1" class="paragraph">
 <p><span class="red">§&#160;9.2.1.</span>&#160;&#160;
-<strong>*</strong>*[1.1]* Aside from bleeps, there are two types of sound effect, samples and music. The game has no way of telling the type of a given sound effect.</p>
+<mark><strong>***[1.1]</strong></mark>
+Aside from bleeps, there are two types of sound effect, samples and music. The game has no way of telling the type of a given sound effect.</p>
 </div>
 </div>
 <div class="sect2">
@@ -3959,7 +3984,8 @@ The game may (but need not) "prepare" a sound effect before use. This would indi
 </div>
 <div id="p9.4.2" class="paragraph">
 <p><span class="red">§&#160;9.4.2.</span>&#160;&#160;
-<strong>*</strong>*[1.1]* A sound effect (other than a bleep) can then be "stopped" or "started". Only one sound effect of each type can play at any given time, so that starting a new music sound effect stops any current music playing, and starting any new sample sound effect stops any current sample sound playing. Samples and music do not interrupt each other.</p>
+<mark><strong>***[1.1]</strong></mark>
+A sound effect (other than a bleep) can then be "stopped" or "started". Only one sound effect of each type can play at any given time, so that starting a new music sound effect stops any current music playing, and starting any new sample sound effect stops any current sample sound playing. Samples and music do not interrupt each other.</p>
 </div>
 <div id="p9.4.3" class="paragraph">
 <p><span class="red">§&#160;9.4.3.</span>&#160;&#160;
@@ -4132,7 +4158,8 @@ In Versions 5 and later, the game may provide a "terminating characters table" b
 </div>
 <div id="p10.5.3" class="paragraph">
 <p><span class="red">§&#160;10.5.3.</span>&#160;&#160;
-<strong>*</strong>*[1.0]* In Versions 4 and later, an interpreter should ideally be able to time input and to call a (game) routine at periodic intervals: see the <strong>read</strong> opcode. If it is able to do this, it should set bit 7 of 'Flags 1' in the header.</p>
+<mark><strong>***[1.0]</strong></mark>
+In Versions 4 and later, an interpreter should ideally be able to time input and to call a (game) routine at periodic intervals: see the <strong>read</strong> opcode. If it is able to do this, it should set bit 7 of 'Flags 1' in the header.</p>
 </div>
 </div>
 <div class="sect2">
@@ -4691,11 +4718,13 @@ Interpreter versions are conventionally ASCII codes for upper-case letters in Ve
 </div>
 <div id="p11.1.4" class="paragraph">
 <p><span class="red">§&#160;11.1.4.</span>&#160;&#160;
-<strong>*</strong>*[1.0]* The use of bit 7 in 'Flags 1' to signal whether timed input is available was new in the 1.0 document: see the preface.</p>
+<mark><strong>***[1.0]</strong></mark>
+The use of bit 7 in 'Flags 1' to signal whether timed input is available was new in the 1.0 document: see the preface.</p>
 </div>
 <div id="p11.1.5" class="paragraph">
 <p><span class="red">§&#160;11.1.5.</span>&#160;&#160;
-<strong>*</strong>*[1.0]* If an interpreter obeys Revision <strong>n.m</strong> of this document <em>perfectly</em>, as far as anyone knows, then byte <strong>$32</strong> should be written with <strong>n</strong> and byte <strong>$33</strong> with <strong>m</strong>. If it is an earlier (non-standard) interpreter, it should leave these bytes as 0.</p>
+<mark><strong>***[1.0]</strong></mark>
+If an interpreter obeys Revision <strong>n.m</strong> of this document <em>perfectly</em>, as far as anyone knows, then byte <strong>$32</strong> should be written with <strong>n</strong> and byte <strong>$33</strong> with <strong>m</strong>. If it is an earlier (non-standard) interpreter, it should leave these bytes as 0.</p>
 </div>
 <div id="p11.1.6" class="paragraph">
 <p><span class="red">§&#160;11.1.6.</span>&#160;&#160;
@@ -4804,11 +4833,13 @@ If the interpreter needs to write a word which is beyond the length of the exten
 </table>
 <div id="p11.1.7.4" class="paragraph">
 <p><span class="red">§&#160;11.1.7.4.</span>&#160;&#160;
-<strong>*</strong>*[1.1]* The bits in Flags 3 are set by the game to request use of a feature. If the interpreter cannot provide a feature, it must clear the relevant bit.</p>
+<mark><strong>***[1.1]</strong></mark>
+The bits in Flags 3 are set by the game to request use of a feature. If the interpreter cannot provide a feature, it must clear the relevant bit.</p>
 </div>
 <div id="p11.1.7.4.1" class="paragraph">
 <p><span class="red">§&#160;11.1.7.4.1.</span>&#160;&#160;
-<strong>*</strong>*[1.1]* All unused bits in Flags 3 must be cleared by the interpreter.</p>
+<mark><strong>***[1.1]</strong></mark>
+All unused bits in Flags 3 must be cleared by the interpreter.</p>
 </div>
 <div class="sect2">
 <h3 id="remarks-11"><a class="anchor" href="#remarks-11"></a>Remarks</h3>
@@ -4929,7 +4960,8 @@ If the top bit (bit 7) of the first size byte is set, then there are two size-an
 </div>
 <div id="p12.4.2.1.1" class="paragraph">
 <p><span class="red">§&#160;12.4.2.1.1.</span>&#160;&#160;
-<strong>*</strong>*[1.0]* A value of 0 as property data length (in the second byte) should be interpreted as a length of 64. (Inform can compile such properties.)</p>
+<mark><strong>***[1.0]</strong></mark>
+A value of 0 as property data length (in the second byte) should be interpreted as a length of 64. (Inform can compile such properties.)</p>
 </div>
 <div id="p12.4.2.2" class="paragraph">
 <p><span class="red">§&#160;12.4.2.2.</span>&#160;&#160;
@@ -6741,7 +6773,8 @@ The highest ideal of a translation&#8230;&#8203; is achieved when the reader fli
 <p>See <strong>S</strong> 8 for more details.</p>
 </div>
 <div class="paragraph">
-<p><strong>*</strong>*[1.1]* This opcode will only be present in interpreters obeying Standard 1.1 or later, so story files should check the standard number of the interpreter before executing this opcode.</p>
+<p><mark><strong>***[1.1]</strong></mark>
+This opcode will only be present in interpreters obeying Standard 1.1 or later, so story files should check the standard number of the interpreter before executing this opcode.</p>
 </div>
 <hr>
 </div>
@@ -6864,7 +6897,8 @@ The highest ideal of a translation&#8230;&#8203; is achieved when the reader fli
 <p>Determines whether or not the interpreter can print, or receive from the keyboard, the given Unicode character. Bit 0 of the result should be set if and only if the interpreter can print the character; bit 1 if and only if the interpreter can receive it from the keyboard. Bits 2 to 15 are undefined.</p>
 </div>
 <div class="paragraph">
-<p><strong>*</strong>*[1.0]* This opcode will only be present in interpreters obeying Standard 1.0 or later, so story files should check the standard number of the interpreter before executing this opcode.</p>
+<p><mark><strong>***[1.0]</strong></mark>
+This opcode will only be present in interpreters obeying Standard 1.0 or later, so story files should check the standard number of the interpreter before executing this opcode.</p>
 </div>
 <hr>
 </div>
@@ -7504,7 +7538,8 @@ The highest ideal of a translation&#8230;&#8203; is achieved when the reader fli
 <p>Print a Unicode character. See <strong>S</strong> 3.8.5.4 and <strong>S</strong> 7.5 for details. The given character code must be defined in Unicode.</p>
 </div>
 <div class="paragraph">
-<p><strong>*</strong>*[1.0]* This opcode will only be present in interpreters obeying Standard 1.0 or later, so story files should check the standard number of the interpreter before executing this opcode.</p>
+<p><mark><strong>***[1.0]</strong></mark>
+This opcode will only be present in interpreters obeying Standard 1.0 or later, so story files should check the standard number of the interpreter before executing this opcode.</p>
 </div>
 <hr>
 </div>
@@ -7758,7 +7793,8 @@ The data is written to words 0 to 3 in the array.)</p>
 <p>As with <strong>restart</strong>, the transcription and fixed font bits survive. The interpreter gives the game a way of knowing that a restore has just happened (see <strong>save</strong>).</p>
 </div>
 <div class="paragraph">
-<p><strong>*</strong>*[1.0]* From Version 5 it can have optional parameters as <strong>save</strong> does, and returns the number of bytes loaded if so. (Whether Infocom intended these options as part of Version 5 is doubtful, but it&#8217;s too useful a feature to exclude from this Standard.)</p>
+<p><mark><strong>***[1.0]</strong></mark>
+From Version 5 it can have optional parameters as <strong>save</strong> does, and returns the number of bytes loaded if so. (Whether Infocom intended these options as part of Version 5 is doubtful, but it&#8217;s too useful a feature to exclude from this Standard.)</p>
 </div>
 <div class="paragraph">
 <p>If the restore fails, 0 is returned, but once again this necessarily happens since otherwise control is already elsewhere.</p>
@@ -7833,10 +7869,12 @@ The data is written to words 0 to 3 in the array.)</p>
 <p>It is illegal to use this opcode within an interrupt routine (one called asynchronously by a sound effect, or keyboard timing, or newline counting).</p>
 </div>
 <div class="paragraph">
-<p><strong>*</strong>*[1.0]* The extension also has (optional) parameters, which save a region of the save area, whose address and length are in bytes, and provides a suggested filename: <strong>name</strong> is a pointer to an array of ASCII characters giving this name (as usual preceded by a byte giving the number of characters). See <strong>S</strong> 7.6. (Whether Infocom intended these options as part of Version 5 is doubtful, but it&#8217;s too useful a feature to exclude from this Standard.)</p>
+<p><mark><strong>***[1.0]</strong></mark>
+The extension also has (optional) parameters, which save a region of the save area, whose address and length are in bytes, and provides a suggested filename: <strong>name</strong> is a pointer to an array of ASCII characters giving this name (as usual preceded by a byte giving the number of characters). See <strong>S</strong> 7.6. (Whether Infocom intended these options as part of Version 5 is doubtful, but it&#8217;s too useful a feature to exclude from this Standard.)</p>
 </div>
 <div class="paragraph">
-<p><strong>*</strong>*[1.1]* As of Standard 1.1 an additional optional parameter, <strong>prompt</strong>, is allowed on Version 5 extended save/restore. This allows a game author to tell the interpreter whether it should ask for confirmation of the provided file name (<strong>prompt</strong> is 1), or just silently save/restore using the provided filename (<strong>prompt</strong> is 0). If the parameter is not provided, whether to prompt or not is a matter for the interpreter - this might be globally user-configurable. Infocom&#8217;s interpreters do prompt for filenames, many modern ones do not.</p>
+<p><mark><strong>***[1.1]</strong></mark>
+As of Standard 1.1 an additional optional parameter, <strong>prompt</strong>, is allowed on Version 5 extended save/restore. This allows a game author to tell the interpreter whether it should ask for confirmation of the provided file name (<strong>prompt</strong> is 1), or just silently save/restore using the provided filename (<strong>prompt</strong> is 0). If the parameter is not provided, whether to prompt or not is a matter for the interpreter - this might be globally user-configurable. Infocom&#8217;s interpreters do prompt for filenames, many modern ones do not.</p>
 </div>
 <hr>
 </div>
@@ -7939,7 +7977,8 @@ The data is written to words 0 to 3 in the array.)</p>
 <p>(Infocom&#8217;s old interpreters did not store 0 for an unavailable font, but the feature is clearly useful and so was introduced in release 0.2 of this Standard.</p>
 </div>
 <div class="paragraph">
-<p><strong>*</strong>*[1.1]* In Version 6, <strong>set_font</strong> has an optional window parameter, as for <strong>set_colour</strong>. This was part of the original Infocom design, but omitted by earlier Standards. It is reinstated here, as it is useful to be able to measure a font that is about to be used in another window, so that window can be sized before attempting to place the cursor in it. A window number of -3 signifies "the currently selected window"</p>
+<p><mark><strong>***[1.1]</strong></mark>
+In Version 6, <strong>set_font</strong> has an optional window parameter, as for <strong>set_colour</strong>. This was part of the original Infocom design, but omitted by earlier Standards. It is reinstated here, as it is useful to be able to measure a font that is about to be used in another window, so that window can be sized before attempting to place the cursor in it. A window number of -3 signifies "the currently selected window"</p>
 </div>
 <hr>
 </div>
@@ -7962,7 +8001,8 @@ The data is written to words 0 to 3 in the array.)</p>
 <p>Sets the text style to: Roman (if 0), Reverse Video (if 1), Bold (if 2), Italic (4), Fixed Pitch (8). In some interpreters (though this is not required) a combination of styles is possible (such as reverse video and bold). In these, changing to Roman should turn off all the other styles currently set.</p>
 </div>
 <div class="paragraph">
-<p><strong>*</strong>*[1.1]* As of Standard 1.1, it is legal to request style combinations in a single <strong>set_text_style</strong> opcode by adding the values (which are powers of two) together. If the parameter is non-zero, then all the styles given are activated. If the parameter is zero, then all styles are deactivated. If the interpreter is unable to provide the requested style combination, it must give precedence first to the styles requested in the most recent call to <strong>set_text_style</strong>, and within that to the highest bit, making the priority Fixed, Italic, Bold, Reverse.</p>
+<p><mark><strong>***[1.1]</strong></mark>
+As of Standard 1.1, it is legal to request style combinations in a single <strong>set_text_style</strong> opcode by adding the values (which are powers of two) together. If the parameter is non-zero, then all the styles given are activated. If the parameter is zero, then all styles are deactivated. If the interpreter is unable to provide the requested style combination, it must give precedence first to the styles requested in the most recent call to <strong>set_text_style</strong>, and within that to the highest bit, making the priority Fixed, Italic, Bold, Reverse.</p>
 </div>
 <hr>
 </div>
@@ -8017,7 +8057,8 @@ bits 4-0
 <p>The optional window parameter is only allowed in V6, and operates the same as in <strong>set_colour</strong>.</p>
 </div>
 <div class="paragraph">
-<p><strong>*</strong>*[1.1]* This opcode will only be present in interpreters obeying Standard 1.1 or later, so story files should check the standard number of the interpreter before executing this opcode.</p>
+<p><mark><strong>***[1.1]</strong></mark>
+This opcode will only be present in interpreters obeying Standard 1.1 or later, so story files should check the standard number of the interpreter before executing this opcode.</p>
 </div>
 <hr>
 </div>

@@ -100,7 +100,8 @@ If the top bit (bit 7) of the first size byte is set, then there are two size-an
 // [[section-5]]
 [[p12.4.2.1.1]]
 [.red]##§{nbsp}12.4.2.1.1.##{nbsp}{nbsp}
-****[1.0]* A value of 0 as property data length (in the second byte) should be interpreted as a length of 64. (Inform can compile such properties.)
+##**{Asterisk}{Asterisk}{Asterisk}[1.0]**##
+A value of 0 as property data length (in the second byte) should be interpreted as a length of 64. (Inform can compile such properties.)
 
 // [[section-6]]
 [[p12.4.2.2]]

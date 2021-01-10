@@ -136,7 +136,8 @@ In Versions 5 and later, the game may provide a "terminating characters table" b
 // [[section-16]]
 [[p10.5.3]]
 [.red]##§{nbsp}10.5.3.##{nbsp}{nbsp}
-****[1.0]* In Versions 4 and later, an interpreter should ideally be able to time input and to call a (game) routine at periodic intervals: see the *read* opcode. If it is able to do this, it should set bit 7 of 'Flags 1' in the header.
+##**{Asterisk}{Asterisk}{Asterisk}[1.0]**##
+In Versions 4 and later, an interpreter should ideally be able to time input and to call a (game) routine at periodic intervals: see the *read* opcode. If it is able to do this, it should set bit 7 of 'Flags 1' in the header.
 
 
 // [[six]]
