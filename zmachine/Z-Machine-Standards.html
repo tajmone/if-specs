@@ -1456,7 +1456,8 @@ The process of converting between Z-characters and ZSCII values is given in <a h
 <div class="sect2">
 <h3 id="s3.2"><a class="anchor" href="#s3.2"></a>3.2. Alphabets</h3>
 <div class="paragraph">
-<p>Text in memory consists of a sequence of 2-byte words. Each word is divided into three 5-bit 'Z-characters', plus 1 bit left over, arranged as</p>
+<p>Text in memory consists of a sequence of 2-byte words.
+Each word is divided into three 5-bit &#8216;Z-characters&#8217;, plus 1 bit left over, arranged as</p>
 </div>
 <table class="tableblock frame-all grid-all stripes-even fit-content">
 <colgroup>
@@ -1493,25 +1494,54 @@ The process of converting between Z-characters and ZSCII values is given in <a h
 </div>
 <div id="p3.2.1" class="paragraph">
 <p><span class="red">§&#160;3.2.1.</span>&#160;&#160;
-There are three 'alphabets', A0 (lower case), A1 (upper case) and A2 (punctuation) and during printing one of these is current at any given time. Initially A0 is current. The meaning of a Z-character may depend on which alphabet is current.</p>
+There are three &#8216;alphabets&#8217;, A0 (lower case), A1 (upper case) and A2 (punctuation) and during printing one of these is current at any given time.
+Initially A0 is current.
+The meaning of a Z-character may depend on which alphabet is current.</p>
 </div>
 <div id="p3.2.2" class="paragraph">
 <p><span class="red">§&#160;3.2.2.</span>&#160;&#160;
-In Versions 1 and 2, the current alphabet can be any of the three. The Z-characters 2 and 3 are called 'shift' characters and change the alphabet for the next character only. The new alphabet depends on what the current one is:</p>
+In Versions 1 and 2, the current alphabet can be any of the three.
+The Z-characters 2 and 3 are called &#8216;shift&#8217; characters and change the alphabet for the next character only.
+The new alphabet depends on what the current one is:</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>             from A0  from A1  from A2
-  Z-char 2      A1       A2       A0
-  Z-char 3      A2       A0       A1</pre>
-</div>
-</div>
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-center valign-top">from A0</th>
+<th class="tableblock halign-center valign-top">from A1</th>
+<th class="tableblock halign-center valign-top">from A2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Z-char 2</p></th>
+<td class="tableblock halign-center valign-top"><p class="tableblock">A1</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">A2</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">A0</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Z-char 3</p></th>
+<td class="tableblock halign-center valign-top"><p class="tableblock">A2</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">A0</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">A1</p></td>
+</tr>
+</tbody>
+</table>
 <div class="paragraph">
-<p>Z-characters 4 and 5 permanently change alphabet, according to the same table, and are called 'shift lock' characters.</p>
+<p>Z-characters 4 and 5 permanently change alphabet, according to the same table, and are called &#8216;shift lock&#8217; characters.</p>
 </div>
 <div id="p3.2.3" class="paragraph">
 <p><span class="red">§&#160;3.2.3.</span>&#160;&#160;
-In Versions 3 and later, the current alphabet is always A0 unless changed for 1 character only: Z-characters 4 and 5 are shift characters. Thus 4 means "the next character is in A1" and 5 means "the next is in A2". There are no shift lock characters.</p>
+In Versions 3 and later, the current alphabet is always A0 unless changed for 1 character only: Z-characters 4 and 5 are shift characters.
+Thus 4 means &#8220;the next character is in A1&#8221; and 5 means &#8220;the next is in A2&#8221;.
+There are no shift lock characters.</p>
 </div>
 <div id="p3.2.4" class="paragraph">
 <p><span class="red">§&#160;3.2.4.</span>&#160;&#160;
@@ -1521,11 +1551,13 @@ An indefinite sequence of shift or shift lock characters is legal (but prints no
 <div class="sect2">
 <h3 id="s3.3"><a class="anchor" href="#s3.3"></a>3.3. Abbreviations</h3>
 <div class="paragraph">
-<p>In Versions 3 and later, Z-characters 1, 2 and 3 represent abbreviations, sometimes also called 'synonyms' (for traditional reasons): the next Z-character indicates which abbreviation string to print. If z is the first Z-character (1, 2 or 3) and x the subsequent one, then the interpreter must look up entry 32(z-1)+x in the abbreviations table and print the string at that word address. In Version 2, Z-character 1 has this effect (but 2 and 3 do not, so there are only 32 abbreviations).</p>
+<p>In Versions 3 and later, Z-characters 1, 2 and 3 represent abbreviations, sometimes also called &#8216;synonyms&#8217; (for traditional reasons): the next Z-character indicates which abbreviation string to print.
+If z is the first Z-character (1, 2 or 3) and x the subsequent one, then the interpreter must look up entry 32(z-1)+x in the abbreviations table and print the string at that word address.
+In Version 2, Z-character 1 has this effect (but 2 and 3 do not, so there are only 32 abbreviations).</p>
 </div>
 <div id="p3.3.1" class="paragraph">
 <p><span class="red">§&#160;3.3.1.</span>&#160;&#160;
-Abbreviation string-printing follows all the rules of this section except that an abbreviation string must not itself use abbreviations and must not end with an incomplete multi-Z-character construction (see <strong>S</strong> 3.6.1 below).</p>
+Abbreviation string-printing follows all the rules of this section except that an abbreviation string must not itself use abbreviations and must not end with an incomplete multi-Z-character construction (see <a href="#p3.6.1">§&#160;3.6.1</a> below).</p>
 </div>
 </div>
 <div class="sect2">
@@ -1537,7 +1569,7 @@ Abbreviation string-printing follows all the rules of this section except that a
 <div class="sect2">
 <h3 id="s3.5"><a class="anchor" href="#s3.5"></a>3.5. Alphabet table</h3>
 <div class="paragraph">
-<p>The remaining Z-characters are translated into ZSCII character codes using the "alphabet table".</p>
+<p>The remaining Z-characters are translated into ZSCII character codes using the &#8220;alphabet table&#8221;.</p>
 </div>
 <div id="p3.5.1" class="paragraph">
 <p><span class="red">§&#160;3.5.1.</span>&#160;&#160;
@@ -1551,61 +1583,100 @@ In Version 1, Z-character 1 is printed as a new-line (ZSCII 13).</p>
 <p><span class="red">§&#160;3.5.3.</span>&#160;&#160;
 In Versions 2 to 4, the alphabet table for converting Z-characters into ZSCII character codes is as follows:</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>   Z-char 6789abcdef0123456789abcdef
-current   --------------------------
-  A0      abcdefghijklmnopqrstuvwxyz
-  A1      ABCDEFGHIJKLMNOPQRSTUVWXYZ
-  A2       ^0123456789.,!?_#'"/\-:()
-          --------------------------</pre>
-</div>
-</div>
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-center valign-middle"><p class="tableblock">Z-char</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>6789abcdef0123456789abcdef</code></p></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock">A0<br>
+  A1<br>
+  A2<br>
+<em>current</em></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>abcdefghijklmnopqrstuvwxyz<br>
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+&#160;^0123456789.,!?_#'"/\-:()</code></p></td>
+</tr>
+</tbody>
+</table>
 <div class="paragraph">
-<p>(Character 6 in A2 is printed as a space here, but is not translated using the alphabet table: see <strong>S</strong> 3.4 above. Character 7 in A2, written here as a circumflex <strong>^</strong>, is a new-line.) For example, in alphabet A1 the Z-character 12 is translated as a capital G (ZSCII character code 71).</p>
+<p>(Character 6 in A2 is printed as a space here, but is not translated using the alphabet table: see <a href="#s3.4">§&#160;3.4</a> above.
+Character 7 in A2, written here as a circumflex <code>^</code>, is a new-line.)
+For example, in alphabet A1 the Z-character 12 is translated as a capital G (ZSCII character code 71).</p>
 </div>
 <div id="p3.5.4" class="paragraph">
 <p><span class="red">§&#160;3.5.4.</span>&#160;&#160;
-Version 1 has a slightly different A2 row in its alphabet table (new-line is not needed, making room for the <strong>&lt;</strong> character):</p>
+Version 1 has a slightly different A2 row in its alphabet table (new-line is not needed, making room for the <code>&lt;</code> character):</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>          6789abcdef0123456789abcdef
-          --------------------------
-  A2       0123456789.,!?_#'"/\&lt;-:()
-          --------------------------</pre>
-</div>
-</div>
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-center valign-middle"><p class="tableblock">Z-char</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>6789abcdef0123456789abcdef</code></p></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-middle"><p class="tableblock">A2</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>&#160;0123456789.,!?_#'"/\<-:()</code></p></td>
+</tr>
+</tbody>
+</table>
 <div id="p3.5.5" class="paragraph">
 <p><span class="red">§&#160;3.5.5.</span>&#160;&#160;
-In Versions 5 and later, the interpreter should look at the word at <strong>$34</strong> in the header. If this is zero, then the alphabet table drawn out in <strong>S</strong> 3.5.3 continues in use. Otherwise it is interpreted as the byte address of an alphabet table specific to this story file.</p>
+In Versions 5 and later, the interpreter should look at the word at <strong>$34</strong> in the header.
+If this is zero, then the alphabet table drawn out in <a href="#p3.5.3">§&#160;3.5.3</a> continues in use.
+Otherwise it is interpreted as the byte address of an alphabet table specific to this story file.</p>
 </div>
 <div id="p3.5.5.1" class="paragraph">
 <p><span class="red">§&#160;3.5.5.1.</span>&#160;&#160;
-Such an alphabet table consists of 78 bytes arranged as 3 blocks of 26 ZSCII values, translating Z-characters 6 to 31 for alphabets A0, A1 and A2. Z-characters 6 and 7 of A2, however, are still translated as escape and newline codes (as above).</p>
+Such an alphabet table consists of 78 bytes arranged as 3 blocks of 26 ZSCII values, translating Z-characters 6 to 31 for alphabets A0, A1 and A2.
+Z-characters 6 and 7 of A2, however, are still translated as escape and newline codes (as above).</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="s3.6"><a class="anchor" href="#s3.6"></a>3.6. Padding and incompleteness</h3>
 <div class="paragraph">
-<p>Since the end-bit only comes up once every three Z-characters, a string may have to be 'padded out' with null values. This is conventionally achieved with a sequence of 5&#8217;s, though a sequence of (for example) 4&#8217;s would work equally well.</p>
+<p>Since the end-bit only comes up once every three Z-characters, a string may have to be &#8216;padded out&#8217; with null values.
+This is conventionally achieved with a sequence of 5&#8217;s, though a sequence of (for example) 4&#8217;s would work equally well.</p>
 </div>
 <div id="p3.6.1" class="paragraph">
 <p><span class="red">§&#160;3.6.1.</span>&#160;&#160;
-It is legal for the string to end while a multi-Z-character construction is incomplete: for instance, after only the top half of an ASCII value has been given. The partial construction is simply ignored. (This can happen in printing dictionary words which have been guillotined to the dictionary resolution of 6 or 9 Z-characters.)</p>
+It is legal for the string to end while a multi-Z-character construction is incomplete: for instance, after only the top half of an ASCII value has been given.
+The partial construction is simply ignored.
+(This can happen in printing dictionary words which have been guillotined to the dictionary resolution of 6 or 9 Z-characters.)</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="s3.7"><a class="anchor" href="#s3.7"></a>3.7. Dictionary truncation</h3>
 <div class="paragraph">
-<p>When an interpreter is encrypting typed-in text to match against dictionary words, the following restrictions apply. Text should be converted to lower case (as a result A1 will not be needed unless the game provides its own alphabet table). Abbreviations may not be used. The pad character, if needed, must be 5. The total string length must be 6 Z-characters (in Versions 1 to 3) or 9 (Versions 4 and later): any multi-Z-character constructions should be left incomplete (rather than omitted) if there&#8217;s no room to finish them. For example, "i" is encrypted as:</p>
+<p>When an interpreter is encrypting typed-in text to match against dictionary words, the following restrictions apply.
+Text should be converted to lower case (as a result A1 will not be needed unless the game provides its own alphabet table).
+Abbreviations may not be used.
+The pad character, if needed, must be 5.
+The total string length must be 6 Z-characters (in Versions 1 to 3) or 9 (Versions 4 and later): any multi-Z-character constructions should be left incomplete (rather than omitted) if there&#8217;s no room to finish them.
+For example, &#8220;i&#8221; is encrypted as:</p>
 </div>
-<div class="paragraph">
-<p><strong>14, 5, 5, 5, 5, 5, 5, 5, 5</strong></p>
-</div>
-<div class="paragraph">
-<p><strong>$48a5</strong> <strong>$14a5</strong> <strong>$94a5</strong></p>
-</div>
+<table class="tableblock frame-none grid-all fit-content">
+<colgroup>
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>14, 5, 5, 5, 5, 5, 5, 5, 5</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>$48a5&#160;&#160;$14a5&#160;&#160;$94a5</code></p></td>
+</tr>
+</tbody>
+</table>
 <div id="p3.7.1" class="paragraph">
 <p><span class="red">§&#160;3.7.1.</span>&#160;&#160;
 In Versions 1 and 2 only, when encoding text for dictionary words, shift-lock Z-characters 4 and 5 are used instead of the single-shift Z-characters 2 and 3 when the next two characters come from the same alphabet.</p>
@@ -1614,119 +1685,122 @@ In Versions 1 and 2 only, when encoding text for dictionary words, shift-lock Z-
 <div class="sect2">
 <h3 id="s3.8"><a class="anchor" href="#s3.8"></a>3.8. Definition of ZSCII and Unicode</h3>
 <div class="paragraph">
-<p>The character set of the Z-machine is called ZSCII (Zork Standard Code for Information Interchange; pronounced to rhyme with "xyzzy"). ZSCII codes are 10-bit unsigned values between 0 and 1023. Story files may only legally use the values which are defined below. Note that some values are defined only for input and some only for output.</p>
+<p>The character set of the Z-machine is called ZSCII (Zork Standard Code for Information Interchange; pronounced to rhyme with &#8220;xyzzy&#8221;).
+ZSCII codes are 10-bit unsigned values between 0 and 1023.
+Story files may only legally use the values which are defined below.
+Note that some values are defined only for input and some only for output.</p>
 </div>
-<table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 2. <strong>Table 2: summary of the ZSCII rules</strong></caption>
+<table class="tableblock frame-all grid-all fit-content">
+<caption class="title">Table 2. Summary of the ZSCII rules</caption>
 <colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
+<col>
+<col>
+<col>
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><code>0</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">null</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Output</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1-7</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">----</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><code>1-7</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">8</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><code>8</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">delete</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Input</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">9</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><code>9</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">tab (V6)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Output</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">10</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">----</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><code>10</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">11</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><code>11</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">sentence space (V6)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Output</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">12</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">----</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><code>12</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">13</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><code>13</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">newline</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Input/Output</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">14-26</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">----</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><code>14-26</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">27</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><code>27</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">escape</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Input</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">28-31</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">----</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><code>28-31</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">32-126</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><code>32-126</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">standard ASCII</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Input/Output</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">127-128</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">----</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><code>127-128</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">129-132</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><code>129-132</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">cursor u/d/l/r</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Input</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">133-144</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">function keys f1 to f12</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><code>133-144</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">function keys <kbd>f1</kbd> to <kbd>f12</kbd></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Input</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">145-154</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">keypad 0 to 9</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><code>145-154</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">keypad <kbd>0</kbd> to <kbd>9</kbd></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Input</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">155-251</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><code>155-251</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">extra characters</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Input/Output</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">252</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><code>252</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">menu click (V6)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Input</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">253</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><code>253</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">double-click (V6)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Input</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">254</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><code>254</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">single-click</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Input</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">255-1023</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">----</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><code>255-1023</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 </tbody>
@@ -1741,74 +1815,133 @@ The codes 0 to 31 are undefined except as follows:</p>
 </div>
 <div id="p3.8.2.1" class="paragraph">
 <p><span class="red">§&#160;3.8.2.1.</span>&#160;&#160;
-ZSCII code 0 ("null") is defined for output but has no effect in any output stream. (It is also used as a value meaning "no character" when reporting terminating character codes, but is not formally defined for input.)</p>
+ZSCII code 0 (&#8220;null&#8221;) is defined for output but has no effect in any output stream.
+(It is also used as a value meaning &#8220;no character&#8221; when reporting terminating character codes, but is not formally defined for input.)</p>
 </div>
 <div id="p3.8.2.2" class="paragraph">
 <p><span class="red">§&#160;3.8.2.2.</span>&#160;&#160;
-ZSCII code 8 ("delete") is defined for input only.</p>
+ZSCII code 8 (&#8220;delete&#8221;) is defined for input only.</p>
 </div>
 <div id="p3.8.2.3" class="paragraph">
 <p><span class="red">§&#160;3.8.2.3.</span>&#160;&#160;
-ZSCII code 9 ("tab") is defined for output in Version 6 only. At the start of a screen line this should print a paragraph indentation suitable for the font being used: if it is printed in the middle of a screen line, it should be converted to a space (Infocom&#8217;s own interpreters do not do this, however).</p>
+ZSCII code 9 (&#8220;tab&#8221;) is defined for output in Version 6 only.
+At the start of a screen line this should print a paragraph indentation suitable for the font being used: if it is printed in the middle of a screen line, it should be converted to a space (Infocom&#8217;s own interpreters do not do this, however).</p>
 </div>
 <div id="p3.8.2.4" class="paragraph">
 <p><span class="red">§&#160;3.8.2.4.</span>&#160;&#160;
-ZSCII code 11 ("sentence space") is defined for output in Version 6 only. This should be printed as a suitable gap between two sentences (in the same way that typographers normally place larger spaces after the full stops ending sentences than after words or commas).</p>
+ZSCII code 11 (&#8220;sentence space&#8221;) is defined for output in Version 6 only.
+This should be printed as a suitable gap between two sentences (in the same way that typographers normally place larger spaces after the full stops ending sentences than after words or commas).</p>
 </div>
 <div id="p3.8.2.5" class="paragraph">
 <p><span class="red">§&#160;3.8.2.5.</span>&#160;&#160;
-ZSCII code 13 ("carriage return") is defined for input and output.</p>
+ZSCII code 13 (&#8220;carriage return&#8221;) is defined for input and output.</p>
 </div>
 <div id="p3.8.2.6" class="paragraph">
 <p><span class="red">§&#160;3.8.2.6.</span>&#160;&#160;
-ZSCII code 27 ("escape" or "break") is defined for input only.</p>
+ZSCII code 27 (&#8220;escape&#8221; or &#8220;break&#8221;) is defined for input only.</p>
 </div>
 <div id="p3.8.3" class="paragraph">
 <p><span class="red">§&#160;3.8.3.</span>&#160;&#160;
-ZSCII codes between 32 ("space") and 126 ("tilde") are defined for input and output, and agree with standard ASCII (as well as all of the ISO 8859 character sets and Unicode). Specifically:</p>
+ZSCII codes between 32 (&#8220;space&#8221;) and 126 (&#8220;tilde&#8221;) are defined for input and output, and agree with standard ASCII (as well as all of the ISO 8859 character sets and Unicode).
+Specifically:</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>      0123456789abcdef0123456789abcdef
-      --------------------------------
- $20   !"#$%&amp;'()*+,-./0123456789:;&lt;=&gt;?
- $40  @ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_
- $60  'abcdefghijklmnopqrstuvwxyz{!}~
-      --------------------------------</pre>
-</div>
-</div>
+<table class="tableblock frame-none grid-all fit-content">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-right valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>0123456789abcdef0123456789abcdef
+</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><code>$20<br>
+  $40<br>
+  $60</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>&#160;!"#$%&amp;'()*+,-./0123456789:;&lt;&#8288;=&#8288;&gt;?<br>
+@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_<br>
+'abcdefghijklmnopqrstuvwxyz{!}~</code></p></td>
+</tr>
+</tbody>
+</table>
 <div class="paragraph">
-<p>Note that code <strong>$23</strong> (35 decimal) is a hash mark, not a pound sign. (Code <strong>$7c</strong> (124 decimal) is a vertical stroke which is shown as <strong>!</strong> here for typesetting reasons.)</p>
+<p>Note that code <strong>$23</strong> (35 decimal) is a hash mark, not a pound sign.
+(Code <strong>$7c</strong> (124 decimal) is a vertical stroke which is shown as <code>!</code> here for typesetting reasons.)</p>
 </div>
 <div id="p3.8.3.1" class="paragraph">
 <p><span class="red">§&#160;3.8.3.1.</span>&#160;&#160;
-ZSCII codes 127 ("delete" in some forms of ASCII) and 128 are undefined.</p>
+ZSCII codes 127 (&#8220;delete&#8221; in some forms of ASCII) and 128 are undefined.</p>
 </div>
 <div id="p3.8.4" class="paragraph">
 <p><span class="red">§&#160;3.8.4.</span>&#160;&#160;
 ZSCII codes 129 to 154 are defined for input only:</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>129: cursor up  130: cursor down  131: cursor left  132: cursor right
-133: f1         134: f2           ....              144: f12
-145: keypad 0   146: keypad 1     ....              154: keypad 9</pre>
-</div>
-</div>
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock">129:</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><kbd>&uarr;</kbd> cursor up</p></td>
+<th class="tableblock halign-center valign-top"><p class="tableblock">130:</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><kbd>&darr;</kbd> cursor down</p></td>
+<th class="tableblock halign-center valign-top"><p class="tableblock">131:</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><kbd>&larr;</kbd> cursor left</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock">132:</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><kbd>&rarr;</kbd> cursor right</p></td>
+<th class="tableblock halign-center valign-top"><p class="tableblock">133:</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><kbd>f1</kbd></p></td>
+<th class="tableblock halign-center valign-top"><p class="tableblock">134:</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><kbd>f2</kbd></p></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock">&#8230;&#8203;.</p></th>
+<td class="tableblock halign-left valign-top"></td>
+<th class="tableblock halign-center valign-top"><p class="tableblock">144:</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><kbd>f12</kbd></p></td>
+<th class="tableblock halign-center valign-top"><p class="tableblock">145:</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">keypad <kbd>0</kbd></p></td>
+</tr>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock">146:</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">keypad <kbd>1</kbd></p></td>
+<th class="tableblock halign-center valign-top"><p class="tableblock">&#8230;&#8203;.</p></th>
+<td class="tableblock halign-left valign-top"></td>
+<th class="tableblock halign-center valign-top"><p class="tableblock">154:</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">keypad <kbd>9</kbd></p></td>
+</tr>
+</tbody>
+</table>
 <div id="p3.8.5" class="paragraph">
 <p><span class="red">§&#160;3.8.5.</span>&#160;&#160;
-The block of codes between 155 and 251 are the "extra characters" and are used differently by different story files. Some will need accented Latin characters (such as French E-acute), others unusual punctuation (Spanish question mark), others new alphabets (Cyrillic or Hebrew); still others may want dingbat characters, mathematical or musical symbols, and so on.</p>
+The block of codes between 155 and 251 are the &#8220;extra characters&#8221; and are used differently by different story files.
+Some will need accented Latin characters (such as French E-acute), others unusual punctuation (Spanish question mark), others new alphabets (Cyrillic or Hebrew); still others may want dingbat characters, mathematical or musical symbols, and so on.</p>
 </div>
 <div id="p3.8.5.1" class="paragraph">
 <p><span class="red">§&#160;3.8.5.1.</span>&#160;&#160;
-<strong>*</strong>*[1.0]* To define which characters are required, the Unicode (or ISO 10646-1) Basic Multilingual Plane character set is used: characters are specified by unsigned 16-bit codes. These values agree with ISO 8859 Latin-1 in the range 0 to 255, and with ASCII and ZSCII in the range 32 to 126. The Unicode standard leaves a range of values, the Private Use Area, free: however, an Internet group called the ConScript Unicode Registry is organising a standard mapping of invented scripts (such as Klingon, or Tolkien&#8217;s Elvish) into the Private Use Area, and this should be considered part of the Unicode standard for Z-machine purposes.</p>
+<strong>*</strong>*[1.0]* To define which characters are required, the Unicode (or ISO 10646-1) Basic Multilingual Plane character set is used: characters are specified by unsigned 16-bit codes.
+These values agree with ISO 8859 Latin-1 in the range 0 to 255, and with ASCII and ZSCII in the range 32 to 126.
+The Unicode standard leaves a range of values, the Private Use Area, free: however, an Internet group called the ConScript Unicode Registry is organising a standard mapping of invented scripts (such as Klingon, or Tolkien&#8217;s Elvish) into the Private Use Area, and this should be considered part of the Unicode standard for Z-machine purposes.</p>
 </div>
 <div class="paragraph">
 <p>The Z-machine does not provide access to non-BMP characters (ie characters outside the range U+0000 to U+FFFF).</p>
 </div>
 <div id="p3.8.5.2" class="paragraph">
 <p><span class="red">§&#160;3.8.5.2.</span>&#160;&#160;
-<strong>*</strong>*[1.0]* The story file chooses its stock of extra characters with a "Unicode translation table" as follows. Under Versions 1 to 4, the "default table" is always used (see below). In Version 5 or later, if Word 3 of the header extension table is present and non-zero then it is interpreted as the byte address of the Unicode translation table. If Word 3 is absent or zero, the default table is used.</p>
+<strong>*</strong>*[1.0]* The story file chooses its stock of extra characters with a &#8220;Unicode translation table&#8221; as follows.
+Under Versions 1 to 4, the &#8220;default table&#8221; is always used (see below).
+In Version 5 or later, if Word 3 of the header extension table is present and non-zero then it is interpreted as the byte address of the Unicode translation table.
+If Word 3 is absent or zero, the default table is used.</p>
 </div>
 <div id="p3.8.5.2.1" class="paragraph">
 <p><span class="red">§&#160;3.8.5.2.1.</span>&#160;&#160;
@@ -1816,7 +1949,8 @@ The table consists of one byte giving a number N, followed by N two-byte words.<
 </div>
 <div id="p3.8.5.2.2" class="paragraph">
 <p><span class="red">§&#160;3.8.5.2.2.</span>&#160;&#160;
-This indicates that ZSCII characters 155 to 155+N-1 are defined for both input and output. (It&#8217;s possible for N to be zero, leaving the whole range 155 to 251 undefined.)</p>
+This indicates that ZSCII characters 155 to 155+N-1 are defined for both input and output.
+(It&#8217;s possible for N to be zero, leaving the whole range 155 to 251 undefined.)</p>
 </div>
 <div id="p3.8.5.2.3" class="paragraph">
 <p><span class="red">§&#160;3.8.5.2.3.</span>&#160;&#160;
