@@ -1,0 +1,31 @@
+The Treaty of Babel
+A community standard for IF bibliography
+
+Change history
+
+* Revision 7 (13 April 2006)
+Initial public release.
+
+* Revision 8 (19 February 2014)
+Added the <description> element to <cover>, providing an (optional) textual
+description of the cover art.
+
+* Revision 9 (24 October 2014)
+Noted that the <format> tag may be extended for new IF systems.
+Added "html" as a format value, indicating a game intended to be run in
+a standard web browser.
+Mentioned the Babel-IF mailing list.
+
+* License (3 November 2018)
+Placed the treaty document (and the rest of the web site text) under
+a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International
+License. The copyright is transferred to the Interactive Fiction
+Technology Foundation.
+
+* License for source code (7 August 2019)
+Updated the babel.zip source package to a Creative Commons Attribution
+4.0 International License. (Previously it was version 2.5.)
+
+* Format update (7 October 2020)
+Updated the plain text treaty document to Markdown, and with HTML generated
+from that.

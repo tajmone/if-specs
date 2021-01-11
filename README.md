@@ -22,6 +22,7 @@ Created by [Tristano Ajmone], 2020/02/19.
     - [Blorb Specification](#blorb-specification)
     - [Glk Specification](#glk-specification)
     - [Glulx Specification](#glulx-specification)
+    - [The Treaty of Babel](#the-treaty-of-babel)
     - [Z-Machine Specification](#z-machine-specification)
 - [Links](#links)
 
@@ -33,6 +34,7 @@ Created by [Tristano Ajmone], 2020/02/19.
 
 - [`/blorb/`](./blorb/) — Blorb Specification v2.0.4.
 - [`/glulx/`](./glulx/) — Glulx Specification v3.1.2.
+- [`/treaty/`](./treaty/) — Treaty of Babel rev9.
 - [`/zmachine/`](./zmachine/) — Z-Machine Standards Document v1.1.
 
 Build and validation scripts:
@@ -56,11 +58,11 @@ Repository settings:
 
 The project is still under development, below is the task-list of the current roadmap.
 
-- [ ] Add original specs and standards documents:
+- [x] Add original specs and standards documents:
     + [x] Blorb
     + [x] Glk
     + [x] Glulx
-    + [ ] Treaty of Babel
+    + [x] Treaty of Babel
     + [x] Z-Machine
 - [ ] Port the documents to AsciiDoc:
     + [ ]  Blorb
@@ -100,6 +102,14 @@ The Glk API specification (written by [Andrew Plotkin]) is Copyright 2020 by the
     + [`LICENSE`](./glulx/LICENSE)
 
 The Glulx specification is Copyright 1999-2014 by [Andrew Plotkin], licensed under [CC BY-NC-SA 3.0].
+
+
+## The Treaty of Babel
+
+- [`/treaty/`](./treaty/)
+    + [`LICENSE`](./treaty/LICENSE)
+
+The _Treaty of Babel_ is Copyright 2006-2014 by the [Interactive Fiction Technology Foundation], licensed under [CC BY-NC-SA 4.0].
 
 
 ## Z-Machine Specification
@@ -149,6 +159,7 @@ The _Z-Machine Standards Document_ (written by [Graham Nelson]) is Copyright 199
 <!-- licenses -->
 
 [CC BY-NC-SA 3.0]: https://creativecommons.org/licenses/by-nc-sa/3.0/ "View CC BY-NC-SA 3.0 License at creativecommons.org"
+[CC BY-NC-SA 4.0]: https://creativecommons.org/licenses/by-nc-sa/4.0/ "View CC BY-NC-SA 4.0 License at creativecommons.org"
 [CC BY-SA 4.0]: https://creativecommons.org/licenses/by-sa/4.0/ "View CC BY-SA 4.0 License at creativecommons.org"
 
 <!-- badges -->
