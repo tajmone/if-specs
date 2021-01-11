@@ -20,6 +20,7 @@ Created by [Tristano Ajmone], 2020/02/19.
 - [Project Status](#project-status)
 - [Licenses](#licenses)
     - [Blorb Specification](#blorb-specification)
+    - [Glk Specification](#glk-specification)
     - [Glulx Specification](#glulx-specification)
     - [Z-Machine Specification](#z-machine-specification)
 - [Links](#links)
@@ -57,7 +58,7 @@ The project is still under development, below is the task-list of the current ro
 
 - [ ] Add original specs and standards documents:
     + [x] Blorb
-    + [ ] Glk
+    + [x] Glk
     + [x] Glulx
     + [ ] Treaty of Babel
     + [x] Z-Machine
@@ -83,6 +84,14 @@ For full details, see the `README.md` and `LICENSE` files inside each subfolder.
     + [`LICENSE`](./blorb/LICENSE)
 
 The Blorb format specification (written by [Andrew Plotkin]) is Copyright 2020 by the [Interactive Fiction Technology Foundation], licensed under [CC BY-NC-SA 3.0].
+
+
+## Glk Specification
+
+- [`/glk/`](./glk/)
+    + [`LICENSE`](./glk/LICENSE)
+
+The Glk API specification (written by [Andrew Plotkin]) is Copyright 2020 by the [Interactive Fiction Technology Foundation], licensed under [CC BY-NC-SA 3.0].
 
 
 ## Glulx Specification
