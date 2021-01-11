@@ -19,6 +19,7 @@ Created by [Tristano Ajmone], 2020/02/19.
 - [Project Contents](#project-contents)
 - [Project Status](#project-status)
 - [Licenses](#licenses)
+    - [Blorb Specification](#blorb-specification)
     - [Glulx Specification](#glulx-specification)
     - [Z-Machine Specification](#z-machine-specification)
 - [Links](#links)
@@ -29,6 +30,7 @@ Created by [Tristano Ajmone], 2020/02/19.
 
 # Project Contents
 
+- [`/blorb/`](./blorb/) — Blorb Specification v2.0.4.
 - [`/glulx/`](./glulx/) — Glulx Specification v3.1.2.
 - [`/zmachine/`](./zmachine/) — Z-Machine Standards Document v1.1.
 
@@ -54,7 +56,7 @@ Repository settings:
 The project is still under development, below is the task-list of the current roadmap.
 
 - [ ] Add original specs and standards documents:
-    + [ ] Blorb
+    + [x] Blorb
     + [ ] Glk
     + [x] Glulx
     + [ ] Treaty of Babel
@@ -74,12 +76,22 @@ Here follows a quick summary of the Copyright and license terms of each third pa
 
 For full details, see the `README.md` and `LICENSE` files inside each subfolder.
 
+
+## Blorb Specification
+
+- [`/blorb/`](./blorb/)
+    + [`LICENSE`](./blorb/LICENSE)
+
+The Blorb format specification (written by [Andrew Plotkin]) is Copyright 2020 by the [Interactive Fiction Technology Foundation], licensed under [CC BY-NC-SA 3.0].
+
+
 ## Glulx Specification
 
 - [`/glulx/`](./glulx/)
     + [`LICENSE`](./glulx/LICENSE)
 
 The Glulx specification is Copyright 1999-2014 by [Andrew Plotkin], licensed under [CC BY-NC-SA 3.0].
+
 
 ## Z-Machine Specification
 
@@ -89,6 +101,11 @@ The Glulx specification is Copyright 1999-2014 by [Andrew Plotkin], licensed und
 The _Z-Machine Standards Document_ (written by [Graham Nelson]) is Copyright 1993-2018 by the [Interactive Fiction Technology Foundation], licensed under [CC BY-SA 4.0].
 
 # Links
+
+- https://github.com/iftechfoundation/ifarchive-if-specs
+
+<!-- MarkdownTOC:excluded -->
+## Specs Homepages
 
 - **[Blorb specs]** — by [Andrew Plotkin], hosted at [eblong.com].
 - **[Blorb format]** — by [Graham Nelson], hosted at [Inform 6 website].
