@@ -50,7 +50,7 @@ Repository settings:
 
 # Project Status
 
-![Blorb Status][blorb-status badge]&nbsp;
+[![Blorb Status][blorb-status badge]][blorb-dev]&nbsp;
 ![Glk Status][glk-status badge]&nbsp;
 [![Glulx Status][glulx-status badge]][glulx-dev]&nbsp;
 ![The Treaty of Babel Status][babel-status badge]&nbsp;
@@ -65,7 +65,7 @@ The project is still under development, below is the task-list of the current ro
     + [x] Treaty of Babel
     + [x] Z-Machine
 - [ ] Port the documents to AsciiDoc:
-    + [ ]  Blorb
+    + [ ]  [Blorb (&nbsp;:construction:&nbsp;)][blorb-dev]
     + [ ]  Glk
     + [ ]  [Glulx (&nbsp;:construction:&nbsp;)][glulx-dev]
     + [ ]  Treaty of Babel
@@ -166,7 +166,7 @@ The _Z-Machine Standards Document_ (written by [Graham Nelson]) is Copyright 199
 
 [travis badge]: https://travis-ci.org/tajmone/if-specs.svg?branch=master "Travis CI Build Status for EditorConfig Validation"
 
-[blorb-status badge]: https://img.shields.io/badge/Blorb-TBD-lightgrey "Blorb AsciiDoc port still pending implementation"
+[blorb-status badge]: https://img.shields.io/badge/Blorb-WIP-orange "View the Blorb AsciiDoc development branch"
 [glk-status badge]: https://img.shields.io/badge/Glk-TBD-lightgrey "Glk AsciiDoc port still pending implementation"
 [glulx-status badge]: https://img.shields.io/badge/Glulx-WIP-orange "View the Glulx AsciiDoc development branch"
 [babel-status badge]: https://img.shields.io/badge/Treaty%20of%20Babel-TBD-lightgrey "Treaty of Babel AsciiDoc port still pending implementation"
@@ -174,6 +174,7 @@ The _Z-Machine Standards Document_ (written by [Graham Nelson]) is Copyright 199
 
 <!-- dev branches  -->
 
+[blorb-dev]: https://github.com/tajmone/if-specs/tree/dev-blorb/blorb/ "View the Blorb AsciiDoc development branch"
 [glulx-dev]: https://github.com/tajmone/if-specs/tree/dev-glulx/glulx/ "View the Glulx AsciiDoc development branch"
 [zmachine-dev]: https://github.com/tajmone/if-specs/tree/dev-zmachine/zmachine/ "View the Z-Machine AsciiDoc development branch"
 
