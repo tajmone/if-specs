@@ -1,6 +1,11 @@
 # Interactive Fiction Specs in AsciiDoc
 
-![build status][travis badge]
+![build status][travis badge]&nbsp;
+[![Blorb Status][blorb-status badge]][blorb/]&nbsp;
+![Glk Status][glk-status badge]&nbsp;
+[![Glulx Status][glulx-status badge]][glulx-dev]&nbsp;
+![The Treaty of Babel Status][babel-status badge]&nbsp;
+[![Z-Machine Status][zmachine-status badge]][zmachine-dev]
 
 - https://github.com/tajmone/if-specs
 
@@ -8,6 +13,9 @@ This repository is dedicated to porting to AsciiDoc technical documents on vario
 
 Created by [Tristano Ajmone], 2020/02/19.
 
+> **DISCLAIMER** — This is an independent project, not affiliated to the original creators and maintainers of the documents which are being ported to AsciiDoc.
+> The documents herein contained are not officially endorsed, and they might not mirror the latest update of their upstream counterparts.
+> Always check the original sources to ensure you're getting access to their latest version (see [links section below](#links)).
 
 -----
 
@@ -32,10 +40,12 @@ Created by [Tristano Ajmone], 2020/02/19.
 
 # Project Contents
 
-- [`/blorb/`](./blorb/) — Blorb Specification v2.0.4.
-- [`/glulx/`](./glulx/) — Glulx Specification v3.1.2.
-- [`/treaty/`](./treaty/) — Treaty of Babel rev9.
-- [`/zmachine/`](./zmachine/) — Z-Machine Standards Document v1.1.
+- [`/blorb/`][blorb/] — Blorb Specification v2.0.4.
+- [`/glk/`][glk/] — Glk API Specification v0.7.5.
+- [`/glulx/`][glulx/] — Glulx Specification v3.1.2.
+- [`/treaty/`][treaty/] — Treaty of Babel rev9.
+- [`/zmachine/`][zmachine/] — Z-Machine Standards Document v1.1.
+
 
 Build and validation scripts:
 
@@ -50,12 +60,6 @@ Repository settings:
 
 # Project Status
 
-[![Blorb Status][blorb-status badge]][blorb-dev]&nbsp;
-![Glk Status][glk-status badge]&nbsp;
-[![Glulx Status][glulx-status badge]][glulx-dev]&nbsp;
-![The Treaty of Babel Status][babel-status badge]&nbsp;
-[![Z-Machine Status][zmachine-status badge]][zmachine-dev]
-
 The project is still under development, below is the task-list of the current roadmap.
 
 - [x] Add original specs and standards documents:
@@ -65,7 +69,7 @@ The project is still under development, below is the task-list of the current ro
     + [x] Treaty of Babel
     + [x] Z-Machine
 - [ ] Port the documents to AsciiDoc:
-    + [ ]  [Blorb (&nbsp;:construction:&nbsp;)][blorb-dev]
+    + [x]  [Blorb][blorb/] ([Live HTML Preview][Blorb Live])
     + [ ]  Glk
     + [ ]  [Glulx (&nbsp;:construction:&nbsp;)][glulx-dev]
     + [ ]  Treaty of Babel
@@ -166,7 +170,7 @@ The _Z-Machine Standards Document_ (written by [Graham Nelson]) is Copyright 199
 
 [travis badge]: https://travis-ci.org/tajmone/if-specs.svg?branch=master "Travis CI Build Status for EditorConfig Validation"
 
-[blorb-status badge]: https://img.shields.io/badge/Blorb-WIP-orange "View the Blorb AsciiDoc development branch"
+[blorb-status badge]: https://img.shields.io/badge/Blorb-2.0.4-brightgreen "Blorb specification version"
 [glk-status badge]: https://img.shields.io/badge/Glk-TBD-lightgrey "Glk AsciiDoc port still pending implementation"
 [glulx-status badge]: https://img.shields.io/badge/Glulx-WIP-orange "View the Glulx AsciiDoc development branch"
 [babel-status badge]: https://img.shields.io/badge/Treaty%20of%20Babel-TBD-lightgrey "Treaty of Babel AsciiDoc port still pending implementation"
@@ -178,6 +182,15 @@ The _Z-Machine Standards Document_ (written by [Graham Nelson]) is Copyright 199
 [glulx-dev]: https://github.com/tajmone/if-specs/tree/dev-glulx/glulx/ "View the Glulx AsciiDoc development branch"
 [zmachine-dev]: https://github.com/tajmone/if-specs/tree/dev-zmachine/zmachine/ "View the Z-Machine AsciiDoc development branch"
 
+<!-- project folders -->
+
+[blorb/]: ./blorb/ "Navigate to Blorb's folder"
+[glk/]: ./glk/ "Navigate to Glk API's folder"
+[glulx/]: ./glulx/ "Navigate to Glulx's folder"
+[treaty/]: ./treaty/ "Navigate to the Treaty of Babel's folder"
+[zmachine/]: ./zmachine/ "Navigate to Z-Machine's folder"
+
+
 <!-- project files -->
 
 [.editorconfig]: ./.editorconfig "EditorConfig settings for code styles consistency"
@@ -185,6 +198,10 @@ The _Z-Machine Standards Document_ (written by [Graham Nelson]) is Copyright 199
 [.gitignore]: ./.gitignore "Git ignore rules files"
 [.travis.yml]: ./.travis.yml "Travis CI build validation settings"
 [validate.sh]: ./validate.sh "Validate contents against EditorConfig settings via EClint"
+
+<!-- Live HTML Links -->
+
+[Blorb Live]: https://htmlpreview.github.io/?https://github.com/tajmone/if-specs/blob/master/blorb/Blorb-Specification.html "Live HTML Preview of Blorb Specification"
 
 <!-- people -->
 

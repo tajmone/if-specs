@@ -24,6 +24,11 @@ The [Blorb Specification], version 2.0.4, by [Andrew Plotkin], licensed under [C
 - [`/upstream/`](./upstream/) — original Blorb specs documents:
     + [`/2.0.4/`][2.0.4] — Mar 2, 2014.
     + [`changes.txt`][changes.txt] — latest Blorb specs change log.
+- [`Blorb-Specification.html`][Blorb html] ([Live HTML]) — new HTML version of Blorb specs built from AsciiDoc.
+- [`blorb.asciidoc`][blorb.asciidoc] — AsciiDoc port source document.
+- [`build.sh`][build.sh] — generates standalone HTML document.
+- [`LICENSE`][LICENSE] — full text of the [CC BY-NC-SA 3.0] License.
+
 
 # About Blorb
 
@@ -97,9 +102,16 @@ In summary (but not a substitute for the [full license text][LICENSE]):
 
 <!-- project files -->
 
-[LICENSE]: ./LICENSE "View the full text of the CC BY-NC-SA 3.0 license"
+[2.0.4]: ./upstream/2.0.4/ "original Blorb v2.0.4 specification docs"
+
+[Blorb html]: ./Blorb-Specification.html "View Blorb Specification converted to HTML"
+[Live HTML]: https://htmlpreview.github.io/?https://github.com/tajmone/if-specs/blob/master/blorb/Blorb-Specification.html "Live HTML Preview of Blorb Specification"
+
+[blorb.asciidoc]: ./blorb.asciidoc "View AsciiDoc source"
+[build.sh]: ./build.sh "View script source"
 [changes.txt]: ./upstream/changes.txt "View the Blorb specification change log"
-[2.0.4]: ./upstream/2.0.4 "original Blorb v2.0.4 specification docs"
+[LICENSE]: ./LICENSE "View the full text of the CC BY-NC-SA 3.0 license"
+
 
 <!-- people -->
 
